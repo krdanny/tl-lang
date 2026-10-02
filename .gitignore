@@ -8,3 +8,4 @@ Projects/validator/tests/cases.json
 # runtime data written by the todo example when run from here
 /todos.json
 .DS_Store
+.worktrees/
