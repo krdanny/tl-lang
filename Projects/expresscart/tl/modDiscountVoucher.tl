@@ -1,1 +1,1 @@
-fn cal discount req|dg 0|if req.session.dis|if discount.type=="amount"|dg=discount.value<if discount.type=="percent"|dg=(discount.value/100)*req.session.tp<<req.session.tw=dg
+fn vn discount req|eq 0|if req.session.dis|if discount.type=="amount|eq=discount.value<if discount.type=="percent|eq=(discount.value/100)*req.session.tw<<req.session.mn=eq

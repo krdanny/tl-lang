@@ -1,0 +1,30 @@
+{
+  "title": "Project 8 — expressCart (online shop application, 34 modules)",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "original/app.js",
+        "original/routes/*.js",
+        "original/lib/*.js",
+        "original/lib/modules/*.js",
+        "original/lib/payments/*.js"
+      ],
+      "cmd": [
+        "original"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/*.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "tl"
+      ]
+    }
+  }
+}
