@@ -1,0 +1,298 @@
+{
+  "project": "hackathon-starter",
+  "title": "Project 9 — hackathon-starter (web application, 16 modules)",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "original/app.js",
+          "chars": 21033,
+          "lines": 424,
+          "o200k": 5107,
+          "cl100k": 5032,
+          "o200k_nocomments": 4249
+        },
+        {
+          "file": "original/config/cacheBust.js",
+          "chars": 1103,
+          "lines": 29,
+          "o200k": 282,
+          "cl100k": 276,
+          "o200k_nocomments": 185
+        },
+        {
+          "file": "original/config/flash.js",
+          "chars": 1485,
+          "lines": 40,
+          "o200k": 351,
+          "cl100k": 347,
+          "o200k_nocomments": 283
+        },
+        {
+          "file": "original/config/morgan.js",
+          "chars": 4165,
+          "lines": 111,
+          "o200k": 1044,
+          "cl100k": 1044,
+          "o200k_nocomments": 828
+        },
+        {
+          "file": "original/config/nodemailer.js",
+          "chars": 1554,
+          "lines": 42,
+          "o200k": 324,
+          "cl100k": 324,
+          "o200k_nocomments": 315
+        },
+        {
+          "file": "original/config/passport.js",
+          "chars": 33740,
+          "lines": 867,
+          "o200k": 7867,
+          "cl100k": 7686,
+          "o200k_nocomments": 6890
+        },
+        {
+          "file": "original/config/token-revocation.js",
+          "chars": 5499,
+          "lines": 134,
+          "o200k": 1283,
+          "cl100k": 1253,
+          "o200k_nocomments": 1283
+        },
+        {
+          "file": "original/controllers/ai-agent.js",
+          "chars": 25858,
+          "lines": 623,
+          "o200k": 6075,
+          "cl100k": 6016,
+          "o200k_nocomments": 4808
+        },
+        {
+          "file": "original/controllers/ai.js",
+          "chars": 32396,
+          "lines": 797,
+          "o200k": 7708,
+          "cl100k": 7624,
+          "o200k_nocomments": 5871
+        },
+        {
+          "file": "original/controllers/api.js",
+          "chars": 48511,
+          "lines": 1393,
+          "o200k": 12628,
+          "cl100k": 12530,
+          "o200k_nocomments": 11485
+        },
+        {
+          "file": "original/controllers/contact.js",
+          "chars": 3766,
+          "lines": 105,
+          "o200k": 930,
+          "cl100k": 921,
+          "o200k_nocomments": 894
+        },
+        {
+          "file": "original/controllers/home.js",
+          "chars": 149,
+          "lines": 10,
+          "o200k": 44,
+          "cl100k": 44,
+          "o200k_nocomments": 35
+        },
+        {
+          "file": "original/controllers/user.js",
+          "chars": 38891,
+          "lines": 1038,
+          "o200k": 9272,
+          "cl100k": 9179,
+          "o200k_nocomments": 8170
+        },
+        {
+          "file": "original/controllers/webauthn.js",
+          "chars": 9324,
+          "lines": 235,
+          "o200k": 2227,
+          "cl100k": 2179,
+          "o200k_nocomments": 2104
+        },
+        {
+          "file": "original/models/Session.js",
+          "chars": 1137,
+          "lines": 30,
+          "o200k": 259,
+          "cl100k": 251,
+          "o200k_nocomments": 132
+        },
+        {
+          "file": "original/models/User.js",
+          "chars": 9678,
+          "lines": 248,
+          "o200k": 2290,
+          "cl100k": 2301,
+          "o200k_nocomments": 1778
+        }
+      ],
+      "chars": 238289,
+      "lines": 6126,
+      "o200k": 57691,
+      "cl100k": 57007,
+      "o200k_nocomments": 49310,
+      "tests": {
+        "ok": true,
+        "summary": "327 passed, 0 failed",
+        "stderr": "<claude-code-hint v=\"1\" type=\"plugin\" value=\"stripe@claude-plugins-official\" />\nToken revocation: https://test.example.com/revoke/token_only responded with HTTP 503\nToken revocation: request to https://test.example.com/revoke/token_only failed — ECONNREFUSED\nToken revocation: skipping basic — missing config: clientId, clientSecret\nToken revocation: request to https://test.example.com/revoke/token_only failed — network down\nError in postRegisterStart: Error: WebAuthn error\n    at Context.<anonymo"
+      },
+      "cmd": "original"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/agent.tl",
+          "chars": 13357,
+          "lines": 1,
+          "o200k": 3643,
+          "cl100k": 3630
+        },
+        {
+          "file": "tl/ai.tl",
+          "chars": 13262,
+          "lines": 1,
+          "o200k": 3758,
+          "cl100k": 3744
+        },
+        {
+          "file": "tl/api.tl",
+          "chars": 26901,
+          "lines": 1,
+          "o200k": 8200,
+          "cl100k": 8159
+        },
+        {
+          "file": "tl/app.tl",
+          "chars": 10205,
+          "lines": 1,
+          "o200k": 3157,
+          "cl100k": 3120
+        },
+        {
+          "file": "tl/cachebust.tl",
+          "chars": 263,
+          "lines": 1,
+          "o200k": 90,
+          "cl100k": 90
+        },
+        {
+          "file": "tl/contact.tl",
+          "chars": 2174,
+          "lines": 1,
+          "o200k": 605,
+          "cl100k": 606
+        },
+        {
+          "file": "tl/dotenv.tl",
+          "chars": 249,
+          "lines": 1,
+          "o200k": 58,
+          "cl100k": 58
+        },
+        {
+          "file": "tl/flash.tl",
+          "chars": 754,
+          "lines": 1,
+          "o200k": 229,
+          "cl100k": 227
+        },
+        {
+          "file": "tl/home.tl",
+          "chars": 70,
+          "lines": 1,
+          "o200k": 21,
+          "cl100k": 21
+        },
+        {
+          "file": "tl/mailer.tl",
+          "chars": 824,
+          "lines": 1,
+          "o200k": 215,
+          "cl100k": 213
+        },
+        {
+          "file": "tl/morgan.tl",
+          "chars": 1821,
+          "lines": 1,
+          "o200k": 571,
+          "cl100k": 555
+        },
+        {
+          "file": "tl/passport.tl",
+          "chars": 15416,
+          "lines": 1,
+          "o200k": 4367,
+          "cl100k": 4317
+        },
+        {
+          "file": "tl/prelude.tl",
+          "chars": 434,
+          "lines": 1,
+          "o200k": 159,
+          "cl100k": 158
+        },
+        {
+          "file": "tl/revocation.tl",
+          "chars": 3086,
+          "lines": 1,
+          "o200k": 831,
+          "cl100k": 803
+        },
+        {
+          "file": "tl/session.tl",
+          "chars": 307,
+          "lines": 1,
+          "o200k": 98,
+          "cl100k": 97
+        },
+        {
+          "file": "tl/user.tl",
+          "chars": 21981,
+          "lines": 1,
+          "o200k": 5879,
+          "cl100k": 5830
+        },
+        {
+          "file": "tl/usermodel.tl",
+          "chars": 3768,
+          "lines": 1,
+          "o200k": 1114,
+          "cl100k": 1116
+        },
+        {
+          "file": "tl/webauthn.tl",
+          "chars": 5238,
+          "lines": 1,
+          "o200k": 1439,
+          "cl100k": 1422
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 15402,
+          "lines": 864,
+          "o200k": 4139,
+          "cl100k": 4105
+        }
+      ],
+      "chars": 135512,
+      "lines": 882,
+      "o200k": 38573,
+      "cl100k": 38271,
+      "o200k_nocomments": 38573,
+      "tests": {
+        "ok": true,
+        "summary": "327 passed, 0 failed",
+        "stderr": "<claude-code-hint v=\"1\" type=\"plugin\" value=\"stripe@claude-plugins-official\" />\nToken revocation: https://test.example.com/revoke/token_only responded with HTTP 503\nToken revocation: request to https://test.example.com/revoke/token_only failed — ECONNREFUSED\nToken revocation: skipping basic — missing config: clientId, clientSecret\nToken revocation: request to https://test.example.com/revoke/token_only failed — network down\nError in postRegisterStart: Error: WebAuthn error\n    at Context.<anonymo"
+      },
+      "cmd": "tl"
+    }
+  }
+}
