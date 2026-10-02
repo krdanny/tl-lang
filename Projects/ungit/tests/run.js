@@ -17,20 +17,23 @@ const only = process.argv[3];
 const root = path.resolve(__dirname, '..');
 const tree = path.join(root, '.run', which);
 
-// source module -> TL module (flat tl/ folder) and how CommonJS code sees it
+// source module -> TL module (tl/ is flat) and what its CommonJS `module.exports` is:
+//   value: 'x'  -> `module.exports = x` in the original: the TL module's top-level `x`
+//   (no value)  -> `exports.a = …; exports.b = …` in the original: the TL module's top-level functions and constants
 const MODULES = {
   'address-parser.js': { tl: 'addressParser' },
-  'bugtracker.js': { tl: 'bugtracker', single: 'BugTracker' },
-  'config.js': { tl: 'config', single: 'config' },
-  'git-api.js': { tl: 'gitApi' },
+  'bugtracker.js': { tl: 'bugtracker', value: 'BugTracker' },
+  'config.js': { tl: 'config', value: 'config' },
+  // git-api's exports object is written to from outside (`gitApi.pathPrefix = '/api'`), so the TL module keeps it as a value
+  'git-api.js': { tl: 'gitApi', value: 'exports' },
   'git-parser.js': { tl: 'gitParser' },
-  'git-promise.js': { tl: 'gitPromise', single: 'git' },
+  'git-promise.js': { tl: 'gitPromise', value: 'git' },
   'server.js': { tl: 'server' },
-  'sysinfo.js': { tl: 'sysinfo', single: 'sysinfo' },
-  'ungit-plugin.js': { tl: 'ungitPlugin', single: 'UngitPlugin' },
-  'utils/cache.js': { tl: 'cache', single: 'cache' },
-  'utils/file-type.js': { tl: 'fileType' },
-  'utils/logger.js': { tl: 'logger', single: 'logger' },
+  'sysinfo.js': { tl: 'sysinfo' },
+  'ungit-plugin.js': { tl: 'ungitPlugin', value: 'UngitPlugin' },
+  'utils/cache.js': { tl: 'cache', value: 'cache' },
+  'utils/file-type.js': { tl: 'fileType', value: 'fileType' },
+  'utils/logger.js': { tl: 'logger', value: 'logger' },
 };
 
 fs.rmSync(tree, { recursive: true, force: true });
@@ -53,10 +56,7 @@ if (which === 'original') {
   fs.writeFileSync(path.join(out, 'package.json'), '{ "type": "module" }\n');
   for (const [file, m] of Object.entries(MODULES)) {
     const rel = path.relative(path.dirname(path.join(tree, 'source', file)), path.join(out, `${m.tl}.js`)).split(path.sep).join('/');
-    // `module.exports = X` modules export one value; the others export an object of named members
-    const shim = m.single
-      ? `module.exports = require('${rel}').${m.single};\n`
-      : `module.exports = require('${rel}').exported;\n`;
+    const shim = `module.exports = require('${rel}')${m.value ? `.${m.value}` : ''};\n`;
     fs.writeFileSync(path.join(tree, 'source', file), shim);
   }
 }

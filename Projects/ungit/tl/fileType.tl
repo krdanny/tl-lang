@@ -1,0 +1,1 @@
++node.path|ie[".PNG" ".JPG" ".BMP" ".GIF" ".JPEG"]|fn ft file|if(ie.io(path.extname file).tc)>-1"image""text"
