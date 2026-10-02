@@ -23,7 +23,10 @@ call punctuation, repeated long names. → [How the language saves tokens](#how-
 **VS Code.** TL source is one dense line, so people do not read it directly. The VS Code extension shows every
 `.tl` file as ordinary indented code with full names, read-only. → [VS Code extension](#vs-code-extension)
 
-[Benchmarks](#benchmarks) · [Key capabilities](#key-capabilities) · [Quick start](#quick-start) · [Install](#install) · [Using TL](#using-tl) · [The dictionary](#the-dictionary-tldef) · [VS Code extension](#vs-code-extension) · [For models](lib/TL_INSTRUCTIONS.md)
+**Learning library for models.** A model learns to write TL from a small library of instruction files in this
+repository: one page of core rules plus 21 topic files it opens on demand. → [Teach a model to write TL](#teach-a-model-to-write-tl)
+
+[Benchmarks](#benchmarks) · [Key capabilities](#key-capabilities) · [Quick start](#quick-start) · [Install](#install) · [Using TL](#using-tl) · [The dictionary](#the-dictionary-tldef) · [VS Code extension](#vs-code-extension) · [Teach a model](#teach-a-model-to-write-tl) · [Roadmap](lib/ROADMAP.md)
 
 **What the model writes** (one line, 39 tokens):
 
@@ -256,7 +259,7 @@ tl test src                 #   ok   adds     1 passed, 0 failed
 Give the model [`lib/TL_INSTRUCTIONS.md`](lib/TL_INSTRUCTIONS.md) (and access to `lib/tl-dictionary/` for the topic
 files it points to), plus the project's `tl.def`. Ask it to keep `tl.def` up to date and to run `tl check` on what it
 writes; the diagnostics name the column and the fix. See
-[For a model that writes TL](#for-a-model-that-writes-tl).
+[Teach a model to write TL](#teach-a-model-to-write-tl).
 
 ### Try the examples and benchmarks in this repository
 
@@ -360,14 +363,49 @@ VS Code and press F5.
 The extension works in Restricted Mode (untrusted folders): it only reads and renders files. Settings and the
 full command list are in `vscode/README.md`. The same rendering is available in a terminal with `tl view`.
 
-## For a model that writes TL
+## Teach a model to write TL
 
-Give the model `lib/TL_INSTRUCTIONS.md`. It contains the dictionary rule, the ten core rules, and an index of the
-topic files in `lib/tl-dictionary/` (loops, errors, pipelines, types, interop, a list of common mistakes, …) so it
-can open only the topic it needs instead of loading the whole reference.
+TL is new, so no model knows it from training. Everything a model needs is in the learning library under `lib/`,
+written for models rather than people: short rules, one example per rule, and the exact output of each example.
+All examples are executed by the test suite, so the library cannot drift from the compiler.
 
-The workflow is `tl def` → `tl check` → `tl fmt` → `tl run`. Diagnostics are written for a model: an error code,
-the column, and named fixes.
+| File | What it teaches | Size |
+|---|---|---|
+| [`lib/TL_INSTRUCTIONS.md`](lib/TL_INSTRUCTIONS.md) | The dictionary rule, the ten core rules, the workflow, and an index of the topic files. **Always give this one.** | ~1,700 tokens |
+| [`lib/tl-dictionary/`](lib/tl-dictionary/) | 21 topic files, opened only when needed | ~750 tokens each, ~15,600 in total |
+
+The topic files:
+
+| Topic | File |
+|---|---|
+| Structure of a file, segments and bodies | `structure.md`, `spacing-and-closers.md` |
+| Bindings, calls, operators | `bindings-and-calls.md`, `operators.md` |
+| Numbers, strings, regex, interpolation | `literals-and-strings.md` |
+| Conditions, loops, pattern matching | `conditionals.md`, `loops.md`, `match.md` |
+| Functions, lambdas, pipelines | `functions-and-lambdas.md`, `pipelines-and-iterators.md` |
+| Lists, maps, sets | `collections.md` |
+| Types, methods, constructors, subclasses | `types-and-methods.md` |
+| Errors and optionals | `errors-and-optionals.md` |
+| Async and concurrency | `async.md` |
+| Modules and JavaScript interop | `modules-and-interop.md` |
+| The dictionary file | `tl-def.md` |
+| Standard library, recipes, testing, tools | `stdlib.md`, `recipes.md`, `testing.md`, `tooling.md` |
+| Common mistakes and current limits | `mistakes-and-limits.md` |
+
+How to use it:
+
+- **Chat or API:** put `TL_INSTRUCTIONS.md` in the system prompt, together with the project's `tl.def`. Add the
+  topic files that fit the task (for a web server: `stdlib.md` and `async.md`), or all of them if context allows.
+- **Coding agent with file access** (Claude Code, Cursor, …): point it at the files from your project instructions,
+  for example in `CLAUDE.md`:
+
+  ```
+  This project is written in TL. Before writing TL, read lib/TL_INSTRUCTIONS.md and open the files it lists in
+  lib/tl-dictionary/ for the topic at hand. Keep tl.def up to date. Run `tl check` on every file you change.
+  ```
+
+- **Let the compiler correct the model.** The workflow is `tl def` → `tl check` → `tl fmt` → `tl run`. Diagnostics are
+  written for a model: an error code, the column, and a named fix, so one round of `tl check` usually repairs a slip.
 
 ## What is in this repository
 
@@ -375,7 +413,7 @@ the column, and named fixes.
 |---|---|
 | `lib/` | The compiler and tools (`tl-lang`): lexer, parser, JavaScript emitter, runtime, formatter, CLI (`tl`, `tlc`), Node loader, tests. Pure JavaScript, no build step. |
 | `lib/TL_INSTRUCTIONS.md`, `lib/tl-dictionary/` | The language reference written for models: core rules in one file, 21 topic files to open on demand. Every example in them is run by the test suite. |
-| `lib/TL_Language_Specification_v0.5.docx` | The original design specification. It predates several changes made during implementation; the instructions and dictionary above describe the language as it works today. |
+| `lib/TL_Language_Specification_v0.1.docx` | The original design specification. It predates several changes made during implementation; the instructions and dictionary above describe the language as it works today. |
 | `Projects/` | Token benchmarks: five small programs written in JavaScript, TypeScript and TL, and two open-source libraries (validator.js, node-semver) converted to TL. `bench.js` counts tokens and runs every version against shared tests. |
 | `vscode/` | The VS Code extension that shows `.tl` files as readable, read-only code. |
 
@@ -383,11 +421,12 @@ the column, and named fixes.
 
 - 📘 [Core rules for models](lib/TL_INSTRUCTIONS.md) — the file to give an LLM
 - 📚 [Topic dictionary](lib/tl-dictionary/) — 21 files: loops, errors, pipelines, types, interop, common mistakes, …
+- 🗺️ [Roadmap](lib/ROADMAP.md) — next steps for JavaScript, and the plans for Python, C#, Rust and further hosts
 - 🗂️ [The `tl.def` dictionary](lib/tl-dictionary/tl-def.md) — format, rules, error codes
 - 📊 [Benchmark results](Projects/results/README.md) and [how they are produced](Projects/README.md)
 - 🧩 [VS Code extension](vscode/README.md) — commands and settings
 - 🛠️ [Compiler and CLI](lib/README.md)
-- 📄 [Original design specification](lib/TL_Language_Specification_v0.5.docx) (predates several implementation changes)
+- 📄 [Original design specification](lib/TL_Language_Specification_v0.1.docx) (predates several implementation changes)
 
 ## Status and limits
 
@@ -398,8 +437,8 @@ TL/JS 0.1 is a working compiler, not a finished language.
 - A call to a function that can raise must be propagated with `?` or handled; used directly in a condition it
   is an always-true result object. This is the easiest mistake to make in TL today.
 - The token figures are for the `o200k` tokenizer. Other tokenizers will give somewhat different numbers.
-- `lib/ROADMAP.md` is the earlier long-term plan (a native core and more host languages). What exists is the
-  pure-JavaScript compiler for Node.js described here.
+- JavaScript is the only host language today. `lib/ROADMAP.md` describes what is planned: Python, C# and Rust as
+  further hosts, in both directions (TL to the host, and existing host code into TL).
 
 ## Third-party code
 

@@ -1,175 +1,281 @@
 # TL Roadmap
 
-Three stages, delivered in order, sharing one core:
+TL is one language with several host languages. The source, the dictionary (`tl.def`) and the tools stay the same;
+what changes per host is the code the compiler emits and a small runtime library. JavaScript is the first host and
+works today. This document says what exists, what comes next for JavaScript, and how Python, C#, Rust and further
+hosts are added, in both directions: **TL → host** (run TL there) and **host → TL** (bring existing code into TL).
 
-1. **TL the independent language** — its own compiler, runtime, standard library and CLI.
-2. **TL for JavaScript** — TL as a compile-to-JS language, the way TypeScript is.
-3. **TL for VS Code** — an extension that translates `.tl` files into a host language (JavaScript first) and is built so more languages can be plugged in.
+Status marks: ✅ done · ◐ partly done · ☐ planned.
 
-Spec reference: `TL_Language_Specification_v0.5.docx` (section numbers below point into it).
+## Where TL is today
 
----
-
-## Guiding decisions
-
-| Decision | Choice | Why |
+| Area | Status | What exists |
 |---|---|---|
-| Core implementation language | **Rust** | Stage 1 needs a native compiler and runtime. The same crates compile to WASM and to a Node addon (napi-rs), so Stages 2 and 3 reuse the exact same parser and checker (the model used by SWC, Biome and Oxc). |
-| One front end for everything | `tl-syntax`, `tl-def`, `tl-resolve`, `tl-check` are shared | A bug fixed once is fixed in the CLI, the JS compiler and the editor. |
-| Stage gating | Stage 2 starts at **M1.4** (interpreter running), not after the native backend | Otherwise the JS target waits a year for work it doesn't need. Stage 1 native work continues in parallel. |
-| Host plugin interface | Defined in Stage 2, used in Stage 3 | Adding Python/Go/Rust later means writing an adapter, not changing the extension. |
-| Conformance suite | Every TL example in the spec is a test | The spec and the implementation cannot drift apart. |
+| Language | ✅ | TL/JS 0.1: one-line syntax, minimal closure, pipelines, records, enums, `match`, errors and `?`, async, subclasses, bit operators, tests |
+| Compiler | ✅ | Pure JavaScript, no build step: lexer, symbol-directed parser, JavaScript emitter, runtime (`lib/`) |
+| Tools | ✅ | `tl run / check / compile / fmt / def / view / test / init`, `tlc` (like `tsc`), Node loader hook |
+| Dictionary | ✅ | `tl.def` is mandatory; compound names live there; `tl def` creates and maintains it |
+| Readable view | ✅ | `tl view` and the VS Code extension (`vscode/`): read-only rendering with long names |
+| Model documentation | ✅ | `TL_INSTRUCTIONS.md` and the topic dictionary; every example is run by the test suite |
+| Benchmarks | ✅ | Five small programs (JS / TS / TL) and two real libraries (validator.js, node-semver) with their own test suites |
+| Static type checking | ☐ | Types are parsed and erased; only simple parameter annotations are checked at run time |
+| Source maps, `.d.ts` output | ☐ | |
+| Language server | ☐ | The extension renders and reports compile errors, but has no rename or go-to-definition |
+| Other host languages | ☐ | This document |
+| Independent runtime | ☐ | See [the long view](#the-long-view-tl-as-an-independent-language) |
+
+## Principles
+
+1. **One compiler, many emitters.** The compiler stays one JavaScript program. A new host is a new emitter and a
+   new runtime library, selected with `tlc --target <host>`; the lexer, parser, dictionary and tools are shared.
+2. **TL semantics are fixed by TL, not by the host.** What `==`, truthiness, integer division, string indexing and
+   map ordering mean is decided once in the core specification. Each host's runtime makes it true there, so the same
+   `.tl` file behaves the same everywhere.
+3. **Every host proves itself with the same evidence.** The shared conformance suite must pass, the five benchmark
+   programs must pass their tests in that host, and one real open-source project of that language is converted
+   and passes its own tests. Token counts are published next to the host's own code.
+4. **Both directions.** A host is complete when existing code in that language can be imported into TL, not only
+   when TL can be emitted to it.
+5. **The dictionary carries the host's names.** A host's libraries are used through `tl.def` entries generated
+   from that host's own type information, so models never write long host names.
+
+## Shared foundation
+
+These are needed once, and every host after JavaScript depends on them. They are the next work regardless of
+which host comes first.
+
+| Step | What | Why it is needed |
+|---|---|---|
+| **F1** ☐ | **Target-neutral program representation.** The parser's tree is lowered to a small typed intermediate form (bindings, calls, blocks as expressions, pattern tests) before any host code is produced. The JavaScript emitter is moved onto it first. | Today the emitter works directly on the syntax tree and makes JavaScript decisions as it goes. A second emitter would have to repeat that. |
+| **F2** ☐ | **Host adapter interface.** One contract per host: `emit` (representation → source), `runtime` (the helper library), `names` (reserved words, name mangling), `interop` (how `+host.module` imports resolve) and `import` (host source → TL). | Adding a host becomes filling in an interface, and the VS Code extension can list the installed hosts. |
+| **F3** ☐ | **Conformance suite.** The documentation examples and the `lib/examples` programs become host-independent tests: TL source plus expected output. | The definition of "the same program behaves the same everywhere". |
+| **F4** ☐ | **Type checker.** Inference for locals, checked signatures from `tl.def`, records, enums with exhaustive `match`, optionals, error sets, generics. | JavaScript and Python can run without it. C# and Rust cannot be emitted without knowing the types. It also gives JavaScript users compile-time errors. |
+| **F5** ☐ | **Standard library contract.** The list of built-in functions, methods and modules (`fs`, `json`, `http`, `time`, …) with their exact behaviour, separate from the JavaScript runtime that implements them today. | Each host runtime implements the same contract. |
+| **F6** ☐ | **Importer framework.** Host source is parsed with that language's tree-sitter grammar (available as WebAssembly, so it runs inside the JavaScript compiler), converted to the representation of F1, and printed as TL plus `tl.def` lines. | The shared half of "host → TL". Only the per-language conversion rules differ. |
+
+Order: F1 → F2 → F3 can start now. F5 is written while the Python runtime is built. F4 is required before C# and
+Rust. F6 is first exercised by the JavaScript importer.
 
 ```
-                 ┌──────────────── core (Rust) ────────────────┐
-                 │ syntax · canon · view · def · resolve · check │
-                 └──────┬───────────────┬───────────────┬──────┘
-                        │               │               │
-        Stage 1         │   Stage 2     │    Stage 3    │
-   interpreter / VM     │  JS emitter   │  WASM build   │
-   native (Cranelift)   │  @tl/rt       │  LSP + VS Code│
-   stdlib, tl CLI       │  npm, .d.ts   │  host adapters│
+            tl source + tl.def
+                   │
+        lexer · parser · dictionary            (shared, exists)
+                   │
+        F1 representation · F4 types           (shared, planned)
+                   │
+   ┌───────────┬───┴───────┬───────────┬───────────┐
+ JavaScript   Python       C#          Rust       more…
+ emitter ✅   emitter ☐    emitter ☐   emitter ☐
+ runtime ✅   runtime ☐    runtime ☐   runtime ☐
+ importer ☐   importer ☐   importer ☐  importer ☐
 ```
 
 ---
 
-## Stage 0 — Validate the idea (2–3 weeks, before building much)
+## JavaScript — finishing the first host
 
-The cheapest way to reduce risk. If this fails, the syntax changes before any compiler work is spent on it.
+| Step | What | Done when |
+|---|---|---|
+| **JS1** ☐ | Move the emitter onto the shared representation (F1) and the adapter interface (F2). | All current tests and the seven benchmark projects pass unchanged. |
+| **JS2** ☐ | Source maps from generated JavaScript back to TL segments. | A stack trace and a debugger breakpoint point at the readable view. |
+| **JS3** ☐ | `.d.ts` output from `tl.def` and inferred signatures. | A TypeScript project imports a TL module with types. |
+| **JS4** ☐ | npm interop: generate `tl.def` entries from a package's `.d.ts`. | `tl def --from npm:express` gives one-token symbols for the package's API. |
+| **JS5** ☐ | Type checker in the JavaScript pipeline (F4). | Seeded type errors in the benchmark projects are reported at compile time. |
+| **JS6** ☐ | **JavaScript/TypeScript → TL importer** (F6). | validator.js and node-semver are re-imported automatically and still pass their tests. |
+| **JS7** ☐ | Language server: rename (source and `tl.def` together), go to definition, hover from the dictionary. | Available in the VS Code extension. |
+| **JS8** ☐ | Build-tool plugins: Vite, esbuild, Bun, Deno. | A mixed `.ts` + `.tl` project builds with one command. |
 
-- Hand-translate ~50 realistic tasks into TL, Python and TypeScript.
-- Measure tokens across several model tokenizers, including the projected `tl.def`.
-- Give models only the spec, ask them to write TL, and score parse rate and test pass rate.
-- Specifically test the riskiest rules: no `<` operator (R-8.3), arity-driven calls (R-9.1), minimal spacing (R-6.4), open strings (R-7.5).
-
-**Exit:** TL uses clearly fewer total tokens per correct task than TS/Python at comparable correctness, or the spec is revised until it does.
-
----
-
-## Stage 1 — TL as an independent language
-
-### M1.1 Syntax front end (6 weeks)
-- One-line lexer; parser with scope and delimiter stacks (§7); spacing rules (R-6.4, R-6.7).
-- Syntax tree with stable node IDs (needed for agent patches, §58).
-- Canonicalizer `tl fmt` and `--repair` (§53); virtual view `tl view` (§55).
-- Parser fuzzing; the spec's ~200 TL examples as golden tests.
-- **Exit:** every spec example parses; `fmt` output re-parses to identical bytes.
-
-### M1.2 Dictionary, resolver, namespaces (5 weeks)
-- `tl.def` parser and writer (§10), namespaces and imports (§46), short-symbol allocator.
-- Binding-vs-call, arity, glued-`[` resolution (R-11.1, R-9.1, R-6.7).
-- `tl def sync / repack / rename`.
-- **Exit:** all spec examples resolve against the shared example dictionary.
-
-### M1.3 Type checker, core subset (10 weeks)
-- Bindings, functions, records, tuples, enums, `match` with exhaustiveness, optionals, error sets and `?`, generics, traits, pipelines, closures.
-- Compact diagnostics format and codes (§59).
-- **Exit:** type-checks the spec's worked examples (§61–63) with correct diagnostics on seeded bugs.
-
-### M1.4 Interpreter and `script` profile — **TL 0.1 release** (8 weeks)
-- Bytecode VM with a tracing GC; REPL (`tl repl`); `tl run`.
-- Core stdlib: `core`, `col`, `text`, `fs`, `io`, `proc`, `env`, `json`, `time`.
-- `tl.pkg` and `tl.lock` basics, `tl test`.
-- **Exit:** a user can build and test a real CLI tool in TL. **→ Stage 2 starts here.**
-
-### M1.5 Async, concurrency, processes (8 weeks)
-- `async`/`await`, structured `scope`, cancellation (§35); threads, channels, locks (§36); subprocesses, signals (§37).
-- Effects and handlers for testing (§43).
-
-### M1.6 Native backend, `app` profile — **TL 0.5 release** (12 weeks)
-- Cranelift code generation, native binaries for Linux/macOS/Windows; WASM target.
-- Package registry, capabilities and `tl audit` (§44, §47).
-
-### M1.7 Ownership and `system` profile (later; does not block anything)
-- Borrow checker with automatic borrows (§32), lifetimes in `tl.def`, `unsafe`, FFI to C (§40–41), no-std.
-- Road to **TL 1.0**: syntax freeze after re-running the Stage 0 benchmark on the real toolchain.
+Known gaps to close along the way: a raising call used in a condition without `?` should be a compile error rather
+than a truthy result object; type names should be scoped per module rather than per process.
 
 ---
 
-## Stage 2 — TL for JavaScript (like TypeScript)
+## Python
 
-Starts after M1.4. Reuses the Stage 1 front end unchanged.
+Python is the second host because it is dynamic like JavaScript: it can be emitted before the type checker exists.
 
-### M2.1 JS host binding spec (2 weeks)
-- A new spec appendix, "TL/JS", defining the semantics mapping:
-  - `int` = safe integer with overflow checks; `i64`/`u64`/`big` = `BigInt`.
-  - Records → objects; enums → tagged objects; `T?` → `undefined`.
-  - Errors → tagged throws, checked statically; async → Promises and `AbortController`.
-  - `with`/`defer` → `using`; threads → Workers; `proc` → `node:child_process`.
-- Mark what doesn't exist on JS (ownership as a guarantee, `unsafe`, `system` profile).
+**TL → Python**
 
-### M2.2 JS emitter (8 weeks)
-- TL → ES2022+ JavaScript with source maps back to TL segments.
-- `.d.ts` generation from `tl.def`, so TypeScript projects can import TL modules.
-- `@tl/rt` runtime: checked math, match helpers, channels, scopes.
-- **Exit:** the §63 application example runs on Node, Bun and Deno.
+| Step | What | Done when |
+|---|---|---|
+| **PY1** ☐ | Host binding note: how each TL construct maps (table below) and where Python differs. | Reviewed against the conformance suite list. |
+| **PY2** ☐ | Emitter: indented Python 3.12+ from the shared representation. Block expressions and multi-statement lambdas are hoisted to local functions, since Python lambdas hold one expression. | Conformance suite passes. |
+| **PY3** ☐ | Runtime package `tl_rt` (pure Python, on PyPI): TL equality, truthiness, pipelines, pattern helpers, results, the standard library contract (F5). | The five benchmark programs pass their tests on Python. |
+| **PY4** ☐ | Running: `tl run --target py file.tl`, `tlc --target py`, and an import hook so `import module` loads `module.tl` directly (the counterpart of the Node loader). | A Python project mixes `.py` and `.tl` files. |
+| **PY5** ☐ | Interop: `+py.requests:rq` imports; `tl def --from py:requests` builds dictionary entries from type stubs (`.pyi`) and inspection. | A TL program uses `requests` and `pathlib` through symbols. |
+| **PY6** ☐ | Benchmark: the five small programs in Python vs TL, and one real Python project converted with its own tests passing. | Published in `Projects/results/`. |
 
-### M2.3 npm interop (6 weeks)
-- `+npm.pkg:alias` imports; converter from `.d.ts` to `tl.def` so every npm package gets a compact dictionary.
-- Mixed projects: `.tl` next to `.ts`/`.js`, one build.
+**Python → TL**
 
-### M2.4 Tooling and distribution — **TL/JS 0.1 release** (5 weeks)
-- `npm i -D tl` (napi-rs build of the Rust compiler), `tl build --target js`, watch mode.
-- Node loader hook; Vite, esbuild and Bun plugins.
-- **Host adapter interface** defined here (`semantics`, `emit`, later `encode`) — the contract Stage 3 builds on.
-- **Exit:** an existing TS project adds TL files without changing anything else.
+| Step | What | Done when |
+|---|---|---|
+| **PY7** ☐ | Importer: Python source (tree-sitter-python) → TL + `tl.def`. Comprehensions become pipelines, `with` becomes `with`, decorators and keyword arguments are mapped. | The real project of PY6 is produced by the importer, with hand edits listed. |
+| **PY8** ☐ | Round trip: Python → TL → Python passes the project's tests. | Reported per project. |
 
----
+How TL maps to Python:
 
-## Stage 3 — TL for VS Code (TL → any language, JS first)
+| TL | Python |
+|---|---|
+| record `type P\|x int` | `@dataclass` class with `__slots__` |
+| enum and `match` | classes per variant, `match` statement |
+| `T?`, `none` | `Optional[T]`, `None` |
+| `!Err`, `call?`, `try/catch` | exceptions; `?` re-raises; results as a small class |
+| `async fn`, `await`, `scope` | `asyncio` coroutines and task groups |
+| `xs>>filter f>>map g` | generator pipeline |
+| map `{k:v}`, set `#[…]`, list | `dict`, `set`, `list` |
+| `fn` values and lambdas | functions; block lambdas hoisted to `def` |
 
-The extension runs the WASM build of the core plus the Stage 2 JS adapter.
-
-### M3.1 Language support (6 weeks)
-- Language server (LSP) from the core: diagnostics, hover with canonical names/types/effects from `tl.def`, go to definition, rename (updates source and `tl.def` together), formatting.
-- Scope highlighting for `|` and `<`, breadcrumbs of the scope stack.
-- Virtual view as a read-only side panel (§55).
-
-### M3.2 Live translation to JS — **extension 0.1 on the Marketplace and Open VSX** (5 weeks)
-- "Show as JavaScript": side-by-side generated JS that updates as you type, with click-through between TL segments and JS lines (source maps).
-- Commands: *Export to JS*, *Copy as JS*, *Open generated file*.
-- A target-language picker in the status bar that lists installed host adapters (only JS at first).
-
-### M3.3 JS → TL (reverse direction) (8 weeks)
-- *Open as TL*: view an existing `.js`/`.ts` file as one-line TL plus a generated `tl.def`.
-- Edits in the TL view are written back as formatted JS (prettier). Comments kept in `.tlnote` sidecars.
-- **Exit:** round-trip on a corpus of real open-source JS files gives byte-identical formatted output.
-
-### M3.4 AI integration (4 weeks)
-- Built-in MCP server exposing the agent protocol (§58): `def.lookup`, `context.export`, `patch.apply`, `check`.
-- AI assistants in VS Code can read and edit any supported file through its TL view, spending fewer tokens.
-
-### M3.5 More host languages (per language, ~8–12 weeks each)
-- Adapters implement the Stage 2 interface using each language's own tooling for types: Python (Pyright), Go (gopls), Rust (rust-analyzer).
-- Suggested order: **Python → Go → Rust**.
-- Each adapter ships its own host binding appendix to the spec and its own round-trip corpus test.
+What needs care: Python treats empty lists and strings as false and TL does not; `//` and `%` differ for negative
+numbers; closures need `nonlocal`; names such as `list`, `type`, `id` are built-ins. All are handled in the emitter
+and runtime so the TL meaning holds.
 
 ---
 
-## Timeline (small team of 2–3; ranges, not commitments)
+## C# (.NET)
 
-| Quarter | Stage 1 | Stage 2 | Stage 3 |
-|---|---|---|---|
-| Q4 2026 | Stage 0 benchmark · M1.1 | | |
-| Q1 2027 | M1.2 · M1.3 | | |
-| Q2 2027 | M1.4 → **TL 0.1** | M2.1 · M2.2 | |
-| Q3 2027 | M1.5 | M2.3 · M2.4 → **TL/JS 0.1** | M3.1 |
-| Q4 2027 | M1.6 | maintenance | M3.2 → **extension 0.1** · M3.3 |
-| 2028 | M1.6 → **TL 0.5** · M1.7 | | M3.4 · M3.5 (Python first) |
+C# is statically typed, so it depends on the type checker (F4). It is the first typed host because its model
+(garbage collection, classes, exceptions, async tasks, generics) is close to what TL already has.
+
+**TL → C#**
+
+| Step | What | Done when |
+|---|---|---|
+| **CS1** ☐ | Host binding note and the typed subset: every binding and parameter must have a known type (inferred or from `tl.def`). | The conformance suite is annotated: which examples are typed, which rely on dynamic behaviour. |
+| **CS2** ☐ | Emitter: C# 12 source from the typed representation. Top-level TL functions become static members of a module class; generics are carried through. | Typed conformance examples compile with `dotnet build` and pass. |
+| **CS3** ☐ | Runtime library `Tl.Runtime` (NuGet): pipelines over `IEnumerable<T>`, pattern helpers, `Result<T,E>`, the standard library contract. | The five benchmark programs pass their tests on .NET. |
+| **CS4** ☐ | Build integration: `dotnet tl build` and an MSBuild step that compiles `.tl` files before the C# compiler runs, so a `.csproj` can hold both. | A C# project calls a TL module and the reverse. |
+| **CS5** ☐ | Interop: `+net.System.Text.Json:js` imports; `tl def --from nuget:<package>` reads assembly metadata and writes dictionary entries with full signatures. | A TL program uses `HttpClient` and `System.Text.Json` through symbols. |
+| **CS6** ☐ | Benchmark: five small programs in C# vs TL, one real C# project converted with its tests passing. | Published. C# is verbose, so this is where the largest savings are expected; that is a prediction to be measured. |
+
+**C# → TL**
+
+| Step | What | Done when |
+|---|---|---|
+| **CS7** ☐ | Importer: C# source (tree-sitter-c-sharp, or Roslyn through a helper process when semantic information is needed) → TL + `tl.def`. Properties become fields and getters, LINQ becomes pipelines, namespaces become modules. | The real project of CS6 is produced by the importer, with hand edits listed. |
+| **CS8** ☐ | Round trip C# → TL → C# passes the project's tests. | Reported per project. |
+
+How TL maps to C#:
+
+| TL | C# |
+|---|---|
+| record | `record class` (or `record struct` when marked) |
+| enum with payloads and `match` | abstract record with sealed cases, `switch` expression |
+| `T?` | nullable reference or `Nullable<T>` |
+| `!Err`, `call?` | exceptions by default; `Result<T,E>` for functions declared with an error set |
+| `async fn`, `await` | `Task<T>`, `await`, cancellation tokens for `scope` |
+| pipelines | LINQ operators |
+| map, set, list | `Dictionary<K,V>`, `HashSet<T>`, `List<T>` |
+| `type Kid:Base`, traits | class inheritance, interfaces |
+
+What needs care: TL code written without types cannot be emitted; the compiler must say which annotation is
+missing. Integer overflow, string indexing (UTF-16 in both, which helps) and structural equality of records follow
+the TL rules through the runtime.
 
 ---
 
-## Cross-cutting work (continuous)
+## Rust
 
-- **Spec:** split into *TL Core* (syntax, `tl.def`, protocol) and *Host Bindings* (Native, JS, later Python/Go/Rust); version it alongside releases.
-- **Conformance suite:** spec examples plus per-host round-trip corpora, run in CI on every change.
-- **Benchmarks:** the Stage 0 token and correctness benchmark re-run at every release.
-- **Docs and website:** tutorial, playground (WASM build in the browser), spec browser.
-- **Governance:** RFC process for syntax changes; editions for breaking changes (§47.2).
+Rust is the hardest host and comes after C#: it needs the type checker and an answer for ownership, which TL/JS
+accepts in the syntax (`&`, `&mut`, `own`) and ignores.
 
-## First two weeks
+**TL → Rust**
 
-1. Set up the monorepo: `crates/` (core), `packages/` (npm, runtime), `extensions/vscode`, `spec/`, `bench/`.
-2. Extract every TL example from the spec into `spec/examples/*.tl` as the first conformance tests.
-3. Start the Stage 0 benchmark: pick the 50 tasks and the tokenizers; translate the first 10.
-4. Write the lexer against R-5.x, R-6.x and R-13.x.
+| Step | What | Done when |
+|---|---|---|
+| **RS1** ☐ | Host binding note and two profiles. **Managed profile:** values are shared with reference counting (`Rc`/`Arc`, interior mutability where a binding is mutated), so any typed TL program can be emitted. **Owned profile:** TL's borrow syntax is checked and emitted as real borrows, giving idiomatic Rust. | The profiles and their limits are written down with examples. |
+| **RS2** ☐ | Emitter, managed profile: Rust 2021 source; TL enums and `match` map directly, `?` maps to Rust's `?`, traits and `impl` map to traits and `impl`. | Typed conformance examples build with `cargo build` and pass. |
+| **RS3** ☐ | Runtime crate `tl-rt`: pipelines as iterator adapters, TL strings and collections, the standard library contract. | The five benchmark programs pass their tests as native binaries. |
+| **RS4** ☐ | Build integration: `cargo tl` and a `build.rs` helper that compiles `.tl` files into the crate. | A Rust crate calls a TL module and the reverse. |
+| **RS5** ☐ | Interop: `+rs.serde_json:sj` imports; `tl def --from crate:<name>` builds dictionary entries from rustdoc's JSON output. | A TL program uses `serde_json` and `reqwest` through symbols. |
+| **RS6** ☐ | Owned profile: ownership and borrow checking in the TL compiler for code that uses `&`, `&mut` and `own`, emitted without reference counting. | The benchmark programs compile in the owned profile and their speed is compared with hand-written Rust. |
+| **RS7** ☐ | Benchmark: five small programs in Rust vs TL, one real Rust project converted with its tests passing. | Published. |
+
+**Rust → TL**
+
+| Step | What | Done when |
+|---|---|---|
+| **RS8** ☐ | Importer: Rust source (tree-sitter-rust) → TL + `tl.def`. Lifetimes and generic bounds move into the dictionary signatures; macros are expanded first (`cargo expand`) or kept as opaque calls. | The real project of RS7 is produced by the importer, with hand edits listed. |
+| **RS9** ☐ | Round trip Rust → TL → Rust passes the project's tests in the owned profile. | Reported per project. |
+
+How TL maps to Rust:
+
+| TL | Rust |
+|---|---|
+| record, tuple struct | `struct` |
+| enum and `match` | `enum` and `match` (direct) |
+| `T?` | `Option<T>` |
+| `fn f!Err`, `call?` | `Result<T, Err>` and `?` (direct) |
+| traits and `impl` | traits and `impl` (direct) |
+| `async fn` | `async fn` on Tokio |
+| pipelines | iterator chains |
+| map, set, list | `HashMap` (insertion-ordered variant where TL requires order), `HashSet`, `Vec` |
+| `type Kid:Base` | composition with a trait; Rust has no class inheritance |
+
+What needs care: macros and lifetimes have no TL syntax of their own; the managed profile costs performance; class
+inheritance must be rewritten. Rust is also where TL saves the least visible punctuation per line, so the token
+benefit has to be measured rather than assumed.
+
+---
+
+## Further hosts
+
+Considered after the three above, each following the same steps (binding note, emitter, runtime, build
+integration, interop from the host's type information, benchmark, importer):
+
+| Host | Notes |
+|---|---|
+| **Go** | Typed, garbage collected, simple. Errors as values match TL's error sets well. No generics-heavy library style, so the dictionary generator is straightforward (`go doc`). |
+| **Java / Kotlin** | Same shape as C#. Kotlin output is closer to TL (data classes, sealed classes, null safety); Java gives the larger token saving. |
+| **TypeScript** | Not a new runtime: the JavaScript emitter with type annotations, once the type checker (F4) exists. |
+| **Swift** | Enums with payloads, optionals and `throws` map directly. Depends on demand. |
+| **PHP, Ruby** | Dynamic like Python; could come early if there is a user for them. |
+
+## VS Code extension
+
+| Step | What |
+|---|---|
+| **VS1** ✅ | Readable, read-only view with long names, outline, hover, diagnostics (version 0.2.1). |
+| **VS2** ☐ | Language server features from JS7: rename, go to definition, completion from `tl.def`. |
+| **VS3** ☐ | **Show as host language:** a side panel with the generated JavaScript, and later Python, C# or Rust, that follows the cursor; the status bar lists the installed hosts. |
+| **VS4** ☐ | **Open as TL:** view an existing `.js`, `.py`, `.cs` or `.rs` file through the importer as TL, read-only at first. |
+| **VS5** ☐ | Tools for assistants: an MCP server exposing dictionary lookup, context export, check and patch, so an assistant reads and edits a project through TL. |
+
+## Order of work
+
+```
+now        F1 representation ── F2 adapter interface ── F3 conformance suite
+             │
+next       JS1  ── JS2 source maps ── JS4 npm dictionary ── JS6 JavaScript importer (first use of F6)
+             │
+then       PY1–PY6 Python host ── PY7–PY8 Python importer
+             │
+           F4 type checker (also JS5, JS3)
+             │
+then       CS1–CS6 C# host ── CS7–CS8 C# importer
+             │
+then       RS1–RS5 Rust, managed profile ── RS6 owned profile ── RS7–RS9
+             │
+later      Go · Java/Kotlin · others        VS2–VS5 alongside, as each host lands
+```
+
+Rough sizes, as estimates rather than commitments: the shared foundation F1–F3 is a few weeks of work; Python is
+the smallest host because it reuses the dynamic model; the type checker is the largest single piece; C# and Rust
+are each larger than Python, and Rust's owned profile is a project of its own.
+
+## The long view: TL as an independent language
+
+The original plan put a native TL first: its own virtual machine, native code generation and a `system` profile
+with ownership (specification §32, §40–41). The implementation went the other way, JavaScript first, because that
+gave a working language and real measurements quickly. A native TL remains possible and would reuse what the
+host work produces: the type checker (F4), the standard library contract (F5), and the Rust emitter, whose output
+is already a native binary. Whether a separate TL runtime is still worth building is a question for after the
+Rust host exists.
+
+## How progress is measured
+
+For every host, the same table is published in `Projects/results/`:
+
+- tokens of the host-language version (with and without comments) against TL including `tl.def`
+- the shared tests passing on both
+- for the converted real project: the project's own test suite passing on the TL version
+- for the importer: how much of the project was converted automatically and what was edited by hand

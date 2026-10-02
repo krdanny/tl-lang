@@ -7,7 +7,7 @@ JavaScript output that imports npm packages and can be imported by JS.
 
 The compiler, runtime and tooling are plain JavaScript (ES modules) with no dependencies and no build step.
 
-The language itself is specified in `TL_Language_Specification_v0.5.docx`.
+The language itself is specified in `TL_Language_Specification_v0.1.docx`.
 
 ```
 +node.path|n"World|print"Hello {n}!|for i 0..3|print i (path.join"a""b")
