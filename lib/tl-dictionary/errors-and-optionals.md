@@ -35,6 +35,18 @@ finally
 0 7
 ```
 
+## Raising inside a lambda
+
+A `?` or `!` inside a lambda makes the **enclosing** `fn` a raising function. Its callers must use `?` (or
+`try`, `??`) too; a plain call gives the `Ok(…)` object, not the value.
+
+```tl
+fn half n!Err|if n%2|!Err"odd<n/2<fn all xs|xs.map(x=>half x?<r all[2 4|print r(all[2 4]?
+```
+```text
+Ok([1, 2]) [1, 2]
+```
+
 ## Optionals
 
 `T?` holds `none` or a value (no wrapping). Tools: `x??d`, `u?.name`, `o is Some v`, `o.unwrap`, and `x?` inside a
@@ -51,6 +63,9 @@ none guest ANN none
 
 - `defer expr` runs when the enclosing body exits; `errdefer expr` runs only on error.
 - `panic"msg"`, `assert cond "msg"`, `unreachable"msg"`: panics are not caught by `catch`.
+- Reading a member of `none` (`x.name`) and indexing out of range (`xs[9]`) are panics as well. Where JavaScript
+  code relies on catching a `TypeError`, test the value first (`if x|…`, `x?.name`, `xs.at 9`).
+- `!value` rethrows an `Error` or a plain JavaScript object unchanged.
 - Standard library functions (`fs.read`, `json.de`, …) raise their errors directly; wrap them in `try|…<catch e|…`.
 
 ```tl

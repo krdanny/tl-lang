@@ -1,1 +1,1 @@
-fn n ..xs|xs.len<fn run next|next()<fn cnt ..a|a.length<print(n())(n 1 2)(run\cnt
+fn n ..xs|xs.len<fn run next|next()<fn cnt ..a|a.length<print(n())(n 1 2)(run\cnt|d new Date()|print((Number d)>0

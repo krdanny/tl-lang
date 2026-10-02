@@ -393,7 +393,7 @@ All examples are executed by the test suite, so the library cannot drift from th
 | File | What it teaches | Size |
 |---|---|---|
 | [`lib/TL_INSTRUCTIONS.md`](lib/TL_INSTRUCTIONS.md) | The dictionary rule, the ten core rules, the workflow, and an index of the topic files. **Always give this one.** | ~1,700 tokens |
-| [`lib/tl-dictionary/`](lib/tl-dictionary/) | 21 topic files, opened only when needed | ~750 tokens each, ~15,600 in total |
+| [`lib/tl-dictionary/`](lib/tl-dictionary/) | 21 topic files, opened only when needed | ~800 tokens each, ~17,100 in total |
 
 The topic files:
 

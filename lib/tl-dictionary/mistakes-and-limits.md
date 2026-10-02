@@ -39,12 +39,21 @@
 | `cache LRUCache` | `cache new LRUCache` | a bare type name is the type; `new T` or `T args` constructs |
 | `LEN 8` | `len8 8` | a capitalized name is a type or variant, so it cannot be bound |
 | `m[k]` on a map that may lack `k` | `m.get k` | indexing a missing key panics; `get` gives `none` |
-| `n.toString` | `String n` | numbers are not objects with methods; `String`, `Number`, `parseInt` are the JS globals |
 | `xs+ys` for lists | `xs.concat ys` | `+` is not list concatenation |
 | `"a\|b"` meant literally | `"a\\|b"` or `` `a\|b` `` | `\|` `\<` `\;` `\{` are the escapes; raw strings need none |
 | `x==y` inside an argument: `s.charAt 5==""` | `(s.charAt 5)==""` | tight operators bind before the call |
 | `if c a else b` | `if c a b` | inline `if` has no `else` |
 | `f x` when `f x` is the last value of a block and `f` is `if` | `^if c a b` | an `if` at segment start is a block; make the value explicit |
+| `for h hs\|h 1` to call a function held in a loop variable | `for h hs\|(h 1)` | at segment start `h 1` binds `h`; parentheses make it a call |
+| `x -1` | `x-1` | a spaced `-1` is an operand: `x(-1)` |
+| `timeout 5`, `error e`, `match m` as variable names | another name | prelude functions (`timeout`, `list`, `str`, …) and keywords (`error match type test ext alias pass static`) cannot be bound; `catch error` fails |
+| `x is str or x is num` | `(x is str)or(x is num)` | `or` after `is` continues the pattern |
+| `new URLSearchParams{a:"1"}` | `new URLSearchParams(obj{a:"1"})` | `Name{` is a record literal of type `Name` |
+| `o.run` to read a function from a JS object | `o["run"]` | a property that holds a function is called when read |
+| `{a:1}` passed to a JS library | `obj{a:1}` | `{…}` is a `Map`; nested: `obj{a:1 b:(obj{c:2})}` |
+| `fn all xs\|xs.map(x=>half x?)` called as `all xs` | `all xs?` | `?` or `!` inside a lambda makes the enclosing `fn` raising: without `?` the caller gets `Ok(…)` |
+| `try\|x.name<catch e\|…` with `x` none | `if x\|…` or `x?.name` | a panic (member of `none`, index out of range) is not caught by `catch` |
+| a plain word that is already a symbol in `tl.def` (`send` when `send sendEmail` exists) | rename the symbol in `tl.def` first | a symbol always compiles to its long name; check `tl.def` before using a short word as a real name |
 
 ## Not supported in TL/JS 0.1
 

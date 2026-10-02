@@ -17,7 +17,8 @@ Status marks: ✅ done · ◐ partly done · ☐ planned.
 | Dictionary | ✅ | `tl.def` is mandatory; compound names live there; `tl def` creates and maintains it |
 | Readable view | ✅ | `tl view` and the VS Code extension (`vscode/`): read-only rendering with long names |
 | Model documentation | ✅ | `TL_INSTRUCTIONS.md` and the topic dictionary; every example is run by the test suite |
-| Benchmarks | ✅ | Five small programs (JS / TS / TL) and two real libraries (validator.js, node-semver) with their own test suites |
+| Benchmarks | ✅ | Five small programs (JS / TS / TL), two real libraries (validator.js, node-semver) and five real applications (expressCart, hackathon-starter, Hubot, Ungit, Raneto), each converted project checked by its own test suite |
+| JavaScript interop | ◐ | Any npm package can be called, and five applications built on Express, MongoDB and Passport run this way; several JavaScript forms still need workarounds (JS0 below) |
 | Static type checking | ☐ | Types are parsed and erased; only simple parameter annotations are checked at run time |
 | Source maps, `.d.ts` output | ☐ | |
 | Language server | ☐ | The extension renders and reports compile errors, but has no rename or go-to-definition |
@@ -76,12 +77,13 @@ Rust. F6 is first exercised by the JavaScript importer.
 
 | Step | What | Done when |
 |---|---|---|
-| **JS1** ☐ | Move the emitter onto the shared representation (F1) and the adapter interface (F2). | All current tests and the seven benchmark projects pass unchanged. |
+| **JS0** ☐ | **Interop gaps found by converting five applications.** (a) A plain-object literal, so `obj{…}` and its nesting rule are not needed. (b) Reading a function-valued property without calling it, so `req.app` works and `req["app"]` is not needed. (c) Panics on a member of `none` and on an index out of range become catchable errors. (d) `x?.method args`, `delete`, `in`, `typeof`, an identity test, `this` for callbacks that receive it, arguments to a JavaScript base constructor, default exports. (e) `tl def` refuses a symbol that a source already uses as a plain name, also on incremental runs. (f) Arity of built-in method names applies only to TL values, so `cursor.sort spec` and `list.push a b` on JavaScript objects work. | The five applications are rebuilt without the interop helpers in their `prelude.tl` files, still pass their suites, and their token counts are published again. |
+| **JS1** ☐ | Move the emitter onto the shared representation (F1) and the adapter interface (F2). | All current tests and the twelve benchmark projects pass unchanged. |
 | **JS2** ☐ | Source maps from generated JavaScript back to TL segments. | A stack trace and a debugger breakpoint point at the readable view. |
 | **JS3** ☐ | `.d.ts` output from `tl.def` and inferred signatures. | A TypeScript project imports a TL module with types. |
 | **JS4** ☐ | npm interop: generate `tl.def` entries from a package's `.d.ts`. | `tl def --from npm:express` gives one-token symbols for the package's API. |
 | **JS5** ☐ | Type checker in the JavaScript pipeline (F4). | Seeded type errors in the benchmark projects are reported at compile time. |
-| **JS6** ☐ | **JavaScript/TypeScript → TL importer** (F6). | validator.js and node-semver are re-imported automatically and still pass their tests. |
+| **JS6** ☐ | **JavaScript/TypeScript → TL importer** (F6). | The seven converted projects are re-imported automatically and still pass their tests. |
 | **JS7** ☐ | Language server: rename (source and `tl.def` together), go to definition, hover from the dictionary. | Available in the VS Code extension. |
 | **JS8** ☐ | Build-tool plugins: Vite, esbuild, Bun, Deno. | A mixed `.ts` + `.tl` project builds with one command. |
 
@@ -245,7 +247,7 @@ integration, interop from the host's type information, benchmark, importer):
 ```
 now        F1 representation ── F2 adapter interface ── F3 conformance suite
              │
-next       JS1  ── JS2 source maps ── JS4 npm dictionary ── JS6 JavaScript importer (first use of F6)
+next       JS0 interop gaps ── JS1 ── JS2 source maps ── JS4 npm dictionary ── JS6 JavaScript importer (first use of F6)
              │
 then       PY1–PY6 Python host ── PY7–PY8 Python importer
              │
