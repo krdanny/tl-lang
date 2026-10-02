@@ -4,7 +4,7 @@ TL is a programming language designed to be written and read by language models 
 It compiles to JavaScript and runs on Node.js, the way TypeScript does. People do not read the source directly:
 a VS Code extension (and `tl view`) renders it as ordinary indented code.
 
-On the two real-world libraries converted so far, the TL version needs **32–35% fewer tokens** than the same
+On the two real-world libraries converted so far, the TL version needs <ins>**32–35% fewer tokens**</ins> than the same
 JavaScript with its comments removed, and passes the libraries' own test suites unchanged.
 
 ```
@@ -37,8 +37,8 @@ same tests as the others. TL counts include `tl.def`, the project's dictionary o
 
 | | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | Tests (both versions) |
 |---|---|---|---|---|---|---|
-| **node-semver** 7.8.5, 47 modules | 19,189 | 15,044 | 9,715 (9,246 + 469) | **−49%** | **−35%** | 9,074 assertions pass |
-| **validator.js** 13.15, 103 modules | 71,443 | 61,301 | 41,815 (39,887 + 1,928) | **−41%** | **−32%** | 13,289 cases pass |
+| **node-semver** 7.8.5, 47 modules | 19,189 | 15,044 | 9,715 (9,246 + 469) | <ins>**−49%**</ins> | <ins>**−35%**</ins> | 9,074 assertions pass |
+| **validator.js** 13.15, 103 modules | 71,443 | 61,301 | 41,815 (39,887 + 1,928) | <ins>**−41%**</ins> | <ins>**−32%**</ins> | 13,289 cases pass |
 
 The fair comparison is the one against JavaScript without comments, because TL files carry none.
 
@@ -52,11 +52,11 @@ the same in any language; that is why it gains a little less than semver, which 
 
 | Program | JS | TS | TL | TL vs JS | TL vs TS |
 |---|---|---|---|---|---|
-| Todo REST API | 774 | 870 | 295 | −62% | −66% |
-| Log analyzer CLI | 704 | 732 | 495 | −30% | −32% |
-| Inventory manager | 747 | 842 | 552 | −26% | −34% |
-| Markdown to HTML | 699 | 728 | 584 | −16% | −20% |
-| Concurrent bank ledger | 395 | 471 | 263 | −33% | −44% |
+| Todo REST API | 774 | 870 | 295 | <ins>−62%</ins> | <ins>−66%</ins> |
+| Log analyzer CLI | 704 | 732 | 495 | <ins>−30%</ins> | <ins>−32%</ins> |
+| Inventory manager | 747 | 842 | 552 | <ins>−26%</ins> | <ins>−34%</ins> |
+| Markdown to HTML | 699 | 728 | 584 | <ins>−16%</ins> | <ins>−20%</ins> |
+| Concurrent bank ledger | 395 | 471 | 263 | <ins>−33%</ins> | <ins>−44%</ins> |
 
 The Todo API result comes mostly from TL's built-in HTTP and storage helpers; against JavaScript written with
 Express it is −49%. The other four show what the syntax alone gives: 16–33%.
