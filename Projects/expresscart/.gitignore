@@ -1,0 +1,3 @@
+node_modules/
+# run trees built by tests/run.js (a copy of original/, plus the compiled TL modules for `tl`)
+.run/
