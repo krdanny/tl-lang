@@ -30,7 +30,8 @@ fn parse version options=none throwErrors=false
 ## Contents
 
 - [What is in this repository](#what-is-in-this-repository)
-- [Quick start](#quick-start)
+- [Install](#install)
+- [Using TL](#using-tl)
 - [How the language saves tokens](#how-the-language-saves-tokens)
 - [The dictionary: `tl.def`](#the-dictionary-tldef)
 - [Toolchain](#toolchain)
@@ -50,21 +51,148 @@ fn parse version options=none throwErrors=false
 | `Projects/` | Token benchmarks: five small programs written in JavaScript, TypeScript and TL, and two open-source libraries (validator.js, node-semver) converted to TL. `bench.js` counts tokens and runs every version against shared tests. |
 | `vscode/` | The VS Code extension that shows `.tl` files as readable, read-only code. |
 
-## Quick start
+## Install
 
-Requires Node.js 20.6 or newer.
+**Requirements:** Node.js 20.6 or newer, and git. VS Code is only needed for the readable view.
+
+### 1. Get the code
 
 ```sh
-cd lib && npm install        # one dependency: the tokenizer `tl def` uses to pick symbols
-npm test                     # 40 checks + 189 documentation examples
-
-node bin/tl.js run examples/loops.tl      # compile in memory and run
-node bin/tl.js view examples/loops.tl     # the readable rendering
-node bin/tl.js compile examples/loops.tl  # the generated JavaScript
+git clone https://github.com/krdanny/tl-lang.git
+cd tl-lang
 ```
 
-A project works like a TypeScript project: `tl init` creates `tlconfig.json`, `tlc` compiles `.tl` files to
-`.js`, and `node --import tl-lang/register app.tl` runs TL directly through a loader hook.
+### 2. Install the compiler
+
+```sh
+cd lib
+npm install          # one dependency: the tokenizer `tl def` uses to pick symbols
+npm test             # optional: 40 checks + 189 documentation examples
+npm install -g .     # puts the `tl` and `tlc` commands on your PATH
+tl --version         # tl 0.1.0
+```
+
+If you prefer not to install globally, either call the compiler by path (`node /path/to/tl-lang/lib/bin/tl.js …`)
+or add it to one project with `npm install /path/to/tl-lang/lib` and use `npx tl …`.
+
+### 3. Install the VS Code extension (optional, for reading TL)
+
+```sh
+cd ../vscode
+npm install
+npm run package                                   # builds tl-readable-0.2.1.vsix
+code --install-extension tl-readable-0.2.1.vsix
+```
+
+Then reload VS Code (Ctrl+Shift+P → "Developer: Reload Window"). See [VS Code extension](#vs-code-extension).
+
+## Using TL
+
+### Create a project
+
+```sh
+mkdir my-app && cd my-app
+tl init
+```
+
+This creates `tlconfig.json`, `package.json`, `src/main.tl` (a hello-world) and `src/tl.def` (the dictionary,
+empty for now).
+
+```sh
+tl run src/main.tl        # Hello from TL
+```
+
+### Write a program
+
+A `.tl` file is one line. Put this in `src/main.tl`:
+
+```
+fn isAdult age|age>=18<for p[["Ann" 31] ["Bo" 12]|print p[0](isAdult p[1])
+```
+
+`isAdult` is a compound name, so the compiler asks for a dictionary entry:
+
+```sh
+tl check src/main.tl
+# E261 'isAdult' is a compound name: give it a short symbol in tl.def … ('tl def' does both)
+```
+
+Let the tool do it:
+
+```sh
+tl def src
+#   ib    isAdult  (2x)
+# src/tl.def: added 1 name(s); 1 of 1 .tl file(s) rewritten
+```
+
+`src/tl.def` now contains `ib isAdult`, and the source reads `fn ib age|age>=18<…`. When you (or a model) write new
+code, add the line to `tl.def` yourself and use the symbol directly.
+
+### Run, read, build
+
+```sh
+tl run src/main.tl          # run it:            Ann true / Bo false
+tl view src/main.tl         # read it:           indented, with the long names
+tl compile src/main.tl      # see the JavaScript it becomes
+tl fmt src/main.tl          # canonical form (minimal spaces and closers)
+tl test src                 # run test"…" blocks in *.tl files
+
+tlc                         # compile src/ to dist/ (settings in tlconfig.json), like tsc
+node dist/main.js           # the output is plain JavaScript and needs nothing but Node
+```
+
+`tl view` shows what a person should read:
+
+```
+fn isAdult age
+    age>=18
+
+for p[["Ann" 31] ["Bo" 12]]
+    print p[0] (isAdult p[1])
+```
+
+### Run TL files directly with Node
+
+With `tl-lang` installed in the project (`npm install /path/to/tl-lang/lib`):
+
+```sh
+node --import tl-lang/register src/main.tl
+```
+
+### Use a TL module from JavaScript
+
+The compiled output is an ES module with the long names, so JavaScript imports it like any other file:
+
+```js
+import { isAdult } from './dist/main.js';
+```
+
+### Tests
+
+A test is a `test"name"|…` block; `assert` checks a condition:
+
+```
+fn add a b|a+b<test"adds"|assert(add 2 3)==5
+```
+
+```sh
+tl test src                 #   ok   adds     1 passed, 0 failed
+```
+
+### Let a model write the code
+
+Give the model [`lib/TL_INSTRUCTIONS.md`](lib/TL_INSTRUCTIONS.md) (and access to `lib/tl-dictionary/` for the topic
+files it points to), plus the project's `tl.def`. Ask it to keep `tl.def` up to date and to run `tl check` on what it
+writes; the diagnostics name the column and the fix. See
+[For a model that writes TL](#for-a-model-that-writes-tl).
+
+### Try the examples and benchmarks in this repository
+
+```sh
+tl run lib/examples/loops.tl
+tl view Projects/semver/tl/range.tl
+cd Projects && npm install && node bench.js      # token counts and tests for all seven projects
+```
 
 ## How the language saves tokens
 
@@ -188,14 +316,17 @@ Read-only by design: the view is a virtual document, and the raw one-line source
 **TL: Open Raw Source** and **TL: Unlock Raw Source for Editing** are there for the cases where a hand edit is
 wanted. Toolbar buttons switch between long names and symbols, and between words and sigils.
 
-Build and install:
+How to use it once installed (see [Install](#install), step 3):
 
-```sh
-cd vscode && npm install
-npm test                 # builds, then 19 tests
-npm run package          # tl-readable-<version>.vsix
-code --install-extension tl-readable-0.2.1.vsix
-```
+1. Open any `.tl` file. It opens as `<name>.tl.view`, the readable rendering.
+2. Use the Outline panel, folding and Ctrl+F as in any editor; hover a word or sigil for an explanation.
+3. The toolbar at the top right of the editor switches long names ↔ symbols and words ↔ sigils, and opens the
+   raw source. The same commands are in the command palette under "TL:".
+4. Right-click a line → **Reveal This Line in Raw Source** to see the segment behind it.
+5. To edit by hand: **TL: Open Raw Source**, then **TL: Unlock Raw Source for Editing**.
+
+To work on the extension itself: `cd vscode && npm test` (builds, then 19 tests), or open the `vscode/` folder in
+VS Code and press F5.
 
 The extension works in Restricted Mode (untrusted folders): it only reads and renders files. Settings and the
 full command list are in `vscode/README.md`. The same rendering is available in a terminal with `tl view`.
