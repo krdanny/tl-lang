@@ -1,0 +1,1 @@
++npm.mongoose|+npm.validator|ss new mongoose.Schema{session:String expires:Date}.js|fn rs ui|if not(validator.bc ui|^Promise.resolve{acknowledged:true dc:0}.js<this.dm{expires:{`$gt`:(new Date)}session:{`$regex`:(new RegExp"\"$ui\"")}}.js<ss.statics={rs:\rs}.js|const sessions mongoose.model"Session"ss

@@ -1,0 +1,1 @@
+fn index req res|res.render"home"{title:"Home"site:process.env.BASE}.js
