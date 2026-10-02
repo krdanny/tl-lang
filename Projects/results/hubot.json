@@ -169,17 +169,17 @@
         },
         {
           "file": "tl/CommandBus.tl",
-          "chars": 12156,
+          "chars": 12184,
           "lines": 1,
-          "o200k": 3370,
-          "cl100k": 3328
+          "o200k": 3376,
+          "cl100k": 3333
         },
         {
           "file": "tl/DataStore.tl",
-          "chars": 711,
+          "chars": 826,
           "lines": 1,
-          "o200k": 183,
-          "cl100k": 181
+          "o200k": 209,
+          "cl100k": 209
         },
         {
           "file": "tl/GenHubot.tl",
@@ -246,10 +246,10 @@
         },
         {
           "file": "tl/Robot.tl",
-          "chars": 12275,
+          "chars": 12320,
           "lines": 1,
-          "o200k": 3322,
-          "cl100k": 3279
+          "o200k": 3328,
+          "cl100k": 3282
         },
         {
           "file": "tl/Shell.tl",
@@ -281,17 +281,17 @@
         },
         {
           "file": "tl/tl.def",
-          "chars": 4739,
-          "lines": 283,
-          "o200k": 1303,
-          "cl100k": 1282
+          "chars": 4780,
+          "lines": 285,
+          "o200k": 1312,
+          "cl100k": 1290
         }
       ],
-      "chars": 61486,
-      "lines": 302,
-      "o200k": 16917,
-      "cl100k": 16761,
-      "o200k_nocomments": 16917,
+      "chars": 61715,
+      "lines": 304,
+      "o200k": 16964,
+      "cl100k": 16805,
+      "o200k_nocomments": 16964,
       "tests": {
         "ok": true,
         "summary": "286 passed, 0 failed",

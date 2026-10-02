@@ -7,13 +7,13 @@ an adapterName
 ts toString
 ap adapterPath
 Data DataStore
+DB DataStoreUnavailable
 dp deleteProperty
 qt queryTokens
 sc shouldContinue
 Text TextMessage
 ui userId
 COM CommandBus
-DB DataStoreUnavailable
 fun fuzzyName
 pp pendingProposals
 pro propertyName
@@ -227,10 +227,12 @@ wx writeFile
 acc accessSync
 BAD BIND_ADDRESS
 bl byteLength
+cas captureStackTrace
 cal catchAll
 cf copyFileSync
 cat created_at
 cre createInterface
+def defineProperty
 aw existsSync
 EX EXPRESS_BIND_ADDRESS
 AP EXPRESS_LIMIT

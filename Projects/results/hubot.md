@@ -3,13 +3,13 @@
 | | JS | TL |
 |---|---|---|
 | files | 18 files | 20 files |
-| non-empty lines | 3576 | 302 |
-| characters | 121937 (100%) | 61486 (50%) |
-| tokens o200k (GPT-4o/5) | 29411 (100%) | 16917 (58%) |
-| tokens cl100k (GPT-4) | 29148 (100%) | 16761 (58%) |
+| non-empty lines | 3576 | 304 |
+| characters | 121937 (100%) | 61715 (51%) |
+| tokens o200k (GPT-4o/5) | 29411 (100%) | 16964 (58%) |
+| tokens cl100k (GPT-4) | 29148 (100%) | 16805 (58%) |
 | token reduction vs JS | — | 42% |
-| of which the dictionary (tl.def) | — | 1303 tokens |
-| source files only | — | 15614 (47% less than JS) |
+| of which the dictionary (tl.def) | — | 1312 tokens |
+| source files only | — | 15652 (47% less than JS) |
 | shared tests | pass (286 passed, 0 failed) | pass (286 passed, 0 failed) |
 | run | `original` | `tl` |
 
