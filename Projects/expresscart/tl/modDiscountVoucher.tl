@@ -1,0 +1,1 @@
+fn vn discount req|eq 0|if req.session.dis|if discount.type=="amount|eq=discount.value<if discount.type=="percent|eq=(discount.value/100)*req.session.tw<<req.session.mn=eq

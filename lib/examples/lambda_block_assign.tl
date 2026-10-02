@@ -1,0 +1,1 @@
+r 0|[1 2 3].each x=>|print x<r=5|print r

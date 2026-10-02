@@ -1,0 +1,1 @@
+n 12.5|s"ab|print n.ts s.ts([1 2].ts)(n.vo+1)(true.ts

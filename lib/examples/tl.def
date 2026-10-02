@@ -1,3 +1,5 @@
 fc first_char
 sd safe_div
 dd defer_demo
+ts toString
+vo valueOf
