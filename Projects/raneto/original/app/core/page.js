@@ -1,0 +1,58 @@
+import path from 'node:path';
+import fs from 'fs-extra';
+import unescape from 'lodash/unescape.js';
+import sanitizeHtml from 'sanitize-html';
+import { marked } from 'marked';
+import utils from './utils.js';
+import content_processors from '../functions/contentProcessors.js';
+import sanitizeHtmlOutput from '../functions/sanitizeHtmlOutput.js';
+
+async function handler(filePath, config) {
+  const contentDir = utils.normalizeDir(path.normalize(config.content_dir));
+
+  try {
+    const file = await fs.readFile(filePath, 'utf8');
+    let slug = utils.getSlug(filePath, contentDir);
+
+    if (slug.includes('index.md')) {
+      slug = slug.replaceAll('index.md', '');
+    }
+    slug = slug.replaceAll('.md', '').trim();
+
+    const meta = content_processors.processMeta(file);
+    const content = content_processors.processVars(
+      content_processors.stripMeta(file),
+      config,
+    );
+
+    const body = sanitizeHtmlOutput(marked(content));
+    const title = meta.title
+      ? meta.title
+      : content_processors.slugToTitle(slug);
+    const cleanText = unescape(
+      sanitizeHtml(body, { allowedTags: [], allowedAttributes: {} }),
+    );
+    const maxLength = config.excerpt_length || 400;
+    const excerpt =
+      cleanText.length > maxLength
+        ? cleanText
+            .slice(0, maxLength)
+            .trimEnd()
+            .replace(/\s\S+$/, '') + '...'
+        : cleanText;
+
+    return {
+      slug,
+      title,
+      body,
+      excerpt,
+    };
+  } catch (e) {
+    if (config.debug) {
+      console.log(e);
+    }
+    return null;
+  }
+}
+
+export default handler;

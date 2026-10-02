@@ -1,0 +1,68 @@
+{
+  "global": {
+    "yes": "Igen",
+    "no": "Nem",
+    "search": "Keresés",
+    "cancel": "Mégsem",
+    "save": "Mentés",
+    "close": "Bezárás",
+    "lastUpdated": "Utoljára frissítve: ",
+    "pageName": "Oldal neve",
+    "addPage": "Oldal hozzáadása",
+    "reallyDeletePage": "Biztosan törölni szeretnéd ezt az oldalt?",
+    "mainArticles": "Fő cikkek",
+    "editor": "Szerkesztő"
+  },
+  "api": {
+    "loginSuccessful": "Sikeres bejelentkezés",
+    "invalidCredentials": "Helytelen felhasználónév / jelszó páros",
+    "invalidFile": "Invalid file path",
+    "invalidCategory": "Invalid category path",
+    "pageSaved": "Oldal mentve",
+    "pageNotSaved": "Error saving page",
+    "pageDeleted": "Oldal törölve",
+    "pageNotDeleted": "Error deleting page",
+    "categoryCreated": "Kategória hozzáadva",
+    "categoryNotCreated": "Error creating category",
+    "pageCreated": "Oldal hozzáadva",
+    "pageNotCreated": "Error creating page"
+  },
+  "error": {
+    "404": "Hoppá! Úgy tűnik, ez az oldal nem létezik."
+  },
+  "edit": {
+    "preview": "Előnézet",
+    "editor": "Szerkesztő",
+    "pageSaved": "Oldal sikeresen mentve",
+    "pageSaveError": "Hiba az oldal mentése közben",
+    "headerMetaInfo": "Összegző információk",
+    "lableMetaTitle": "Cím",
+    "labelMetaTitle": "Cím",
+    "lableMetaDescription": "Leírás",
+    "labelMetaDescription": "Leírás",
+    "lableMetaSort": "Rendezés",
+    "labelMetaSort": "Rendezés"
+  },
+  "home": {
+    "searchKnowledgeBase": "Keresés a tudásbázisban"
+  },
+  "login": {
+    "login": "Bejelentkezés",
+    "logout": "Kijelentkezés",
+    "username": "Felhasználónév",
+    "password": "Jelszó"
+  },
+  "page": {
+    "addCategory": "Kategória hozzáadása",
+    "addPage": "Oldal hozzáadása",
+    "deletePage": "Törlés",
+    "editPage": "Szerkesztés",
+    "actions": "Műveletek",
+    "needHelp": "Még mindig kell segítség?",
+    "getInTouch": "Kerülj kapcsolatba!"
+  },
+  "search": {
+    "resultsFor": "Keresési eredmények",
+    "noResultsFor": "Semmi nem található erre: "
+  }
+}
