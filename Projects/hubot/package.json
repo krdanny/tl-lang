@@ -1,0 +1,10 @@
+{
+  "name": "tl-bench-hubot",
+  "private": true,
+  "description": "Hubot (hubotio/hubot @ 628ec6c) and its TL conversion; dependencies of the application",
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-basic-auth": "^1.2.1",
+    "pino": "^10.3.1"
+  }
+}
