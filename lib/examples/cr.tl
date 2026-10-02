@@ -1,0 +1,1 @@
+s"a\rb\r\nc|print(s.split"\r").len s.length(JSON.stringify s
