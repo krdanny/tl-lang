@@ -1,1 +1,1 @@
-fn js v|if v==none|^if(Object.is v null)"object""undefined"<match type_of v|"fn"or"type"|"function"<"str"|"string"<"num"|"number"<"bool"|"boolean"<_|"object"
+fn js v|if v==none|^if(Object.is v null)"object""undefined<match type_of v|"fn"or"type|"function<"str|"string<"num|"number<"bool|"boolean<_|"object
