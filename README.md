@@ -4,6 +4,9 @@ TL is a programming language designed to be written and read by language models 
 It compiles to JavaScript and runs on Node.js, the way TypeScript does. People do not read the source directly:
 a VS Code extension (and `tl view`) renders it as ordinary indented code.
 
+**TL saves roughly <ins>30–60% of the tokens</ins>** of the same program written in JavaScript. Across the seven
+benchmark projects the saving ranges from 16% to 62%, and five of the seven fall between 30% and 62%.
+
 On the two real-world libraries converted so far, the TL version needs <ins>**32–35% fewer tokens**</ins> than the same
 JavaScript with its comments removed, and passes the libraries' own test suites unchanged.
 
