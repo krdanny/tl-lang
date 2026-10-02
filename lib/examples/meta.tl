@@ -1,0 +1,1 @@
+print(import.meta.dirname.ends"examples")(import.meta.url.ends"meta.tl
