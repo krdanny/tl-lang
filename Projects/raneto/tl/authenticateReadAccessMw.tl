@@ -1,0 +1,1 @@
+fn are config|if config.authentication==true and config.af==false|^req res next=>|if not req.session.li|if req.path=="/rn-login"or req.path=="/logout"or req.path=="/login|^next()<^res.redirect 302 config.bas+"/login<next()<<^req res next=>next()

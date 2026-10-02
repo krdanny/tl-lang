@@ -1,0 +1,1 @@
+fn ed config pl|in config.ib.replace"/""|pl.filter page=>page.slug!=in

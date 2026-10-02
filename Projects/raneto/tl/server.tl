@@ -1,0 +1,1 @@
++index.initialize|+"../config/config.js":config|app initialize config?|server app.listen(app.get"port")(app.get"host")()=>console.log"HTTP server listening on port "+(server.address()).port

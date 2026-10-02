@@ -1,0 +1,31 @@
+{
+  "title": "Project 12 — Raneto (knowledge-base web application, 34 modules)",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "original/server.js",
+        "original/app/index.js",
+        "original/app/core/*.js",
+        "original/app/functions/*.js",
+        "original/app/middleware/*.js",
+        "original/app/routes/*.js"
+      ],
+      "cmd": [
+        "original"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/*.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "tl"
+      ]
+    }
+  }
+}

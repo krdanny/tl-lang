@@ -1,0 +1,1 @@
+fn ga config session|auth config.authentication or config.af|li if auth session.li false|username if auth session.username null|ce if auth(li and config.ad)config.ad|obj{li:li username:username ce:ce

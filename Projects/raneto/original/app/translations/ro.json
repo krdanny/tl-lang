@@ -1,0 +1,68 @@
+{
+  "global": {
+    "yes": "Da",
+    "no": "Nu",
+    "search": "Căutare",
+    "cancel": "Anulare",
+    "save": "Salvează",
+    "close": "Închide",
+    "lastUpdated": "Ultima actualizare",
+    "pageName": "Nume pagină",
+    "addPage": "Adaugă pagină",
+    "reallyDeletePage": "Ești sigur că vrei să ștergi această paginpă?",
+    "mainArticles": "Articole principale",
+    "editor": "Editor"
+  },
+  "api": {
+    "loginSuccessful": "Autentificare Reușită",
+    "invalidCredentials": "Combinație Nevalidă de Utilizator/Parolă",
+    "invalidFile": "Invalid file path",
+    "invalidCategory": "Invalid category path",
+    "pageSaved": "Paginâ Salvată",
+    "pageNotSaved": "Error saving page",
+    "pageDeleted": "Pagina a fost Ștearsă",
+    "pageNotDeleted": "Error deleting page",
+    "categoryCreated": "Categorie Creată",
+    "categoryNotCreated": "Error creating category",
+    "pageCreated": "Pagină Creată",
+    "pageNotCreated": "Error creating page"
+  },
+  "error": {
+    "404": "Oopa. Se pare că această pagină nu există."
+  },
+  "edit": {
+    "preview": "Previzualizare",
+    "editor": "Editor",
+    "pageSaved": "Pagină Salvată cu Success",
+    "pageSaveError": "Eroare la Salvarea Paginii",
+    "headerMetaInfo": "Metadata",
+    "lableMetaTitle": "Titlu",
+    "labelMetaTitle": "Titlu",
+    "lableMetaDescription": "Descriere",
+    "labelMetaDescription": "Descriere",
+    "lableMetaSort": "Sortare",
+    "labelMetaSort": "Sortare"
+  },
+  "home": {
+    "searchKnowledgeBase": "Caută în Baza de Cunoștințe"
+  },
+  "login": {
+    "login": "Logare",
+    "logout": "Deconectare",
+    "username": "Nume Utilizator",
+    "password": "Parolă"
+  },
+  "page": {
+    "addCategory": "Adaugă categorie",
+    "addPage": "Adaugă pagină",
+    "deletePage": "Șterge",
+    "editPage": "Editează",
+    "actions": "Acțiuni",
+    "needHelp": "Aveți nevoie de ajutor?",
+    "getInTouch": "Întrați în legătură!"
+  },
+  "search": {
+    "resultsFor": "Rezultatele căutării pentru",
+    "noResultsFor": "Nimic nu a fost găsit"
+  }
+}

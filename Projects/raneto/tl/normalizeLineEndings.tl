@@ -1,0 +1,1 @@
+fn nl s|(s.replace"\r\n""\n").replace"\r""\n

@@ -1,0 +1,1 @@
++node.fs|+node.path|fn ll loc|JSON.parse(fs.gz(path.join import.meta.dirname"translations"loc+".json")"utf8

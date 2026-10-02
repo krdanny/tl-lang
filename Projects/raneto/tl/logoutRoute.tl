@@ -1,0 +1,1 @@
+fn re config|^req res=>|req.session.destroy err=>|if err|console.error"Error destroying session:"err<res.dd config.hp|res.redirect config.bas+"/|none<none
