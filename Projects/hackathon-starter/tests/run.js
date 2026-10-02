@@ -17,13 +17,7 @@ if (!['original', 'tl'].includes(which)) { console.log('usage: node tests/run.js
 if (!fs.existsSync(path.join(root, 'node_modules'))) { console.log('run `npm install` in Projects/hackathon-starter first'); process.exit(2) }
 
 const original = path.join(root, 'original')
-// app.js serves library files from <app>/node_modules, and the views need the compiled stylesheet (upstream: `npm run scss` on install)
-const link = path.join(original, 'node_modules')
-if (!fs.existsSync(link)) fs.symlinkSync('../node_modules', link, 'dir')
-if (!fs.existsSync(path.join(original, 'public/css/main.css'))) {
-  const sass = spawnSync(process.execPath, [path.join(root, 'node_modules/sass/sass.js'), '--no-source-map', '--silence-deprecation=import', '--quiet-deps', '--load-path=./', '--update', './public/css:./public/css'], { cwd: original, stdio: 'inherit' })
-  if (sass.status) { console.log('0 passed, 1 failed (scss build)'); process.exit(1) }
-}
+if (!require('./build.js').prepare()) { console.log('0 passed, 1 failed (scss build)'); process.exit(1) }
 
 let app = original
 if (which === 'tl') {

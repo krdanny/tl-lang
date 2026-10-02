@@ -13,7 +13,7 @@
 'use strict'
 const fs = require('node:fs')
 const path = require('node:path')
-const { execFileSync } = require('node:child_process')
+const { execFileSync, spawnSync } = require('node:child_process')
 
 const root = path.resolve(__dirname, '..')
 const out = path.join(root, 'tl-build')
@@ -101,6 +101,19 @@ function toCommonJS(name, src) {
   return res.join('\n') + '\n'
 }
 
+// What the application needs next to its sources and upstream produces on `npm install`:
+// app.js serves library files from <app>/node_modules, and the views link the compiled stylesheet (`npm run scss`).
+function prepare() {
+  const original = path.join(root, 'original')
+  const link = path.join(original, 'node_modules')
+  if (!fs.existsSync(link)) fs.symlinkSync('../node_modules', link, 'dir')
+  if (!fs.existsSync(path.join(original, 'public/css/main.css'))) {
+    const sass = spawnSync(process.execPath, [path.join(root, 'node_modules/sass/sass.js'), '--no-source-map', '--silence-deprecation=import', '--quiet-deps', '--load-path=./', '--update', './public/css:./public/css'], { cwd: original, stdio: 'inherit' })
+    if (sass.status) return false
+  }
+  return true
+}
+
 function build() {
   const esm = path.join(out, '.esm')
   fs.rmSync(out, { recursive: true, force: true })
@@ -127,5 +140,5 @@ function build() {
   return out
 }
 
-module.exports = { build, MODULES, MAIN }
+module.exports = { build, prepare, MODULES, MAIN }
 if (require.main === module) build()
