@@ -1,1 +1,1 @@
-fn cd discount req|dis 0|if req.session.dc|if discount.type=="amount"|dis=discount.value<if discount.type=="percent"|dis=(discount.value/100)*req.session.ta<<req.session.tb=dis
+fn cal discount req|dg 0|if req.session.dis|if discount.type=="amount"|dg=discount.value<if discount.type=="percent"|dg=(discount.value/100)*req.session.tp<<req.session.tw=dg
