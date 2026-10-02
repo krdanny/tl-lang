@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="TL — Token Language. One line for the model, readable code for people.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="TL — Token Language. The token-efficient language for LLMs.">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0f172a"/>
@@ -11,7 +11,7 @@
   <text x="130" y="165" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="76" font-weight="700" fill="#0f172a">TL</text>
   <!-- title -->
   <text x="232" y="128" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="58" font-weight="700" fill="#f8fafc">Token Language</text>
-  <text x="234" y="176" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="25" fill="#cbd5e1">One line for the model. Readable code for people.</text>
+  <text x="234" y="176" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="25" fill="#cbd5e1">The token-efficient language for LLMs</text>
   <text x="234" y="212" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="21" fill="#7dd3fc">30–60% fewer tokens than JavaScript · compiles to JavaScript · runs on Node.js</text>
   <!-- source line -->
   <rect x="64" y="244" width="1072" height="44" rx="10" fill="#020617" stroke="#334155"/>

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="docs/assets/tl-banner.svg" alt="TL — Token Language. One line for the model, readable code for people." width="100%">
+  <img src="docs/assets/tl-banner.svg" alt="TL — Token Language. The token-efficient language for LLMs." width="100%">
 </p>
 
-# TL — Token Language: code written for models, shown readable to people
+# TL — the token-efficient language for LLMs
 
 <p align="center">
   <img src="https://img.shields.io/badge/tokens-30%E2%80%9360%25%20fewer%20than%20JavaScript-38bdf8?style=flat-square" alt="30–60% fewer tokens than JavaScript">
@@ -12,9 +12,10 @@
   <img src="https://img.shields.io/badge/tested%20on-5%20applications%20%C2%B7%202%20libraries-64748b?style=flat-square" alt="Tested on five open-source applications and two libraries">
 </p>
 
-TL is a programming language designed to be written and read by language models with as few tokens as possible.
-It compiles to JavaScript and runs on Node.js, the way TypeScript does. **TL saves roughly
-<ins>30–60% of the tokens</ins>** of the same program written in JavaScript.
+**TL (Token Language) is a token-efficient programming language for LLMs**: code is written and read by the
+model in as few tokens as possible, and shown to people as ordinary readable code. It compiles to JavaScript
+and runs on Node.js, the way TypeScript does. **TL saves roughly <ins>30–60% of the tokens</ins>** of the same
+program written in JavaScript.
 
 **Tokens.** A model does not read characters, it reads tokens (word pieces), and cost, speed and how much code fits
 in its context all depend on the token count. TL removes the tokens a model does not need: indentation, brackets,
