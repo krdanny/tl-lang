@@ -1,0 +1,27 @@
+{
+  "title": "Project 11 — Ungit server (git web UI, 12 modules)",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "original/source/*.js",
+        "original/source/utils/*.js"
+      ],
+      "cmd": [
+        "original"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/*.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "tl"
+      ]
+    }
+  }
+}

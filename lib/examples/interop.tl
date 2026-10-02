@@ -1,1 +1,1 @@
-+node.path|+node.os|+"./helper.js":h|print(path.basename"/a/b/c.txt")(path.join"x""y|print(h.twice 21|p os.platform()|print(p=="linux" or p!="linux|j json.en{"a":[1 2|print j|print(json.de j).a
++node.path|+node.os|+"./helper.js":h|print(path.basename"/a/b/c.txt")(path.join"x""y|print(h.twice 21|p os.platform()|print(p=="linux" or p!="linux|j json.en{"a":[1 2|print j|print(json.de j).a|t try|!obj{code:7<catch e|e.code<print t
