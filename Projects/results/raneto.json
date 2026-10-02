@@ -1,0 +1,554 @@
+{
+  "project": "raneto",
+  "title": "Project 12 — Raneto (knowledge-base web application, 34 modules)",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "original/server.js",
+          "chars": 608,
+          "lines": 15,
+          "o200k": 137,
+          "cl100k": 143,
+          "o200k_nocomments": 58
+        },
+        {
+          "file": "original/app/index.js",
+          "chars": 8085,
+          "lines": 237,
+          "o200k": 1917,
+          "cl100k": 1909,
+          "o200k_nocomments": 1755
+        },
+        {
+          "file": "original/app/core/configValidation.js",
+          "chars": 5910,
+          "lines": 163,
+          "o200k": 1384,
+          "cl100k": 1372,
+          "o200k_nocomments": 1293
+        },
+        {
+          "file": "original/app/core/contents.js",
+          "chars": 5222,
+          "lines": 177,
+          "o200k": 1303,
+          "cl100k": 1284,
+          "o200k_nocomments": 1251
+        },
+        {
+          "file": "original/app/core/envOverrides.js",
+          "chars": 2216,
+          "lines": 76,
+          "o200k": 534,
+          "cl100k": 532,
+          "o200k_nocomments": 459
+        },
+        {
+          "file": "original/app/core/language.js",
+          "chars": 473,
+          "lines": 16,
+          "o200k": 115,
+          "cl100k": 112,
+          "o200k_nocomments": 101
+        },
+        {
+          "file": "original/app/core/lunr.js",
+          "chars": 1797,
+          "lines": 62,
+          "o200k": 572,
+          "cl100k": 587,
+          "o200k_nocomments": 543
+        },
+        {
+          "file": "original/app/core/page.js",
+          "chars": 1581,
+          "lines": 51,
+          "o200k": 359,
+          "cl100k": 350,
+          "o200k_nocomments": 359
+        },
+        {
+          "file": "original/app/core/search.js",
+          "chars": 2871,
+          "lines": 79,
+          "o200k": 741,
+          "cl100k": 733,
+          "o200k_nocomments": 653
+        },
+        {
+          "file": "original/app/core/utils.js",
+          "chars": 1418,
+          "lines": 37,
+          "o200k": 329,
+          "cl100k": 320,
+          "o200k_nocomments": 288
+        },
+        {
+          "file": "original/app/functions/buildNestedPages.js",
+          "chars": 525,
+          "lines": 22,
+          "o200k": 141,
+          "cl100k": 135,
+          "o200k_nocomments": 138
+        },
+        {
+          "file": "original/app/functions/contentProcessors.js",
+          "chars": 3707,
+          "lines": 127,
+          "o200k": 931,
+          "cl100k": 928,
+          "o200k_nocomments": 838
+        },
+        {
+          "file": "original/app/functions/createMetaInfo.js",
+          "chars": 642,
+          "lines": 22,
+          "o200k": 163,
+          "cl100k": 164,
+          "o200k_nocomments": 146
+        },
+        {
+          "file": "original/app/functions/excludeImageDirectory.js",
+          "chars": 222,
+          "lines": 6,
+          "o200k": 47,
+          "cl100k": 47,
+          "o200k_nocomments": 44
+        },
+        {
+          "file": "original/app/functions/getAuthContext.js",
+          "chars": 424,
+          "lines": 11,
+          "o200k": 94,
+          "cl100k": 91,
+          "o200k_nocomments": 91
+        },
+        {
+          "file": "original/app/functions/getFilepath.js",
+          "chars": 1825,
+          "lines": 60,
+          "o200k": 438,
+          "cl100k": 435,
+          "o200k_nocomments": 342
+        },
+        {
+          "file": "original/app/functions/normalizeLineEndings.js",
+          "chars": 206,
+          "lines": 6,
+          "o200k": 49,
+          "cl100k": 48,
+          "o200k_nocomments": 36
+        },
+        {
+          "file": "original/app/functions/sanitize.js",
+          "chars": 557,
+          "lines": 16,
+          "o200k": 118,
+          "cl100k": 120,
+          "o200k_nocomments": 54
+        },
+        {
+          "file": "original/app/functions/sanitizeHtmlOutput.js",
+          "chars": 611,
+          "lines": 24,
+          "o200k": 170,
+          "cl100k": 170,
+          "o200k_nocomments": 170
+        },
+        {
+          "file": "original/app/middleware/authenticate.mw.js",
+          "chars": 453,
+          "lines": 17,
+          "o200k": 102,
+          "cl100k": 102,
+          "o200k_nocomments": 93
+        },
+        {
+          "file": "original/app/middleware/authenticateReadAccess.mw.js",
+          "chars": 626,
+          "lines": 26,
+          "o200k": 140,
+          "cl100k": 140,
+          "o200k_nocomments": 131
+        },
+        {
+          "file": "original/app/middleware/errorHandler.mw.js",
+          "chars": 547,
+          "lines": 19,
+          "o200k": 126,
+          "cl100k": 125,
+          "o200k_nocomments": 117
+        },
+        {
+          "file": "original/app/middleware/oauth2.mw.js",
+          "chars": 6262,
+          "lines": 185,
+          "o200k": 1395,
+          "cl100k": 1388,
+          "o200k_nocomments": 874
+        },
+        {
+          "file": "original/app/routes/categoryCreate.route.js",
+          "chars": 905,
+          "lines": 34,
+          "o200k": 199,
+          "cl100k": 198,
+          "o200k_nocomments": 181
+        },
+        {
+          "file": "original/app/routes/home.route.js",
+          "chars": 1744,
+          "lines": 53,
+          "o200k": 388,
+          "cl100k": 386,
+          "o200k_nocomments": 324
+        },
+        {
+          "file": "original/app/routes/login.route.js",
+          "chars": 908,
+          "lines": 36,
+          "o200k": 222,
+          "cl100k": 222,
+          "o200k_nocomments": 219
+        },
+        {
+          "file": "original/app/routes/loginPage.route.js",
+          "chars": 291,
+          "lines": 13,
+          "o200k": 69,
+          "cl100k": 68,
+          "o200k_nocomments": 66
+        },
+        {
+          "file": "original/app/routes/logout.route.js",
+          "chars": 321,
+          "lines": 13,
+          "o200k": 72,
+          "cl100k": 73,
+          "o200k_nocomments": 69
+        },
+        {
+          "file": "original/app/routes/pageCreate.route.js",
+          "chars": 921,
+          "lines": 35,
+          "o200k": 210,
+          "cl100k": 209,
+          "o200k_nocomments": 192
+        },
+        {
+          "file": "original/app/routes/pageDelete.route.js",
+          "chars": 1277,
+          "lines": 48,
+          "o200k": 290,
+          "cl100k": 290,
+          "o200k_nocomments": 259
+        },
+        {
+          "file": "original/app/routes/pageEdit.route.js",
+          "chars": 1687,
+          "lines": 58,
+          "o200k": 379,
+          "cl100k": 376,
+          "o200k_nocomments": 349
+        },
+        {
+          "file": "original/app/routes/search.route.js",
+          "chars": 1356,
+          "lines": 43,
+          "o200k": 287,
+          "cl100k": 289,
+          "o200k_nocomments": 260
+        },
+        {
+          "file": "original/app/routes/sitemap.route.js",
+          "chars": 2173,
+          "lines": 63,
+          "o200k": 498,
+          "cl100k": 489,
+          "o200k_nocomments": 473
+        },
+        {
+          "file": "original/app/routes/wildcard.route.js",
+          "chars": 4518,
+          "lines": 128,
+          "o200k": 1001,
+          "cl100k": 970,
+          "o200k_nocomments": 900
+        }
+      ],
+      "chars": 62889,
+      "lines": 1978,
+      "o200k": 14920,
+      "cl100k": 14805,
+      "o200k_nocomments": 13126,
+      "tests": {
+        "ok": true,
+        "summary": "221 passed, 0 failed (14/14 suites)",
+        "stderr": ""
+      },
+      "cmd": "original"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/authenticateMw.tl",
+          "chars": 182,
+          "lines": 1,
+          "o200k": 50,
+          "cl100k": 49
+        },
+        {
+          "file": "tl/authenticateReadAccessMw.tl",
+          "chars": 245,
+          "lines": 1,
+          "o200k": 71,
+          "cl100k": 70
+        },
+        {
+          "file": "tl/buildNestedPages.tl",
+          "chars": 282,
+          "lines": 1,
+          "o200k": 84,
+          "cl100k": 82
+        },
+        {
+          "file": "tl/categoryCreateRoute.tl",
+          "chars": 418,
+          "lines": 1,
+          "o200k": 113,
+          "cl100k": 111
+        },
+        {
+          "file": "tl/configValidation.tl",
+          "chars": 3580,
+          "lines": 1,
+          "o200k": 888,
+          "cl100k": 884
+        },
+        {
+          "file": "tl/contentProcessors.tl",
+          "chars": 1413,
+          "lines": 1,
+          "o200k": 489,
+          "cl100k": 491
+        },
+        {
+          "file": "tl/contents.tl",
+          "chars": 2186,
+          "lines": 1,
+          "o200k": 689,
+          "cl100k": 683
+        },
+        {
+          "file": "tl/createMetaInfo.tl",
+          "chars": 187,
+          "lines": 1,
+          "o200k": 77,
+          "cl100k": 75
+        },
+        {
+          "file": "tl/envOverrides.tl",
+          "chars": 1030,
+          "lines": 1,
+          "o200k": 269,
+          "cl100k": 268
+        },
+        {
+          "file": "tl/errorHandlerMw.tl",
+          "chars": 278,
+          "lines": 1,
+          "o200k": 76,
+          "cl100k": 75
+        },
+        {
+          "file": "tl/excludeImageDirectory.tl",
+          "chars": 70,
+          "lines": 1,
+          "o200k": 20,
+          "cl100k": 20
+        },
+        {
+          "file": "tl/getAuthContext.tl",
+          "chars": 199,
+          "lines": 1,
+          "o200k": 48,
+          "cl100k": 48
+        },
+        {
+          "file": "tl/getFilepath.tl",
+          "chars": 719,
+          "lines": 1,
+          "o200k": 215,
+          "cl100k": 209
+        },
+        {
+          "file": "tl/homeRoute.tl",
+          "chars": 579,
+          "lines": 1,
+          "o200k": 169,
+          "cl100k": 167
+        },
+        {
+          "file": "tl/index.tl",
+          "chars": 3295,
+          "lines": 1,
+          "o200k": 1017,
+          "cl100k": 1022
+        },
+        {
+          "file": "tl/language.tl",
+          "chars": 107,
+          "lines": 1,
+          "o200k": 31,
+          "cl100k": 31
+        },
+        {
+          "file": "tl/loginPageRoute.tl",
+          "chars": 131,
+          "lines": 1,
+          "o200k": 34,
+          "cl100k": 33
+        },
+        {
+          "file": "tl/loginRoute.tl",
+          "chars": 465,
+          "lines": 1,
+          "o200k": 131,
+          "cl100k": 127
+        },
+        {
+          "file": "tl/logoutRoute.tl",
+          "chars": 154,
+          "lines": 1,
+          "o200k": 41,
+          "cl100k": 41
+        },
+        {
+          "file": "tl/lunr.tl",
+          "chars": 970,
+          "lines": 1,
+          "o200k": 356,
+          "cl100k": 367
+        },
+        {
+          "file": "tl/normalizeLineEndings.tl",
+          "chars": 44,
+          "lines": 1,
+          "o200k": 19,
+          "cl100k": 19
+        },
+        {
+          "file": "tl/oauth2Mw.tl",
+          "chars": 2165,
+          "lines": 1,
+          "o200k": 575,
+          "cl100k": 571
+        },
+        {
+          "file": "tl/page.tl",
+          "chars": 638,
+          "lines": 1,
+          "o200k": 202,
+          "cl100k": 204
+        },
+        {
+          "file": "tl/pageCreateRoute.tl",
+          "chars": 435,
+          "lines": 1,
+          "o200k": 119,
+          "cl100k": 118
+        },
+        {
+          "file": "tl/pageDeleteRoute.tl",
+          "chars": 593,
+          "lines": 1,
+          "o200k": 159,
+          "cl100k": 156
+        },
+        {
+          "file": "tl/pageEditRoute.tl",
+          "chars": 688,
+          "lines": 1,
+          "o200k": 197,
+          "cl100k": 195
+        },
+        {
+          "file": "tl/sanitize.tl",
+          "chars": 112,
+          "lines": 1,
+          "o200k": 36,
+          "cl100k": 36
+        },
+        {
+          "file": "tl/sanitizeHtmlOutput.tl",
+          "chars": 307,
+          "lines": 1,
+          "o200k": 106,
+          "cl100k": 106
+        },
+        {
+          "file": "tl/search.tl",
+          "chars": 1319,
+          "lines": 1,
+          "o200k": 400,
+          "cl100k": 397
+        },
+        {
+          "file": "tl/searchRoute.tl",
+          "chars": 460,
+          "lines": 1,
+          "o200k": 136,
+          "cl100k": 134
+        },
+        {
+          "file": "tl/server.tl",
+          "chars": 189,
+          "lines": 1,
+          "o200k": 44,
+          "cl100k": 45
+        },
+        {
+          "file": "tl/sitemapRoute.tl",
+          "chars": 924,
+          "lines": 1,
+          "o200k": 270,
+          "cl100k": 270
+        },
+        {
+          "file": "tl/utils.tl",
+          "chars": 676,
+          "lines": 1,
+          "o200k": 187,
+          "cl100k": 187
+        },
+        {
+          "file": "tl/wildcardRoute.tl",
+          "chars": 1692,
+          "lines": 1,
+          "o200k": 510,
+          "cl100k": 504
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 5096,
+          "lines": 308,
+          "o200k": 1354,
+          "cl100k": 1337
+        }
+      ],
+      "chars": 31828,
+      "lines": 342,
+      "o200k": 9182,
+      "cl100k": 9132,
+      "o200k_nocomments": 9182,
+      "tests": {
+        "ok": true,
+        "summary": "221 passed, 0 failed (14/14 suites)",
+        "stderr": ""
+      },
+      "cmd": "tl"
+    }
+  }
+}

@@ -7,6 +7,12 @@
 // tl/ is compiled to tl-build/tl/, and every upstream source file is replaced by a one-line shim that re-exports
 // the compiled TL module (TL has named exports only, so the shim also supplies the default export).
 // The last line of stdout is `N passed, M failed`; the exit code is non-zero when anything fails.
+//
+// Name mapping (tl/ is one flat folder): app/core/x.js and app/functions/x.js → tl/x.tl,
+// app/middleware/x.mw.js → tl/xMw.tl, app/routes/x.route.js → tl/xRoute.tl, app/index.js → tl/index.tl,
+// server.js → tl/server.tl. Because the compiled modules sit in one folder, two paths differ from the original:
+// language.tl reads <module dir>/translations (the original goes up from app/core), and server.tl imports
+// ../config/config.js. Object default exports (utils, contentProcessors, lunr, oauth2) are `const` objects.
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
