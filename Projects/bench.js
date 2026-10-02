@@ -68,7 +68,7 @@ for (const name of projects) {
   }
   all.push(result);
   if (!flags.has('--tests-only')) fs.writeFileSync(path.join(resultsDir, `${name}.json`), JSON.stringify(result, null, 2));
-  fs.writeFileSync(path.join(resultsDir, `${name}.md`), projectMd(result));
+  if (!flags.has('--tests-only')) fs.writeFileSync(path.join(resultsDir, `${name}.md`), projectMd(result));
   console.log(projectMd(result));
 }
 
