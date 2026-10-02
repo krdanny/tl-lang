@@ -36,7 +36,9 @@ const MODULES = {
   mailer: 'config/nodemailer.js',
   passport: 'config/passport.js',
   revocation: 'config/token-revocation.js',
-  prelude: 'tl/prelude.js', // shared TL helpers (no counterpart in the original)
+  // TL-only modules (no file of their own in the original)
+  prelude: 'tl/prelude.js', // helpers shared by all modules
+  dotenv: 'tl/dotenv.js', // app.js lines 18-29: load .env.example before the controllers are imported
 }
 // modules whose original does `module.exports = <one value>`: the TL module's export of that name
 const MAIN = { app: 'app', session: 'sessions', usermodel: 'users' }
@@ -76,8 +78,6 @@ function toCommonJS(name, src) {
           if (imp !== MAIN[m[2]]) throw new Error(`${name}: '${imp}' is not what ${MODULES[m[2]]} exports`)
           res.push(`const ${local || imp} = require(${id});`)
         }
-      } else if (m[2] === 'prelude') {
-        res.push(`const { ${items.map(([imp, local]) => (local ? `${imp}: ${local}` : imp)).join(', ')} } = require(${id});`)
       } else {
         res.push(`const { ${items.map(([imp, local]) => (local ? `${imp}: ${local}` : imp)).join(', ')} } = require(${id});`)
       }
