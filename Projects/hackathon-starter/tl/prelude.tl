@@ -1,1 +1,1 @@
-fn deep v|if v is Map|o Object.create Object.prototype|for k,x v|o[k]=deep x<^o<if(Array.ib v|for i,x v.enum|if x is Map|v[i]=deep x<elif(Array.ib x|deep x<<<v<ext map|js self|deep self<<fn del o k|Reflect.dep o k<fn undef x|Object.is x none
+fn deep v|if v is Map|o Object.create Object.prototype|for k,x v|o[k]=deep x<^o<if(Array.ib v|for i,x v.enum|if x is Map|v[i]=deep x<elif(Array.ib x|deep x<<<v<ext map|js self|deep self<<fn del o k|Reflect.dep o k<fn undef x|Object.is x none<fn isnull x|Object.is x null<fn isa x c|c[Symbol.hi].call c x
