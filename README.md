@@ -1,20 +1,37 @@
-# TL — Token Language
+<p align="center">
+  <img src="docs/assets/tl-banner.svg" alt="TL — Token Language. One line for the model, readable code for people." width="100%">
+</p>
+
+# TL — Token Language: code written for models, shown readable to people
+
+<p align="center">
+  <img src="https://img.shields.io/badge/tokens-30%E2%80%9360%25%20fewer%20than%20JavaScript-38bdf8?style=flat-square" alt="30–60% fewer tokens than JavaScript">
+  <img src="https://img.shields.io/badge/compiles%20to-JavaScript-f7df1e?style=flat-square&logo=javascript&logoColor=black" alt="Compiles to JavaScript">
+  <img src="https://img.shields.io/badge/node-%E2%89%A5%2020.6-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js 20.6 or newer">
+  <img src="https://img.shields.io/badge/VS%20Code-readable%20view-007acc?style=flat-square" alt="VS Code readable view">
+  <img src="https://img.shields.io/badge/tested%20on-validator.js%20%C2%B7%20node--semver-64748b?style=flat-square" alt="Tested on validator.js and node-semver">
+</p>
 
 TL is a programming language designed to be written and read by language models with as few tokens as possible.
-It compiles to JavaScript and runs on Node.js, the way TypeScript does. People do not read the source directly:
-a VS Code extension (and `tl view`) renders it as ordinary indented code.
+It compiles to JavaScript and runs on Node.js, the way TypeScript does. **TL saves roughly
+<ins>30–60% of the tokens</ins>** of the same program written in JavaScript.
 
-**TL saves roughly <ins>30–60% of the tokens</ins>** of the same program written in JavaScript. Across the seven
-benchmark projects the saving ranges from 16% to 62%, and five of the seven fall between 30% and 62%.
+**Tokens.** A model does not read characters, it reads tokens (word pieces), and cost, speed and how much code fits
+in its context all depend on the token count. TL removes the tokens a model does not need: indentation, brackets,
+call punctuation, repeated long names. → [How the language saves tokens](#how-the-language-saves-tokens)
 
-On the two real-world libraries converted so far, the TL version needs <ins>**32–35% fewer tokens**</ins> than the same
-JavaScript with its comments removed, and passes the libraries' own test suites unchanged.
+**VS Code.** TL source is one dense line, so people do not read it directly. The VS Code extension shows every
+`.tl` file as ordinary indented code with full names, read-only. → [VS Code extension](#vs-code-extension)
+
+[Benchmarks](#benchmarks) · [Key capabilities](#key-capabilities) · [Quick start](#quick-start) · [Install](#install) · [Using TL](#using-tl) · [The dictionary](#the-dictionary-tldef) · [VS Code extension](#vs-code-extension) · [For models](lib/TL_INSTRUCTIONS.md)
+
+**What the model writes** (one line, 39 tokens):
 
 ```
 +semver.Sem|fn parse version options=none the=false|if version is Sem|^version<try|Sem version options<catch e|if not the|^null<!e
 ```
 
-That is a complete TL module (one line, 39 tokens). The editor shows it like this:
+**What a person sees** in VS Code or with `tl view`:
 
 ```
 import semver.SemVer
@@ -31,6 +48,10 @@ fn parse version options=none throwErrors=false
 ```
 
 ## Benchmarks
+
+Across the seven benchmark projects the saving ranges from 16% to 62%, and five of the seven fall between 30% and
+62%. On the two real-world libraries, TL needs <ins>**32–35% fewer tokens**</ins> than the same JavaScript with its
+comments removed, and passes the libraries' own test suites unchanged.
 
 Tokens are counted with the `o200k` tokenizer (GPT-4o / GPT-5 family). A version only counts if it passes the
 same tests as the others. TL counts include `tl.def`, the project's dictionary of long names
@@ -74,29 +95,33 @@ node bench.js semver       # one project
 
 Per-project tables are in `Projects/results/`. How each project is tested is described in `Projects/README.md`.
 
-## Contents
+## Key capabilities
 
-- [Benchmarks](#benchmarks) (above)
-- [What is in this repository](#what-is-in-this-repository)
-- [Install](#install)
-- [Using TL](#using-tl)
-- [How the language saves tokens](#how-the-language-saves-tokens)
-- [The dictionary: `tl.def`](#the-dictionary-tldef)
-- [Toolchain](#toolchain)
-- [VS Code extension](#vs-code-extension)
-- [For a model that writes TL](#for-a-model-that-writes-tl)
-- [Status and limits](#status-and-limits)
-- [Third-party code](#third-party-code)
+- **Token-minimal syntax**: one line per file, no call parentheses or commas, closers only when something follows,
+  one-character statement forms (`^` return, `!` raise, `?` propagate, `+` import), pipelines with `>>`.
+- **Runs like TypeScript**: `tlc` compiles a project to plain ES modules, `tl run` executes a file, and a Node loader
+  runs `.tl` directly. The output uses the long, readable names and is importable from JavaScript.
+- **A mandatory dictionary**: compound names live once in `tl.def`; the source writes a one-token symbol.
+  `tl def` creates and maintains it.
+- **Readable for people**: the VS Code extension and `tl view` render the same file as indented code with full
+  names. The rendering is read-only and is checked to keep the source's tokens.
+- **Built for models**: a short rule file plus 21 topic files a model opens on demand; diagnostics give an error
+  code, the column and a named fix.
+- **Measured, not claimed**: every benchmark version must pass the same tests; two of them are the original test
+  suites of validator.js and node-semver.
 
-## What is in this repository
+## Quick start
 
-| Folder | What it is |
-|---|---|
-| `lib/` | The compiler and tools (`tl-lang`): lexer, parser, JavaScript emitter, runtime, formatter, CLI (`tl`, `tlc`), Node loader, tests. Pure JavaScript, no build step. |
-| `lib/TL_INSTRUCTIONS.md`, `lib/tl-dictionary/` | The language reference written for models: core rules in one file, 21 topic files to open on demand. Every example in them is run by the test suite. |
-| `lib/TL_Language_Specification_v0.5.docx` | The original design specification. It predates several changes made during implementation; the instructions and dictionary above describe the language as it works today. |
-| `Projects/` | Token benchmarks: five small programs written in JavaScript, TypeScript and TL, and two open-source libraries (validator.js, node-semver) converted to TL. `bench.js` counts tokens and runs every version against shared tests. |
-| `vscode/` | The VS Code extension that shows `.tl` files as readable, read-only code. |
+```sh
+git clone https://github.com/krdanny/tl-lang.git && cd tl-lang/lib
+npm install && npm install -g .          # the `tl` and `tlc` commands
+
+tl run examples/loops.tl                 # run a TL file
+tl view ../Projects/semver/tl/range.tl   # read a TL file
+```
+
+Full steps, including the VS Code extension, are under [Install](#install); a first project is walked through in
+[Using TL](#using-tl).
 
 ## Install
 
@@ -343,6 +368,26 @@ can open only the topic it needs instead of loading the whole reference.
 
 The workflow is `tl def` → `tl check` → `tl fmt` → `tl run`. Diagnostics are written for a model: an error code,
 the column, and named fixes.
+
+## What is in this repository
+
+| Folder | What it is |
+|---|---|
+| `lib/` | The compiler and tools (`tl-lang`): lexer, parser, JavaScript emitter, runtime, formatter, CLI (`tl`, `tlc`), Node loader, tests. Pure JavaScript, no build step. |
+| `lib/TL_INSTRUCTIONS.md`, `lib/tl-dictionary/` | The language reference written for models: core rules in one file, 21 topic files to open on demand. Every example in them is run by the test suite. |
+| `lib/TL_Language_Specification_v0.5.docx` | The original design specification. It predates several changes made during implementation; the instructions and dictionary above describe the language as it works today. |
+| `Projects/` | Token benchmarks: five small programs written in JavaScript, TypeScript and TL, and two open-source libraries (validator.js, node-semver) converted to TL. `bench.js` counts tokens and runs every version against shared tests. |
+| `vscode/` | The VS Code extension that shows `.tl` files as readable, read-only code. |
+
+## Resources
+
+- 📘 [Core rules for models](lib/TL_INSTRUCTIONS.md) — the file to give an LLM
+- 📚 [Topic dictionary](lib/tl-dictionary/) — 21 files: loops, errors, pipelines, types, interop, common mistakes, …
+- 🗂️ [The `tl.def` dictionary](lib/tl-dictionary/tl-def.md) — format, rules, error codes
+- 📊 [Benchmark results](Projects/results/README.md) and [how they are produced](Projects/README.md)
+- 🧩 [VS Code extension](vscode/README.md) — commands and settings
+- 🛠️ [Compiler and CLI](lib/README.md)
+- 📄 [Original design specification](lib/TL_Language_Specification_v0.5.docx) (predates several implementation changes)
 
 ## Status and limits
 
