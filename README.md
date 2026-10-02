@@ -2,7 +2,7 @@
   <img src="docs/assets/tl-banner.svg" alt="TL — Token Language. The token-efficient language for LLMs." width="100%">
 </p>
 
-# TL — the token-efficient language for LLMs
+# TL — token-efficient language for LLMs
 
 <p align="center">
   <img src="https://img.shields.io/badge/tokens-30%E2%80%9360%25%20fewer%20than%20JavaScript-38bdf8?style=flat-square" alt="30–60% fewer tokens than JavaScript">
