@@ -1,6 +1,7 @@
 // Runs expressCart's own test suite (original/test/specs/*.js, ava + supertest, unchanged) against an implementation.
 //   node tests/run.js original [spec]   the original JavaScript (original/)
 //   node tests/run.js tl [spec]         the TL modules (tl/*.tl), compiled with tlc first
+// The last line printed is `N passed, M failed`; the exit code is non-zero when a test fails.
 //
 // The tests need a MongoDB server. Start one with Docker before running (the port is 27117 so that it does
 // not collide with a MongoDB that may already listen on 27017):
@@ -11,9 +12,21 @@
 // database `expresscart-test` by itself when NODE_ENV=test.
 //
 // How it works: original/ is copied to .run/<impl>/ (the app writes config/settings-local.json, uploads and
-// similar files at run time, original/ stays untouched). For `tl`, the TL modules are compiled to .run/tl/_tl/
-// and every converted source file of the copy is replaced by a one-line CommonJS shim that loads the compiled
-// TL module, so the specs `require('../app.js')`, `require('../lib/common')`, ... exactly as they do upstream.
+// similar files at run time, original/ stays untouched) and ava runs there. For `tl`, the TL modules are compiled
+// to .run/tl/_tl/ and every converted source file of the copy is replaced by a one-line CommonJS shim that loads
+// the compiled TL module, so the specs `require('../app.js')`, `require('../lib/common')`, ... exactly as they do
+// upstream. Views, public files, config and locale JSON are the upstream ones in both runs.
+//
+// Notes on the TL modules (tl/):
+// - one .tl file per source module, in one flat folder; the `modules` table below is the name mapping
+//   (routes/x.js -> routeX, lib/payments/x.js -> payX, lib/modules/x-y.js -> modXY, lib/payment-common.js -> paymentCommon).
+// - tl/prelude.tl holds the helpers every module uses for JavaScript interop: `js` (a plain JavaScript object from a
+//   map literal, deep), `nil` (JavaScript null), `del` (delete a property), `call` (call a method whose name the TL
+//   parser gives a fixed number of operands, e.g. `sort`), `ap` (call a function value), `root` and `load`.
+// - TL has no `__dirname`: `root` is the directory the app is started from (process.cwd()), which is the app root in
+//   every documented way of running expressCart. `load` is `require` relative to that root; it serves the three
+//   places where upstream requires a module by a name taken from the configuration (payment gateways,
+//   lib/modules/*, payment schema/config JSON). In the `tl` run those names resolve to the shims.
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
@@ -78,10 +91,10 @@ if(which === 'tl'){
         process.exit(1);
     }
     for(const [file, m] of Object.entries(modules)){
-        // a module that is not converted yet keeps its original source (used while converting module by module)
         if(!fs.existsSync(path.join(root, 'tl', `${m.tl}.tl`))){
-            console.log(`not converted, original used: ${file}`);
-            continue;
+            console.log(`tl/${m.tl}.tl is missing (${file})`);
+            console.log('0 passed, 1 failed');
+            process.exit(1);
         }
         const rel = path.relative(path.dirname(path.join(tree, file)), path.join(tree, '_tl', `${m.tl}.js`)).split(path.sep).join('/');
         fs.writeFileSync(path.join(tree, file), `module.exports = require('${rel.startsWith('.') ? rel : `./${rel}`}')${m.main ? `.${m.main}` : ''};\n`);
@@ -104,16 +117,16 @@ let pass = 0; let fail = 0;
 for(const line of out.split('\n')){
     if(/^ok \d+ /.test(line)){ if(!/# SKIP/.test(line)){ pass++; } }else if(/^not ok \d+ /.test(line)){ fail++; }
 }
-// show the failures (TAP diagnostics) and anything the run printed to stderr when it did not end cleanly
+// show the failures (TAP diagnostics); when the run broke without a failed test, the end of stderr
 if(fail || r.status !== 0){
     const lines = out.split('\n');
     for(let i = 0; i < lines.length; i++){
         if(/^not ok /.test(lines[i])){
             console.log(lines[i]);
-            for(let j = i + 1; j < lines.length && /^\s/.test(lines[j]) && j < i + 30; j++){ console.log(lines[j]); }
+            for(let j = i + 1; j < lines.length && /^\s/.test(lines[j]) && j < i + 14; j++){ console.log(lines[j]); }
         }
     }
-    if(r.stderr){ console.log(r.stderr.split('\n').slice(-40).join('\n')); }
+    if(!fail && r.stderr){ console.log(r.stderr.split('\n').filter((l) => !/\u001b\[0m(GET|POST|DELETE) /.test(l)).slice(-30).join('\n')); }
 }
 if(r.status !== 0 && fail === 0){ fail = 1; }
 console.log(`${pass} passed, ${fail} failed`);

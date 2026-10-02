@@ -1,0 +1,561 @@
+{
+  "project": "expresscart",
+  "title": "Project 8 — expressCart (online shop application, 34 modules)",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "original/app.js",
+          "chars": 17174,
+          "lines": 511,
+          "o200k": 3732,
+          "cl100k": 3718,
+          "o200k_nocomments": 3473
+        },
+        {
+          "file": "original/routes/admin.js",
+          "chars": 28556,
+          "lines": 767,
+          "o200k": 6597,
+          "cl100k": 6507,
+          "o200k_nocomments": 5935
+        },
+        {
+          "file": "original/routes/customer.js",
+          "chars": 21744,
+          "lines": 566,
+          "o200k": 4640,
+          "cl100k": 4605,
+          "o200k_nocomments": 4272
+        },
+        {
+          "file": "original/routes/index.js",
+          "chars": 40550,
+          "lines": 1059,
+          "o200k": 8614,
+          "cl100k": 8509,
+          "o200k_nocomments": 7605
+        },
+        {
+          "file": "original/routes/order.js",
+          "chars": 9961,
+          "lines": 269,
+          "o200k": 2152,
+          "cl100k": 2125,
+          "o200k_nocomments": 1966
+        },
+        {
+          "file": "original/routes/product.js",
+          "chars": 15958,
+          "lines": 403,
+          "o200k": 3617,
+          "cl100k": 3573,
+          "o200k_nocomments": 3305
+        },
+        {
+          "file": "original/routes/reviews.js",
+          "chars": 2617,
+          "lines": 74,
+          "o200k": 626,
+          "cl100k": 612,
+          "o200k_nocomments": 597
+        },
+        {
+          "file": "original/routes/transactions.js",
+          "chars": 2841,
+          "lines": 79,
+          "o200k": 646,
+          "cl100k": 629,
+          "o200k_nocomments": 618
+        },
+        {
+          "file": "original/routes/user.js",
+          "chars": 7431,
+          "lines": 211,
+          "o200k": 1732,
+          "cl100k": 1694,
+          "o200k_nocomments": 1523
+        },
+        {
+          "file": "original/lib/auth.js",
+          "chars": 3231,
+          "lines": 83,
+          "o200k": 753,
+          "cl100k": 749,
+          "o200k_nocomments": 686
+        },
+        {
+          "file": "original/lib/cart.js",
+          "chars": 3443,
+          "lines": 97,
+          "o200k": 731,
+          "cl100k": 726,
+          "o200k_nocomments": 591
+        },
+        {
+          "file": "original/lib/common.js",
+          "chars": 8238,
+          "lines": 290,
+          "o200k": 1878,
+          "cl100k": 1850,
+          "o200k_nocomments": 1736
+        },
+        {
+          "file": "original/lib/config.js",
+          "chars": 6030,
+          "lines": 148,
+          "o200k": 1302,
+          "cl100k": 1261,
+          "o200k_nocomments": 1158
+        },
+        {
+          "file": "original/lib/db.js",
+          "chars": 1755,
+          "lines": 53,
+          "o200k": 396,
+          "cl100k": 391,
+          "o200k_nocomments": 354
+        },
+        {
+          "file": "original/lib/googledata.js",
+          "chars": 2073,
+          "lines": 62,
+          "o200k": 482,
+          "cl100k": 464,
+          "o200k_nocomments": 433
+        },
+        {
+          "file": "original/lib/indexing.js",
+          "chars": 4963,
+          "lines": 148,
+          "o200k": 1042,
+          "cl100k": 1040,
+          "o200k_nocomments": 940
+        },
+        {
+          "file": "original/lib/menu.js",
+          "chars": 2570,
+          "lines": 98,
+          "o200k": 651,
+          "cl100k": 647,
+          "o200k_nocomments": 602
+        },
+        {
+          "file": "original/lib/paginate.js",
+          "chars": 3025,
+          "lines": 107,
+          "o200k": 763,
+          "cl100k": 746,
+          "o200k_nocomments": 571
+        },
+        {
+          "file": "original/lib/payment-common.js",
+          "chars": 1601,
+          "lines": 47,
+          "o200k": 337,
+          "cl100k": 333,
+          "o200k_nocomments": 318
+        },
+        {
+          "file": "original/lib/schema.js",
+          "chars": 2138,
+          "lines": 64,
+          "o200k": 562,
+          "cl100k": 547,
+          "o200k_nocomments": 535
+        },
+        {
+          "file": "original/lib/testdata.js",
+          "chars": 1813,
+          "lines": 45,
+          "o200k": 389,
+          "cl100k": 379,
+          "o200k_nocomments": 386
+        },
+        {
+          "file": "original/lib/testhelper.js",
+          "chars": 2676,
+          "lines": 85,
+          "o200k": 618,
+          "cl100k": 598,
+          "o200k_nocomments": 548
+        },
+        {
+          "file": "original/lib/modules/discount-voucher.js",
+          "chars": 526,
+          "lines": 16,
+          "o200k": 112,
+          "cl100k": 112,
+          "o200k_nocomments": 96
+        },
+        {
+          "file": "original/lib/modules/reviews-basic.js",
+          "chars": 3420,
+          "lines": 68,
+          "o200k": 875,
+          "cl100k": 868,
+          "o200k_nocomments": 849
+        },
+        {
+          "file": "original/lib/modules/shipping-basic.js",
+          "chars": 1645,
+          "lines": 41,
+          "o200k": 327,
+          "cl100k": 329,
+          "o200k_nocomments": 288
+        },
+        {
+          "file": "original/lib/payments/adyen.js",
+          "chars": 5359,
+          "lines": 135,
+          "o200k": 1124,
+          "cl100k": 1114,
+          "o200k_nocomments": 1024
+        },
+        {
+          "file": "original/lib/payments/authorizenet.js",
+          "chars": 7153,
+          "lines": 156,
+          "o200k": 1360,
+          "cl100k": 1354,
+          "o200k_nocomments": 1210
+        },
+        {
+          "file": "original/lib/payments/blockonomics.js",
+          "chars": 5982,
+          "lines": 126,
+          "o200k": 1252,
+          "cl100k": 1246,
+          "o200k_nocomments": 1135
+        },
+        {
+          "file": "original/lib/payments/instore.js",
+          "chars": 3287,
+          "lines": 74,
+          "o200k": 679,
+          "cl100k": 674,
+          "o200k_nocomments": 604
+        },
+        {
+          "file": "original/lib/payments/paypal.js",
+          "chars": 8797,
+          "lines": 204,
+          "o200k": 1633,
+          "cl100k": 1621,
+          "o200k_nocomments": 1432
+        },
+        {
+          "file": "original/lib/payments/payway.js",
+          "chars": 6917,
+          "lines": 155,
+          "o200k": 1319,
+          "cl100k": 1311,
+          "o200k_nocomments": 1182
+        },
+        {
+          "file": "original/lib/payments/stripe.js",
+          "chars": 7625,
+          "lines": 195,
+          "o200k": 1559,
+          "cl100k": 1541,
+          "o200k_nocomments": 1315
+        },
+        {
+          "file": "original/lib/payments/verifone.js",
+          "chars": 7024,
+          "lines": 152,
+          "o200k": 1301,
+          "cl100k": 1291,
+          "o200k_nocomments": 1148
+        },
+        {
+          "file": "original/lib/payments/zip.js",
+          "chars": 9372,
+          "lines": 259,
+          "o200k": 1889,
+          "cl100k": 1870,
+          "o200k_nocomments": 1708
+        }
+      ],
+      "chars": 257495,
+      "lines": 6847,
+      "o200k": 55690,
+      "cl100k": 55034,
+      "o200k_nocomments": 50143,
+      "tests": {
+        "ok": true,
+        "summary": "86 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "original"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/app.tl",
+          "chars": 7949,
+          "lines": 1,
+          "o200k": 2504,
+          "cl100k": 2435
+        },
+        {
+          "file": "tl/auth.tl",
+          "chars": 1859,
+          "lines": 1,
+          "o200k": 498,
+          "cl100k": 493
+        },
+        {
+          "file": "tl/cart.tl",
+          "chars": 1390,
+          "lines": 1,
+          "o200k": 361,
+          "cl100k": 362
+        },
+        {
+          "file": "tl/common.tl",
+          "chars": 3265,
+          "lines": 1,
+          "o200k": 985,
+          "cl100k": 981
+        },
+        {
+          "file": "tl/config.tl",
+          "chars": 2390,
+          "lines": 1,
+          "o200k": 658,
+          "cl100k": 648
+        },
+        {
+          "file": "tl/db.tl",
+          "chars": 858,
+          "lines": 1,
+          "o200k": 215,
+          "cl100k": 214
+        },
+        {
+          "file": "tl/googledata.tl",
+          "chars": 887,
+          "lines": 1,
+          "o200k": 272,
+          "cl100k": 272
+        },
+        {
+          "file": "tl/indexing.tl",
+          "chars": 2167,
+          "lines": 1,
+          "o200k": 589,
+          "cl100k": 592
+        },
+        {
+          "file": "tl/menu.tl",
+          "chars": 1098,
+          "lines": 1,
+          "o200k": 373,
+          "cl100k": 373
+        },
+        {
+          "file": "tl/modDiscountVoucher.tl",
+          "chars": 171,
+          "lines": 1,
+          "o200k": 47,
+          "cl100k": 48
+        },
+        {
+          "file": "tl/modReviewsBasic.tl",
+          "chars": 2265,
+          "lines": 1,
+          "o200k": 683,
+          "cl100k": 679
+        },
+        {
+          "file": "tl/modShippingBasic.tl",
+          "chars": 556,
+          "lines": 1,
+          "o200k": 163,
+          "cl100k": 161
+        },
+        {
+          "file": "tl/paginate.tl",
+          "chars": 1070,
+          "lines": 1,
+          "o200k": 350,
+          "cl100k": 343
+        },
+        {
+          "file": "tl/payAdyen.tl",
+          "chars": 2242,
+          "lines": 1,
+          "o200k": 621,
+          "cl100k": 624
+        },
+        {
+          "file": "tl/payAuthorizenet.tl",
+          "chars": 2774,
+          "lines": 1,
+          "o200k": 760,
+          "cl100k": 767
+        },
+        {
+          "file": "tl/payBlockonomics.tl",
+          "chars": 2528,
+          "lines": 1,
+          "o200k": 722,
+          "cl100k": 722
+        },
+        {
+          "file": "tl/payInstore.tl",
+          "chars": 1284,
+          "lines": 1,
+          "o200k": 351,
+          "cl100k": 353
+        },
+        {
+          "file": "tl/payPaypal.tl",
+          "chars": 3204,
+          "lines": 1,
+          "o200k": 868,
+          "cl100k": 879
+        },
+        {
+          "file": "tl/payPayway.tl",
+          "chars": 2861,
+          "lines": 1,
+          "o200k": 765,
+          "cl100k": 772
+        },
+        {
+          "file": "tl/payStripe.tl",
+          "chars": 3007,
+          "lines": 1,
+          "o200k": 817,
+          "cl100k": 821
+        },
+        {
+          "file": "tl/payVerifone.tl",
+          "chars": 2731,
+          "lines": 1,
+          "o200k": 736,
+          "cl100k": 744
+        },
+        {
+          "file": "tl/payZip.tl",
+          "chars": 3803,
+          "lines": 1,
+          "o200k": 1014,
+          "cl100k": 1019
+        },
+        {
+          "file": "tl/paymentCommon.tl",
+          "chars": 619,
+          "lines": 1,
+          "o200k": 201,
+          "cl100k": 201
+        },
+        {
+          "file": "tl/prelude.tl",
+          "chars": 361,
+          "lines": 1,
+          "o200k": 144,
+          "cl100k": 142
+        },
+        {
+          "file": "tl/routeAdmin.tl",
+          "chars": 14962,
+          "lines": 1,
+          "o200k": 4268,
+          "cl100k": 4249
+        },
+        {
+          "file": "tl/routeCustomer.tl",
+          "chars": 11656,
+          "lines": 1,
+          "o200k": 3034,
+          "cl100k": 3042
+        },
+        {
+          "file": "tl/routeIndex.tl",
+          "chars": 18418,
+          "lines": 1,
+          "o200k": 5274,
+          "cl100k": 5259
+        },
+        {
+          "file": "tl/routeOrder.tl",
+          "chars": 5042,
+          "lines": 1,
+          "o200k": 1338,
+          "cl100k": 1340
+        },
+        {
+          "file": "tl/routeProduct.tl",
+          "chars": 8310,
+          "lines": 1,
+          "o200k": 2308,
+          "cl100k": 2303
+        },
+        {
+          "file": "tl/routeReviews.tl",
+          "chars": 1433,
+          "lines": 1,
+          "o200k": 398,
+          "cl100k": 397
+        },
+        {
+          "file": "tl/routeTransactions.tl",
+          "chars": 1556,
+          "lines": 1,
+          "o200k": 402,
+          "cl100k": 401
+        },
+        {
+          "file": "tl/routeUser.tl",
+          "chars": 3770,
+          "lines": 1,
+          "o200k": 1065,
+          "cl100k": 1065
+        },
+        {
+          "file": "tl/schema.tl",
+          "chars": 989,
+          "lines": 1,
+          "o200k": 370,
+          "cl100k": 363
+        },
+        {
+          "file": "tl/testdata.tl",
+          "chars": 918,
+          "lines": 1,
+          "o200k": 260,
+          "cl100k": 260
+        },
+        {
+          "file": "tl/testhelper.tl",
+          "chars": 955,
+          "lines": 1,
+          "o200k": 284,
+          "cl100k": 284
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 9695,
+          "lines": 599,
+          "o200k": 2567,
+          "cl100k": 2531
+        }
+      ],
+      "chars": 129043,
+      "lines": 634,
+      "o200k": 36265,
+      "cl100k": 36139,
+      "o200k_nocomments": 36265,
+      "tests": {
+        "ok": true,
+        "summary": "86 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "tl"
+    }
+  }
+}
