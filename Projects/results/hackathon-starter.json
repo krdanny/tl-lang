@@ -157,14 +157,14 @@
         },
         {
           "file": "tl/ai.tl",
-          "chars": 13262,
+          "chars": 13272,
           "lines": 1,
-          "o200k": 3758,
-          "cl100k": 3744
+          "o200k": 3756,
+          "cl100k": 3742
         },
         {
           "file": "tl/api.tl",
-          "chars": 26901,
+          "chars": 26902,
           "lines": 1,
           "o200k": 8200,
           "cl100k": 8159
@@ -241,7 +241,7 @@
         },
         {
           "file": "tl/revocation.tl",
-          "chars": 3086,
+          "chars": 3090,
           "lines": 1,
           "o200k": 831,
           "cl100k": 803
@@ -282,11 +282,11 @@
           "cl100k": 4105
         }
       ],
-      "chars": 135512,
+      "chars": 135527,
       "lines": 882,
-      "o200k": 38573,
-      "cl100k": 38271,
-      "o200k_nocomments": 38573,
+      "o200k": 38571,
+      "cl100k": 38269,
+      "o200k_nocomments": 38571,
       "tests": {
         "ok": true,
         "summary": "327 passed, 0 failed",
