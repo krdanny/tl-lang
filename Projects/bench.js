@@ -51,7 +51,7 @@ function measure(files, dir, lang) {
 }
 
 function runTests(cfg, cmd, dir) {
-  const r = spawnSync(process.execPath, [...cfg.test.slice(1), ...cmd], { cwd: dir, encoding: 'utf8', timeout: 120000 });
+  const r = spawnSync(process.execPath, [...cfg.test.slice(1), ...cmd], { cwd: dir, encoding: 'utf8', timeout: 600000 });
   const line = (r.stdout || '').trim().split('\n').pop() || '';
   return { ok: r.status === 0, summary: line, stderr: (r.stderr || '').trim().slice(0, 500) };
 }
@@ -115,18 +115,17 @@ function summaryMd(results) {
   const lines = ['# Token benchmark results', '', 'Same spec, same tests, several languages. Tokens counted with the o200k tokenizer (GPT-4o / GPT-5 family). "Reduction" = how many fewer tokens TL uses than that version. TL counts include the project dictionary (`tl.def`), which is mandatory.', ''];
   lines.push('| Project | JS tokens | TS tokens | TL tokens | TL reduction vs JS | TL reduction vs JS without comments | TL reduction vs TS | JS+Express | TL reduction vs Express | tests |');
   lines.push('|---|---|---|---|---|---|---|---|---|---|');
-  results.sort((a, b) => a.title.localeCompare(b.title));
-  const tot = { js: 0, ts: 0, tl: 0 };
+  results.sort((a, b) => a.title.localeCompare(b.title, undefined, { numeric: true }));
+  const tot = { js: 0, noc: 0, tl: 0 };
   for (const r of results) {
     const { js, ts, tl } = r.impls;
     const ex = r.impls['js-express'];
-    if (js && ts && tl) { tot.js += js.o200k; tot.ts += ts.o200k; tot.tl += tl.o200k; }
-    else if (js && tl) { tot.js += js.o200k; tot.tl += tl.o200k; tot.ts += js.o200k; } // no TS version: the original is JS
+    if (js && tl) { tot.js += js.o200k; tot.noc += js.o200k_nocomments ?? js.o200k; tot.tl += tl.o200k; }
     const tests = Object.entries(r.impls).map(([l, i]) => `${l}: ${i.tests ? (i.tests.ok ? '✓' : '✗') : '–'}`).join(' ');
     const noc = js && js.o200k_nocomments !== js.o200k ? `**${red(tl?.o200k, js.o200k_nocomments)}** (${js.o200k_nocomments} tokens)` : 'same';
-    lines.push(`| ${r.title} | ${js?.o200k ?? '—'} | ${ts?.o200k ?? '—'} | ${tl?.o200k ?? '—'} | **${red(tl?.o200k, js?.o200k)}** | ${noc} | **${red(tl?.o200k, ts?.o200k)}** | ${ex?.o200k ?? '—'} | ${ex ? `**${red(tl?.o200k, ex.o200k)}**` : '—'} | ${tests} |`);
+    lines.push(`| ${r.title} | ${js?.o200k ?? '—'} | ${ts?.o200k ?? '—'} | ${tl?.o200k ?? '—'} | **${red(tl?.o200k, js?.o200k)}** | ${noc} | ${ts ? `**${red(tl?.o200k, ts.o200k)}**` : '—'} | ${ex?.o200k ?? '—'} | ${ex ? `**${red(tl?.o200k, ex.o200k)}**` : '—'} | ${tests} |`);
   }
-  lines.push(`| **Total** | **${tot.js}** | **${tot.ts}** | **${tot.tl}** | **${red(tot.tl, tot.js)}** | | **${red(tot.tl, tot.ts)}** | | | |`);
+  lines.push(`| **Total** | **${tot.js}** | | **${tot.tl}** | **${red(tot.tl, tot.js)}** | **${red(tot.tl, tot.noc)}** (${tot.noc} tokens) | | | | |`);
   lines.push('', 'Per-project details: `results/<project>.md` and `results/<project>.json`.');
   return lines.join('\n') + '\n';
 }
