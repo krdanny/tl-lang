@@ -10,133 +10,151 @@
           "chars": 1166,
           "lines": 52,
           "o200k": 303,
-          "cl100k": 303
+          "cl100k": 303,
+          "o200k_nocomments": 303
         },
         {
           "file": "original/bin/Hubot.mjs",
           "chars": 4265,
           "lines": 131,
           "o200k": 1115,
-          "cl100k": 1101
+          "cl100k": 1101,
+          "o200k_nocomments": 1114
         },
         {
           "file": "original/src/Adapter.mjs",
           "chars": 4727,
           "lines": 122,
           "o200k": 1198,
-          "cl100k": 1196
+          "cl100k": 1196,
+          "o200k_nocomments": 468
         },
         {
           "file": "original/src/Brain.mjs",
           "chars": 6193,
           "lines": 206,
           "o200k": 1558,
-          "cl100k": 1543
+          "cl100k": 1543,
+          "o200k_nocomments": 940
         },
         {
           "file": "original/src/CommandBus.mjs",
           "chars": 23646,
           "lines": 717,
           "o200k": 5570,
-          "cl100k": 5526
+          "cl100k": 5526,
+          "o200k_nocomments": 5103
         },
         {
           "file": "original/src/DataStore.mjs",
           "chars": 3178,
           "lines": 81,
           "o200k": 769,
-          "cl100k": 772
+          "cl100k": 772,
+          "o200k_nocomments": 291
         },
         {
           "file": "original/src/GenHubot.mjs",
           "chars": 7523,
           "lines": 191,
           "o200k": 1914,
-          "cl100k": 1887
+          "cl100k": 1887,
+          "o200k_nocomments": 1899
         },
         {
           "file": "original/src/HttpClient.mjs",
           "chars": 8673,
           "lines": 272,
           "o200k": 2106,
-          "cl100k": 2091
+          "cl100k": 2091,
+          "o200k_nocomments": 1670
         },
         {
           "file": "original/src/Listener.mjs",
           "chars": 3528,
           "lines": 98,
           "o200k": 768,
-          "cl100k": 768
+          "cl100k": 768,
+          "o200k_nocomments": 461
         },
         {
           "file": "original/src/Message.mjs",
           "chars": 2111,
           "lines": 79,
           "o200k": 474,
-          "cl100k": 484
+          "cl100k": 484,
+          "o200k_nocomments": 194
         },
         {
           "file": "original/src/Middleware.mjs",
           "chars": 1402,
           "lines": 41,
           "o200k": 311,
-          "cl100k": 311
+          "cl100k": 311,
+          "o200k_nocomments": 159
         },
         {
           "file": "original/src/OptParse.mjs",
           "chars": 1352,
           "lines": 44,
           "o200k": 346,
-          "cl100k": 334
+          "cl100k": 334,
+          "o200k_nocomments": 346
         },
         {
           "file": "original/src/Response.mjs",
           "chars": 3748,
           "lines": 113,
           "o200k": 894,
-          "cl100k": 891
+          "cl100k": 891,
+          "o200k_nocomments": 386
         },
         {
           "file": "original/src/Robot.mjs",
           "chars": 31837,
           "lines": 872,
           "o200k": 7466,
-          "cl100k": 7384
+          "cl100k": 7384,
+          "o200k_nocomments": 5123
         },
         {
           "file": "original/src/User.mjs",
           "chars": 1463,
           "lines": 53,
           "o200k": 375,
-          "cl100k": 369
+          "cl100k": 369,
+          "o200k_nocomments": 301
         },
         {
           "file": "original/src/adapters/Campfire.mjs",
           "chars": 11704,
           "lines": 332,
           "o200k": 2783,
-          "cl100k": 2751
+          "cl100k": 2751,
+          "o200k_nocomments": 2654
         },
         {
           "file": "original/src/adapters/Shell.mjs",
           "chars": 4997,
           "lines": 154,
           "o200k": 1351,
-          "cl100k": 1329
+          "cl100k": 1329,
+          "o200k_nocomments": 1316
         },
         {
           "file": "original/src/datastores/Memory.mjs",
           "chars": 424,
           "lines": 18,
           "o200k": 110,
-          "cl100k": 108
+          "cl100k": 108,
+          "o200k_nocomments": 110
         }
       ],
       "chars": 121937,
       "lines": 3576,
       "o200k": 29411,
       "cl100k": 29148,
-      "o200k_nocomments": 29411,
+      "o200k_nocomments": 22838,
       "tests": {
         "ok": true,
         "summary": "286 passed, 0 failed",

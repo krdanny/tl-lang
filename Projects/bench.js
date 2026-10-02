@@ -43,7 +43,7 @@ function measure(files, dir, lang) {
   const rows = expand(files, dir).map((f) => {
     const text = fs.readFileSync(path.join(dir, f), 'utf8');
     const row = { file: f, chars: text.length, lines: text.split('\n').filter((l) => l.trim()).length, o200k: o200k(text).length, cl100k: cl100k(text).length };
-    if (f.endsWith('.js') && !f.endsWith('.ts')) { const nc = stripComments(text); if (nc !== null) row.o200k_nocomments = o200k(nc).length; }
+    if (/\.[mc]?js$/.test(f)) { const nc = stripComments(text); if (nc !== null) row.o200k_nocomments = o200k(nc).length; }
     return row;
   });
   const sum = (k) => rows.reduce((a, r) => a + (r[k] ?? r.o200k), 0);

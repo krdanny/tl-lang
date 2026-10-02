@@ -10,6 +10,8 @@
 | token reduction vs JS | — | 42% |
 | of which the dictionary (tl.def) | — | 1312 tokens |
 | source files only | — | 15652 (47% less than JS) |
+| tokens o200k, JS comments removed | 22838 | 16964 |
+| token reduction vs JS without comments | — | 26% |
 | shared tests | pass (286 passed, 0 failed) | pass (286 passed, 0 failed) |
 | run | `original` | `tl` |
 
