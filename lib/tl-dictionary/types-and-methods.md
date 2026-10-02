@@ -18,6 +18,10 @@ type P|x int|y int=0<impl P|new x|P{x<norm self|self.x*self.x+self.y*self.y<shif
 - **Constructor**: an `init self args` method (write it first in the impl) makes the type callable: `V"1.2"` in TL and
   `new V("1.2")` from JavaScript both run it; `^other` inside `init` returns that instance instead. `V{…}` literals skip it.
 - **Getters**: `get name self|body<` is read as `v.name` (also from JavaScript), without parentheses.
+- **Extending a class**: `type Kid:Base|fields<` makes the type a subclass of a JavaScript class (`Error`,
+  `events.EventEmitter`) or of another TL type. Methods and `is` checks follow the chain (`k is Base`). The base's
+  `init` is not run for you: the subtype's `init` sets what it needs. A subclass of `Error` can be raised with `!`.
+- **`is` with JavaScript classes**: `d is Date`, `e is RangeError`, `x is RegExp` are `instanceof` tests.
 
 ```tl
 type V|major int|raw str<impl V|init self s|self.raw=s|self.major=int(s.split".")[0<get next self|self.major+1<<v V"7.1|w V"2|print v.major v.next w.raw
@@ -38,6 +42,22 @@ type Http|Ok=200|Missing=404<type Shape|Dot|Sq f64<print Http.Missing.code Dot(S
 ```
 
 Match on variants: see match.md.
+
+## Subclasses
+
+```tl
+type Base|a int<impl Base|init self a|self.a=a<twice self|self.a*2<<type Kid:Base|b int<impl Kid|init self a b|self.a=a|self.b=b<sum self|self.a+self.b<<k Kid 3 4|print k.twice k.sum(k is Base)(k is Kid
+```
+```text
+6 7 true true
+```
+
+```tl
+type Oops:Error|code int<impl Oops|init self code msg|self.code=code|self.message=msg<<fn f|!(Oops 7"boom<try|f?<catch e|print e.message e.code(e is Oops)(e is Error
+```
+```text
+boom 7 true true
+```
 
 ## Tuple structs and newtypes
 

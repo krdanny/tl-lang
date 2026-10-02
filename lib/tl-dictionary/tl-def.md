@@ -35,6 +35,8 @@ The generated JavaScript reads `function isValidEmail(s)`, `let user_id = 7` and
 - Strings are not touched: `"includePrerelease"` in quotes is that text.
 - `tl def [dir]` writes the file for an existing project: it finds every compound name, picks a symbol that is one
   token, replaces the name in the sources and adds the line. `tl def --check` only reports.
+- `tl def --expand [dir]` puts the long names back into the sources for a round of editing; `tl def` afterwards
+  restores the same symbols.
 
 Whether a symbol saves tokens depends on how often the name is used: the line costs about the name's tokens plus two,
 each use saves the name's tokens minus one. A four-token name pays off from its third use; a two-token name from its

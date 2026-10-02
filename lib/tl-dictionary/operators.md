@@ -29,3 +29,16 @@ true 3 1 256 false true true
 ```
 
 Range checks: `(lo..hi).has x`, or `x>=lo and hi>x`.
+
+## Bit operators
+
+Bit operators are words, because `<` closes a body and `>>` is the pipeline: `band` `bor` `bxor` `bnot` `shl` `shr`
+`ushr` (JavaScript `& | ^ ~ << >> >>>`). Like `and`/`or` they bind looser than a call and than every symbol
+operator, so parenthesize a comparison: `(a band 4)==4`.
+
+```tl
+a 12|b 10|print(a band b)(a bor b)(a bxor b)(1 shl 4)(256 shr 2)(bnot 5)((a band 4)==4
+```
+```text
+8 14 6 16 64 -6 true
+```
