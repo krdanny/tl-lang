@@ -1,0 +1,1 @@
+fn bn pages|result[|i pages.length|while i|i-=1|if(pages[i].slug.split"/").length>1|parent fin pages pages[i|if parent|parent.files.unshift pages[i<<else|result.unshift pages[i<<result<fn fin pages page|pg((page.slug.split"/").slice 0 -1).join"/|pages.find element=>element.slug==pg

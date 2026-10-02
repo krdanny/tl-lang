@@ -1,0 +1,1 @@
++npm.validator|inc"&'\"/>\<|fn sanitizer s|s=validator.blacklist s inc|s=validator.trim s|s=validator.escape s|s

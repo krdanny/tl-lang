@@ -1,0 +1,1 @@
+fn rd config|^req res=>res.render"login"(obj{config:config layout:null lang:config.lang bi:config.bi googleoauth:config.googleoauth
