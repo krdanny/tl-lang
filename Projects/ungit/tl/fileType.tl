@@ -1,1 +1,1 @@
-+node.path|bi[".PNG" ".JPG" ".BMP" ".GIF" ".JPEG"]|fn ft fin|if(bi.ind(path.extname fin).te)>-1"image""text"
++node.path|cy[".PNG"".JPG"".BMP"".GIF"".JPEG|fn ft fin|if(cy.ind(path.extname fin).te)>-1"image""text

@@ -1,0 +1,224 @@
+{
+  "project": "ungit",
+  "title": "Project 11 — Ungit server (git web UI, 12 modules)",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "original/source/address-parser.js",
+          "chars": 2259,
+          "lines": 70,
+          "o200k": 619,
+          "cl100k": 628,
+          "o200k_nocomments": 588
+        },
+        {
+          "file": "original/source/bugtracker.js",
+          "chars": 971,
+          "lines": 31,
+          "o200k": 254,
+          "cl100k": 255,
+          "o200k_nocomments": 254
+        },
+        {
+          "file": "original/source/config.js",
+          "chars": 14750,
+          "lines": 352,
+          "o200k": 3734,
+          "cl100k": 3746,
+          "o200k_nocomments": 2610
+        },
+        {
+          "file": "original/source/git-api.js",
+          "chars": 37135,
+          "lines": 1001,
+          "o200k": 9060,
+          "cl100k": 8951,
+          "o200k_nocomments": 8658
+        },
+        {
+          "file": "original/source/git-parser.js",
+          "chars": 13053,
+          "lines": 400,
+          "o200k": 3587,
+          "cl100k": 3501,
+          "o200k_nocomments": 3380
+        },
+        {
+          "file": "original/source/git-promise.js",
+          "chars": 21772,
+          "lines": 619,
+          "o200k": 5514,
+          "cl100k": 5459,
+          "o200k_nocomments": 4989
+        },
+        {
+          "file": "original/source/server.js",
+          "chars": 11853,
+          "lines": 384,
+          "o200k": 2918,
+          "cl100k": 2897,
+          "o200k_nocomments": 2813
+        },
+        {
+          "file": "original/source/sysinfo.js",
+          "chars": 1156,
+          "lines": 37,
+          "o200k": 283,
+          "cl100k": 284,
+          "o200k_nocomments": 283
+        },
+        {
+          "file": "original/source/ungit-plugin.js",
+          "chars": 3632,
+          "lines": 113,
+          "o200k": 797,
+          "cl100k": 794,
+          "o200k_nocomments": 797
+        },
+        {
+          "file": "original/source/utils/cache.js",
+          "chars": 2680,
+          "lines": 82,
+          "o200k": 664,
+          "cl100k": 667,
+          "o200k_nocomments": 336
+        },
+        {
+          "file": "original/source/utils/file-type.js",
+          "chars": 241,
+          "lines": 5,
+          "o200k": 67,
+          "cl100k": 63,
+          "o200k_nocomments": 67
+        },
+        {
+          "file": "original/source/utils/logger.js",
+          "chars": 1139,
+          "lines": 33,
+          "o200k": 276,
+          "cl100k": 276,
+          "o200k_nocomments": 276
+        }
+      ],
+      "chars": 110641,
+      "lines": 3127,
+      "o200k": 27773,
+      "cl100k": 27521,
+      "o200k_nocomments": 25051,
+      "tests": {
+        "ok": true,
+        "summary": "17 spec files, 230 passed, 0 failed, 2 pending",
+        "stderr": ""
+      },
+      "cmd": "original"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/addressParser.tl",
+          "chars": 997,
+          "lines": 1,
+          "o200k": 390,
+          "cl100k": 380
+        },
+        {
+          "file": "tl/bugtracker.tl",
+          "chars": 569,
+          "lines": 1,
+          "o200k": 176,
+          "cl100k": 177
+        },
+        {
+          "file": "tl/cache.tl",
+          "chars": 681,
+          "lines": 1,
+          "o200k": 209,
+          "cl100k": 202
+        },
+        {
+          "file": "tl/config.tl",
+          "chars": 7544,
+          "lines": 1,
+          "o200k": 1903,
+          "cl100k": 1910
+        },
+        {
+          "file": "tl/fileType.tl",
+          "chars": 101,
+          "lines": 1,
+          "o200k": 43,
+          "cl100k": 40
+        },
+        {
+          "file": "tl/gitApi.tl",
+          "chars": 17895,
+          "lines": 1,
+          "o200k": 5246,
+          "cl100k": 5213
+        },
+        {
+          "file": "tl/gitParser.tl",
+          "chars": 5744,
+          "lines": 1,
+          "o200k": 2045,
+          "cl100k": 2026
+        },
+        {
+          "file": "tl/gitPromise.tl",
+          "chars": 9867,
+          "lines": 1,
+          "o200k": 3006,
+          "cl100k": 2983
+        },
+        {
+          "file": "tl/logger.tl",
+          "chars": 775,
+          "lines": 1,
+          "o200k": 202,
+          "cl100k": 202
+        },
+        {
+          "file": "tl/server.tl",
+          "chars": 6322,
+          "lines": 1,
+          "o200k": 1811,
+          "cl100k": 1802
+        },
+        {
+          "file": "tl/sysinfo.tl",
+          "chars": 651,
+          "lines": 1,
+          "o200k": 181,
+          "cl100k": 187
+        },
+        {
+          "file": "tl/ungitPlugin.tl",
+          "chars": 1895,
+          "lines": 1,
+          "o200k": 517,
+          "cl100k": 517
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 6098,
+          "lines": 360,
+          "o200k": 1692,
+          "cl100k": 1675
+        }
+      ],
+      "chars": 59139,
+      "lines": 372,
+      "o200k": 17421,
+      "cl100k": 17314,
+      "o200k_nocomments": 17421,
+      "tests": {
+        "ok": true,
+        "summary": "17 spec files, 230 passed, 0 failed, 2 pending",
+        "stderr": ""
+      },
+      "cmd": "tl"
+    }
+  }
+}
