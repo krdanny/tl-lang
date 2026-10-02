@@ -1,0 +1,43 @@
+[
+  {
+    "scope": "https://en.wikipedia.org:443",
+    "method": "GET",
+    "path": "/89d31365348d",
+    "body": "",
+    "status": 200,
+    "response": [
+      "1f8b08000000000000039d976b6fdb361486ff0aa17d495b399164499684ae40eaad5db2ae1d62671bb6ee032d51365b89d4482a6ed6f6bfefa5e48bdc39055c20b1e3883987e739efb9e4a3b3a0265fe5b26e2a669893398eebe452182e5a7cfae86825cb5233e364be377ce28c3e7d723ebbce3f2d53f7dd414655bee2a294f6939186562b6eb49385d124721ddd2e974c1b2e05fef61dbda33a57bc31cef08916bc69acabe101f8e84d3bd95f1f1d0183b887e1a6b297b8c6b9d9d65043978c174e9626a175c8ffc58924f1a2d075d65215b96c056c275ee2e3e9ced553dd5041f28a6afdfddb8dabda3279eb3cdb9b7f7a618f3d2367d7b347846b4249a3e452d1bae662492a2a962dbc132a0a924bc58861f94ac84a2eef892c895931f23b5bb88456522c352f18f969fecbabeef874363b2753c5a8610559dc93e78a890237fa91e72bc205f1d334720937d66b4db930f8ee4e3a16430d72b46e1047e005f1c84b47fe64eec59937cea2f84fc0fb3fb2d99bd703583eb2e325c196573849c2435e611aa7435ef6efc9d969d4de2cdeb1dc90d71085cdb36be10998cf11c8c5dbd60bf2a4b06f69c0ec5b4cb57d8b527141a43a7ea2fb5dde9f0bc4459f144164c30401122054052979c54829156ed6b12ea8a1606a186e8b94ed9e99155e5acd3459b535152364a3a00be03a8e3808e67e87384c8f2246aa7fe64345c6491a05e19671144493f49031b230645cd23bc40de1f49608d584db02ad99d8a8e4a5944bc4067d586d4d574ad6bcad2d574bfa9c5c194d4ecb11134b08cb25fb275308d94a564bd2c83553baf3f5bc0560a6ee981a7542be9e118520800967f543a28ce6de24f3a2cc4f8e12fb1519416c23267259a0a286024d90f424dec2f3d3d00f0ee0f9e9e400de97b63621bc17722d2cc9db9b5764ffacabe59a99952c8891fd03d4b15a70a3a8badf4a06875ac1ad5c88625ab67041103de22e3953e4ecf6e6ea1114649b8114d57d47ea7636ba9c4dafae08c4a6680ed51dc7938c026fee8708240bc747f1dc6e5cdf6c5d5fed5c0f488d033fdc711a87a9f7a5c88260c8e9927cc56c1f91db15085308086791724dab63a737184108e300eac02b6adb0a781f7a5f643b665db5d28536f6b1adf26675af794eab871494cc83208bc22cf28f22fa2d416fde4977a3e647431da57ee84dfcbd90c6be55d550485e72202498ecc23aad8e6c9f41d95e6acdea05c0f5372105bb6315bad3b07a01178d5df7e5cbc842c9352aeb9cf48e4bc5fa81627bda68c35ccbd2ac2906ccd98b37338c22fbbca1ca6ca7ccb6131ca518dbe1e027591066e3e401a1c98551d0f11d23c767ab3f8e033fd9410cd3c9e1b8f023ff605c0c2d9e06b263bf648229888e36686d141311356ae344b3eee455715bea5d233ad1ba206bb620362e0daa1b7596275a2931b65b65c58c94d83c705a21e7c86bd9da1f2070dcefa13112cefd49d67d1d9fd47b39577c61bbd150ce1ef698b81bcd5d26d2d08e90e19e132787d57e5a641b8f7d16b61f40bc516cb456dc18ccd9d32c768db5c30c46507a277f46b5ed369beab0f3cd3a39c9f0684135ca0a0aa9d03fba3dd2254c372cef9361dd5c5e5ffe71340be1c84fe75e928d319a8e3796295663aab896c2de6cef7de3d68aa8c41ec880febd1e26288e136468b24d509c7ac961a904e3687c30f57766ba3b97d891ec14eb7d0c09f510a138c52a4e2db26fca8575825ae28a2cd88ade7189d6f32de4edf506f407385ca25bd42c86ee0db36d1eddea2b0b429c051e16d087b2d0857e66ff5369314f86fbf7b0cd27511a8cbd64bfcf46e9615d447e70401debd51a17a4458150d015a6697ade6daad8ff768b3df62f91576dc1323275c9f4c913bc7ce7921ffa75c9fd8611315bf3127bda0b5b031fa85dee3272f1983c460767f97bdb8924e62d36fe0fbcee17bb9c698d4aacb971c9a27da8a978f13cf0b3f1240bedfafff7e7cfff01b2fd72f2e20d0000"
+    ],
+    "rawHeaders": {
+      "accept-ranges": "bytes",
+      "access-control-allow-credentials": "false",
+      "access-control-allow-origin": "*",
+      "access-control-expose-headers": "MediaWiki-API-Error, Retry-After, X-Database-Lag, MediaWiki-Login-Suppressed",
+      "age": "0",
+      "cache-control": "private, must-revalidate, max-age=0",
+      "content-disposition": "inline; filename=api-result.json",
+      "content-encoding": "gzip",
+      "content-security-policy": "default-src 'self'; script-src 'none'; object-src 'none'",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Tue, 29 Sep 2026 23:27:41 GMT",
+      "mediawiki-login-suppressed": "true",
+      "nel": "{ \"report_to\": \"wm_nel\", \"max_age\": 604800, \"failure_fraction\": 0.05, \"success_fraction\": 0.0}",
+      "report-to": "{ \"group\": \"wm_nel\", \"max_age\": 604800, \"endpoints\": [{ \"url\": \"https://intake-logging.wikimedia.org/v1/events?stream=w3c.reportingapi.network_error&schema_uri=/w3c/reportingapi/network_error/1.0.0\" }] }",
+      "server": "mw-api-ext.codfw.main-66f54b6ddc-gw9dj",
+      "server-timing": "cache;desc=\"pass\", host;desc=\"cp4044\",co_id;desc=\"1959128806\"",
+      "set-cookie": "REDACTED",
+      "strict-transport-security": "max-age=106384710; includeSubDomains; preload",
+      "transfer-encoding": "chunked",
+      "vary": "Accept-Encoding,X-Subdomain,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization,User-Agent",
+      "x-analytics": "",
+      "x-cache": "cp4044 miss, cp4044 pass",
+      "x-cache-status": "pass",
+      "x-client-ip": "76.104.248.98",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "x-request-id": "cd6a9a49-4d40-4e74-9584-87a0f63eb70f",
+      "x-search-id": "30bj7ek2wguq7aqntzgec9ceh"
+    },
+    "responseIsBinary": false
+  }
+]

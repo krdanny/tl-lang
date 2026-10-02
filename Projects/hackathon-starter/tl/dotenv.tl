@@ -1,0 +1,1 @@
+try|process.lef".env.example<catch err|if err and err.code=="ENOENT|console.log"No .env.example file found. This is OK if the required environment variables are already set in your environment.<else|console.error"Error loading .env.example file:"err

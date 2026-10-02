@@ -1,0 +1,29 @@
+{
+  "title": "Project 9 — hackathon-starter (web application, 16 modules)",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "original/app.js",
+        "original/config/*.js",
+        "original/controllers/*.js",
+        "original/models/*.js"
+      ],
+      "cmd": [
+        "original"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/*.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "tl"
+      ]
+    }
+  }
+}
