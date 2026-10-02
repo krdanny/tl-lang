@@ -26,7 +26,7 @@ if (!['original', 'tl'].includes(which)) {
 
 // original module -> shim source (TL modules are flat: src/adapters/Shell.mjs is tl/Shell.tl, bin/Hubot.mjs is tl/Hubot.tl)
 const SHIMS = {
-  'index.mjs': "import * as m from './src/index.js'\nexport * from './src/index.js'\nexport default { Adapter: m.Adapter, User: m.User, Brain: m.Brain, Robot: m.Robot, Response: m.Response, Listener: m.Listener, TextListener: m.TextListener, Message: m.Message, TextMessage: m.TextMessage, EnterMessage: m.EnterMessage, LeaveMessage: m.LeaveMessage, TopicMessage: m.TopicMessage, CatchAllMessage: m.CatchAllMessage, DataStore: m.DataStore, DataStoreUnavailable: m.DataStoreUnavailable, CommandBus: m.CommandBus, loadBot: m.loadBot }\n",
+  'index.mjs': "import { hubot } from './src/index.js'\nexport const { Adapter, User, Brain, Robot, Response, Listener, TextListener, Message, TextMessage, EnterMessage, LeaveMessage, TopicMessage, CatchAllMessage, DataStore, DataStoreUnavailable, Middleware, CommandBus, loadBot } = hubot\nexport default hubot\n",
   'bin/Hubot.mjs': "export { robot as default } from '../src/Hubot.js'\n",
   'src/Adapter.mjs': "export { Adapter as default } from './Adapter.js'\n",
   'src/Brain.mjs': "export { Brain as default } from './Brain.js'\n",
