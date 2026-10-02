@@ -6,6 +6,9 @@
 // A runnable tree is assembled in .run/<impl>/ with the layout the tests expect (source/, test/, bin/, package.json).
 // For `tl`, every file in source/ is a one-line shim that re-exports the compiled TL module, so the tests and the
 // way they load the server are exactly the same for both implementations.
+//
+// The unit tests load git-api, git-promise, git-parser, config, address-parser, utils/cache, utils/file-type and
+// utils/logger. tests/smoke.js compares the modules they do not load (server, ungit-plugin, sysinfo, bugtracker).
 'use strict';
 const fs = require('node:fs');
 const os = require('node:os');
