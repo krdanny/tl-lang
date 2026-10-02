@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/compiles%20to-JavaScript-f7df1e?style=flat-square&logo=javascript&logoColor=black" alt="Compiles to JavaScript">
   <img src="https://img.shields.io/badge/node-%E2%89%A5%2020.6-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js 20.6 or newer">
   <img src="https://img.shields.io/badge/VS%20Code-readable%20view-007acc?style=flat-square" alt="VS Code readable view">
-  <img src="https://img.shields.io/badge/tested%20on-validator.js%20%C2%B7%20node--semver-64748b?style=flat-square" alt="Tested on validator.js and node-semver">
+  <img src="https://img.shields.io/badge/tested%20on-5%20applications%20%C2%B7%202%20libraries-64748b?style=flat-square" alt="Tested on five open-source applications and two libraries">
 </p>
 
 TL is a programming language designed to be written and read by language models with as few tokens as possible.
@@ -52,28 +52,46 @@ fn parse version options=none throwErrors=false
 
 ## Benchmarks
 
-Across the seven benchmark projects the saving ranges from 16% to 62%, and five of the seven fall between 30% and
-62%. On the two real-world libraries, TL needs <ins>**32–35% fewer tokens**</ins> than the same JavaScript with its
-comments removed, and passes the libraries' own test suites unchanged.
+Seven open-source projects were converted from their original JavaScript to TL: five applications and two
+libraries, 276,117 tokens of JavaScript in total. The TL versions need 169,933 tokens, <ins>**38% fewer**</ins>,
+and <ins>**28% fewer**</ins> than the same JavaScript with its comments removed. Every TL version passes the
+project's own test suite, unchanged.
 
 Tokens are counted with the `o200k` tokenizer (GPT-4o / GPT-5 family). A version only counts if it passes the
-same tests as the others. TL counts include `tl.def`, the project's dictionary of long names
+same tests as the original. TL counts include `tl.def`, the project's dictionary of long names
 ([explained below](#the-dictionary-tldef)).
 
-### Two real libraries, converted from their original JavaScript
+### Five real applications
 
-| | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | Tests (both versions) |
+| | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | The project's own tests (both versions) |
+|---|---|---|---|---|---|---|
+| **Hubot** — chat bot, 18 modules | 29,411 | 22,838 | 16,964 (15,652 + 1,312) | <ins>**−42%**</ins> | <ins>**−26%**</ins> | 286 pass |
+| **Raneto** 0.18.1 — knowledge-base web app, 34 modules | 14,920 | 13,126 | 9,182 (7,828 + 1,354) | <ins>**−38%**</ins> | <ins>**−30%**</ins> | 221 pass |
+| **Ungit** 1.5.30 — git web UI (server), 12 modules | 27,773 | 25,051 | 17,421 (15,729 + 1,692) | <ins>**−37%**</ins> | <ins>**−30%**</ins> | 230 pass |
+| **expressCart** 1.1.19 — online shop, 34 modules | 55,690 | 50,143 | 36,265 (33,698 + 2,567) | <ins>**−35%**</ins> | <ins>**−28%**</ins> | 86 pass |
+| **hackathon-starter** 10.0.0 — web app with accounts and OAuth, 16 modules | 57,691 | 49,310 | 38,571 (34,432 + 4,139) | <ins>**−33%**</ins> | <ins>**−22%**</ins> | 327 pass |
+| **All five** | 185,485 | 160,468 | 118,403 | <ins>**−36%**</ins> | <ins>**−26%**</ins> | |
+
+### Two real libraries
+
+| | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | The project's own tests (both versions) |
 |---|---|---|---|---|---|---|
 | **node-semver** 7.8.5, 47 modules | 19,189 | 15,044 | 9,715 (9,246 + 469) | <ins>**−49%**</ins> | <ins>**−35%**</ins> | 9,074 assertions pass |
 | **validator.js** 13.15, 103 modules | 71,443 | 61,301 | 41,815 (39,887 + 1,928) | <ins>**−41%**</ins> | <ins>**−32%**</ins> | 13,289 cases pass |
 
 The fair comparison is the one against JavaScript without comments, because TL files carry none.
 
-The tests are the libraries' own: semver's tap test files run unchanged against the compiled TL through a
-`require` redirect, and validator's mocha cases are replayed against both implementations.
+How to read these numbers:
 
-About 42% of the TL version of validator is regular-expression text (phone numbers, postal codes, IBANs), which is
-the same in any language; that is why it gains a little less than semver, which is mostly logic.
+- **Applications gain less than libraries.** Application code is mostly calls into other people's APIs (Express,
+  MongoDB, Passport, payment gateways): their names and string literals cost the same in any language. Calling
+  JavaScript libraries from TL also has a cost today, for example a plain JavaScript object needs a helper call.
+  hackathon-starter is the lowest for this reason.
+- **The tests are the projects' own**, run unchanged against the compiled TL in place of the original modules.
+  They do not reach every line of an application, so each application was also run side by side with the
+  original on code its suite misses; `Projects/README.md` lists what was compared and the known differences.
+- About 42% of the TL version of validator is regular-expression text (phone numbers, postal codes, IBANs), which
+  is the same in any language; that is why it gains less than semver, which is mostly logic.
 
 ### Five small programs, written from one specification in each language
 
@@ -96,6 +114,9 @@ node bench.js              # every project: token counts and tests; writes resul
 node bench.js semver       # one project
 ```
 
+The application projects have their own dependencies (`npm install` inside the project folder), and expressCart's
+tests need a MongoDB server; `Projects/README.md` has the commands.
+
 Per-project tables are in `Projects/results/`. How each project is tested is described in `Projects/README.md`.
 
 ## Key capabilities
@@ -110,8 +131,8 @@ Per-project tables are in `Projects/results/`. How each project is tested is des
   names. The rendering is read-only and is checked to keep the source's tokens.
 - **Built for models**: a short rule file plus 21 topic files a model opens on demand; diagnostics give an error
   code, the column and a named fix.
-- **Measured, not claimed**: every benchmark version must pass the same tests; two of them are the original test
-  suites of validator.js and node-semver.
+- **Measured, not claimed**: every benchmark version must pass the same tests; for the seven open-source projects
+  these are the projects' own test suites.
 
 ## Quick start
 
@@ -266,7 +287,7 @@ writes; the diagnostics name the column and the fix. See
 ```sh
 tl run lib/examples/loops.tl
 tl view Projects/semver/tl/range.tl
-cd Projects && npm install && node bench.js      # token counts and tests for all seven projects
+cd Projects && npm install && node bench.js      # token counts and tests for the small programs and libraries
 ```
 
 ## How the language saves tokens
@@ -414,7 +435,7 @@ How to use it:
 | `lib/` | The compiler and tools (`tl-lang`): lexer, parser, JavaScript emitter, runtime, formatter, CLI (`tl`, `tlc`), Node loader, tests. Pure JavaScript, no build step. |
 | `lib/TL_INSTRUCTIONS.md`, `lib/tl-dictionary/` | The language reference written for models: core rules in one file, 21 topic files to open on demand. Every example in them is run by the test suite. |
 | `lib/TL_Language_Specification_v0.1.docx` | The original design specification. It predates several changes made during implementation; the instructions and dictionary above describe the language as it works today. |
-| `Projects/` | Token benchmarks: five small programs written in JavaScript, TypeScript and TL, and two open-source libraries (validator.js, node-semver) converted to TL. `bench.js` counts tokens and runs every version against shared tests. |
+| `Projects/` | Token benchmarks: five small programs written in JavaScript, TypeScript and TL; two open-source libraries (validator.js, node-semver) and five open-source applications (expressCart, hackathon-starter, Hubot, Ungit, Raneto) converted to TL. `bench.js` counts tokens and runs every version against the same tests. |
 | `vscode/` | The VS Code extension that shows `.tl` files as readable, read-only code. |
 
 ## Resources
@@ -433,7 +454,10 @@ How to use it:
 TL/JS 0.1 is a working compiler, not a finished language.
 
 - Types are parsed and erased, except simple parameter annotations (`s:str`), which are checked at run time.
-- No bitwise operators, macros, effects or ownership; `thread` is an async task.
+- No macros, effects or ownership; `thread` is an async task.
+- Calling JavaScript libraries works but is not yet smooth: there is no plain-object literal, reading a
+  function-valued property calls it (`req["app"]` reads it), and a TL panic (member of `none`, index out of range)
+  is not caught by `catch`. `lib/tl-dictionary/mistakes-and-limits.md` lists these and the workarounds.
 - A call to a function that can raise must be propagated with `?` or handled; used directly in a condition it
   is an always-true result object. This is the easiest mistake to make in TL today.
 - The token figures are for the `o200k` tokenizer. Other tokenizers will give somewhat different numbers.
@@ -442,5 +466,6 @@ TL/JS 0.1 is a working compiler, not a finished language.
 
 ## Third-party code
 
-`Projects/validator/` and `Projects/semver/` include the sources and tests of validator.js (MIT) and node-semver
-(ISC) so the benchmarks can run against the originals. See `THIRD_PARTY.md`.
+The benchmark projects include the sources and tests of the open-source projects they are measured against:
+validator.js, expressCart, hackathon-starter, Hubot, Ungit and Raneto (all MIT) and node-semver (ISC). See
+`THIRD_PARTY.md`.
