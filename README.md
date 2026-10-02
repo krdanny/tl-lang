@@ -27,15 +27,59 @@ fn parse version options=none throwErrors=false
         raise e
 ```
 
+## Benchmarks
+
+Tokens are counted with the `o200k` tokenizer (GPT-4o / GPT-5 family). A version only counts if it passes the
+same tests as the others. TL counts include `tl.def`, the project's dictionary of long names
+([explained below](#the-dictionary-tldef)).
+
+### Two real libraries, converted from their original JavaScript
+
+| | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | Tests (both versions) |
+|---|---|---|---|---|---|---|
+| **node-semver** 7.8.5, 47 modules | 19,189 | 15,044 | 9,715 (9,246 + 469) | **−49%** | **−35%** | 9,074 assertions pass |
+| **validator.js** 13.15, 103 modules | 71,443 | 61,301 | 41,815 (39,887 + 1,928) | **−41%** | **−32%** | 13,289 cases pass |
+
+The fair comparison is the one against JavaScript without comments, because TL files carry none.
+
+The tests are the libraries' own: semver's tap test files run unchanged against the compiled TL through a
+`require` redirect, and validator's mocha cases are replayed against both implementations.
+
+About 42% of the TL version of validator is regular-expression text (phone numbers, postal codes, IBANs), which is
+the same in any language; that is why it gains a little less than semver, which is mostly logic.
+
+### Five small programs, written from one specification in each language
+
+| Program | JS | TS | TL | TL vs JS | TL vs TS |
+|---|---|---|---|---|---|
+| Todo REST API | 774 | 870 | 295 | −62% | −66% |
+| Log analyzer CLI | 704 | 732 | 495 | −30% | −32% |
+| Inventory manager | 747 | 842 | 552 | −26% | −34% |
+| Markdown to HTML | 699 | 728 | 584 | −16% | −20% |
+| Concurrent bank ledger | 395 | 471 | 263 | −33% | −44% |
+
+The Todo API result comes mostly from TL's built-in HTTP and storage helpers; against JavaScript written with
+Express it is −49%. The other four show what the syntax alone gives: 16–33%.
+
+### Reproducing
+
+```sh
+cd Projects && npm install
+node bench.js              # every project: token counts and tests; writes results/
+node bench.js semver       # one project
+```
+
+Per-project tables are in `Projects/results/`. How each project is tested is described in `Projects/README.md`.
+
 ## Contents
 
+- [Benchmarks](#benchmarks) (above)
 - [What is in this repository](#what-is-in-this-repository)
 - [Install](#install)
 - [Using TL](#using-tl)
 - [How the language saves tokens](#how-the-language-saves-tokens)
 - [The dictionary: `tl.def`](#the-dictionary-tldef)
 - [Toolchain](#toolchain)
-- [Benchmarks](#benchmarks)
 - [VS Code extension](#vs-code-extension)
 - [For a model that writes TL](#for-a-model-that-writes-tl)
 - [Status and limits](#status-and-limits)
@@ -249,49 +293,6 @@ All commands are `node lib/bin/tl.js <command>` (or `tl <command>` once the pack
 | `tl view file.tl` | readable rendering: indented, closers restored, long names |
 | `tl test` | run `test"…"` blocks |
 | `tlc` | compile a project described by `tlconfig.json`, like `tsc` |
-
-## Benchmarks
-
-Tokens are counted with the `o200k` tokenizer (GPT-4o / GPT-5 family). A version only counts if it passes the
-same tests as the others. TL counts include `tl.def`.
-
-### Two real libraries, converted from their original JavaScript
-
-| | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | Tests (both versions) |
-|---|---|---|---|---|---|---|
-| **node-semver** 7.8.5, 47 modules | 19,189 | 15,044 | 9,715 (9,246 + 469) | **−49%** | **−35%** | 9,074 assertions pass |
-| **validator.js** 13.15, 103 modules | 71,443 | 61,301 | 41,815 (39,887 + 1,928) | **−41%** | **−32%** | 13,289 cases pass |
-
-The fair comparison is the one against JavaScript without comments, because TL files carry none.
-
-The tests are the libraries' own: semver's tap test files run unchanged against the compiled TL through a
-`require` redirect, and validator's mocha cases are replayed against both implementations.
-
-About 42% of the TL version of validator is regular-expression text (phone numbers, postal codes, IBANs), which is
-the same in any language; that is why it gains a little less than semver, which is mostly logic.
-
-### Five small programs, written from one specification in each language
-
-| Program | JS | TS | TL | TL vs JS | TL vs TS |
-|---|---|---|---|---|---|
-| Todo REST API | 774 | 870 | 295 | −62% | −66% |
-| Log analyzer CLI | 704 | 732 | 495 | −30% | −32% |
-| Inventory manager | 747 | 842 | 552 | −26% | −34% |
-| Markdown to HTML | 699 | 728 | 584 | −16% | −20% |
-| Concurrent bank ledger | 395 | 471 | 263 | −33% | −44% |
-
-The Todo API result comes mostly from TL's built-in HTTP and storage helpers; against JavaScript written with
-Express it is −49%. The other four show what the syntax alone gives: 16–33%.
-
-### Reproducing
-
-```sh
-cd Projects && npm install
-node bench.js              # every project: token counts and tests; writes results/
-node bench.js semver       # one project
-```
-
-Per-project tables are in `Projects/results/`. How each project is tested is described in `Projects/README.md`.
 
 ## VS Code extension
 
