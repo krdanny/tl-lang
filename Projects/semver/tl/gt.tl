@@ -1,0 +1,1 @@
++compare.compare|fn gt a b loose=none|(compare a b loose)>0

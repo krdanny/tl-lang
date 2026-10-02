@@ -1,0 +1,1 @@
++ltrim.ltrim|+rtrim.rtrim|fn trim s chars|rtrim(ltrim s chars)chars

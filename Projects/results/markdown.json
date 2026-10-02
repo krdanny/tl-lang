@@ -1,0 +1,81 @@
+{
+  "project": "markdown",
+  "title": "Project 4 — Markdown to HTML",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "js/md.js",
+          "chars": 2152,
+          "lines": 51,
+          "o200k": 699,
+          "cl100k": 685,
+          "o200k_nocomments": 699
+        }
+      ],
+      "chars": 2152,
+      "lines": 51,
+      "o200k": 699,
+      "cl100k": 685,
+      "o200k_nocomments": 699,
+      "tests": {
+        "ok": true,
+        "summary": "10 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node js/md.js"
+    },
+    "ts": {
+      "files": [
+        {
+          "file": "ts/md.ts",
+          "chars": 2271,
+          "lines": 55,
+          "o200k": 728,
+          "cl100k": 714
+        }
+      ],
+      "chars": 2271,
+      "lines": 55,
+      "o200k": 728,
+      "cl100k": 714,
+      "o200k_nocomments": 728,
+      "tests": {
+        "ok": true,
+        "summary": "10 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ts/md.ts"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/md.tl",
+          "chars": 1315,
+          "lines": 1,
+          "o200k": 584,
+          "cl100k": 580
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 0,
+          "lines": 0,
+          "o200k": 0,
+          "cl100k": 0
+        }
+      ],
+      "chars": 1315,
+      "lines": 1,
+      "o200k": 584,
+      "cl100k": 580,
+      "o200k_nocomments": 584,
+      "tests": {
+        "ok": true,
+        "summary": "10 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ../../lib/bin/tl.js run tl/md.tl"
+    }
+  }
+}

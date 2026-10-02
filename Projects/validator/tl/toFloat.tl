@@ -1,0 +1,1 @@
++af.af|fn th s|if not af s|^NaN<parseFloat s

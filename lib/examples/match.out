@@ -1,0 +1,14 @@
+Circle(1) 3.14159
+Rect{w: 2, h: 3} 6
+Empty 0
+P(4,0) 16 true
+4 0
+[P(4,0)]
+HI!
+digit 7
+point 3 4
+head 1 tail [2, 3]
+fizzbuzz
+404
+5
+none

@@ -1,0 +1,1 @@
++eq.eq|+neq.neq|+gt.gt|+gte.gte|+lt.lt|+lte.lte|fn cmp a op b loose=none|match op|"===|if(type_of a)!="str|a=a.version<if(type_of b)!="str|b=b.version<a==b<"!==|if(type_of a)!="str|a=a.version<if(type_of b)!="str|b=b.version<a!=b<""or"="or"==|eq a b loose<"!=|neq a b loose<">|gt a b loose<">=|gte a b loose<"\<|lt a b loose<"\<=|lte a b loose<_|!TypeError"Invalid operator: $op

@@ -1,0 +1,1 @@
+kn /^(?:[-+]?(?:0|[1-9]\d*))$/|kh /^[-+]?\d+$/|fn in s:str options|o options??(obj{|regex if o.az==false kn kh|mi not Object.hg o"min"or o.min==none or s>=o.min|mb not Object.hg o"max"or o.max==none or o.max>=s|ly not Object.hg o"lt"or o.lt==none or o.lt>s|gz not Object.hg o"gt"or o.gt==none or s>o.gt|regex.test s and mi and mb and ly and gz

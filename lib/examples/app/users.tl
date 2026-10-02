@@ -1,0 +1,1 @@
+db[U{i:1 n:"Ann"}(U{i:2 n:"Bob"a:false|fn gu|u db>>find x=>x.i==i|if u is Some v|v<else|!NF<<fn ls|db

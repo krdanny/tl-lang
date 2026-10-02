@@ -1,0 +1,28 @@
+{
+  "title": "Project 6 — validator.js (real-world library, 103 modules)",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "original/index.js",
+        "original/lib/*.js",
+        "original/lib/util/*.js"
+      ],
+      "cmd": [
+        "original"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/*.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "tl"
+      ]
+    }
+  }
+}

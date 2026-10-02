@@ -1,0 +1,1 @@
+numeric /^\d+$/|fn cid a b|if(type_of a)=="num"and(type_of b)=="num|^if a==b 0(if b>a -1 1<anum numeric.test a|bnum numeric.test b|if anum and bnum|a=Number a|b=Number b<if a==b|^0<if anum and not bnum|^-1<if bnum and not anum|^1<if b>a -1 1<fn rb a b|cid b a

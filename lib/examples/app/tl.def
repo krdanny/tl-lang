@@ -1,0 +1,6 @@
+# Semantic dictionary for the example app (spec §10)
+@mod users "User directory"
+U   type  User       {i=id:int n=name:str a=active:bool=true}  derive Eq Json
+gu  fn    getUser    (i=id:int) >U !NF      "Loads a user by id."
+ls  fn    listUsers  () >[U]
+NF  error NotFound   "user not found"

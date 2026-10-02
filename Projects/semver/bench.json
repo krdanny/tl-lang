@@ -1,0 +1,31 @@
+{
+  "title": "Project 7 — node-semver (real-world library, 47 modules)",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "original/index.js",
+        "original/preload.js",
+        "original/classes/*.js",
+        "original/functions/*.js",
+        "original/ranges/*.js",
+        "original/internal/*.js"
+      ],
+      "cmd": [
+        "original"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/*.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "tl"
+      ]
+    }
+  }
+}

@@ -1,0 +1,310 @@
+add SKU-1 Widget 25
+add SKU-2 Gadget 14
+add SKU-3 Bolt 30
+add SKU-4 Nut 8
+add SKU-5 Gear 9
+add SKU-6 Cable 39
+add SKU-7 Panel 11
+add SKU-8 Sensor 28
+add SKU-1 Dup 3
+ship O1
+frobnicate now
+order O1 SKU-2 0
+receive SKU-4 5
+ship O1
+cancel O1
+report
+ship O1
+ship O999
+order O2 SKU-4 1
+ship O1
+order O3 SKU-3 2
+ship O2
+order O4 SKU-4 13
+order O5 SKU-2 1
+ship O4
+return O4
+cancel O4
+ship O4
+receive SKU-4 10
+return O2
+order O6 SKU-5 -2
+order O6 SKU-2 1
+receive SKU-2 5
+ship O2
+cancel O2
+report
+receive SKU-2 20
+receive SKU-6 x
+ship O4
+order O7 SKU-2 8
+ship O2
+order O8 SKU-5 -2
+order O9 SKU-7 13
+order O10 SKU-8 13
+order O11 SKU-2 -2
+order O12 SKU-5 3
+return O7
+receive SKU-8 5
+order O13 SKU-7 8
+frobnicate now
+cancel O9
+order O14 SKU-7 13
+return O7
+
+order O15 SKU-3 3
+order O16 SKU-4 1
+ship O6
+order O17 SKU-1 3
+receive SKU-6 20
+
+return O17
+
+return O2
+ship O999
+receive SKU-7 x
+order O18 SKU-7 1
+order O19 SKU-4 -2
+order O20 SKU-6 1
+order O21 SKU-3 2
+report
+ship O3
+order O20 SKU-2 1
+receive SKU-5 20
+ship O16
+order O22 SKU-8 -2
+ship O10
+order O23 SKU-2 13
+return O16
+cancel O6
+ship O7
+
+ship O5
+return O1
+cancel O10
+
+order O23 SKU-2 1
+cancel O17
+receive SKU-3 20
+cancel O18
+ship O17
+receive SKU-4 10
+cancel O13
+return O8
+order O24 SKU-8 13
+return O1
+cancel O16
+order O25 SKU-6 -2
+cancel O24
+
+
+receive SKU-4 5
+order O26 SKU-4 13
+order O27 SKU-1 -2
+frobnicate now
+receive SKU-2 5
+frobnicate now
+cancel O25
+order O28 SKU-3 0
+cancel O11
+order O29 SKU-7 -2
+receive SKU-2 10
+order O30 SKU-3 1
+order O31 SKU-8 3
+ship O31
+return O12
+order O32 SKU-99 3
+order O33 SKU-2 3
+receive SKU-4 10
+order O34 SKU-4 8
+ship O21
+order O35 SKU-7 3
+order O36 SKU-6 -2
+return O34
+receive SKU-42 10
+ship O34
+ship O29
+cancel O1
+cancel O10
+order O37 SKU-8 2
+ship O21
+return O34
+ship O7
+frobnicate now
+order O38 SKU-4 8
+order O39 SKU-2 -2
+ship O5
+receive SKU-42 10
+return O29
+ship O31
+ship O16
+return O17
+report
+frobnicate now
+order O40 SKU-8 3
+receive SKU-7 x
+receive SKU-4 x
+order O41 SKU-5 2
+frobnicate now
+order O42 SKU-6 3
+order O43 SKU-3 -2
+order O44 SKU-2 0
+frobnicate now
+order O45 SKU-4 3
+return O33
+receive SKU-7 10
+receive SKU-2 20
+order O46 SKU-99 -2
+receive SKU-1 x
+receive SKU-5 5
+order O47 SKU-4 2
+order O48 SKU-5 1
+frobnicate now
+order O49 SKU-3 0
+cancel O44
+cancel O17
+receive SKU-42 x
+return O6
+order O50 SKU-3 0
+frobnicate now
+order O51 SKU-1 2
+cancel O6
+ship O15
+order O52 SKU-2 -2
+order O53 SKU-99 0
+report
+order O54 SKU-3 1
+ship O16
+report
+
+order O55 SKU-3 5
+report
+ship O34
+cancel O19
+receive SKU-3 20
+receive SKU-1 20
+order O56 SKU-1 5
+ship O16
+report
+order O57 SKU-7 -2
+ship O57
+receive SKU-42 20
+return O15
+receive SKU-3 x
+
+
+cancel O1
+order O58 SKU-5 0
+order O59 SKU-2 0
+order O43 SKU-2 1
+
+ship O45
+order O60 SKU-8 3
+order O61 SKU-8 1
+order O62 SKU-6 13
+order O63 SKU-5 5
+receive SKU-1 20
+receive SKU-8 20
+ship O26
+order O64 SKU-1 2
+order O65 SKU-2 3
+receive SKU-1 x
+order O66 SKU-5 5
+order O67 SKU-99 3
+return O50
+cancel O64
+order O68 SKU-3 1
+cancel O66
+ship O65
+order O69 SKU-99 1
+cancel O30
+order O70 SKU-1 3
+ship O14
+receive SKU-8 5
+ship O69
+return O63
+order O71 SKU-8 2
+return O65
+frobnicate now
+order O72 SKU-99 2
+return O61
+order O73 SKU-2 8
+order O74 SKU-4 5
+return O59
+ship O49
+order O75 SKU-5 1
+ship O26
+order O76 SKU-3 13
+order O77 SKU-5 3
+order O78 SKU-1 -2
+order O79 SKU-2 5
+return O38
+return O37
+ship O60
+cancel O71
+order O80 SKU-2 -2
+order O81 SKU-8 2
+cancel O58
+
+receive SKU-4 5
+ship O19
+return O34
+
+order O82 SKU-99 8
+frobnicate now
+return O30
+ship O63
+receive SKU-3 5
+report
+return O52
+receive SKU-3 x
+receive SKU-6 5
+cancel O1
+receive SKU-6 x
+order O83 SKU-4 1
+frobnicate now
+order O84 SKU-6 2
+receive SKU-2 20
+report
+cancel O7
+order O85 SKU-1 8
+ship O20
+order O86 SKU-5 0
+ship O25
+cancel O55
+frobnicate now
+cancel O81
+receive SKU-42 10
+return O7
+report
+receive SKU-3 20
+ship O71
+order O87 SKU-8 0
+receive SKU-5 20
+return O84
+order O88 SKU-4 8
+ship O86
+receive SKU-3 10
+order O89 SKU-99 -2
+ship O58
+frobnicate now
+
+receive SKU-3 10
+order O90 SKU-3 13
+ship O41
+order O91 SKU-5 5
+frobnicate now
+return O53
+receive SKU-42 10
+receive SKU-6 5
+ship O74
+
+order O92 SKU-99 5
+order O93 SKU-4 0
+receive SKU-8 x
+
+cancel O3
+order O94 SKU-7 -2
+
+ship O10
+report

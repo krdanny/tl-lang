@@ -1,0 +1,1 @@
+const hk /[ -~｡-ﾟﾠ-ￜ￨-￮\da-zA-Z]/|fn kw s:str|hk.test s

@@ -1,0 +1,1 @@
+fn whitelist s:str chars|s.replace(new RegExp"[^{chars}]+""g")"

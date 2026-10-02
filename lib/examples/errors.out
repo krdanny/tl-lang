@@ -1,0 +1,17 @@
+Ok("ann") Err(NF)
+Ok("annann")
+true
+err NF
+fallback
+bad: negative
+finally
+0
+default
+T none
+none
+3
+Ok(2)
+[Ok(6), Ok(3), Ok(2)]
+step 1
+step 2
+cleanup

@@ -1,0 +1,757 @@
+{
+  "project": "semver",
+  "title": "Project 7 — node-semver (real-world library, 47 modules)",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "original/index.js",
+          "chars": 2691,
+          "lines": 92,
+          "o200k": 634,
+          "cl100k": 640,
+          "o200k_nocomments": 621
+        },
+        {
+          "file": "original/preload.js",
+          "chars": 83,
+          "lines": 3,
+          "o200k": 19,
+          "cl100k": 20,
+          "o200k_nocomments": 11
+        },
+        {
+          "file": "original/classes/comparator.js",
+          "chars": 3631,
+          "lines": 121,
+          "o200k": 910,
+          "cl100k": 894,
+          "o200k_nocomments": 830
+        },
+        {
+          "file": "original/classes/index.js",
+          "chars": 143,
+          "lines": 6,
+          "o200k": 35,
+          "cl100k": 35,
+          "o200k_nocomments": 35
+        },
+        {
+          "file": "original/classes/range.js",
+          "chars": 15647,
+          "lines": 507,
+          "o200k": 5022,
+          "cl100k": 5027,
+          "o200k_nocomments": 3588
+        },
+        {
+          "file": "original/classes/semver.js",
+          "chars": 9891,
+          "lines": 315,
+          "o200k": 2558,
+          "cl100k": 2561,
+          "o200k_nocomments": 2104
+        },
+        {
+          "file": "original/functions/clean.js",
+          "chars": 205,
+          "lines": 7,
+          "o200k": 54,
+          "cl100k": 53,
+          "o200k_nocomments": 54
+        },
+        {
+          "file": "original/functions/cmp.js",
+          "chars": 961,
+          "lines": 44,
+          "o200k": 275,
+          "cl100k": 277,
+          "o200k_nocomments": 275
+        },
+        {
+          "file": "original/functions/coerce.js",
+          "chars": 2004,
+          "lines": 53,
+          "o200k": 579,
+          "cl100k": 576,
+          "o200k_nocomments": 401
+        },
+        {
+          "file": "original/functions/compare-build.js",
+          "chars": 281,
+          "lines": 8,
+          "o200k": 74,
+          "cl100k": 74,
+          "o200k_nocomments": 74
+        },
+        {
+          "file": "original/functions/compare-loose.js",
+          "chars": 132,
+          "lines": 4,
+          "o200k": 33,
+          "cl100k": 35,
+          "o200k_nocomments": 33
+        },
+        {
+          "file": "original/functions/compare.js",
+          "chars": 170,
+          "lines": 5,
+          "o200k": 46,
+          "cl100k": 46,
+          "o200k_nocomments": 46
+        },
+        {
+          "file": "original/functions/diff.js",
+          "chars": 1423,
+          "lines": 47,
+          "o200k": 443,
+          "cl100k": 443,
+          "o200k_nocomments": 313
+        },
+        {
+          "file": "original/functions/eq.js",
+          "chars": 126,
+          "lines": 4,
+          "o200k": 37,
+          "cl100k": 37,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/functions/gt.js",
+          "chars": 124,
+          "lines": 4,
+          "o200k": 37,
+          "cl100k": 37,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/functions/gte.js",
+          "chars": 127,
+          "lines": 4,
+          "o200k": 39,
+          "cl100k": 39,
+          "o200k_nocomments": 39
+        },
+        {
+          "file": "original/functions/inc.js",
+          "chars": 478,
+          "lines": 18,
+          "o200k": 116,
+          "cl100k": 116,
+          "o200k_nocomments": 116
+        },
+        {
+          "file": "original/functions/lt.js",
+          "chars": 124,
+          "lines": 4,
+          "o200k": 37,
+          "cl100k": 37,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/functions/lte.js",
+          "chars": 127,
+          "lines": 4,
+          "o200k": 39,
+          "cl100k": 39,
+          "o200k_nocomments": 39
+        },
+        {
+          "file": "original/functions/major.js",
+          "chars": 136,
+          "lines": 4,
+          "o200k": 37,
+          "cl100k": 37,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/functions/minor.js",
+          "chars": 136,
+          "lines": 4,
+          "o200k": 37,
+          "cl100k": 37,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/functions/neq.js",
+          "chars": 128,
+          "lines": 4,
+          "o200k": 37,
+          "cl100k": 39,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/functions/parse.js",
+          "chars": 331,
+          "lines": 16,
+          "o200k": 88,
+          "cl100k": 88,
+          "o200k_nocomments": 88
+        },
+        {
+          "file": "original/functions/patch.js",
+          "chars": 136,
+          "lines": 4,
+          "o200k": 37,
+          "cl100k": 37,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/functions/prerelease.js",
+          "chars": 234,
+          "lines": 7,
+          "o200k": 56,
+          "cl100k": 56,
+          "o200k_nocomments": 56
+        },
+        {
+          "file": "original/functions/rcompare.js",
+          "chars": 132,
+          "lines": 4,
+          "o200k": 35,
+          "cl100k": 35,
+          "o200k_nocomments": 35
+        },
+        {
+          "file": "original/functions/rsort.js",
+          "chars": 163,
+          "lines": 4,
+          "o200k": 44,
+          "cl100k": 44,
+          "o200k_nocomments": 44
+        },
+        {
+          "file": "original/functions/satisfies.js",
+          "chars": 247,
+          "lines": 11,
+          "o200k": 61,
+          "cl100k": 61,
+          "o200k_nocomments": 61
+        },
+        {
+          "file": "original/functions/sort.js",
+          "chars": 161,
+          "lines": 4,
+          "o200k": 42,
+          "cl100k": 42,
+          "o200k_nocomments": 42
+        },
+        {
+          "file": "original/functions/truncate.js",
+          "chars": 1021,
+          "lines": 37,
+          "o200k": 251,
+          "cl100k": 252,
+          "o200k_nocomments": 251
+        },
+        {
+          "file": "original/functions/valid.js",
+          "chars": 176,
+          "lines": 7,
+          "o200k": 44,
+          "cl100k": 44,
+          "o200k_nocomments": 44
+        },
+        {
+          "file": "original/ranges/gtr.js",
+          "chars": 231,
+          "lines": 5,
+          "o200k": 51,
+          "cl100k": 52,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/ranges/intersects.js",
+          "chars": 224,
+          "lines": 8,
+          "o200k": 65,
+          "cl100k": 65,
+          "o200k_nocomments": 65
+        },
+        {
+          "file": "original/ranges/ltr.js",
+          "chars": 227,
+          "lines": 5,
+          "o200k": 51,
+          "cl100k": 52,
+          "o200k_nocomments": 37
+        },
+        {
+          "file": "original/ranges/max-satisfying.js",
+          "chars": 593,
+          "lines": 25,
+          "o200k": 170,
+          "cl100k": 169,
+          "o200k_nocomments": 152
+        },
+        {
+          "file": "original/ranges/min-satisfying.js",
+          "chars": 591,
+          "lines": 25,
+          "o200k": 170,
+          "cl100k": 169,
+          "o200k_nocomments": 152
+        },
+        {
+          "file": "original/ranges/min-version.js",
+          "chars": 1514,
+          "lines": 55,
+          "o200k": 394,
+          "cl100k": 393,
+          "o200k_nocomments": 362
+        },
+        {
+          "file": "original/ranges/outside.js",
+          "chars": 2204,
+          "lines": 71,
+          "o200k": 585,
+          "cl100k": 587,
+          "o200k_nocomments": 491
+        },
+        {
+          "file": "original/ranges/simplify.js",
+          "chars": 1355,
+          "lines": 47,
+          "o200k": 354,
+          "cl100k": 355,
+          "o200k_nocomments": 310
+        },
+        {
+          "file": "original/ranges/subset.js",
+          "chars": 7478,
+          "lines": 224,
+          "o200k": 2253,
+          "cl100k": 2280,
+          "o200k_nocomments": 1429
+        },
+        {
+          "file": "original/ranges/to-comparators.js",
+          "chars": 282,
+          "lines": 7,
+          "o200k": 69,
+          "cl100k": 70,
+          "o200k_nocomments": 59
+        },
+        {
+          "file": "original/ranges/valid.js",
+          "chars": 326,
+          "lines": 12,
+          "o200k": 81,
+          "cl100k": 82,
+          "o200k_nocomments": 58
+        },
+        {
+          "file": "original/internal/constants.js",
+          "chars": 873,
+          "lines": 31,
+          "o200k": 236,
+          "cl100k": 235,
+          "o200k_nocomments": 159
+        },
+        {
+          "file": "original/internal/debug.js",
+          "chars": 240,
+          "lines": 9,
+          "o200k": 63,
+          "cl100k": 63,
+          "o200k_nocomments": 63
+        },
+        {
+          "file": "original/internal/identifiers.js",
+          "chars": 525,
+          "lines": 23,
+          "o200k": 183,
+          "cl100k": 191,
+          "o200k_nocomments": 183
+        },
+        {
+          "file": "original/internal/lrucache.js",
+          "chars": 802,
+          "lines": 34,
+          "o200k": 208,
+          "cl100k": 208,
+          "o200k_nocomments": 179
+        },
+        {
+          "file": "original/internal/parse-options.js",
+          "chars": 338,
+          "lines": 14,
+          "o200k": 79,
+          "cl100k": 80,
+          "o200k_nocomments": 70
+        },
+        {
+          "file": "original/internal/re.js",
+          "chars": 8139,
+          "lines": 176,
+          "o200k": 2421,
+          "cl100k": 2427,
+          "o200k_nocomments": 1779
+        }
+      ],
+      "chars": 67311,
+      "lines": 2127,
+      "o200k": 19189,
+      "cl100k": 19236,
+      "o200k_nocomments": 15044,
+      "tests": {
+        "ok": true,
+        "summary": "48 test files, 9074 assertions passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "original"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/clean.tl",
+          "chars": 112,
+          "lines": 1,
+          "o200k": 30,
+          "cl100k": 30
+        },
+        {
+          "file": "tl/cmp.tl",
+          "chars": 378,
+          "lines": 1,
+          "o200k": 160,
+          "cl100k": 158
+        },
+        {
+          "file": "tl/coerce.tl",
+          "chars": 682,
+          "lines": 1,
+          "o200k": 262,
+          "cl100k": 255
+        },
+        {
+          "file": "tl/comparator.tl",
+          "chars": 1843,
+          "lines": 1,
+          "o200k": 559,
+          "cl100k": 542
+        },
+        {
+          "file": "tl/compare.tl",
+          "chars": 71,
+          "lines": 1,
+          "o200k": 22,
+          "cl100k": 23
+        },
+        {
+          "file": "tl/compareBuild.tl",
+          "chars": 89,
+          "lines": 1,
+          "o200k": 31,
+          "cl100k": 32
+        },
+        {
+          "file": "tl/compareLoose.tl",
+          "chars": 43,
+          "lines": 1,
+          "o200k": 13,
+          "cl100k": 13
+        },
+        {
+          "file": "tl/constants.tl",
+          "chars": 178,
+          "lines": 1,
+          "o200k": 65,
+          "cl100k": 65
+        },
+        {
+          "file": "tl/debug.tl",
+          "chars": 86,
+          "lines": 1,
+          "o200k": 31,
+          "cl100k": 31
+        },
+        {
+          "file": "tl/diff.tl",
+          "chars": 529,
+          "lines": 1,
+          "o200k": 178,
+          "cl100k": 173
+        },
+        {
+          "file": "tl/eq.tl",
+          "chars": 60,
+          "lines": 1,
+          "o200k": 18,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/gt.tl",
+          "chars": 59,
+          "lines": 1,
+          "o200k": 18,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/gte.tl",
+          "chars": 61,
+          "lines": 1,
+          "o200k": 19,
+          "cl100k": 19
+        },
+        {
+          "file": "tl/gtr.tl",
+          "chars": 83,
+          "lines": 1,
+          "o200k": 21,
+          "cl100k": 21
+        },
+        {
+          "file": "tl/identifiers.tl",
+          "chars": 259,
+          "lines": 1,
+          "o200k": 113,
+          "cl100k": 114
+        },
+        {
+          "file": "tl/inc.tl",
+          "chars": 255,
+          "lines": 1,
+          "o200k": 64,
+          "cl100k": 64
+        },
+        {
+          "file": "tl/index.tl",
+          "chars": 1014,
+          "lines": 1,
+          "o200k": 354,
+          "cl100k": 357
+        },
+        {
+          "file": "tl/intersects.tl",
+          "chars": 100,
+          "lines": 1,
+          "o200k": 28,
+          "cl100k": 28
+        },
+        {
+          "file": "tl/lrucache.tl",
+          "chars": 378,
+          "lines": 1,
+          "o200k": 108,
+          "cl100k": 107
+        },
+        {
+          "file": "tl/lt.tl",
+          "chars": 58,
+          "lines": 1,
+          "o200k": 18,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/lte.tl",
+          "chars": 60,
+          "lines": 1,
+          "o200k": 20,
+          "cl100k": 20
+        },
+        {
+          "file": "tl/ltr.tl",
+          "chars": 84,
+          "lines": 1,
+          "o200k": 22,
+          "cl100k": 22
+        },
+        {
+          "file": "tl/major.tl",
+          "chars": 53,
+          "lines": 1,
+          "o200k": 17,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/maxSatisfying.tl",
+          "chars": 208,
+          "lines": 1,
+          "o200k": 64,
+          "cl100k": 64
+        },
+        {
+          "file": "tl/minSatisfying.tl",
+          "chars": 206,
+          "lines": 1,
+          "o200k": 63,
+          "cl100k": 63
+        },
+        {
+          "file": "tl/minVersion.tl",
+          "chars": 654,
+          "lines": 1,
+          "o200k": 221,
+          "cl100k": 219
+        },
+        {
+          "file": "tl/minor.tl",
+          "chars": 53,
+          "lines": 1,
+          "o200k": 17,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/neq.tl",
+          "chars": 61,
+          "lines": 1,
+          "o200k": 18,
+          "cl100k": 19
+        },
+        {
+          "file": "tl/outside.tl",
+          "chars": 957,
+          "lines": 1,
+          "o200k": 301,
+          "cl100k": 301
+        },
+        {
+          "file": "tl/parse.tl",
+          "chars": 130,
+          "lines": 1,
+          "o200k": 39,
+          "cl100k": 38
+        },
+        {
+          "file": "tl/parseOptions.tl",
+          "chars": 167,
+          "lines": 1,
+          "o200k": 55,
+          "cl100k": 53
+        },
+        {
+          "file": "tl/patch.tl",
+          "chars": 53,
+          "lines": 1,
+          "o200k": 17,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/prelude.tl",
+          "chars": 212,
+          "lines": 1,
+          "o200k": 65,
+          "cl100k": 62
+        },
+        {
+          "file": "tl/prerelease.tl",
+          "chars": 141,
+          "lines": 1,
+          "o200k": 32,
+          "cl100k": 32
+        },
+        {
+          "file": "tl/range.tl",
+          "chars": 6022,
+          "lines": 1,
+          "o200k": 2212,
+          "cl100k": 2188
+        },
+        {
+          "file": "tl/rcompare.tl",
+          "chars": 61,
+          "lines": 1,
+          "o200k": 17,
+          "cl100k": 17
+        },
+        {
+          "file": "tl/re.tl",
+          "chars": 2629,
+          "lines": 1,
+          "o200k": 1242,
+          "cl100k": 1209
+        },
+        {
+          "file": "tl/rsort.tl",
+          "chars": 64,
+          "lines": 1,
+          "o200k": 22,
+          "cl100k": 22
+        },
+        {
+          "file": "tl/satisfies.tl",
+          "chars": 108,
+          "lines": 1,
+          "o200k": 28,
+          "cl100k": 25
+        },
+        {
+          "file": "tl/semver.tl",
+          "chars": 4418,
+          "lines": 1,
+          "o200k": 1389,
+          "cl100k": 1351
+        },
+        {
+          "file": "tl/simplify.tl",
+          "chars": 670,
+          "lines": 1,
+          "o200k": 188,
+          "cl100k": 186
+        },
+        {
+          "file": "tl/sort.tl",
+          "chars": 63,
+          "lines": 1,
+          "o200k": 21,
+          "cl100k": 21
+        },
+        {
+          "file": "tl/subset.tl",
+          "chars": 2516,
+          "lines": 1,
+          "o200k": 864,
+          "cl100k": 839
+        },
+        {
+          "file": "tl/toComparators.tl",
+          "chars": 128,
+          "lines": 1,
+          "o200k": 38,
+          "cl100k": 38
+        },
+        {
+          "file": "tl/truncate.tl",
+          "chars": 448,
+          "lines": 1,
+          "o200k": 116,
+          "cl100k": 116
+        },
+        {
+          "file": "tl/valid.tl",
+          "chars": 88,
+          "lines": 1,
+          "o200k": 22,
+          "cl100k": 22
+        },
+        {
+          "file": "tl/validRange.tl",
+          "chars": 88,
+          "lines": 1,
+          "o200k": 24,
+          "cl100k": 24
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 1585,
+          "lines": 101,
+          "o200k": 469,
+          "cl100k": 473
+        }
+      ],
+      "chars": 28265,
+      "lines": 148,
+      "o200k": 9715,
+      "cl100k": 9564,
+      "o200k_nocomments": 9715,
+      "tests": {
+        "ok": true,
+        "summary": "48 test files, 9074 assertions passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "tl"
+    }
+  }
+}

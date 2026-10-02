@@ -1,0 +1,39 @@
+{
+  "title": "Project 5 — Concurrent bank ledger",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "js/ledger.js"
+      ],
+      "cmd": [
+        "node",
+        "js/ledger.js"
+      ]
+    },
+    "ts": {
+      "files": [
+        "ts/ledger.ts"
+      ],
+      "cmd": [
+        "node",
+        "ts/ledger.ts"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/ledger.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "node",
+        "../../lib/bin/tl.js",
+        "run",
+        "tl/ledger.tl"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+fn ag s:str|/^(0x|0h)?[\dA-F]+$/i.test s

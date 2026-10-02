@@ -1,0 +1,1 @@
+fn matches s:str pattern modifiers|if type_of pattern!="regex|pattern=new RegExp pattern modifiers<not not s.match pattern

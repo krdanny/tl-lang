@@ -1,0 +1,1 @@
+fn iet s:str|/^(0x)[\da-f]{40}$/i.test s

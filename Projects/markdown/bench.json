@@ -1,0 +1,39 @@
+{
+  "title": "Project 4 — Markdown to HTML",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "js/md.js"
+      ],
+      "cmd": [
+        "node",
+        "js/md.js"
+      ]
+    },
+    "ts": {
+      "files": [
+        "ts/md.ts"
+      ],
+      "cmd": [
+        "node",
+        "ts/md.ts"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/md.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "node",
+        "../../lib/bin/tl.js",
+        "run",
+        "tl/md.tl"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1 @@
++semver.Sem|fn inc version release options=none identifier=none ide=none|if(type_of options)=="str|ide=identifier|identifier=options|options=none<try|((Sem(if(version is Sem)version.version version)options).inc release identifier ide).version<catch e|null

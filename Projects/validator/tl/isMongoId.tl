@@ -1,0 +1,1 @@
++ag.ag|fn imo s:str|ag s and s.length==24

@@ -1,0 +1,16 @@
+requests: 2131
+malformed: 17
+status:
+  200: 1795
+  201: 58
+  301: 59
+  404: 152
+  500: 67
+top paths:
+  /health 512
+  / 401
+  /api/users 309
+requests per hour:
+  2023-10-10 14:00 1446
+  2023-10-10 15:00 685
+p95 response ms: 459

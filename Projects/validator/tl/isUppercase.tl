@@ -1,0 +1,1 @@
+fn aq s:str|s==s.tc

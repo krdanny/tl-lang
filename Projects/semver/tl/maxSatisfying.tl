@@ -1,0 +1,1 @@
++range.Range|+semver.Sem|fn mas versions range options=none|max null|mc null|ro try|Range range options<catch e|^null<for v versions|if ro.test v|if not max or(mc.compare v)==-1|max=v|mc=Sem max options<<<max

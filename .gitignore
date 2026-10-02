@@ -1,0 +1,10 @@
+node_modules/
+# build output
+tl-build/
+vscode/dist/
+*.vsix
+# rebuilt on every test run (some upstream cases are relative to today's date)
+Projects/validator/tests/cases.json
+# runtime data written by the todo example when run from here
+/todos.json
+.DS_Store

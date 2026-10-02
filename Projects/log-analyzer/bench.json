@@ -1,0 +1,39 @@
+{
+  "title": "Project 2 — Log analyzer CLI",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "js/analyze.js"
+      ],
+      "cmd": [
+        "node",
+        "js/analyze.js"
+      ]
+    },
+    "ts": {
+      "files": [
+        "ts/analyze.ts"
+      ],
+      "cmd": [
+        "node",
+        "ts/analyze.ts"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/analyze.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "node",
+        "../../lib/bin/tl.js",
+        "run",
+        "tl/analyze.tl"
+      ]
+    }
+  }
+}

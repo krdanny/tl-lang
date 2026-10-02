@@ -1,0 +1,1 @@
++kz.AF|rx /^[A-Za-z]{6}[A-Za-z\d]{2}([A-Za-z\d]{3})?$/|fn xt s:str|cc(s.slice 4 6).tc|(AF.has cc or cc=="XK")and rx.test s

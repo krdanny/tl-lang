@@ -1,0 +1,1 @@
+plain /^\d{15}$/|hyphens /^\d{2}-\d{6}-\d{6}-\d$/|fn iim s:str options=none|rx if options?.qt hyphens plain|if not rx.test s|^false<s=s.replace /-/g"|sum 0|mul 2|l 14|for i 0..l|tp(int(s.substring(l-i-1)(l-i)))*mul|sum+=if tp>=10 tp%10+1 tp|mul=if mul==1 mul+1 mul-1<chk(10-sum%10)%10|chk==(int(s.substring 14 15

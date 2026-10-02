@@ -1,0 +1,1 @@
++alpha.decimal|+aw.aw|fn dex o|sep decimal[String o.locale|dd o.ec|q if o.fx"""?|new RegExp$`^[-+]?(\d+)?(\$sep\d{$dd})$q$`<defaults{fx:false ec:"1,"locale:"en-US|blacklist["""-""+|fn ide s:str options|o merge options defaults|loc String o.locale|if decimal.has loc|^not blacklist.includes(s.replace$re` `g"")and(dex o).test s<panic"Invalid locale '{o.locale}'

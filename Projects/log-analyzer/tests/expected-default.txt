@@ -1,0 +1,20 @@
+requests: 5000
+malformed: 17
+status:
+  200: 4243
+  201: 145
+  301: 116
+  404: 336
+  500: 160
+top paths:
+  /health 1203
+  / 956
+  /api/users 692
+  /static/app.js 524
+  /api/orders 459
+requests per hour:
+  2023-10-10 12:00 1430
+  2023-10-10 13:00 1439
+  2023-10-10 14:00 1446
+  2023-10-10 15:00 685
+p95 response ms: 458

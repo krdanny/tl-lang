@@ -1,0 +1,1 @@
+fn isl s:str|s==s.ta

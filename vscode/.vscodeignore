@@ -1,0 +1,7 @@
+src/**
+test/**
+build.mjs
+node_modules/**
+.vscode/**
+*.vsix
+syntaxes/grammar.mjs

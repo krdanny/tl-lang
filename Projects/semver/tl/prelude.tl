@@ -1,0 +1,1 @@
+error TypeError message str"$message|error Error message str"$message|fn js v|t type_of v|if t=="none|^if(String v)=="null""object""undefined<({num:"number"str:"string"bool:"boolean"fn:"function"}.get t)??"object

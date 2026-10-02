@@ -1,0 +1,1 @@
+fn ia s:str options|o merge options(obj{js:false|(if o.js s.trim.length s.length)==0

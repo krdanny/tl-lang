@@ -1,0 +1,39 @@
+{
+  "title": "Project 3 — Inventory manager",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "js/inventory.js"
+      ],
+      "cmd": [
+        "node",
+        "js/inventory.js"
+      ]
+    },
+    "ts": {
+      "files": [
+        "ts/inventory.ts"
+      ],
+      "cmd": [
+        "node",
+        "ts/inventory.ts"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/inventory.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "node",
+        "../../lib/bin/tl.js",
+        "run",
+        "tl/inventory.tl"
+      ]
+    }
+  }
+}

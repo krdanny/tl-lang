@@ -1,0 +1,1 @@
+const SC"2.0.0|const MM 256|const MAX Number.MAX|const AF 16|const AD MM-6|const RE["major""premajor""minor""preminor""patch""prepatch""prerelease|const FLAG 0b001|const FL 0b010

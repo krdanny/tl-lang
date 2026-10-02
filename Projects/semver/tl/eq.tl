@@ -1,0 +1,1 @@
++compare.compare|fn eq a b loose=none|(compare a b loose)==0

@@ -1,0 +1,1 @@
+fn ism s:str|/^[a-f\d]{32}$/.test s

@@ -1,0 +1,1 @@
+base32 /^[A-Z2-7]+=*$/|crockford /^[A-HJKMNP-TV-Z\d]+$/|fn up s:str options|o merge options(obj{crockford:false|if o.crockford|^crockford.test s<s.length%8==0 and base32.test s

@@ -1,0 +1,1 @@
+fn equals s:str c|s==c

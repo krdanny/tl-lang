@@ -1,0 +1,1 @@
++range.Range|fn val range options=none|try|(Range range options).range or"*<catch e|null

@@ -1,0 +1,57 @@
+{
+  "title": "Project 1 — Todo REST API",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "js/server.js"
+      ],
+      "cmd": [
+        "node",
+        "js/server.js"
+      ]
+    },
+    "ts": {
+      "files": [
+        "ts/server.ts"
+      ],
+      "cmd": [
+        "node",
+        "ts/server.ts"
+      ]
+    },
+    "js-express": {
+      "files": [
+        "js-express/server.js"
+      ],
+      "cmd": [
+        "node",
+        "js-express/server.js"
+      ]
+    },
+    "ts-express": {
+      "files": [
+        "ts-express/server.ts"
+      ],
+      "cmd": [
+        "node",
+        "ts-express/server.ts"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/server.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "node",
+        "../../lib/bin/tl.js",
+        "run",
+        "tl/server.tl"
+      ]
+    }
+  }
+}

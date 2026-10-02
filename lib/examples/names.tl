@@ -1,0 +1,1 @@
+count 0|count+=1|first"a|sum[1 2]>>sum|max[4 9 2].max|print count first sum max

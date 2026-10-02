@@ -1,0 +1,1 @@
++range.Range|fn intersects r1 r2 options=none|(Range r1 options).intersects(Range r2 options)options

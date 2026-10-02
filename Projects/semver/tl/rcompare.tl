@@ -1,0 +1,1 @@
++compare.compare|fn rcompare a b loose=none|compare b a loose

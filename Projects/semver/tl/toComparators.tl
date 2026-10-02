@@ -1,0 +1,1 @@
++range.Range|fn tc range options=none|(Range range options).set>>map comp=>((comp>>map c=>c.value>>join" ").trim.split" ")>>list

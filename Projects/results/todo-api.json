@@ -1,0 +1,126 @@
+{
+  "project": "todo-api",
+  "title": "Project 1 — Todo REST API",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "js/server.js",
+          "chars": 2847,
+          "lines": 71,
+          "o200k": 774,
+          "cl100k": 764,
+          "o200k_nocomments": 774
+        }
+      ],
+      "chars": 2847,
+      "lines": 71,
+      "o200k": 774,
+      "cl100k": 764,
+      "o200k_nocomments": 774,
+      "tests": {
+        "ok": true,
+        "summary": "22 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node js/server.js"
+    },
+    "ts": {
+      "files": [
+        {
+          "file": "ts/server.ts",
+          "chars": 3243,
+          "lines": 74,
+          "o200k": 870,
+          "cl100k": 860
+        }
+      ],
+      "chars": 3243,
+      "lines": 74,
+      "o200k": 870,
+      "cl100k": 860,
+      "o200k_nocomments": 870,
+      "tests": {
+        "ok": true,
+        "summary": "22 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ts/server.ts"
+    },
+    "js-express": {
+      "files": [
+        {
+          "file": "js-express/server.js",
+          "chars": 2081,
+          "lines": 53,
+          "o200k": 584,
+          "cl100k": 583,
+          "o200k_nocomments": 584
+        }
+      ],
+      "chars": 2081,
+      "lines": 53,
+      "o200k": 584,
+      "cl100k": 583,
+      "o200k_nocomments": 584,
+      "tests": {
+        "ok": true,
+        "summary": "22 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node js-express/server.js"
+    },
+    "ts-express": {
+      "files": [
+        {
+          "file": "ts-express/server.ts",
+          "chars": 2707,
+          "lines": 57,
+          "o200k": 733,
+          "cl100k": 732
+        }
+      ],
+      "chars": 2707,
+      "lines": 57,
+      "o200k": 733,
+      "cl100k": 732,
+      "o200k_nocomments": 733,
+      "tests": {
+        "ok": true,
+        "summary": "22 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ts-express/server.ts"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/server.tl",
+          "chars": 819,
+          "lines": 1,
+          "o200k": 291,
+          "cl100k": 291
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 12,
+          "lines": 1,
+          "o200k": 4,
+          "cl100k": 4
+        }
+      ],
+      "chars": 831,
+      "lines": 2,
+      "o200k": 295,
+      "cl100k": 295,
+      "o200k_nocomments": 295,
+      "tests": {
+        "ok": true,
+        "summary": "22 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ../../lib/bin/tl.js run tl/server.tl"
+    }
+  }
+}

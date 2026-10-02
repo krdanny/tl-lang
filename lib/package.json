@@ -1,0 +1,25 @@
+{
+  "name": "tl-lang",
+  "version": "0.1.0",
+  "description": "TL (Token Language): a token-minimal language that compiles to JavaScript and runs on Node.js, the way TypeScript does",
+  "type": "module",
+  "bin": {
+    "tlc": "bin/tlc.js",
+    "tl": "bin/tl.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./register": "./src/register.js",
+    "./runtime": "./runtime/tl-runtime.js"
+  },
+  "scripts": {
+    "test": "node tests/run.js && node tests/docs.js"
+  },
+  "engines": {
+    "node": ">=20.6"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "gpt-tokenizer": "^4.0.0"
+  }
+}

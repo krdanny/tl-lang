@@ -1,0 +1,1 @@
+fn ltrim s:str chars|p if chars|e chars.replace /[.*+?^${}()|[\]\\]/"\\$&|new RegExp"^[{e}]+""g<else|/^\s+/g<s.replace p"

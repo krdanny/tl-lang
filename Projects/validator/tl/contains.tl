@@ -1,0 +1,1 @@
++tb.tb|fn contains s:str elem options|o merge options(obj{ke:false mo:1|if o.ke|^(s.ta.split(tb elem).ta).length>o.mo<(s.split(tb elem)).length>o.mo

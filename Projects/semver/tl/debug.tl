@@ -1,0 +1,1 @@
+on /\bsemver\b/i.test(env.get"NODE_DEBUG""|fn debug ..args|if on|eprint"SEMVER" ..args

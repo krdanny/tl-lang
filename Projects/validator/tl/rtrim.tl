@@ -1,0 +1,1 @@
+fn rtrim s:str chars|if chars|e chars.replace /[.*+?^${}()|[\]\\]/"\\$&|^s.replace(new RegExp"[{e}]+$""g")"<i s.length-1|while i>=0 and /\s/.test(s[i|i-=1<s.slice 0 i+1

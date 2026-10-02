@@ -1,0 +1,1 @@
+hexcolor /^#?([\dA-F]{3}|[\dA-F]{4}|[\dA-F]{6}|[\dA-F]{8})$/i|wp /^#([\dA-F]{3}|[\dA-F]{4}|[\dA-F]{6}|[\dA-F]{8})$/i|fn ihe s:str options|o merge options(obj{req:false|(if o.req wp hexcolor).test s

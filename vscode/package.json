@@ -1,0 +1,247 @@
+{
+  "name": "tl-readable",
+  "displayName": "TL Readable View",
+  "description": "Shows TL (Token Language) files as indented, human-readable code. The view is read-only: TL source stays one line for the LLM, people read the rendering.",
+  "version": "0.2.1",
+  "publisher": "tl-lang",
+  "private": true,
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters"
+  ],
+  "keywords": [
+    "tl",
+    "token language",
+    "readable",
+    "viewer"
+  ],
+  "main": "./dist/extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": { "supported": true, "description": "The extension only reads .tl files and tl.def and renders them; it never runs code from the workspace." },
+    "virtualWorkspaces": { "supported": false, "description": "Files are read from disk to resolve imports and tl.def." }
+  },
+  "activationEvents": [
+    "onLanguage:tl",
+    "onLanguage:tl-readable"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "tl",
+        "aliases": [
+          "TL",
+          "Token Language"
+        ],
+        "extensions": [
+          ".tl"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "tl-readable",
+        "aliases": [
+          "TL (readable view)"
+        ],
+        "extensions": [
+          ".tl.view"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tl",
+        "scopeName": "source.tl",
+        "path": "./syntaxes/tl.tmLanguage.json"
+      },
+      {
+        "language": "tl-readable",
+        "scopeName": "source.tl.readable",
+        "path": "./syntaxes/tl-readable.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "tl.openReadable",
+        "title": "Open Readable View",
+        "category": "TL",
+        "icon": "$(book)"
+      },
+      {
+        "command": "tl.openReadableToSide",
+        "title": "Open Readable View to the Side",
+        "category": "TL",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "tl.openSource",
+        "title": "Open Raw Source (one line)",
+        "category": "TL",
+        "icon": "$(code)"
+      },
+      {
+        "command": "tl.revealInSource",
+        "title": "Reveal This Line in Raw Source",
+        "category": "TL"
+      },
+      {
+        "command": "tl.unlockSource",
+        "title": "Unlock Raw Source for Editing",
+        "category": "TL",
+        "icon": "$(unlock)"
+      },
+      {
+        "command": "tl.toggleKeywords",
+        "title": "Toggle Words for Sigils (return / import / raise / =)",
+        "category": "TL",
+        "icon": "$(symbol-keyword)"
+      },
+      {
+        "command": "tl.toggleLongNames",
+        "title": "Toggle Long Names from tl.def",
+        "category": "TL"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "tl.openReadable",
+          "when": "resourceScheme == file && resourceExtname == .tl",
+          "group": "navigation@1"
+        },
+        {
+          "command": "tl.unlockSource",
+          "when": "resourceScheme == file && resourceExtname == .tl && activeEditorIsReadonly",
+          "group": "navigation@2"
+        },
+        {
+          "command": "tl.openSource",
+          "when": "resourceScheme == tl-readable",
+          "group": "navigation@1"
+        },
+        {
+          "command": "tl.toggleKeywords",
+          "when": "resourceScheme == tl-readable",
+          "group": "navigation@2"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "tl.revealInSource",
+          "when": "resourceScheme == tl-readable",
+          "group": "navigation@1"
+        },
+        {
+          "command": "tl.openSource",
+          "when": "resourceScheme == tl-readable",
+          "group": "navigation@2"
+        },
+        {
+          "command": "tl.openReadable",
+          "when": "resourceScheme == file && resourceExtname == .tl",
+          "group": "navigation@1"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "tl.openReadable",
+          "when": "resourceExtname == .tl",
+          "group": "navigation@9"
+        },
+        {
+          "command": "tl.openSource",
+          "when": "resourceExtname == .tl",
+          "group": "navigation@9"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "tl.openReadable",
+          "when": "resourceExtname == .tl && resourceScheme == file"
+        },
+        {
+          "command": "tl.openReadableToSide",
+          "when": "resourceExtname == .tl && resourceScheme == file"
+        },
+        {
+          "command": "tl.unlockSource",
+          "when": "resourceExtname == .tl && resourceScheme == file"
+        },
+        {
+          "command": "tl.openSource",
+          "when": "resourceScheme == tl-readable"
+        },
+        {
+          "command": "tl.revealInSource",
+          "when": "resourceScheme == tl-readable"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "TL Readable View",
+      "properties": {
+        "tl.readable.openByDefault": {
+          "type": "boolean",
+          "default": true,
+          "description": "Opening a .tl file shows the readable view instead of the one-line source. Use \"TL: Open Raw Source\" to see the file itself."
+        },
+        "tl.readable.keywords": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Spell out the statement sigils: `^x` as `return x`, `+m.f` as `import m.f`, `!E` as `raise E`, and a binding `x 5` as `x = 5`. Off shows the exact TL tokens."
+        },
+        "tl.readable.longNames": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Show the long names from the project's `tl.def` instead of the short symbols written in the source."
+        },
+        "tl.readable.indent": {
+          "type": "integer",
+          "default": 4,
+          "minimum": 1,
+          "maximum": 8,
+          "description": "Spaces per nesting level in the readable view."
+        },
+        "tl.readable.wrapWidth": {
+          "type": "integer",
+          "default": 100,
+          "minimum": 0,
+          "description": "Lists, sets and maps that make a line longer than this are shown with their elements on separate rows (0 = never wrap)."
+        },
+        "tl.lockSource": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Open raw `.tl` source read-only, so it is not edited by hand accidentally. \"TL: Unlock Raw Source for Editing\" lifts the lock for that editor."
+        },
+        "tl.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Report TL compile errors in the Problems panel."
+        }
+      }
+    },
+    "configurationDefaults": {
+      "[tl]": {
+        "editor.wordWrap": "on"
+      },
+      "[tl-readable]": {
+        "editor.wordWrap": "off",
+        "editor.insertSpaces": true
+      }
+    }
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node test/run.cjs",
+    "package": "node build.mjs && vsce package --no-dependencies --skip-license"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.25.0",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.2"
+  }
+}

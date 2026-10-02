@@ -1,0 +1,81 @@
+{
+  "project": "inventory",
+  "title": "Project 3 — Inventory manager",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "js/inventory.js",
+          "chars": 2608,
+          "lines": 83,
+          "o200k": 747,
+          "cl100k": 744,
+          "o200k_nocomments": 747
+        }
+      ],
+      "chars": 2608,
+      "lines": 83,
+      "o200k": 747,
+      "cl100k": 744,
+      "o200k_nocomments": 747,
+      "tests": {
+        "ok": true,
+        "summary": "1 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node js/inventory.js"
+    },
+    "ts": {
+      "files": [
+        {
+          "file": "ts/inventory.ts",
+          "chars": 2984,
+          "lines": 86,
+          "o200k": 842,
+          "cl100k": 839
+        }
+      ],
+      "chars": 2984,
+      "lines": 86,
+      "o200k": 842,
+      "cl100k": 839,
+      "o200k_nocomments": 842,
+      "tests": {
+        "ok": true,
+        "summary": "1 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ts/inventory.ts"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/inventory.tl",
+          "chars": 1525,
+          "lines": 1,
+          "o200k": 552,
+          "cl100k": 548
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 0,
+          "lines": 0,
+          "o200k": 0,
+          "cl100k": 0
+        }
+      ],
+      "chars": 1525,
+      "lines": 1,
+      "o200k": 552,
+      "cl100k": 548,
+      "o200k_nocomments": 552,
+      "tests": {
+        "ok": true,
+        "summary": "1 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ../../lib/bin/tl.js run tl/inventory.tl"
+    }
+  }
+}

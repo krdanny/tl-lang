@@ -1,0 +1,1 @@
++kt.full|+kw.hk|fn iva s:str|full.test s and hk.test s

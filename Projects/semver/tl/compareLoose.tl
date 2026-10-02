@@ -1,0 +1,1 @@
++compare.compare|fn cl a b|compare a b true

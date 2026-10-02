@@ -1,0 +1,1 @@
+type LA|max int|map map<impl LA|init self|self.max=1000|self.map={<get self key|value self.map.get key|if value==none|^none<self.map.delete key|self.map.set key value|value<delete self key|self.map.delete key<set self key value|deleted self.delete key|if not deleted and value!=none|if self.map.size>=self.max|for k self.map.keys|self.delete k|break<<self.map.set key value<self

@@ -1,0 +1,1 @@
+const full /[^ -~｡-ﾟﾠ-ￜ￨-￮\da-zA-Z]/|fn kt s:str|full.test s

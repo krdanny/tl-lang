@@ -1,0 +1,1 @@
++tb.tb|fn aw s:str options|t type_of options|if t=="list|arr options.map x=>tb x|^(arr.io s)>=0<if t=="obj" or t=="map|^options.sz s<if t=="str|^(options.io s)>=0<false

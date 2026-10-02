@@ -1,0 +1,81 @@
+{
+  "project": "log-analyzer",
+  "title": "Project 2 — Log analyzer CLI",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "js/analyze.js",
+          "chars": 1953,
+          "lines": 42,
+          "o200k": 704,
+          "cl100k": 697,
+          "o200k_nocomments": 704
+        }
+      ],
+      "chars": 1953,
+      "lines": 42,
+      "o200k": 704,
+      "cl100k": 697,
+      "o200k_nocomments": 704,
+      "tests": {
+        "ok": true,
+        "summary": "3 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node js/analyze.js"
+    },
+    "ts": {
+      "files": [
+        {
+          "file": "ts/analyze.ts",
+          "chars": 2070,
+          "lines": 42,
+          "o200k": 732,
+          "cl100k": 725
+        }
+      ],
+      "chars": 2070,
+      "lines": 42,
+      "o200k": 732,
+      "cl100k": 725,
+      "o200k_nocomments": 732,
+      "tests": {
+        "ok": true,
+        "summary": "3 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ts/analyze.ts"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/analyze.tl",
+          "chars": 1073,
+          "lines": 1,
+          "o200k": 495,
+          "cl100k": 487
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 0,
+          "lines": 0,
+          "o200k": 0,
+          "cl100k": 0
+        }
+      ],
+      "chars": 1073,
+      "lines": 1,
+      "o200k": 495,
+      "cl100k": 487,
+      "o200k_nocomments": 495,
+      "tests": {
+        "ok": true,
+        "summary": "3 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ../../lib/bin/tl.js run tl/analyze.tl"
+    }
+  }
+}

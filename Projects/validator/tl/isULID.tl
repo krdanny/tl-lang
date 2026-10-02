@@ -1,0 +1,1 @@
+fn ao s:str|/^[0-7][\dA-HJKMNP-TV-Z]{25}$/i.test s

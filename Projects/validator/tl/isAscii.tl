@@ -1,0 +1,1 @@
+fn un s:str|/^[\x00-\x7F]+$/.test s

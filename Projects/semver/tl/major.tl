@@ -1,0 +1,1 @@
++semver.Sem|fn major a loose=none|(Sem a loose).major

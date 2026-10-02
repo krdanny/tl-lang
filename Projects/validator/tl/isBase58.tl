@@ -1,0 +1,1 @@
+fn ut s:str|/^[A-HJ-NP-Za-km-z1-9]*$/.test s

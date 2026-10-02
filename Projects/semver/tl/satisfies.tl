@@ -1,0 +1,1 @@
++range.Range|fn satisfies version range options=none|r try|Range range options<catch e|^false<r.test version

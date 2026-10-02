@@ -1,0 +1,81 @@
+{
+  "project": "ledger",
+  "title": "Project 5 — Concurrent bank ledger",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "js/ledger.js",
+          "chars": 1383,
+          "lines": 32,
+          "o200k": 395,
+          "cl100k": 392,
+          "o200k_nocomments": 395
+        }
+      ],
+      "chars": 1383,
+      "lines": 32,
+      "o200k": 395,
+      "cl100k": 392,
+      "o200k_nocomments": 395,
+      "tests": {
+        "ok": true,
+        "summary": "3 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node js/ledger.js"
+    },
+    "ts": {
+      "files": [
+        {
+          "file": "ts/ledger.ts",
+          "chars": 1721,
+          "lines": 35,
+          "o200k": 471,
+          "cl100k": 468
+        }
+      ],
+      "chars": 1721,
+      "lines": 35,
+      "o200k": 471,
+      "cl100k": 468,
+      "o200k_nocomments": 471,
+      "tests": {
+        "ok": true,
+        "summary": "3 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ts/ledger.ts"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/ledger.tl",
+          "chars": 727,
+          "lines": 1,
+          "o200k": 263,
+          "cl100k": 258
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 0,
+          "lines": 0,
+          "o200k": 0,
+          "cl100k": 0
+        }
+      ],
+      "chars": 727,
+      "lines": 1,
+      "o200k": 263,
+      "cl100k": 258,
+      "o200k_nocomments": 263,
+      "tests": {
+        "ok": true,
+        "summary": "3 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "node ../../lib/bin/tl.js run tl/ledger.tl"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+fn add a b|a+b<fn fact n|if 2>n|1<else|n*(fact n-1<<test"add|assert(add 2 3)==5<test"fact|assert(fact 5)==120<test"strings|assert"ab".upper=="AB|assert("a-b".split"-")==["a""b<test"match|r match 3|1|"one<_|"many<<assert r=="many<test"async"async|await sleep 1ms|assert true

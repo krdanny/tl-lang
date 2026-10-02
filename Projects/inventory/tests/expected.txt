@@ -1,0 +1,792 @@
+ok add SKU-1
+ok add SKU-2
+ok add SKU-3
+ok add SKU-4
+ok add SKU-5
+ok add SKU-6
+ok add SKU-7
+ok add SKU-8
+error: product exists SKU-1
+error: unknown order O1
+error: unknown command frobnicate
+error: invalid quantity
+ok receive SKU-4 stock=13
+error: unknown order O1
+error: unknown order O1
+inventory:
+  SKU-1 Widget stock=25 reserved=0 available=25
+  SKU-2 Gadget stock=14 reserved=0 available=14
+  SKU-3 Bolt stock=30 reserved=0 available=30
+  SKU-4 Nut stock=13 reserved=0 available=13
+  SKU-5 Gear stock=9 reserved=0 available=9
+  SKU-6 Cable stock=39 reserved=0 available=39
+  SKU-7 Panel stock=11 reserved=0 available=11
+  SKU-8 Sensor stock=28 reserved=0 available=28
+orders:
+error: unknown order O1
+error: unknown order O999
+ok order O2
+error: unknown order O1
+ok order O3
+ok ship O2
+error: insufficient stock for SKU-4 (available 12)
+ok order O5
+error: unknown order O4
+error: unknown order O4
+error: unknown order O4
+error: unknown order O4
+ok receive SKU-4 stock=22
+ok return O2
+error: invalid quantity
+ok order O6
+ok receive SKU-2 stock=19
+error: order O2 cannot ship from Returned
+error: order O2 cannot cancel from Returned
+inventory:
+  SKU-1 Widget stock=25 reserved=0 available=25
+  SKU-2 Gadget stock=19 reserved=2 available=17
+  SKU-3 Bolt stock=30 reserved=2 available=28
+  SKU-4 Nut stock=23 reserved=0 available=23
+  SKU-5 Gear stock=9 reserved=0 available=9
+  SKU-6 Cable stock=39 reserved=0 available=39
+  SKU-7 Panel stock=11 reserved=0 available=11
+  SKU-8 Sensor stock=28 reserved=0 available=28
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Reserved
+  O5 SKU-2 1 Reserved
+  O6 SKU-2 1 Reserved
+ok receive SKU-2 stock=39
+error: invalid quantity
+error: unknown order O4
+ok order O7
+error: order O2 cannot ship from Returned
+error: invalid quantity
+error: insufficient stock for SKU-7 (available 11)
+ok order O10
+error: invalid quantity
+ok order O12
+error: order O7 cannot return from Reserved
+ok receive SKU-8 stock=33
+ok order O13
+error: unknown command frobnicate
+error: unknown order O9
+error: insufficient stock for SKU-7 (available 3)
+error: order O7 cannot return from Reserved
+ok order O15
+ok order O16
+ok ship O6
+ok order O17
+ok receive SKU-6 stock=59
+error: order O17 cannot return from Reserved
+error: order O2 cannot return from Returned
+error: unknown order O999
+error: invalid quantity
+ok order O18
+error: invalid quantity
+ok order O20
+ok order O21
+inventory:
+  SKU-1 Widget stock=25 reserved=3 available=22
+  SKU-2 Gadget stock=38 reserved=9 available=29
+  SKU-3 Bolt stock=30 reserved=7 available=23
+  SKU-4 Nut stock=23 reserved=1 available=22
+  SKU-5 Gear stock=9 reserved=3 available=6
+  SKU-6 Cable stock=59 reserved=1 available=58
+  SKU-7 Panel stock=11 reserved=9 available=2
+  SKU-8 Sensor stock=33 reserved=13 available=20
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Reserved
+  O5 SKU-2 1 Reserved
+  O6 SKU-2 1 Shipped
+  O7 SKU-2 8 Reserved
+  O10 SKU-8 13 Reserved
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Reserved
+  O15 SKU-3 3 Reserved
+  O16 SKU-4 1 Reserved
+  O17 SKU-1 3 Reserved
+  O18 SKU-7 1 Reserved
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Reserved
+ok ship O3
+error: order exists O20
+ok receive SKU-5 stock=29
+ok ship O16
+error: invalid quantity
+ok ship O10
+ok order O23
+ok return O16
+error: order O6 cannot cancel from Shipped
+ok ship O7
+ok ship O5
+error: unknown order O1
+error: order O10 cannot cancel from Shipped
+error: order exists O23
+ok cancel O17
+ok receive SKU-3 stock=48
+ok cancel O18
+error: order O17 cannot ship from Cancelled
+ok receive SKU-4 stock=33
+ok cancel O13
+error: unknown order O8
+ok order O24
+error: unknown order O1
+error: order O16 cannot cancel from Returned
+error: invalid quantity
+ok cancel O24
+ok receive SKU-4 stock=38
+ok order O26
+error: invalid quantity
+error: unknown command frobnicate
+ok receive SKU-2 stock=34
+error: unknown command frobnicate
+error: unknown order O25
+error: invalid quantity
+error: unknown order O11
+error: invalid quantity
+ok receive SKU-2 stock=44
+ok order O30
+ok order O31
+ok ship O31
+error: order O12 cannot return from Reserved
+error: unknown product SKU-99
+ok order O33
+ok receive SKU-4 stock=48
+ok order O34
+ok ship O21
+ok order O35
+error: invalid quantity
+error: order O34 cannot return from Reserved
+error: unknown product SKU-42
+ok ship O34
+error: unknown order O29
+error: unknown order O1
+error: order O10 cannot cancel from Shipped
+ok order O37
+error: order O21 cannot ship from Shipped
+ok return O34
+error: order O7 cannot ship from Shipped
+error: unknown command frobnicate
+ok order O38
+error: invalid quantity
+error: order O5 cannot ship from Shipped
+error: unknown product SKU-42
+error: unknown order O29
+error: order O31 cannot ship from Shipped
+error: order O16 cannot ship from Returned
+error: order O17 cannot return from Cancelled
+inventory:
+  SKU-1 Widget stock=25 reserved=0 available=25
+  SKU-2 Gadget stock=44 reserved=16 available=28
+  SKU-3 Bolt stock=46 reserved=4 available=42
+  SKU-4 Nut stock=48 reserved=21 available=27
+  SKU-5 Gear stock=29 reserved=3 available=26
+  SKU-6 Cable stock=59 reserved=1 available=58
+  SKU-7 Panel stock=11 reserved=3 available=8
+  SKU-8 Sensor stock=17 reserved=2 available=15
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Shipped
+  O7 SKU-2 8 Shipped
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Reserved
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Reserved
+  O30 SKU-3 1 Reserved
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+error: unknown command frobnicate
+ok order O40
+error: invalid quantity
+error: invalid quantity
+ok order O41
+error: unknown command frobnicate
+ok order O42
+error: invalid quantity
+error: invalid quantity
+error: unknown command frobnicate
+ok order O45
+error: order O33 cannot return from Reserved
+ok receive SKU-7 stock=21
+ok receive SKU-2 stock=64
+error: invalid quantity
+error: invalid quantity
+ok receive SKU-5 stock=34
+ok order O47
+ok order O48
+error: unknown command frobnicate
+error: invalid quantity
+error: unknown order O44
+error: order O17 cannot cancel from Cancelled
+error: invalid quantity
+ok return O6
+error: invalid quantity
+error: unknown command frobnicate
+ok order O51
+error: order O6 cannot cancel from Returned
+ok ship O15
+error: invalid quantity
+error: invalid quantity
+inventory:
+  SKU-1 Widget stock=25 reserved=2 available=23
+  SKU-2 Gadget stock=65 reserved=16 available=49
+  SKU-3 Bolt stock=43 reserved=1 available=42
+  SKU-4 Nut stock=48 reserved=26 available=22
+  SKU-5 Gear stock=34 reserved=6 available=28
+  SKU-6 Cable stock=59 reserved=4 available=55
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=17 reserved=5 available=12
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Shipped
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Shipped
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Reserved
+  O30 SKU-3 1 Reserved
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Reserved
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Reserved
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+ok order O54
+error: order O16 cannot ship from Returned
+inventory:
+  SKU-1 Widget stock=25 reserved=2 available=23
+  SKU-2 Gadget stock=65 reserved=16 available=49
+  SKU-3 Bolt stock=43 reserved=2 available=41
+  SKU-4 Nut stock=48 reserved=26 available=22
+  SKU-5 Gear stock=34 reserved=6 available=28
+  SKU-6 Cable stock=59 reserved=4 available=55
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=17 reserved=5 available=12
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Shipped
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Shipped
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Reserved
+  O30 SKU-3 1 Reserved
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Reserved
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Reserved
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+  O54 SKU-3 1 Reserved
+ok order O55
+inventory:
+  SKU-1 Widget stock=25 reserved=2 available=23
+  SKU-2 Gadget stock=65 reserved=16 available=49
+  SKU-3 Bolt stock=43 reserved=7 available=36
+  SKU-4 Nut stock=48 reserved=26 available=22
+  SKU-5 Gear stock=34 reserved=6 available=28
+  SKU-6 Cable stock=59 reserved=4 available=55
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=17 reserved=5 available=12
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Shipped
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Shipped
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Reserved
+  O30 SKU-3 1 Reserved
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Reserved
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Reserved
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+  O54 SKU-3 1 Reserved
+  O55 SKU-3 5 Reserved
+error: order O34 cannot ship from Returned
+error: unknown order O19
+ok receive SKU-3 stock=63
+ok receive SKU-1 stock=45
+ok order O56
+error: order O16 cannot ship from Returned
+inventory:
+  SKU-1 Widget stock=45 reserved=7 available=38
+  SKU-2 Gadget stock=65 reserved=16 available=49
+  SKU-3 Bolt stock=63 reserved=7 available=56
+  SKU-4 Nut stock=48 reserved=26 available=22
+  SKU-5 Gear stock=34 reserved=6 available=28
+  SKU-6 Cable stock=59 reserved=4 available=55
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=17 reserved=5 available=12
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Shipped
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Shipped
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Reserved
+  O30 SKU-3 1 Reserved
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Reserved
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Reserved
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+  O54 SKU-3 1 Reserved
+  O55 SKU-3 5 Reserved
+  O56 SKU-1 5 Reserved
+error: invalid quantity
+error: unknown order O57
+error: unknown product SKU-42
+ok return O15
+error: invalid quantity
+error: unknown order O1
+error: invalid quantity
+error: invalid quantity
+ok order O43
+ok ship O45
+ok order O60
+ok order O61
+ok order O62
+ok order O63
+ok receive SKU-1 stock=65
+ok receive SKU-8 stock=37
+ok ship O26
+ok order O64
+ok order O65
+error: invalid quantity
+ok order O66
+error: unknown product SKU-99
+error: unknown order O50
+ok cancel O64
+ok order O68
+ok cancel O66
+ok ship O65
+error: unknown product SKU-99
+ok cancel O30
+ok order O70
+error: unknown order O14
+ok receive SKU-8 stock=42
+error: unknown order O69
+error: order O63 cannot return from Reserved
+ok order O71
+ok return O65
+error: unknown command frobnicate
+error: unknown product SKU-99
+error: order O61 cannot return from Reserved
+ok order O73
+ok order O74
+error: unknown order O59
+error: unknown order O49
+ok order O75
+error: order O26 cannot ship from Shipped
+ok order O76
+ok order O77
+error: invalid quantity
+ok order O79
+error: order O38 cannot return from Reserved
+error: order O37 cannot return from Reserved
+ok ship O60
+ok cancel O71
+error: invalid quantity
+ok order O81
+error: unknown order O58
+ok receive SKU-4 stock=37
+error: unknown order O19
+error: order O34 cannot return from Returned
+error: unknown product SKU-99
+error: unknown command frobnicate
+error: order O30 cannot return from Cancelled
+ok ship O63
+ok receive SKU-3 stock=71
+inventory:
+  SKU-1 Widget stock=65 reserved=10 available=55
+  SKU-2 Gadget stock=65 reserved=30 available=35
+  SKU-3 Bolt stock=71 reserved=20 available=51
+  SKU-4 Nut stock=37 reserved=15 available=22
+  SKU-5 Gear stock=29 reserved=10 available=19
+  SKU-6 Cable stock=59 reserved=17 available=42
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=39 reserved=8 available=31
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Shipped
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Returned
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Shipped
+  O30 SKU-3 1 Cancelled
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Reserved
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Shipped
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+  O54 SKU-3 1 Reserved
+  O55 SKU-3 5 Reserved
+  O56 SKU-1 5 Reserved
+  O43 SKU-2 1 Reserved
+  O60 SKU-8 3 Shipped
+  O61 SKU-8 1 Reserved
+  O62 SKU-6 13 Reserved
+  O63 SKU-5 5 Shipped
+  O64 SKU-1 2 Cancelled
+  O65 SKU-2 3 Returned
+  O66 SKU-5 5 Cancelled
+  O68 SKU-3 1 Reserved
+  O70 SKU-1 3 Reserved
+  O71 SKU-8 2 Cancelled
+  O73 SKU-2 8 Reserved
+  O74 SKU-4 5 Reserved
+  O75 SKU-5 1 Reserved
+  O76 SKU-3 13 Reserved
+  O77 SKU-5 3 Reserved
+  O79 SKU-2 5 Reserved
+  O81 SKU-8 2 Reserved
+error: unknown order O52
+error: invalid quantity
+ok receive SKU-6 stock=64
+error: unknown order O1
+error: invalid quantity
+ok order O83
+error: unknown command frobnicate
+ok order O84
+ok receive SKU-2 stock=85
+inventory:
+  SKU-1 Widget stock=65 reserved=10 available=55
+  SKU-2 Gadget stock=85 reserved=30 available=55
+  SKU-3 Bolt stock=71 reserved=20 available=51
+  SKU-4 Nut stock=37 reserved=16 available=21
+  SKU-5 Gear stock=29 reserved=10 available=19
+  SKU-6 Cable stock=64 reserved=19 available=45
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=39 reserved=8 available=31
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Shipped
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Returned
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Reserved
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Shipped
+  O30 SKU-3 1 Cancelled
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Reserved
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Shipped
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+  O54 SKU-3 1 Reserved
+  O55 SKU-3 5 Reserved
+  O56 SKU-1 5 Reserved
+  O43 SKU-2 1 Reserved
+  O60 SKU-8 3 Shipped
+  O61 SKU-8 1 Reserved
+  O62 SKU-6 13 Reserved
+  O63 SKU-5 5 Shipped
+  O64 SKU-1 2 Cancelled
+  O65 SKU-2 3 Returned
+  O66 SKU-5 5 Cancelled
+  O68 SKU-3 1 Reserved
+  O70 SKU-1 3 Reserved
+  O71 SKU-8 2 Cancelled
+  O73 SKU-2 8 Reserved
+  O74 SKU-4 5 Reserved
+  O75 SKU-5 1 Reserved
+  O76 SKU-3 13 Reserved
+  O77 SKU-5 3 Reserved
+  O79 SKU-2 5 Reserved
+  O81 SKU-8 2 Reserved
+  O83 SKU-4 1 Reserved
+  O84 SKU-6 2 Reserved
+error: order O7 cannot cancel from Shipped
+ok order O85
+ok ship O20
+error: invalid quantity
+error: unknown order O25
+ok cancel O55
+error: unknown command frobnicate
+ok cancel O81
+error: unknown product SKU-42
+ok return O7
+inventory:
+  SKU-1 Widget stock=65 reserved=18 available=47
+  SKU-2 Gadget stock=93 reserved=30 available=63
+  SKU-3 Bolt stock=71 reserved=15 available=56
+  SKU-4 Nut stock=37 reserved=16 available=21
+  SKU-5 Gear stock=29 reserved=10 available=19
+  SKU-6 Cable stock=63 reserved=18 available=45
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=39 reserved=6 available=33
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Returned
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Returned
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Shipped
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Shipped
+  O30 SKU-3 1 Cancelled
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Reserved
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Shipped
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+  O54 SKU-3 1 Reserved
+  O55 SKU-3 5 Cancelled
+  O56 SKU-1 5 Reserved
+  O43 SKU-2 1 Reserved
+  O60 SKU-8 3 Shipped
+  O61 SKU-8 1 Reserved
+  O62 SKU-6 13 Reserved
+  O63 SKU-5 5 Shipped
+  O64 SKU-1 2 Cancelled
+  O65 SKU-2 3 Returned
+  O66 SKU-5 5 Cancelled
+  O68 SKU-3 1 Reserved
+  O70 SKU-1 3 Reserved
+  O71 SKU-8 2 Cancelled
+  O73 SKU-2 8 Reserved
+  O74 SKU-4 5 Reserved
+  O75 SKU-5 1 Reserved
+  O76 SKU-3 13 Reserved
+  O77 SKU-5 3 Reserved
+  O79 SKU-2 5 Reserved
+  O81 SKU-8 2 Cancelled
+  O83 SKU-4 1 Reserved
+  O84 SKU-6 2 Reserved
+  O85 SKU-1 8 Reserved
+ok receive SKU-3 stock=91
+error: order O71 cannot ship from Cancelled
+error: invalid quantity
+ok receive SKU-5 stock=49
+error: order O84 cannot return from Reserved
+ok order O88
+error: unknown order O86
+ok receive SKU-3 stock=101
+error: invalid quantity
+error: unknown order O58
+error: unknown command frobnicate
+ok receive SKU-3 stock=111
+ok order O90
+ok ship O41
+ok order O91
+error: unknown command frobnicate
+error: unknown order O53
+error: unknown product SKU-42
+ok receive SKU-6 stock=68
+ok ship O74
+error: unknown product SKU-99
+error: invalid quantity
+error: invalid quantity
+error: order O3 cannot cancel from Shipped
+error: invalid quantity
+error: order O10 cannot ship from Shipped
+inventory:
+  SKU-1 Widget stock=65 reserved=18 available=47
+  SKU-2 Gadget stock=93 reserved=30 available=63
+  SKU-3 Bolt stock=111 reserved=28 available=83
+  SKU-4 Nut stock=32 reserved=19 available=13
+  SKU-5 Gear stock=47 reserved=13 available=34
+  SKU-6 Cable stock=68 reserved=18 available=50
+  SKU-7 Panel stock=21 reserved=3 available=18
+  SKU-8 Sensor stock=39 reserved=6 available=33
+orders:
+  O2 SKU-4 1 Returned
+  O3 SKU-3 2 Shipped
+  O5 SKU-2 1 Shipped
+  O6 SKU-2 1 Returned
+  O7 SKU-2 8 Returned
+  O10 SKU-8 13 Shipped
+  O12 SKU-5 3 Reserved
+  O13 SKU-7 8 Cancelled
+  O15 SKU-3 3 Returned
+  O16 SKU-4 1 Returned
+  O17 SKU-1 3 Cancelled
+  O18 SKU-7 1 Cancelled
+  O20 SKU-6 1 Shipped
+  O21 SKU-3 2 Shipped
+  O23 SKU-2 13 Reserved
+  O24 SKU-8 13 Cancelled
+  O26 SKU-4 13 Shipped
+  O30 SKU-3 1 Cancelled
+  O31 SKU-8 3 Shipped
+  O33 SKU-2 3 Reserved
+  O34 SKU-4 8 Returned
+  O35 SKU-7 3 Reserved
+  O37 SKU-8 2 Reserved
+  O38 SKU-4 8 Reserved
+  O40 SKU-8 3 Reserved
+  O41 SKU-5 2 Shipped
+  O42 SKU-6 3 Reserved
+  O45 SKU-4 3 Shipped
+  O47 SKU-4 2 Reserved
+  O48 SKU-5 1 Reserved
+  O51 SKU-1 2 Reserved
+  O54 SKU-3 1 Reserved
+  O55 SKU-3 5 Cancelled
+  O56 SKU-1 5 Reserved
+  O43 SKU-2 1 Reserved
+  O60 SKU-8 3 Shipped
+  O61 SKU-8 1 Reserved
+  O62 SKU-6 13 Reserved
+  O63 SKU-5 5 Shipped
+  O64 SKU-1 2 Cancelled
+  O65 SKU-2 3 Returned
+  O66 SKU-5 5 Cancelled
+  O68 SKU-3 1 Reserved
+  O70 SKU-1 3 Reserved
+  O71 SKU-8 2 Cancelled
+  O73 SKU-2 8 Reserved
+  O74 SKU-4 5 Shipped
+  O75 SKU-5 1 Reserved
+  O76 SKU-3 13 Reserved
+  O77 SKU-5 3 Reserved
+  O79 SKU-2 5 Reserved
+  O81 SKU-8 2 Cancelled
+  O83 SKU-4 1 Reserved
+  O84 SKU-6 2 Reserved
+  O85 SKU-1 8 Reserved
+  O88 SKU-4 8 Reserved
+  O90 SKU-3 13 Reserved
+  O91 SKU-5 5 Reserved

@@ -1,0 +1,1 @@
+fn ak s:str|z s.replace /[- ]+/g"|sum 0|dbl false|for i(0..z.length).rev|n int(z.substring i i+1|if dbl|n*=2|if n>=10|sum+=(n%10)+1<else|sum+=n<<else|sum+=n<dbl=not dbl<sum%10==0 and z!="

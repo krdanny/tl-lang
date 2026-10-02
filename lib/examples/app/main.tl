@@ -1,0 +1,1 @@
++users|u users.gu 1?|print u.n|print(users.gu 5|for x users.ls|if x.a|print x.n<<print"done

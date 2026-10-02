@@ -1,0 +1,1 @@
++alpha.decimal|nb /^\d+$/|fn aa s:str options|if options and options.nf|^nb.test s<sep if options?.locale!=none decimal[options.locale]".|(new RegExp$`^[+-]?(\d*[$sep])?\d+$`).test s

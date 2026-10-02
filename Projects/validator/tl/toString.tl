@@ -1,0 +1,1 @@
+fn tb input|t type_of input|if t=="obj" or t=="list" or t=="map" or t=="date|input=input.tb<elif input==none or(isNaN input and not input.length|input="<String input

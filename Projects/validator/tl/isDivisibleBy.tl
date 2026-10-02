@@ -1,0 +1,1 @@
++th.th|fn idi s:str num|(th s)%(int num)==0

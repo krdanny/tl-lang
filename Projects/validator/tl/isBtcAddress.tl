@@ -1,0 +1,1 @@
+bech32 /^(bc1|tb1|bc1p|tb1p)[ac-hj-np-z02-9]{39,58}$/|base58 /^(1|2|3|m)[A-HJ-NP-Za-km-z1-9]{25,39}$/|fn xy s:str|bech32.test s or base58.test s

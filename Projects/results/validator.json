@@ -1,0 +1,1698 @@
+{
+  "project": "validator",
+  "title": "Project 6 — validator.js (real-world library, 103 modules)",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "original/index.js",
+          "chars": 6088,
+          "lines": 219,
+          "o200k": 1705,
+          "cl100k": 1732,
+          "o200k_nocomments": 1705
+        },
+        {
+          "file": "original/lib/alpha.js",
+          "chars": 5916,
+          "lines": 153,
+          "o200k": 3400,
+          "cl100k": 3898,
+          "o200k_nocomments": 3367
+        },
+        {
+          "file": "original/lib/blacklist.js",
+          "chars": 178,
+          "lines": 5,
+          "o200k": 41,
+          "cl100k": 40,
+          "o200k_nocomments": 41
+        },
+        {
+          "file": "original/lib/contains.js",
+          "chars": 532,
+          "lines": 15,
+          "o200k": 119,
+          "cl100k": 114,
+          "o200k_nocomments": 119
+        },
+        {
+          "file": "original/lib/equals.js",
+          "chars": 151,
+          "lines": 5,
+          "o200k": 30,
+          "cl100k": 30,
+          "o200k_nocomments": 30
+        },
+        {
+          "file": "original/lib/escape.js",
+          "chars": 349,
+          "lines": 12,
+          "o200k": 119,
+          "cl100k": 120,
+          "o200k_nocomments": 119
+        },
+        {
+          "file": "original/lib/isAbaRouting.js",
+          "chars": 701,
+          "lines": 16,
+          "o200k": 252,
+          "cl100k": 251,
+          "o200k_nocomments": 212
+        },
+        {
+          "file": "original/lib/isAfter.js",
+          "chars": 462,
+          "lines": 9,
+          "o200k": 106,
+          "cl100k": 101,
+          "o200k_nocomments": 75
+        },
+        {
+          "file": "original/lib/isAlpha.js",
+          "chars": 751,
+          "lines": 21,
+          "o200k": 202,
+          "cl100k": 197,
+          "o200k_nocomments": 197
+        },
+        {
+          "file": "original/lib/isAlphanumeric.js",
+          "chars": 786,
+          "lines": 21,
+          "o200k": 207,
+          "cl100k": 199,
+          "o200k_nocomments": 202
+        },
+        {
+          "file": "original/lib/isAscii.js",
+          "chars": 245,
+          "lines": 8,
+          "o200k": 59,
+          "cl100k": 59,
+          "o200k_nocomments": 43
+        },
+        {
+          "file": "original/lib/isBIC.js",
+          "chars": 563,
+          "lines": 14,
+          "o200k": 168,
+          "cl100k": 164,
+          "o200k_nocomments": 123
+        },
+        {
+          "file": "original/lib/isBase32.js",
+          "chars": 464,
+          "lines": 15,
+          "o200k": 129,
+          "cl100k": 132,
+          "o200k_nocomments": 129
+        },
+        {
+          "file": "original/lib/isBase58.js",
+          "chars": 270,
+          "lines": 7,
+          "o200k": 74,
+          "cl100k": 74,
+          "o200k_nocomments": 53
+        },
+        {
+          "file": "original/lib/isBase64.js",
+          "chars": 811,
+          "lines": 19,
+          "o200k": 231,
+          "cl100k": 231,
+          "o200k_nocomments": 231
+        },
+        {
+          "file": "original/lib/isBefore.js",
+          "chars": 464,
+          "lines": 9,
+          "o200k": 106,
+          "cl100k": 101,
+          "o200k_nocomments": 75
+        },
+        {
+          "file": "original/lib/isBoolean.js",
+          "chars": 458,
+          "lines": 12,
+          "o200k": 115,
+          "cl100k": 108,
+          "o200k_nocomments": 115
+        },
+        {
+          "file": "original/lib/isBtcAddress.js",
+          "chars": 284,
+          "lines": 7,
+          "o200k": 107,
+          "cl100k": 104,
+          "o200k_nocomments": 107
+        },
+        {
+          "file": "original/lib/isByteLength.js",
+          "chars": 1053,
+          "lines": 36,
+          "o200k": 327,
+          "cl100k": 317,
+          "o200k_nocomments": 285
+        },
+        {
+          "file": "original/lib/isCreditCard.js",
+          "chars": 1428,
+          "lines": 39,
+          "o200k": 480,
+          "cl100k": 469,
+          "o200k_nocomments": 434
+        },
+        {
+          "file": "original/lib/isCurrency.js",
+          "chars": 2880,
+          "lines": 69,
+          "o200k": 722,
+          "cl100k": 722,
+          "o200k_nocomments": 646
+        },
+        {
+          "file": "original/lib/isDataURI.js",
+          "chars": 1013,
+          "lines": 34,
+          "o200k": 309,
+          "cl100k": 301,
+          "o200k_nocomments": 309
+        },
+        {
+          "file": "original/lib/isDate.js",
+          "chars": 2615,
+          "lines": 73,
+          "o200k": 744,
+          "cl100k": 731,
+          "o200k_nocomments": 712
+        },
+        {
+          "file": "original/lib/isDecimal.js",
+          "chars": 817,
+          "lines": 22,
+          "o200k": 205,
+          "cl100k": 202,
+          "o200k_nocomments": 205
+        },
+        {
+          "file": "original/lib/isDivisibleBy.js",
+          "chars": 204,
+          "lines": 6,
+          "o200k": 53,
+          "cl100k": 51,
+          "o200k_nocomments": 53
+        },
+        {
+          "file": "original/lib/isEAN.js",
+          "chars": 2146,
+          "lines": 65,
+          "o200k": 627,
+          "cl100k": 630,
+          "o200k_nocomments": 268
+        },
+        {
+          "file": "original/lib/isEmail.js",
+          "chars": 6041,
+          "lines": 157,
+          "o200k": 1660,
+          "cl100k": 1644,
+          "o200k_nocomments": 1338
+        },
+        {
+          "file": "original/lib/isEmpty.js",
+          "chars": 353,
+          "lines": 10,
+          "o200k": 79,
+          "cl100k": 76,
+          "o200k_nocomments": 79
+        },
+        {
+          "file": "original/lib/isEthereumAddress.js",
+          "chars": 181,
+          "lines": 6,
+          "o200k": 48,
+          "cl100k": 49,
+          "o200k_nocomments": 48
+        },
+        {
+          "file": "original/lib/isFQDN.js",
+          "chars": 1796,
+          "lines": 61,
+          "o200k": 527,
+          "cl100k": 524,
+          "o200k_nocomments": 461
+        },
+        {
+          "file": "original/lib/isFloat.js",
+          "chars": 994,
+          "lines": 18,
+          "o200k": 262,
+          "cl100k": 247,
+          "o200k_nocomments": 262
+        },
+        {
+          "file": "original/lib/isFullWidth.js",
+          "chars": 239,
+          "lines": 6,
+          "o200k": 77,
+          "cl100k": 74,
+          "o200k_nocomments": 77
+        },
+        {
+          "file": "original/lib/isHSL.js",
+          "chars": 997,
+          "lines": 12,
+          "o200k": 486,
+          "cl100k": 489,
+          "o200k_nocomments": 466
+        },
+        {
+          "file": "original/lib/isHalfWidth.js",
+          "chars": 238,
+          "lines": 6,
+          "o200k": 76,
+          "cl100k": 76,
+          "o200k_nocomments": 76
+        },
+        {
+          "file": "original/lib/isHash.js",
+          "chars": 419,
+          "lines": 21,
+          "o200k": 156,
+          "cl100k": 155,
+          "o200k_nocomments": 156
+        },
+        {
+          "file": "original/lib/isHexColor.js",
+          "chars": 572,
+          "lines": 15,
+          "o200k": 186,
+          "cl100k": 186,
+          "o200k_nocomments": 186
+        },
+        {
+          "file": "original/lib/isHexadecimal.js",
+          "chars": 194,
+          "lines": 6,
+          "o200k": 51,
+          "cl100k": 50,
+          "o200k_nocomments": 51
+        },
+        {
+          "file": "original/lib/isIBAN.js",
+          "chars": 6358,
+          "lines": 162,
+          "o200k": 2760,
+          "cl100k": 2674,
+          "o200k_nocomments": 2376
+        },
+        {
+          "file": "original/lib/isIMEI.js",
+          "chars": 976,
+          "lines": 38,
+          "o200k": 335,
+          "cl100k": 333,
+          "o200k_nocomments": 319
+        },
+        {
+          "file": "original/lib/isIP.js",
+          "chars": 2642,
+          "lines": 52,
+          "o200k": 864,
+          "cl100k": 850,
+          "o200k_nocomments": 594
+        },
+        {
+          "file": "original/lib/isIPRange.js",
+          "chars": 995,
+          "lines": 37,
+          "o200k": 296,
+          "cl100k": 303,
+          "o200k_nocomments": 251
+        },
+        {
+          "file": "original/lib/isISBN.js",
+          "chars": 1349,
+          "lines": 42,
+          "o200k": 428,
+          "cl100k": 420,
+          "o200k_nocomments": 397
+        },
+        {
+          "file": "original/lib/isISIN.js",
+          "chars": 1539,
+          "lines": 52,
+          "o200k": 455,
+          "cl100k": 455,
+          "o200k_nocomments": 358
+        },
+        {
+          "file": "original/lib/isISO15924.js",
+          "chars": 2521,
+          "lines": 34,
+          "o200k": 1201,
+          "cl100k": 1262,
+          "o200k_nocomments": 1182
+        },
+        {
+          "file": "original/lib/isISO31661Alpha2.js",
+          "chars": 2358,
+          "lines": 46,
+          "o200k": 971,
+          "cl100k": 971,
+          "o200k_nocomments": 953
+        },
+        {
+          "file": "original/lib/isISO31661Alpha3.js",
+          "chars": 2525,
+          "lines": 36,
+          "o200k": 1138,
+          "cl100k": 1140,
+          "o200k_nocomments": 1120
+        },
+        {
+          "file": "original/lib/isISO31661Numeric.js",
+          "chars": 2065,
+          "lines": 24,
+          "o200k": 830,
+          "cl100k": 831,
+          "o200k_nocomments": 814
+        },
+        {
+          "file": "original/lib/isISO4217.js",
+          "chars": 1630,
+          "lines": 35,
+          "o200k": 784,
+          "cl100k": 795,
+          "o200k_nocomments": 771
+        },
+        {
+          "file": "original/lib/isISO6346.js",
+          "chars": 1253,
+          "lines": 30,
+          "o200k": 377,
+          "cl100k": 374,
+          "o200k_nocomments": 337
+        },
+        {
+          "file": "original/lib/isISO6391.js",
+          "chars": 1343,
+          "lines": 33,
+          "o200k": 628,
+          "cl100k": 630,
+          "o200k_nocomments": 628
+        },
+        {
+          "file": "original/lib/isISO8601.js",
+          "chars": 2113,
+          "lines": 41,
+          "o200k": 872,
+          "cl100k": 867,
+          "o200k_nocomments": 772
+        },
+        {
+          "file": "original/lib/isISRC.js",
+          "chars": 241,
+          "lines": 7,
+          "o200k": 74,
+          "cl100k": 74,
+          "o200k_nocomments": 58
+        },
+        {
+          "file": "original/lib/isISSN.js",
+          "chars": 639,
+          "lines": 18,
+          "o200k": 201,
+          "cl100k": 196,
+          "o200k_nocomments": 201
+        },
+        {
+          "file": "original/lib/isIdentityCard.js",
+          "chars": 12239,
+          "lines": 381,
+          "o200k": 4481,
+          "cl100k": 4537,
+          "o200k_nocomments": 4068
+        },
+        {
+          "file": "original/lib/isIn.js",
+          "chars": 785,
+          "lines": 22,
+          "o200k": 202,
+          "cl100k": 191,
+          "o200k_nocomments": 159
+        },
+        {
+          "file": "original/lib/isInt.js",
+          "chars": 1034,
+          "lines": 17,
+          "o200k": 272,
+          "cl100k": 257,
+          "o200k_nocomments": 238
+        },
+        {
+          "file": "original/lib/isJSON.js",
+          "chars": 761,
+          "lines": 24,
+          "o200k": 174,
+          "cl100k": 174,
+          "o200k_nocomments": 155
+        },
+        {
+          "file": "original/lib/isJWT.js",
+          "chars": 351,
+          "lines": 11,
+          "o200k": 92,
+          "cl100k": 92,
+          "o200k_nocomments": 92
+        },
+        {
+          "file": "original/lib/isLatLong.js",
+          "chars": 981,
+          "lines": 22,
+          "o200k": 384,
+          "cl100k": 373,
+          "o200k_nocomments": 384
+        },
+        {
+          "file": "original/lib/isLength.js",
+          "chars": 894,
+          "lines": 22,
+          "o200k": 244,
+          "cl100k": 245,
+          "o200k_nocomments": 225
+        },
+        {
+          "file": "original/lib/isLicensePlate.js",
+          "chars": 4677,
+          "lines": 38,
+          "o200k": 2852,
+          "cl100k": 2841,
+          "o200k_nocomments": 2842
+        },
+        {
+          "file": "original/lib/isLocale.js",
+          "chars": 3375,
+          "lines": 91,
+          "o200k": 1052,
+          "cl100k": 1040,
+          "o200k_nocomments": 446
+        },
+        {
+          "file": "original/lib/isLowercase.js",
+          "chars": 151,
+          "lines": 5,
+          "o200k": 33,
+          "cl100k": 31,
+          "o200k_nocomments": 33
+        },
+        {
+          "file": "original/lib/isLuhnNumber.js",
+          "chars": 636,
+          "lines": 25,
+          "o200k": 193,
+          "cl100k": 192,
+          "o200k_nocomments": 193
+        },
+        {
+          "file": "original/lib/isMACAddress.js",
+          "chars": 1305,
+          "lines": 32,
+          "o200k": 466,
+          "cl100k": 466,
+          "o200k_nocomments": 444
+        },
+        {
+          "file": "original/lib/isMD5.js",
+          "chars": 164,
+          "lines": 6,
+          "o200k": 45,
+          "cl100k": 45,
+          "o200k_nocomments": 45
+        },
+        {
+          "file": "original/lib/isMagnetURI.js",
+          "chars": 411,
+          "lines": 9,
+          "o200k": 153,
+          "cl100k": 154,
+          "o200k_nocomments": 153
+        },
+        {
+          "file": "original/lib/isMailtoURI.js",
+          "chars": 1357,
+          "lines": 50,
+          "o200k": 365,
+          "cl100k": 352,
+          "o200k_nocomments": 354
+        },
+        {
+          "file": "original/lib/isMimeType.js",
+          "chars": 1935,
+          "lines": 32,
+          "o200k": 601,
+          "cl100k": 574,
+          "o200k_nocomments": 285
+        },
+        {
+          "file": "original/lib/isMobilePhone.js",
+          "chars": 9368,
+          "lines": 211,
+          "o200k": 5303,
+          "cl100k": 5290,
+          "o200k_nocomments": 5226
+        },
+        {
+          "file": "original/lib/isMongoId.js",
+          "chars": 209,
+          "lines": 6,
+          "o200k": 48,
+          "cl100k": 48,
+          "o200k_nocomments": 48
+        },
+        {
+          "file": "original/lib/isMultibyte.js",
+          "chars": 255,
+          "lines": 8,
+          "o200k": 65,
+          "cl100k": 64,
+          "o200k_nocomments": 49
+        },
+        {
+          "file": "original/lib/isNumeric.js",
+          "chars": 395,
+          "lines": 10,
+          "o200k": 108,
+          "cl100k": 105,
+          "o200k_nocomments": 108
+        },
+        {
+          "file": "original/lib/isOctal.js",
+          "chars": 170,
+          "lines": 6,
+          "o200k": 48,
+          "cl100k": 47,
+          "o200k_nocomments": 48
+        },
+        {
+          "file": "original/lib/isPassportNumber.js",
+          "chars": 3445,
+          "lines": 85,
+          "o200k": 1519,
+          "cl100k": 1526,
+          "o200k_nocomments": 1083
+        },
+        {
+          "file": "original/lib/isPort.js",
+          "chars": 144,
+          "lines": 4,
+          "o200k": 43,
+          "cl100k": 43,
+          "o200k_nocomments": 43
+        },
+        {
+          "file": "original/lib/isPostalCode.js",
+          "chars": 2900,
+          "lines": 101,
+          "o200k": 1316,
+          "cl100k": 1308,
+          "o200k_nocomments": 1256
+        },
+        {
+          "file": "original/lib/isRFC3339.js",
+          "chars": 974,
+          "lines": 19,
+          "o200k": 302,
+          "cl100k": 292,
+          "o200k_nocomments": 281
+        },
+        {
+          "file": "original/lib/isRgbColor.js",
+          "chars": 1560,
+          "lines": 37,
+          "o200k": 526,
+          "cl100k": 520,
+          "o200k_nocomments": 484
+        },
+        {
+          "file": "original/lib/isSemVer.js",
+          "chars": 611,
+          "lines": 17,
+          "o200k": 218,
+          "cl100k": 214,
+          "o200k_nocomments": 182
+        },
+        {
+          "file": "original/lib/isSlug.js",
+          "chars": 219,
+          "lines": 6,
+          "o200k": 69,
+          "cl100k": 69,
+          "o200k_nocomments": 69
+        },
+        {
+          "file": "original/lib/isStrongPassword.js",
+          "chars": 2791,
+          "lines": 91,
+          "o200k": 722,
+          "cl100k": 715,
+          "o200k_nocomments": 686
+        },
+        {
+          "file": "original/lib/isSurrogatePair.js",
+          "chars": 210,
+          "lines": 6,
+          "o200k": 56,
+          "cl100k": 54,
+          "o200k_nocomments": 56
+        },
+        {
+          "file": "original/lib/isTaxID.js",
+          "chars": 39642,
+          "lines": 1193,
+          "o200k": 12784,
+          "cl100k": 12764,
+          "o200k_nocomments": 9057
+        },
+        {
+          "file": "original/lib/isTime.js",
+          "chars": 793,
+          "lines": 22,
+          "o200k": 326,
+          "cl100k": 323,
+          "o200k_nocomments": 326
+        },
+        {
+          "file": "original/lib/isULID.js",
+          "chars": 163,
+          "lines": 5,
+          "o200k": 48,
+          "cl100k": 48,
+          "o200k_nocomments": 48
+        },
+        {
+          "file": "original/lib/isURL.js",
+          "chars": 8998,
+          "lines": 224,
+          "o200k": 2218,
+          "cl100k": 2213,
+          "o200k_nocomments": 1347
+        },
+        {
+          "file": "original/lib/isUUID.js",
+          "chars": 1313,
+          "lines": 23,
+          "o200k": 705,
+          "cl100k": 704,
+          "o200k_nocomments": 686
+        },
+        {
+          "file": "original/lib/isUppercase.js",
+          "chars": 151,
+          "lines": 5,
+          "o200k": 33,
+          "cl100k": 33,
+          "o200k_nocomments": 33
+        },
+        {
+          "file": "original/lib/isVAT.js",
+          "chars": 5300,
+          "lines": 128,
+          "o200k": 2280,
+          "cl100k": 2206,
+          "o200k_nocomments": 2155
+        },
+        {
+          "file": "original/lib/isVariableWidth.js",
+          "chars": 259,
+          "lines": 7,
+          "o200k": 59,
+          "cl100k": 57,
+          "o200k_nocomments": 59
+        },
+        {
+          "file": "original/lib/isWhitelisted.js",
+          "chars": 255,
+          "lines": 10,
+          "o200k": 72,
+          "cl100k": 72,
+          "o200k_nocomments": 72
+        },
+        {
+          "file": "original/lib/ltrim.js",
+          "chars": 355,
+          "lines": 7,
+          "o200k": 99,
+          "cl100k": 97,
+          "o200k_nocomments": 75
+        },
+        {
+          "file": "original/lib/matches.js",
+          "chars": 283,
+          "lines": 8,
+          "o200k": 63,
+          "cl100k": 60,
+          "o200k_nocomments": 63
+        },
+        {
+          "file": "original/lib/normalizeEmail.js",
+          "chars": 6689,
+          "lines": 228,
+          "o200k": 1909,
+          "cl100k": 1867,
+          "o200k_nocomments": 1395
+        },
+        {
+          "file": "original/lib/rtrim.js",
+          "chars": 619,
+          "lines": 15,
+          "o200k": 176,
+          "cl100k": 171,
+          "o200k_nocomments": 122
+        },
+        {
+          "file": "original/lib/stripLow.js",
+          "chars": 293,
+          "lines": 7,
+          "o200k": 92,
+          "cl100k": 92,
+          "o200k_nocomments": 92
+        },
+        {
+          "file": "original/lib/toBoolean.js",
+          "chars": 249,
+          "lines": 8,
+          "o200k": 68,
+          "cl100k": 68,
+          "o200k_nocomments": 68
+        },
+        {
+          "file": "original/lib/toDate.js",
+          "chars": 187,
+          "lines": 6,
+          "o200k": 46,
+          "cl100k": 43,
+          "o200k_nocomments": 46
+        },
+        {
+          "file": "original/lib/toFloat.js",
+          "chars": 135,
+          "lines": 5,
+          "o200k": 34,
+          "cl100k": 32,
+          "o200k_nocomments": 34
+        },
+        {
+          "file": "original/lib/toInt.js",
+          "chars": 153,
+          "lines": 5,
+          "o200k": 36,
+          "cl100k": 35,
+          "o200k_nocomments": 36
+        },
+        {
+          "file": "original/lib/trim.js",
+          "chars": 146,
+          "lines": 5,
+          "o200k": 38,
+          "cl100k": 36,
+          "o200k_nocomments": 38
+        },
+        {
+          "file": "original/lib/unescape.js",
+          "chars": 537,
+          "lines": 15,
+          "o200k": 162,
+          "cl100k": 161,
+          "o200k_nocomments": 118
+        },
+        {
+          "file": "original/lib/whitelist.js",
+          "chars": 179,
+          "lines": 5,
+          "o200k": 42,
+          "cl100k": 41,
+          "o200k_nocomments": 42
+        },
+        {
+          "file": "original/lib/util/algorithms.js",
+          "chars": 2883,
+          "lines": 91,
+          "o200k": 1197,
+          "cl100k": 1188,
+          "o200k_nocomments": 995
+        },
+        {
+          "file": "original/lib/util/assertString.js",
+          "chars": 285,
+          "lines": 4,
+          "o200k": 60,
+          "cl100k": 58,
+          "o200k_nocomments": 60
+        },
+        {
+          "file": "original/lib/util/checkHost.js",
+          "chars": 334,
+          "lines": 12,
+          "o200k": 90,
+          "cl100k": 85,
+          "o200k_nocomments": 90
+        },
+        {
+          "file": "original/lib/util/includesArray.js",
+          "chars": 93,
+          "lines": 2,
+          "o200k": 23,
+          "cl100k": 23,
+          "o200k_nocomments": 23
+        },
+        {
+          "file": "original/lib/util/includesString.js",
+          "chars": 82,
+          "lines": 2,
+          "o200k": 22,
+          "cl100k": 21,
+          "o200k_nocomments": 22
+        },
+        {
+          "file": "original/lib/util/merge.js",
+          "chars": 253,
+          "lines": 11,
+          "o200k": 70,
+          "cl100k": 70,
+          "o200k_nocomments": 70
+        },
+        {
+          "file": "original/lib/util/multilineRegex.js",
+          "chars": 333,
+          "lines": 12,
+          "o200k": 82,
+          "cl100k": 78,
+          "o200k_nocomments": 34
+        },
+        {
+          "file": "original/lib/util/nullUndefinedCheck.js",
+          "chars": 101,
+          "lines": 3,
+          "o200k": 21,
+          "cl100k": 20,
+          "o200k_nocomments": 21
+        },
+        {
+          "file": "original/lib/util/toString.js",
+          "chars": 371,
+          "lines": 12,
+          "o200k": 96,
+          "cl100k": 90,
+          "o200k_nocomments": 96
+        },
+        {
+          "file": "original/lib/util/typeOf.js",
+          "chars": 320,
+          "lines": 10,
+          "o200k": 81,
+          "cl100k": 77,
+          "o200k_nocomments": 57
+        }
+      ],
+      "chars": 200261,
+      "lines": 5400,
+      "o200k": 71443,
+      "cl100k": 71515,
+      "o200k_nocomments": 61301,
+      "tests": {
+        "ok": true,
+        "summary": "103 functions, 13289 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "original"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/alpha.tl",
+          "chars": 4366,
+          "lines": 1,
+          "o200k": 2952,
+          "cl100k": 3396
+        },
+        {
+          "file": "tl/blacklist.tl",
+          "chars": 62,
+          "lines": 1,
+          "o200k": 20,
+          "cl100k": 19
+        },
+        {
+          "file": "tl/contains.tl",
+          "chars": 148,
+          "lines": 1,
+          "o200k": 49,
+          "cl100k": 49
+        },
+        {
+          "file": "tl/equals.tl",
+          "chars": 22,
+          "lines": 1,
+          "o200k": 9,
+          "cl100k": 9
+        },
+        {
+          "file": "tl/escape.tl",
+          "chars": 199,
+          "lines": 1,
+          "o200k": 89,
+          "cl100k": 89
+        },
+        {
+          "file": "tl/isAbaRouting.tl",
+          "chars": 212,
+          "lines": 1,
+          "o200k": 130,
+          "cl100k": 128
+        },
+        {
+          "file": "tl/isAfter.tl",
+          "chars": 127,
+          "lines": 1,
+          "o200k": 46,
+          "cl100k": 45
+        },
+        {
+          "file": "tl/isAlpha.tl",
+          "chars": 407,
+          "lines": 1,
+          "o200k": 127,
+          "cl100k": 123
+        },
+        {
+          "file": "tl/isAlphanumeric.tl",
+          "chars": 428,
+          "lines": 1,
+          "o200k": 130,
+          "cl100k": 124
+        },
+        {
+          "file": "tl/isAscii.tl",
+          "chars": 35,
+          "lines": 1,
+          "o200k": 19,
+          "cl100k": 17
+        },
+        {
+          "file": "tl/isBIC.tl",
+          "chars": 122,
+          "lines": 1,
+          "o200k": 58,
+          "cl100k": 58
+        },
+        {
+          "file": "tl/isBase32.tl",
+          "chars": 176,
+          "lines": 1,
+          "o200k": 66,
+          "cl100k": 65
+        },
+        {
+          "file": "tl/isBase58.tl",
+          "chars": 44,
+          "lines": 1,
+          "o200k": 24,
+          "cl100k": 24
+        },
+        {
+          "file": "tl/isBase64.tl",
+          "chars": 319,
+          "lines": 1,
+          "o200k": 122,
+          "cl100k": 120
+        },
+        {
+          "file": "tl/isBefore.tl",
+          "chars": 127,
+          "lines": 1,
+          "o200k": 46,
+          "cl100k": 46
+        },
+        {
+          "file": "tl/isBoolean.tl",
+          "chars": 116,
+          "lines": 1,
+          "o200k": 48,
+          "cl100k": 47
+        },
+        {
+          "file": "tl/isBtcAddress.tl",
+          "chars": 144,
+          "lines": 1,
+          "o200k": 79,
+          "cl100k": 76
+        },
+        {
+          "file": "tl/isByteLength.tl",
+          "chars": 409,
+          "lines": 1,
+          "o200k": 173,
+          "cl100k": 165
+        },
+        {
+          "file": "tl/isCreditCard.tl",
+          "chars": 620,
+          "lines": 1,
+          "o200k": 255,
+          "cl100k": 254
+        },
+        {
+          "file": "tl/isCurrency.tl",
+          "chars": 921,
+          "lines": 1,
+          "o200k": 354,
+          "cl100k": 354
+        },
+        {
+          "file": "tl/isDataURI.tl",
+          "chars": 435,
+          "lines": 1,
+          "o200k": 179,
+          "cl100k": 175
+        },
+        {
+          "file": "tl/isDate.tl",
+          "chars": 1103,
+          "lines": 1,
+          "o200k": 438,
+          "cl100k": 428
+        },
+        {
+          "file": "tl/isDecimal.tl",
+          "chars": 360,
+          "lines": 1,
+          "o200k": 125,
+          "cl100k": 123
+        },
+        {
+          "file": "tl/isDivisibleBy.tl",
+          "chars": 43,
+          "lines": 1,
+          "o200k": 18,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/isEAN.tl",
+          "chars": 357,
+          "lines": 1,
+          "o200k": 142,
+          "cl100k": 139
+        },
+        {
+          "file": "tl/isEmail.tl",
+          "chars": 1901,
+          "lines": 1,
+          "o200k": 795,
+          "cl100k": 771
+        },
+        {
+          "file": "tl/isEmpty.tl",
+          "chars": 84,
+          "lines": 1,
+          "o200k": 24,
+          "cl100k": 24
+        },
+        {
+          "file": "tl/isEthereumAddress.tl",
+          "chars": 40,
+          "lines": 1,
+          "o200k": 19,
+          "cl100k": 20
+        },
+        {
+          "file": "tl/isFQDN.tl",
+          "chars": 728,
+          "lines": 1,
+          "o200k": 285,
+          "cl100k": 274
+        },
+        {
+          "file": "tl/isFloat.tl",
+          "chars": 488,
+          "lines": 1,
+          "o200k": 187,
+          "cl100k": 187
+        },
+        {
+          "file": "tl/isFreightContainerID.tl",
+          "chars": 20,
+          "lines": 1,
+          "o200k": 10,
+          "cl100k": 11
+        },
+        {
+          "file": "tl/isFullWidth.tl",
+          "chars": 60,
+          "lines": 1,
+          "o200k": 34,
+          "cl100k": 35
+        },
+        {
+          "file": "tl/isHSL.tl",
+          "chars": 571,
+          "lines": 1,
+          "o200k": 344,
+          "cl100k": 339
+        },
+        {
+          "file": "tl/isHalfWidth.tl",
+          "chars": 55,
+          "lines": 1,
+          "o200k": 34,
+          "cl100k": 34
+        },
+        {
+          "file": "tl/isHash.tl",
+          "chars": 226,
+          "lines": 1,
+          "o200k": 90,
+          "cl100k": 89
+        },
+        {
+          "file": "tl/isHexColor.tl",
+          "chars": 197,
+          "lines": 1,
+          "o200k": 93,
+          "cl100k": 94
+        },
+        {
+          "file": "tl/isHexadecimal.tl",
+          "chars": 40,
+          "lines": 1,
+          "o200k": 22,
+          "cl100k": 22
+        },
+        {
+          "file": "tl/isIBAN.tl",
+          "chars": 2941,
+          "lines": 1,
+          "o200k": 1557,
+          "cl100k": 1554
+        },
+        {
+          "file": "tl/isIMEI.tl",
+          "chars": 312,
+          "lines": 1,
+          "o200k": 141,
+          "cl100k": 140
+        },
+        {
+          "file": "tl/isIP.tl",
+          "chars": 777,
+          "lines": 1,
+          "o200k": 420,
+          "cl100k": 413
+        },
+        {
+          "file": "tl/isIPRange.tl",
+          "chars": 344,
+          "lines": 1,
+          "o200k": 131,
+          "cl100k": 128
+        },
+        {
+          "file": "tl/isISBN.tl",
+          "chars": 551,
+          "lines": 1,
+          "o200k": 215,
+          "cl100k": 209
+        },
+        {
+          "file": "tl/isISIN.tl",
+          "chars": 363,
+          "lines": 1,
+          "o200k": 151,
+          "cl100k": 150
+        },
+        {
+          "file": "tl/isISO15924.tl",
+          "chars": 1656,
+          "lines": 1,
+          "o200k": 841,
+          "cl100k": 901
+        },
+        {
+          "file": "tl/isISO31661Alpha2.tl",
+          "chars": 1147,
+          "lines": 1,
+          "o200k": 558,
+          "cl100k": 563
+        },
+        {
+          "file": "tl/isISO31661Alpha3.tl",
+          "chars": 1402,
+          "lines": 1,
+          "o200k": 751,
+          "cl100k": 759
+        },
+        {
+          "file": "tl/isISO31661Numeric.tl",
+          "chars": 1276,
+          "lines": 1,
+          "o200k": 509,
+          "cl100k": 510
+        },
+        {
+          "file": "tl/isISO4217.tl",
+          "chars": 928,
+          "lines": 1,
+          "o200k": 516,
+          "cl100k": 528
+        },
+        {
+          "file": "tl/isISO6346.tl",
+          "chars": 375,
+          "lines": 1,
+          "o200k": 173,
+          "cl100k": 172
+        },
+        {
+          "file": "tl/isISO6391.tl",
+          "chars": 770,
+          "lines": 1,
+          "o200k": 382,
+          "cl100k": 384
+        },
+        {
+          "file": "tl/isISO8601.tl",
+          "chars": 1100,
+          "lines": 1,
+          "o200k": 636,
+          "cl100k": 631
+        },
+        {
+          "file": "tl/isISRC.tl",
+          "chars": 51,
+          "lines": 1,
+          "o200k": 30,
+          "cl100k": 30
+        },
+        {
+          "file": "tl/isISSN.tl",
+          "chars": 253,
+          "lines": 1,
+          "o200k": 116,
+          "cl100k": 111
+        },
+        {
+          "file": "tl/isIdentityCard.tl",
+          "chars": 4024,
+          "lines": 1,
+          "o200k": 1872,
+          "cl100k": 1834
+        },
+        {
+          "file": "tl/isIn.tl",
+          "chars": 168,
+          "lines": 1,
+          "o200k": 63,
+          "cl100k": 62
+        },
+        {
+          "file": "tl/isInt.tl",
+          "chars": 343,
+          "lines": 1,
+          "o200k": 135,
+          "cl100k": 138
+        },
+        {
+          "file": "tl/isJSON.tl",
+          "chars": 210,
+          "lines": 1,
+          "o200k": 72,
+          "cl100k": 71
+        },
+        {
+          "file": "tl/isJWT.tl",
+          "chars": 106,
+          "lines": 1,
+          "o200k": 34,
+          "cl100k": 34
+        },
+        {
+          "file": "tl/isLatLong.tl",
+          "chars": 538,
+          "lines": 1,
+          "o200k": 286,
+          "cl100k": 279
+        },
+        {
+          "file": "tl/isLength.tl",
+          "chars": 365,
+          "lines": 1,
+          "o200k": 138,
+          "cl100k": 134
+        },
+        {
+          "file": "tl/isLicensePlate.tl",
+          "chars": 4068,
+          "lines": 1,
+          "o200k": 2711,
+          "cl100k": 2700
+        },
+        {
+          "file": "tl/isLocale.tl",
+          "chars": 862,
+          "lines": 1,
+          "o200k": 401,
+          "cl100k": 396
+        },
+        {
+          "file": "tl/isLowercase.tl",
+          "chars": 20,
+          "lines": 1,
+          "o200k": 9,
+          "cl100k": 9
+        },
+        {
+          "file": "tl/isLuhnNumber.tl",
+          "chars": 187,
+          "lines": 1,
+          "o200k": 85,
+          "cl100k": 85
+        },
+        {
+          "file": "tl/isMACAddress.tl",
+          "chars": 613,
+          "lines": 1,
+          "o200k": 287,
+          "cl100k": 279
+        },
+        {
+          "file": "tl/isMD5.tl",
+          "chars": 35,
+          "lines": 1,
+          "o200k": 16,
+          "cl100k": 17
+        },
+        {
+          "file": "tl/isMagnetURI.tl",
+          "chars": 222,
+          "lines": 1,
+          "o200k": 112,
+          "cl100k": 112
+        },
+        {
+          "file": "tl/isMailtoURI.tl",
+          "chars": 595,
+          "lines": 1,
+          "o200k": 204,
+          "cl100k": 198
+        },
+        {
+          "file": "tl/isMimeType.tl",
+          "chars": 467,
+          "lines": 1,
+          "o200k": 222,
+          "cl100k": 208
+        },
+        {
+          "file": "tl/isMobilePhone.tl",
+          "chars": 7556,
+          "lines": 1,
+          "o200k": 4702,
+          "cl100k": 4698
+        },
+        {
+          "file": "tl/isMongoId.tl",
+          "chars": 41,
+          "lines": 1,
+          "o200k": 16,
+          "cl100k": 17
+        },
+        {
+          "file": "tl/isMultibyte.tl",
+          "chars": 33,
+          "lines": 1,
+          "o200k": 17,
+          "cl100k": 17
+        },
+        {
+          "file": "tl/isNumeric.tl",
+          "chars": 182,
+          "lines": 1,
+          "o200k": 63,
+          "cl100k": 61
+        },
+        {
+          "file": "tl/isOctal.tl",
+          "chars": 35,
+          "lines": 1,
+          "o200k": 19,
+          "cl100k": 19
+        },
+        {
+          "file": "tl/isPassportNumber.tl",
+          "chars": 1489,
+          "lines": 1,
+          "o200k": 826,
+          "cl100k": 825
+        },
+        {
+          "file": "tl/isPort.tl",
+          "chars": 49,
+          "lines": 1,
+          "o200k": 21,
+          "cl100k": 22
+        },
+        {
+          "file": "tl/isPostalCode.tl",
+          "chars": 1711,
+          "lines": 1,
+          "o200k": 982,
+          "cl100k": 982
+        },
+        {
+          "file": "tl/isRFC3339.tl",
+          "chars": 424,
+          "lines": 1,
+          "o200k": 201,
+          "cl100k": 193
+        },
+        {
+          "file": "tl/isRgbColor.tl",
+          "chars": 604,
+          "lines": 1,
+          "o200k": 314,
+          "cl100k": 305
+        },
+        {
+          "file": "tl/isSemVer.tl",
+          "chars": 206,
+          "lines": 1,
+          "o200k": 129,
+          "cl100k": 124
+        },
+        {
+          "file": "tl/isSlug.tl",
+          "chars": 67,
+          "lines": 1,
+          "o200k": 35,
+          "cl100k": 35
+        },
+        {
+          "file": "tl/isStrongPassword.tl",
+          "chars": 797,
+          "lines": 1,
+          "o200k": 321,
+          "cl100k": 324
+        },
+        {
+          "file": "tl/isSurrogatePair.tl",
+          "chars": 52,
+          "lines": 1,
+          "o200k": 27,
+          "cl100k": 26
+        },
+        {
+          "file": "tl/isTaxID.tl",
+          "chars": 12100,
+          "lines": 1,
+          "o200k": 5434,
+          "cl100k": 5354
+        },
+        {
+          "file": "tl/isTime.tl",
+          "chars": 442,
+          "lines": 1,
+          "o200k": 237,
+          "cl100k": 234
+        },
+        {
+          "file": "tl/isULID.tl",
+          "chars": 50,
+          "lines": 1,
+          "o200k": 26,
+          "cl100k": 26
+        },
+        {
+          "file": "tl/isURL.tl",
+          "chars": 1976,
+          "lines": 1,
+          "o200k": 718,
+          "cl100k": 690
+        },
+        {
+          "file": "tl/isUUID.tl",
+          "chars": 967,
+          "lines": 1,
+          "o200k": 542,
+          "cl100k": 534
+        },
+        {
+          "file": "tl/isUppercase.tl",
+          "chars": 19,
+          "lines": 1,
+          "o200k": 9,
+          "cl100k": 10
+        },
+        {
+          "file": "tl/isVAT.tl",
+          "chars": 3162,
+          "lines": 1,
+          "o200k": 1823,
+          "cl100k": 1813
+        },
+        {
+          "file": "tl/isVariableWidth.tl",
+          "chars": 54,
+          "lines": 1,
+          "o200k": 20,
+          "cl100k": 22
+        },
+        {
+          "file": "tl/isWhitelisted.tl",
+          "chars": 76,
+          "lines": 1,
+          "o200k": 29,
+          "cl100k": 28
+        },
+        {
+          "file": "tl/ltrim.tl",
+          "chars": 121,
+          "lines": 1,
+          "o200k": 55,
+          "cl100k": 53
+        },
+        {
+          "file": "tl/matches.tl",
+          "chars": 122,
+          "lines": 1,
+          "o200k": 26,
+          "cl100k": 25
+        },
+        {
+          "file": "tl/normalizeEmail.tl",
+          "chars": 2195,
+          "lines": 1,
+          "o200k": 695,
+          "cl100k": 684
+        },
+        {
+          "file": "tl/prelude.tl",
+          "chars": 1393,
+          "lines": 1,
+          "o200k": 788,
+          "cl100k": 783
+        },
+        {
+          "file": "tl/rtrim.tl",
+          "chars": 168,
+          "lines": 1,
+          "o200k": 75,
+          "cl100k": 69
+        },
+        {
+          "file": "tl/stripLow.tl",
+          "chars": 114,
+          "lines": 1,
+          "o200k": 59,
+          "cl100k": 59
+        },
+        {
+          "file": "tl/toBoolean.tl",
+          "chars": 99,
+          "lines": 1,
+          "o200k": 36,
+          "cl100k": 35
+        },
+        {
+          "file": "tl/toDate.tl",
+          "chars": 53,
+          "lines": 1,
+          "o200k": 19,
+          "cl100k": 18
+        },
+        {
+          "file": "tl/toFloat.tl",
+          "chars": 44,
+          "lines": 1,
+          "o200k": 20,
+          "cl100k": 17
+        },
+        {
+          "file": "tl/toInt.tl",
+          "chars": 38,
+          "lines": 1,
+          "o200k": 13,
+          "cl100k": 12
+        },
+        {
+          "file": "tl/toString.tl",
+          "chars": 165,
+          "lines": 1,
+          "o200k": 51,
+          "cl100k": 50
+        },
+        {
+          "file": "tl/trim.tl",
+          "chars": 67,
+          "lines": 1,
+          "o200k": 24,
+          "cl100k": 23
+        },
+        {
+          "file": "tl/unescape.tl",
+          "chars": 191,
+          "lines": 1,
+          "o200k": 86,
+          "cl100k": 86
+        },
+        {
+          "file": "tl/whitelist.tl",
+          "chars": 63,
+          "lines": 1,
+          "o200k": 20,
+          "cl100k": 19
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 6315,
+          "lines": 401,
+          "o200k": 1928,
+          "cl100k": 1923
+        }
+      ],
+      "chars": 86021,
+      "lines": 507,
+      "o200k": 41815,
+      "cl100k": 41945,
+      "o200k_nocomments": 41815,
+      "tests": {
+        "ok": true,
+        "summary": "103 functions, 13289 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "tl"
+    }
+  }
+}
