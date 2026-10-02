@@ -1,0 +1,1 @@
++node.path|+node.module:nm|const nil JSON.parse"null"|fn js v|if(type_of v)=="map"|r obj{}|for k,x v|r[k]=js x<^r<if Array.ic v|for i,x v.enum|if(type_of x)=="map"or Array.ic x|v[i]=js x<<<v<fn ap f ..a|f ..a<fn root ..parts|path.join(process.cwd()) ..parts<fn load p|ap(nm.cr(root"app.js"))p<fn del o k|Reflect.dp o k<fn call o name ..a|Reflect.apply o[name] o a
