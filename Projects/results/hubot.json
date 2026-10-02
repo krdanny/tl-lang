@@ -1,0 +1,303 @@
+{
+  "project": "hubot",
+  "title": "Project 10 — Hubot (chat bot application, 18 modules)",
+  "date": "2026-10-02",
+  "impls": {
+    "js": {
+      "files": [
+        {
+          "file": "original/index.mjs",
+          "chars": 1166,
+          "lines": 52,
+          "o200k": 303,
+          "cl100k": 303
+        },
+        {
+          "file": "original/bin/Hubot.mjs",
+          "chars": 4265,
+          "lines": 131,
+          "o200k": 1115,
+          "cl100k": 1101
+        },
+        {
+          "file": "original/src/Adapter.mjs",
+          "chars": 4727,
+          "lines": 122,
+          "o200k": 1198,
+          "cl100k": 1196
+        },
+        {
+          "file": "original/src/Brain.mjs",
+          "chars": 6193,
+          "lines": 206,
+          "o200k": 1558,
+          "cl100k": 1543
+        },
+        {
+          "file": "original/src/CommandBus.mjs",
+          "chars": 23646,
+          "lines": 717,
+          "o200k": 5570,
+          "cl100k": 5526
+        },
+        {
+          "file": "original/src/DataStore.mjs",
+          "chars": 3178,
+          "lines": 81,
+          "o200k": 769,
+          "cl100k": 772
+        },
+        {
+          "file": "original/src/GenHubot.mjs",
+          "chars": 7523,
+          "lines": 191,
+          "o200k": 1914,
+          "cl100k": 1887
+        },
+        {
+          "file": "original/src/HttpClient.mjs",
+          "chars": 8673,
+          "lines": 272,
+          "o200k": 2106,
+          "cl100k": 2091
+        },
+        {
+          "file": "original/src/Listener.mjs",
+          "chars": 3528,
+          "lines": 98,
+          "o200k": 768,
+          "cl100k": 768
+        },
+        {
+          "file": "original/src/Message.mjs",
+          "chars": 2111,
+          "lines": 79,
+          "o200k": 474,
+          "cl100k": 484
+        },
+        {
+          "file": "original/src/Middleware.mjs",
+          "chars": 1402,
+          "lines": 41,
+          "o200k": 311,
+          "cl100k": 311
+        },
+        {
+          "file": "original/src/OptParse.mjs",
+          "chars": 1352,
+          "lines": 44,
+          "o200k": 346,
+          "cl100k": 334
+        },
+        {
+          "file": "original/src/Response.mjs",
+          "chars": 3748,
+          "lines": 113,
+          "o200k": 894,
+          "cl100k": 891
+        },
+        {
+          "file": "original/src/Robot.mjs",
+          "chars": 31837,
+          "lines": 872,
+          "o200k": 7466,
+          "cl100k": 7384
+        },
+        {
+          "file": "original/src/User.mjs",
+          "chars": 1463,
+          "lines": 53,
+          "o200k": 375,
+          "cl100k": 369
+        },
+        {
+          "file": "original/src/adapters/Campfire.mjs",
+          "chars": 11704,
+          "lines": 332,
+          "o200k": 2783,
+          "cl100k": 2751
+        },
+        {
+          "file": "original/src/adapters/Shell.mjs",
+          "chars": 4997,
+          "lines": 154,
+          "o200k": 1351,
+          "cl100k": 1329
+        },
+        {
+          "file": "original/src/datastores/Memory.mjs",
+          "chars": 424,
+          "lines": 18,
+          "o200k": 110,
+          "cl100k": 108
+        }
+      ],
+      "chars": 121937,
+      "lines": 3576,
+      "o200k": 29411,
+      "cl100k": 29148,
+      "o200k_nocomments": 29411,
+      "tests": {
+        "ok": true,
+        "summary": "286 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "original"
+    },
+    "tl": {
+      "files": [
+        {
+          "file": "tl/Adapter.tl",
+          "chars": 1265,
+          "lines": 1,
+          "o200k": 354,
+          "cl100k": 349
+        },
+        {
+          "file": "tl/Brain.tl",
+          "chars": 1890,
+          "lines": 1,
+          "o200k": 539,
+          "cl100k": 535
+        },
+        {
+          "file": "tl/Campfire.tl",
+          "chars": 6717,
+          "lines": 1,
+          "o200k": 1757,
+          "cl100k": 1738
+        },
+        {
+          "file": "tl/CommandBus.tl",
+          "chars": 12184,
+          "lines": 1,
+          "o200k": 3376,
+          "cl100k": 3333
+        },
+        {
+          "file": "tl/DataStore.tl",
+          "chars": 826,
+          "lines": 1,
+          "o200k": 209,
+          "cl100k": 209
+        },
+        {
+          "file": "tl/GenHubot.tl",
+          "chars": 6028,
+          "lines": 1,
+          "o200k": 1788,
+          "cl100k": 1800
+        },
+        {
+          "file": "tl/HttpClient.tl",
+          "chars": 4086,
+          "lines": 1,
+          "o200k": 1090,
+          "cl100k": 1081
+        },
+        {
+          "file": "tl/Hubot.tl",
+          "chars": 2988,
+          "lines": 1,
+          "o200k": 802,
+          "cl100k": 810
+        },
+        {
+          "file": "tl/Listener.tl",
+          "chars": 1464,
+          "lines": 1,
+          "o200k": 339,
+          "cl100k": 332
+        },
+        {
+          "file": "tl/Memory.tl",
+          "chars": 249,
+          "lines": 1,
+          "o200k": 70,
+          "cl100k": 68
+        },
+        {
+          "file": "tl/Message.tl",
+          "chars": 472,
+          "lines": 1,
+          "o200k": 123,
+          "cl100k": 122
+        },
+        {
+          "file": "tl/Middleware.tl",
+          "chars": 440,
+          "lines": 1,
+          "o200k": 103,
+          "cl100k": 103
+        },
+        {
+          "file": "tl/OptParse.tl",
+          "chars": 680,
+          "lines": 1,
+          "o200k": 226,
+          "cl100k": 223
+        },
+        {
+          "file": "tl/Response.tl",
+          "chars": 1099,
+          "lines": 1,
+          "o200k": 272,
+          "cl100k": 266
+        },
+        {
+          "file": "tl/Robot.tl",
+          "chars": 12320,
+          "lines": 1,
+          "o200k": 3328,
+          "cl100k": 3282
+        },
+        {
+          "file": "tl/Shell.tl",
+          "chars": 3093,
+          "lines": 1,
+          "o200k": 942,
+          "cl100k": 937
+        },
+        {
+          "file": "tl/User.tl",
+          "chars": 544,
+          "lines": 1,
+          "o200k": 160,
+          "cl100k": 158
+        },
+        {
+          "file": "tl/index.tl",
+          "chars": 443,
+          "lines": 1,
+          "o200k": 124,
+          "cl100k": 124
+        },
+        {
+          "file": "tl/prelude.tl",
+          "chars": 147,
+          "lines": 1,
+          "o200k": 50,
+          "cl100k": 45
+        },
+        {
+          "file": "tl/tl.def",
+          "chars": 4780,
+          "lines": 285,
+          "o200k": 1312,
+          "cl100k": 1290
+        }
+      ],
+      "chars": 61715,
+      "lines": 304,
+      "o200k": 16964,
+      "cl100k": 16805,
+      "o200k_nocomments": 16964,
+      "tests": {
+        "ok": true,
+        "summary": "286 passed, 0 failed",
+        "stderr": ""
+      },
+      "cmd": "tl"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Project 10 — Hubot (chat bot application, 18 modules)",
+  "test": [
+    "node",
+    "tests/run.js"
+  ],
+  "impls": {
+    "js": {
+      "files": [
+        "original/index.mjs",
+        "original/bin/Hubot.mjs",
+        "original/src/*.mjs",
+        "original/src/adapters/*.mjs",
+        "original/src/datastores/*.mjs"
+      ],
+      "cmd": [
+        "original"
+      ]
+    },
+    "tl": {
+      "files": [
+        "tl/*.tl",
+        "tl/tl.def"
+      ],
+      "cmd": [
+        "tl"
+      ]
+    }
+  }
+}

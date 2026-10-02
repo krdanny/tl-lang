@@ -1,0 +1,47 @@
+{
+  "name": "hubot",
+  "version": "0.0.0-development",
+  "author": "hubot",
+  "keywords": [
+    "github",
+    "hubot",
+    "campfire",
+    "bot"
+  ],
+  "description": "A simple helpful robot for your Company",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hubotio/hubot.git"
+  },
+  "engines": {
+    "node": ">= 18",
+    "npm": ">= 9"
+  },
+  "main": "./index.mjs",
+  "bin": {
+    "hubot": "./bin/hubot"
+  },
+  "scripts": {
+    "start": "bin/hubot",
+    "gen": "bin/hubot --create myhubot",
+    "pretest": "node script/simple-lint.mjs",
+    "test": "node --test --test-timeout=40000",
+    "test:smoke": "node src/**/*.js",
+    "test:e2e": "bin/e2e-test.sh",
+    "build:local": "npx @hubot-friends/sfab --folder ./docs --destination ./_site --verbose --serve /hubot/ --watch-path ./docs --scripts ./sfab-hooks",
+    "build": "npx @hubot-friends/sfab --folder ./docs --destination ./_site --verbose --scripts ./sfab-hooks"
+  },
+  "release": {
+    "branches": [
+      "main",
+      "next"
+    ],
+    "dryRun": false
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "express-basic-auth": "^1.2.1",
+    "pino": "^10.3.1"
+  }
+}
