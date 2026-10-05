@@ -29,10 +29,10 @@ repository: one page of core rules plus 21 topic files it opens on demand. → [
 
 [Benchmarks](#benchmarks) · [Key capabilities](#key-capabilities) · [Quick start](#quick-start) · [Install](#install) · [Using TL](#using-tl) · [The dictionary](#the-dictionary-tldef) · [VS Code extension](#vs-code-extension) · [Teach a model](#teach-a-model-to-write-tl) · [Roadmap](lib/ROADMAP.md)
 
-**What the model writes** (one line, 39 tokens):
+**What the model writes** (one line, 37 tokens):
 
 ```
-+semver.Sem|fn parse version options=none the=false|if version is Sem|^version<try|Sem version options<catch e|if not the|^null<!e
++sem.Sem|fn parse version options=none the=false|if version is Sem|^version<try|Sem version options<catch e|guard the|^null<!e
 ```
 
 **What a person sees** in VS Code or with `tl view`:
@@ -54,8 +54,8 @@ fn parse version options=none throwErrors=false
 ## Benchmarks
 
 Seven open-source projects were converted from their original JavaScript to TL: five applications and two
-libraries, 276,117 tokens of JavaScript in total. The TL versions need 169,933 tokens, <ins>**38% fewer**</ins>,
-and <ins>**28% fewer**</ins> than the same JavaScript with its comments removed. Every TL version passes the
+libraries, 276,117 tokens of JavaScript in total. The TL versions need 162,220 tokens, <ins>**41% fewer**</ins>,
+and <ins>**31% fewer**</ins> than the same JavaScript with its comments removed. Every TL version passes the
 project's own test suite, unchanged.
 
 Tokens are counted with the `o200k` tokenizer (GPT-4o / GPT-5 family). A version only counts if it passes the
@@ -66,19 +66,19 @@ same tests as the original. TL counts include `tl.def`, the project's dictionary
 
 | | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | The project's own tests (both versions) |
 |---|---|---|---|---|---|---|
-| **Hubot** — chat bot, 18 modules | 29,411 | 22,838 | 16,964 (15,652 + 1,312) | <ins>**−42%**</ins> | <ins>**−26%**</ins> | 286 pass |
-| **Raneto** 0.18.1 — knowledge-base web app, 34 modules | 14,920 | 13,126 | 9,182 (7,828 + 1,354) | <ins>**−38%**</ins> | <ins>**−30%**</ins> | 221 pass |
-| **Ungit** 1.5.30 — git web UI (server), 12 modules | 27,773 | 25,051 | 17,421 (15,729 + 1,692) | <ins>**−37%**</ins> | <ins>**−30%**</ins> | 230 pass |
-| **expressCart** 1.1.19 — online shop, 34 modules | 55,690 | 50,143 | 36,265 (33,698 + 2,567) | <ins>**−35%**</ins> | <ins>**−28%**</ins> | 86 pass |
-| **hackathon-starter** 10.0.0 — web app with accounts and OAuth, 16 modules | 57,691 | 49,310 | 38,571 (34,432 + 4,139) | <ins>**−33%**</ins> | <ins>**−22%**</ins> | 327 pass |
-| **All five** | 185,485 | 160,468 | 118,403 | <ins>**−36%**</ins> | <ins>**−26%**</ins> | |
+| **Hubot** — chat bot, 18 modules | 29,411 | 22,838 | 16,382 (15,329 + 1,053) | <ins>**−44%**</ins> | <ins>**−28%**</ins> | 286 pass |
+| **Raneto** 0.18.1 — knowledge-base web app, 34 modules | 14,920 | 13,126 | 8,705 (7,643 + 1,062) | <ins>**−42%**</ins> | <ins>**−34%**</ins> | 221 pass |
+| **Ungit** 1.5.30 — git web UI (server), 12 modules | 27,773 | 25,051 | 16,744 (15,368 + 1,376) | <ins>**−40%**</ins> | <ins>**−33%**</ins> | 230 pass |
+| **expressCart** 1.1.19 — online shop, 34 modules | 55,690 | 50,143 | 34,048 (32,052 + 1,996) | <ins>**−39%**</ins> | <ins>**−32%**</ins> | 86 pass |
+| **hackathon-starter** 10.0.0 — web app with accounts and OAuth, 16 modules | 57,691 | 49,310 | 35,864 (32,559 + 3,305) | <ins>**−38%**</ins> | <ins>**−27%**</ins> | 327 pass |
+| **All five** | 185,485 | 160,468 | 111,743 | <ins>**−40%**</ins> | <ins>**−30%**</ins> | |
 
 ### Two real libraries
 
 | | Original JS | JS without comments | TL (source + `tl.def`) | TL vs JS | TL vs JS without comments | The project's own tests (both versions) |
 |---|---|---|---|---|---|---|
-| **node-semver** 7.8.5, 47 modules | 19,189 | 15,044 | 9,715 (9,246 + 469) | <ins>**−49%**</ins> | <ins>**−35%**</ins> | 9,074 assertions pass |
-| **validator.js** 13.15, 103 modules | 71,443 | 61,301 | 41,815 (39,887 + 1,928) | <ins>**−41%**</ins> | <ins>**−32%**</ins> | 13,289 cases pass |
+| **node-semver** 7.8.5, 47 modules | 19,189 | 15,044 | 9,265 (8,840 + 425) | <ins>**−52%**</ins> | <ins>**−38%**</ins> | 9,074 assertions pass |
+| **validator.js** 13.15, 103 modules | 71,443 | 61,301 | 41,212 (39,644 + 1,568) | <ins>**−42%**</ins> | <ins>**−33%**</ins> | 13,289 cases pass |
 
 The fair comparison is the one against JavaScript without comments, because TL files carry none.
 
@@ -86,8 +86,7 @@ How to read these numbers:
 
 - **Applications gain less than libraries.** Application code is mostly calls into other people's APIs (Express,
   MongoDB, Passport, payment gateways): their names and string literals cost the same in any language. Calling
-  JavaScript libraries from TL also has a cost today, for example a plain JavaScript object needs a helper call.
-  hackathon-starter is the lowest for this reason.
+  JavaScript libraries from TL also has a cost today. hackathon-starter is the lowest for this reason.
 - **The tests are the projects' own**, run unchanged against the compiled TL in place of the original modules.
   They do not reach every line of an application, so each application was also run side by side with the
   original on code its suite misses; `Projects/README.md` lists what was compared and the known differences.
@@ -99,10 +98,10 @@ How to read these numbers:
 | Program | JS | TS | TL | TL vs JS | TL vs TS |
 |---|---|---|---|---|---|
 | Todo REST API | 774 | 870 | 295 | <ins>−62%</ins> | <ins>−66%</ins> |
-| Log analyzer CLI | 704 | 732 | 495 | <ins>−30%</ins> | <ins>−32%</ins> |
-| Inventory manager | 747 | 842 | 552 | <ins>−26%</ins> | <ins>−34%</ins> |
-| Markdown to HTML | 699 | 728 | 584 | <ins>−16%</ins> | <ins>−20%</ins> |
-| Concurrent bank ledger | 395 | 471 | 263 | <ins>−33%</ins> | <ins>−44%</ins> |
+| Log analyzer CLI | 704 | 732 | 492 | <ins>−30%</ins> | <ins>−33%</ins> |
+| Inventory manager | 747 | 842 | 550 | <ins>−26%</ins> | <ins>−35%</ins> |
+| Markdown to HTML | 699 | 728 | 583 | <ins>−17%</ins> | <ins>−20%</ins> |
+| Concurrent bank ledger | 395 | 471 | 262 | <ins>−34%</ins> | <ins>−44%</ins> |
 
 The Todo API result comes mostly from TL's built-in HTTP and storage helpers; against JavaScript written with
 Express it is −49%. The other four show what the syntax alone gives: 16–33%.
@@ -177,8 +176,8 @@ or add it to one project with `npm install /path/to/tl-lang/lib` and use `npx tl
 ```sh
 cd ../vscode
 npm install
-npm run package                                   # builds tl-readable-0.2.1.vsix
-code --install-extension tl-readable-0.2.1.vsix
+npm run package                                   # builds tl-readable-0.2.2.vsix
+code --install-extension tl-readable-0.2.2.vsix
 ```
 
 Then reload VS Code (Ctrl+Shift+P → "Developer: Reload Window"). See [VS Code extension](#vs-code-extension).
@@ -303,6 +302,10 @@ cd Projects && npm install && node bench.js      # token counts and tests for th
 - **Pipelines.** `xs>>filter f>>map g>>list`.
 - **A standard library that removes boilerplate.** For example an HTTP server with JSON persistence and route
   patterns; this is where the largest saving comes from (62% on the Todo API below).
+- **Short forms for common JavaScript.** `#{a:1}` is a plain object, `guard c` is `if not c`, `+express` imports
+  a package, `env.PORT` reads the environment, and `req.app.db` reads a function-valued property in a chain.
+- **`tl shrink`** removes every token that does not change the compiled program, so code a model writes is
+  brought to its shortest form automatically.
 - **A dictionary for long names** — next section.
 
 The generated JavaScript is plain ES modules and uses the long, readable names, so a TL module can be imported
@@ -455,8 +458,8 @@ TL/JS 0.1 is a working compiler, not a finished language.
 
 - Types are parsed and erased, except simple parameter annotations (`s:str`), which are checked at run time.
 - No macros, effects or ownership; `thread` is an async task.
-- Calling JavaScript libraries works but is not yet smooth: there is no plain-object literal, reading a
-  function-valued property calls it (`req["app"]` reads it), and a TL panic (member of `none`, index out of range)
+- Calling JavaScript libraries works but has rough edges: reading a function-valued property at the end of a chain
+  calls it (`o["run"]` reads it), and a TL panic (member of `none`, index out of range)
   is not caught by `catch`. `lib/tl-dictionary/mistakes-and-limits.md` lists these and the workarounds.
 - A call to a function that can raise must be propagated with `?` or handled; used directly in a condition it
   is an always-true result object. This is the easiest mistake to make in TL today.

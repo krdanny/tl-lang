@@ -1,7 +1,7 @@
 {
   "project": "ungit",
   "title": "Project 11 — Ungit server (git web UI, 12 modules)",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -118,31 +118,31 @@
       "files": [
         {
           "file": "tl/addressParser.tl",
-          "chars": 997,
+          "chars": 981,
           "lines": 1,
-          "o200k": 390,
-          "cl100k": 380
+          "o200k": 382,
+          "cl100k": 372
         },
         {
           "file": "tl/bugtracker.tl",
-          "chars": 569,
+          "chars": 533,
           "lines": 1,
-          "o200k": 176,
-          "cl100k": 177
+          "o200k": 166,
+          "cl100k": 169
         },
         {
           "file": "tl/cache.tl",
-          "chars": 681,
+          "chars": 676,
           "lines": 1,
-          "o200k": 209,
-          "cl100k": 202
+          "o200k": 207,
+          "cl100k": 200
         },
         {
           "file": "tl/config.tl",
-          "chars": 7544,
+          "chars": 7454,
           "lines": 1,
-          "o200k": 1903,
-          "cl100k": 1910
+          "o200k": 1879,
+          "cl100k": 1887
         },
         {
           "file": "tl/fileType.tl",
@@ -153,66 +153,66 @@
         },
         {
           "file": "tl/gitApi.tl",
-          "chars": 17895,
+          "chars": 17650,
           "lines": 1,
-          "o200k": 5246,
-          "cl100k": 5213
+          "o200k": 5137,
+          "cl100k": 5106
         },
         {
           "file": "tl/gitParser.tl",
-          "chars": 5744,
+          "chars": 5495,
           "lines": 1,
-          "o200k": 2045,
-          "cl100k": 2026
+          "o200k": 1978,
+          "cl100k": 1960
         },
         {
           "file": "tl/gitPromise.tl",
-          "chars": 9867,
+          "chars": 9710,
           "lines": 1,
-          "o200k": 3006,
-          "cl100k": 2983
+          "o200k": 2949,
+          "cl100k": 2932
         },
         {
           "file": "tl/logger.tl",
-          "chars": 775,
+          "chars": 711,
           "lines": 1,
-          "o200k": 202,
-          "cl100k": 202
+          "o200k": 188,
+          "cl100k": 188
         },
         {
           "file": "tl/server.tl",
-          "chars": 6322,
+          "chars": 6179,
           "lines": 1,
-          "o200k": 1811,
-          "cl100k": 1802
+          "o200k": 1764,
+          "cl100k": 1757
         },
         {
           "file": "tl/sysinfo.tl",
-          "chars": 651,
+          "chars": 626,
           "lines": 1,
-          "o200k": 181,
-          "cl100k": 187
+          "o200k": 172,
+          "cl100k": 178
         },
         {
           "file": "tl/ungitPlugin.tl",
-          "chars": 1895,
+          "chars": 1840,
           "lines": 1,
-          "o200k": 517,
-          "cl100k": 517
+          "o200k": 503,
+          "cl100k": 503
         },
         {
           "file": "tl/tl.def",
-          "chars": 6098,
-          "lines": 360,
-          "o200k": 1692,
-          "cl100k": 1675
+          "chars": 6285,
+          "lines": 1,
+          "o200k": 1376,
+          "cl100k": 1361
         }
       ],
-      "chars": 59139,
-      "lines": 372,
-      "o200k": 17421,
-      "cl100k": 17314,
-      "o200k_nocomments": 17421,
+      "chars": 58241,
+      "lines": 13,
+      "o200k": 16744,
+      "cl100k": 16653,
+      "o200k_nocomments": 16744,
       "tests": {
         "ok": true,
         "summary": "17 spec files, 230 passed, 0 failed, 2 pending",

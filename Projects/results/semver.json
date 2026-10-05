@@ -1,7 +1,7 @@
 {
   "project": "semver",
   "title": "Project 7 — node-semver (real-world library, 47 modules)",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -413,38 +413,38 @@
         },
         {
           "file": "tl/cmp.tl",
-          "chars": 378,
+          "chars": 357,
           "lines": 1,
           "o200k": 160,
           "cl100k": 158
         },
         {
           "file": "tl/coerce.tl",
-          "chars": 682,
+          "chars": 666,
           "lines": 1,
-          "o200k": 262,
-          "cl100k": 255
+          "o200k": 259,
+          "cl100k": 253
         },
         {
           "file": "tl/comparator.tl",
-          "chars": 1843,
+          "chars": 1766,
           "lines": 1,
-          "o200k": 559,
-          "cl100k": 542
+          "o200k": 531,
+          "cl100k": 516
         },
         {
           "file": "tl/compare.tl",
-          "chars": 71,
+          "chars": 59,
           "lines": 1,
-          "o200k": 22,
-          "cl100k": 23
+          "o200k": 21,
+          "cl100k": 22
         },
         {
           "file": "tl/compareBuild.tl",
-          "chars": 89,
+          "chars": 76,
           "lines": 1,
-          "o200k": 31,
-          "cl100k": 32
+          "o200k": 29,
+          "cl100k": 30
         },
         {
           "file": "tl/compareLoose.tl",
@@ -469,28 +469,28 @@
         },
         {
           "file": "tl/diff.tl",
-          "chars": 529,
+          "chars": 501,
           "lines": 1,
-          "o200k": 178,
-          "cl100k": 173
+          "o200k": 170,
+          "cl100k": 165
         },
         {
           "file": "tl/eq.tl",
-          "chars": 60,
+          "chars": 54,
           "lines": 1,
           "o200k": 18,
           "cl100k": 18
         },
         {
           "file": "tl/gt.tl",
-          "chars": 59,
+          "chars": 53,
           "lines": 1,
           "o200k": 18,
           "cl100k": 18
         },
         {
           "file": "tl/gte.tl",
-          "chars": 61,
+          "chars": 55,
           "lines": 1,
           "o200k": 19,
           "cl100k": 19
@@ -511,24 +511,24 @@
         },
         {
           "file": "tl/inc.tl",
-          "chars": 255,
+          "chars": 252,
           "lines": 1,
-          "o200k": 64,
-          "cl100k": 64
+          "o200k": 62,
+          "cl100k": 62
         },
         {
           "file": "tl/index.tl",
-          "chars": 1014,
+          "chars": 850,
           "lines": 1,
-          "o200k": 354,
-          "cl100k": 357
+          "o200k": 323,
+          "cl100k": 328
         },
         {
           "file": "tl/intersects.tl",
-          "chars": 100,
+          "chars": 84,
           "lines": 1,
-          "o200k": 28,
-          "cl100k": 28
+          "o200k": 27,
+          "cl100k": 27
         },
         {
           "file": "tl/lrucache.tl",
@@ -539,14 +539,14 @@
         },
         {
           "file": "tl/lt.tl",
-          "chars": 58,
+          "chars": 52,
           "lines": 1,
           "o200k": 18,
           "cl100k": 18
         },
         {
           "file": "tl/lte.tl",
-          "chars": 60,
+          "chars": 54,
           "lines": 1,
           "o200k": 20,
           "cl100k": 20
@@ -560,73 +560,73 @@
         },
         {
           "file": "tl/major.tl",
-          "chars": 53,
+          "chars": 44,
           "lines": 1,
-          "o200k": 17,
-          "cl100k": 18
+          "o200k": 16,
+          "cl100k": 17
         },
         {
           "file": "tl/maxSatisfying.tl",
-          "chars": 208,
-          "lines": 1,
-          "o200k": 64,
-          "cl100k": 64
-        },
-        {
-          "file": "tl/minSatisfying.tl",
-          "chars": 206,
+          "chars": 205,
           "lines": 1,
           "o200k": 63,
           "cl100k": 63
         },
         {
-          "file": "tl/minVersion.tl",
-          "chars": 654,
+          "file": "tl/minSatisfying.tl",
+          "chars": 203,
           "lines": 1,
-          "o200k": 221,
-          "cl100k": 219
+          "o200k": 62,
+          "cl100k": 62
+        },
+        {
+          "file": "tl/minVersion.tl",
+          "chars": 516,
+          "lines": 1,
+          "o200k": 194,
+          "cl100k": 192
         },
         {
           "file": "tl/minor.tl",
-          "chars": 53,
+          "chars": 38,
           "lines": 1,
-          "o200k": 17,
-          "cl100k": 18
+          "o200k": 16,
+          "cl100k": 17
         },
         {
           "file": "tl/neq.tl",
-          "chars": 61,
+          "chars": 55,
           "lines": 1,
           "o200k": 18,
           "cl100k": 19
         },
         {
           "file": "tl/outside.tl",
-          "chars": 957,
+          "chars": 857,
           "lines": 1,
-          "o200k": 301,
-          "cl100k": 301
+          "o200k": 272,
+          "cl100k": 272
         },
         {
           "file": "tl/parse.tl",
-          "chars": 130,
+          "chars": 126,
           "lines": 1,
-          "o200k": 39,
-          "cl100k": 38
+          "o200k": 37,
+          "cl100k": 36
         },
         {
           "file": "tl/parseOptions.tl",
-          "chars": 167,
+          "chars": 159,
           "lines": 1,
-          "o200k": 55,
-          "cl100k": 53
+          "o200k": 52,
+          "cl100k": 50
         },
         {
           "file": "tl/patch.tl",
-          "chars": 53,
+          "chars": 44,
           "lines": 1,
-          "o200k": 17,
-          "cl100k": 18
+          "o200k": 16,
+          "cl100k": 17
         },
         {
           "file": "tl/prelude.tl",
@@ -637,73 +637,73 @@
         },
         {
           "file": "tl/prerelease.tl",
-          "chars": 141,
+          "chars": 116,
           "lines": 1,
-          "o200k": 32,
-          "cl100k": 32
+          "o200k": 26,
+          "cl100k": 27
         },
         {
           "file": "tl/range.tl",
-          "chars": 6022,
+          "chars": 5790,
           "lines": 1,
-          "o200k": 2212,
-          "cl100k": 2188
+          "o200k": 2152,
+          "cl100k": 2128
         },
         {
           "file": "tl/rcompare.tl",
-          "chars": 61,
+          "chars": 49,
           "lines": 1,
-          "o200k": 17,
-          "cl100k": 17
+          "o200k": 16,
+          "cl100k": 16
         },
         {
           "file": "tl/re.tl",
-          "chars": 2629,
+          "chars": 2602,
           "lines": 1,
-          "o200k": 1242,
-          "cl100k": 1209
+          "o200k": 1232,
+          "cl100k": 1199
         },
         {
           "file": "tl/rsort.tl",
-          "chars": 64,
+          "chars": 55,
           "lines": 1,
-          "o200k": 22,
-          "cl100k": 22
+          "o200k": 21,
+          "cl100k": 21
         },
         {
           "file": "tl/satisfies.tl",
-          "chars": 108,
+          "chars": 101,
           "lines": 1,
           "o200k": 28,
           "cl100k": 25
         },
         {
           "file": "tl/semver.tl",
-          "chars": 4418,
+          "chars": 3991,
           "lines": 1,
-          "o200k": 1389,
-          "cl100k": 1351
+          "o200k": 1274,
+          "cl100k": 1236
         },
         {
           "file": "tl/simplify.tl",
-          "chars": 670,
+          "chars": 647,
           "lines": 1,
-          "o200k": 188,
-          "cl100k": 186
+          "o200k": 183,
+          "cl100k": 182
         },
         {
           "file": "tl/sort.tl",
-          "chars": 63,
+          "chars": 57,
           "lines": 1,
           "o200k": 21,
           "cl100k": 21
         },
         {
           "file": "tl/subset.tl",
-          "chars": 2516,
+          "chars": 2322,
           "lines": 1,
-          "o200k": 864,
-          "cl100k": 839
+          "o200k": 811,
+          "cl100k": 786
         },
         {
           "file": "tl/toComparators.tl",
@@ -714,10 +714,10 @@
         },
         {
           "file": "tl/truncate.tl",
-          "chars": 448,
+          "chars": 377,
           "lines": 1,
-          "o200k": 116,
-          "cl100k": 116
+          "o200k": 103,
+          "cl100k": 103
         },
         {
           "file": "tl/valid.tl",
@@ -735,17 +735,17 @@
         },
         {
           "file": "tl/tl.def",
-          "chars": 1585,
-          "lines": 101,
-          "o200k": 469,
-          "cl100k": 473
+          "chars": 1802,
+          "lines": 1,
+          "o200k": 425,
+          "cl100k": 428
         }
       ],
-      "chars": 28265,
-      "lines": 148,
-      "o200k": 9715,
-      "cl100k": 9564,
-      "o200k_nocomments": 9715,
+      "chars": 26774,
+      "lines": 48,
+      "o200k": 9265,
+      "cl100k": 9120,
+      "o200k_nocomments": 9265,
       "tests": {
         "ok": true,
         "summary": "48 test files, 9074 assertions passed, 0 failed",

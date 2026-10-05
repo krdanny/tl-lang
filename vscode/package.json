@@ -2,7 +2,7 @@
   "name": "tl-readable",
   "displayName": "TL Readable View",
   "description": "Shows TL (Token Language) files as indented, human-readable code. The view is read-only: TL source stays one line for the LLM, people read the rendering.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "publisher": "tl-lang",
   "private": true,
   "engines": {

@@ -1,17 +1,17 @@
-# Project 8 — expressCart (online shop application, 34 modules) — 2026-10-02
+# Project 8 — expressCart (online shop application, 34 modules) — 2026-10-05
 
 | | JS | TL |
 |---|---|---|
 | files | 34 files | 36 files |
-| non-empty lines | 6847 | 634 |
-| characters | 257495 (100%) | 129043 (50%) |
-| tokens o200k (GPT-4o/5) | 55690 (100%) | 36265 (65%) |
-| tokens cl100k (GPT-4) | 55034 (100%) | 36139 (66%) |
-| token reduction vs JS | — | 35% |
-| of which the dictionary (tl.def) | — | 2567 tokens |
-| source files only | — | 33698 (39% less than JS) |
-| tokens o200k, JS comments removed | 50143 | 36265 |
-| token reduction vs JS without comments | — | 28% |
+| non-empty lines | 6847 | 36 |
+| characters | 257495 (100%) | 125261 (49%) |
+| tokens o200k (GPT-4o/5) | 55690 (100%) | 34048 (61%) |
+| tokens cl100k (GPT-4) | 55034 (100%) | 33941 (62%) |
+| token reduction vs JS | — | 39% |
+| of which the dictionary (tl.def) | — | 1996 tokens |
+| source files only | — | 32052 (42% less than JS) |
+| tokens o200k, JS comments removed | 50143 | 34048 |
+| token reduction vs JS without comments | — | 32% |
 | shared tests | pass (86 passed, 0 failed) | pass (86 passed, 0 failed) |
 | run | `original` | `tl` |
 

@@ -1,17 +1,17 @@
-# Project 9 — hackathon-starter (web application, 16 modules) — 2026-10-02
+# Project 9 — hackathon-starter (web application, 16 modules) — 2026-10-05
 
 | | JS | TL |
 |---|---|---|
 | files | 16 files | 19 files |
-| non-empty lines | 6126 | 882 |
-| characters | 238289 (100%) | 135527 (57%) |
-| tokens o200k (GPT-4o/5) | 57691 (100%) | 38571 (67%) |
-| tokens cl100k (GPT-4) | 57007 (100%) | 38269 (67%) |
-| token reduction vs JS | — | 33% |
-| of which the dictionary (tl.def) | — | 4139 tokens |
-| source files only | — | 34432 (40% less than JS) |
-| tokens o200k, JS comments removed | 49310 | 38571 |
-| token reduction vs JS without comments | — | 22% |
+| non-empty lines | 6126 | 19 |
+| characters | 238289 (100%) | 131577 (55%) |
+| tokens o200k (GPT-4o/5) | 57691 (100%) | 35864 (62%) |
+| tokens cl100k (GPT-4) | 57007 (100%) | 35706 (63%) |
+| token reduction vs JS | — | 38% |
+| of which the dictionary (tl.def) | — | 3305 tokens |
+| source files only | — | 32559 (44% less than JS) |
+| tokens o200k, JS comments removed | 49310 | 35864 |
+| token reduction vs JS without comments | — | 27% |
 | shared tests | pass (327 passed, 0 failed) | pass (327 passed, 0 failed) |
 | run | `original` | `tl` |
 

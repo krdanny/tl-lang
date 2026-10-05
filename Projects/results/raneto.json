@@ -1,7 +1,7 @@
 {
   "project": "raneto",
   "title": "Project 12 — Raneto (knowledge-base web application, 34 modules)",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -294,17 +294,17 @@
       "files": [
         {
           "file": "tl/authenticateMw.tl",
-          "chars": 182,
+          "chars": 181,
           "lines": 1,
-          "o200k": 50,
-          "cl100k": 49
+          "o200k": 49,
+          "cl100k": 48
         },
         {
           "file": "tl/authenticateReadAccessMw.tl",
-          "chars": 245,
+          "chars": 244,
           "lines": 1,
-          "o200k": 71,
-          "cl100k": 70
+          "o200k": 70,
+          "cl100k": 69
         },
         {
           "file": "tl/buildNestedPages.tl",
@@ -315,52 +315,52 @@
         },
         {
           "file": "tl/categoryCreateRoute.tl",
-          "chars": 418,
+          "chars": 408,
           "lines": 1,
-          "o200k": 113,
-          "cl100k": 111
+          "o200k": 109,
+          "cl100k": 108
         },
         {
           "file": "tl/configValidation.tl",
-          "chars": 3580,
+          "chars": 3514,
           "lines": 1,
-          "o200k": 888,
-          "cl100k": 884
+          "o200k": 870,
+          "cl100k": 866
         },
         {
           "file": "tl/contentProcessors.tl",
-          "chars": 1413,
+          "chars": 1397,
           "lines": 1,
-          "o200k": 489,
-          "cl100k": 491
+          "o200k": 483,
+          "cl100k": 485
         },
         {
           "file": "tl/contents.tl",
-          "chars": 2186,
+          "chars": 2169,
           "lines": 1,
-          "o200k": 689,
-          "cl100k": 683
+          "o200k": 680,
+          "cl100k": 676
         },
         {
           "file": "tl/createMetaInfo.tl",
-          "chars": 187,
+          "chars": 185,
           "lines": 1,
           "o200k": 77,
           "cl100k": 75
         },
         {
           "file": "tl/envOverrides.tl",
-          "chars": 1030,
+          "chars": 1024,
           "lines": 1,
-          "o200k": 269,
-          "cl100k": 268
+          "o200k": 265,
+          "cl100k": 264
         },
         {
           "file": "tl/errorHandlerMw.tl",
-          "chars": 278,
+          "chars": 272,
           "lines": 1,
-          "o200k": 76,
-          "cl100k": 75
+          "o200k": 74,
+          "cl100k": 73
         },
         {
           "file": "tl/excludeImageDirectory.tl",
@@ -371,31 +371,31 @@
         },
         {
           "file": "tl/getAuthContext.tl",
-          "chars": 199,
+          "chars": 197,
           "lines": 1,
-          "o200k": 48,
-          "cl100k": 48
+          "o200k": 47,
+          "cl100k": 47
         },
         {
           "file": "tl/getFilepath.tl",
-          "chars": 719,
+          "chars": 693,
           "lines": 1,
-          "o200k": 215,
-          "cl100k": 209
+          "o200k": 206,
+          "cl100k": 200
         },
         {
           "file": "tl/homeRoute.tl",
-          "chars": 579,
+          "chars": 572,
           "lines": 1,
-          "o200k": 169,
-          "cl100k": 167
+          "o200k": 165,
+          "cl100k": 164
         },
         {
           "file": "tl/index.tl",
-          "chars": 3295,
+          "chars": 3168,
           "lines": 1,
-          "o200k": 1017,
-          "cl100k": 1022
+          "o200k": 983,
+          "cl100k": 988
         },
         {
           "file": "tl/language.tl",
@@ -406,17 +406,17 @@
         },
         {
           "file": "tl/loginPageRoute.tl",
-          "chars": 131,
+          "chars": 111,
           "lines": 1,
-          "o200k": 34,
-          "cl100k": 33
+          "o200k": 31,
+          "cl100k": 30
         },
         {
           "file": "tl/loginRoute.tl",
-          "chars": 465,
+          "chars": 455,
           "lines": 1,
-          "o200k": 131,
-          "cl100k": 127
+          "o200k": 126,
+          "cl100k": 122
         },
         {
           "file": "tl/logoutRoute.tl",
@@ -427,10 +427,10 @@
         },
         {
           "file": "tl/lunr.tl",
-          "chars": 970,
+          "chars": 962,
           "lines": 1,
-          "o200k": 356,
-          "cl100k": 367
+          "o200k": 351,
+          "cl100k": 362
         },
         {
           "file": "tl/normalizeLineEndings.tl",
@@ -441,66 +441,66 @@
         },
         {
           "file": "tl/oauth2Mw.tl",
-          "chars": 2165,
+          "chars": 2084,
           "lines": 1,
-          "o200k": 575,
-          "cl100k": 571
+          "o200k": 551,
+          "cl100k": 547
         },
         {
           "file": "tl/page.tl",
-          "chars": 638,
+          "chars": 625,
           "lines": 1,
-          "o200k": 202,
-          "cl100k": 204
+          "o200k": 198,
+          "cl100k": 200
         },
         {
           "file": "tl/pageCreateRoute.tl",
-          "chars": 435,
+          "chars": 425,
           "lines": 1,
-          "o200k": 119,
-          "cl100k": 118
+          "o200k": 115,
+          "cl100k": 115
         },
         {
           "file": "tl/pageDeleteRoute.tl",
-          "chars": 593,
+          "chars": 580,
           "lines": 1,
-          "o200k": 159,
-          "cl100k": 156
+          "o200k": 154,
+          "cl100k": 152
         },
         {
           "file": "tl/pageEditRoute.tl",
-          "chars": 688,
+          "chars": 674,
           "lines": 1,
-          "o200k": 197,
-          "cl100k": 195
+          "o200k": 191,
+          "cl100k": 190
         },
         {
           "file": "tl/sanitize.tl",
-          "chars": 112,
+          "chars": 101,
           "lines": 1,
-          "o200k": 36,
-          "cl100k": 36
+          "o200k": 35,
+          "cl100k": 35
         },
         {
           "file": "tl/sanitizeHtmlOutput.tl",
-          "chars": 307,
+          "chars": 303,
           "lines": 1,
-          "o200k": 106,
-          "cl100k": 106
+          "o200k": 104,
+          "cl100k": 104
         },
         {
           "file": "tl/search.tl",
-          "chars": 1319,
+          "chars": 1305,
           "lines": 1,
-          "o200k": 400,
-          "cl100k": 397
+          "o200k": 393,
+          "cl100k": 389
         },
         {
           "file": "tl/searchRoute.tl",
-          "chars": 460,
+          "chars": 437,
           "lines": 1,
-          "o200k": 136,
-          "cl100k": 134
+          "o200k": 131,
+          "cl100k": 130
         },
         {
           "file": "tl/server.tl",
@@ -511,38 +511,38 @@
         },
         {
           "file": "tl/sitemapRoute.tl",
-          "chars": 924,
+          "chars": 908,
           "lines": 1,
-          "o200k": 270,
-          "cl100k": 270
+          "o200k": 265,
+          "cl100k": 265
         },
         {
           "file": "tl/utils.tl",
-          "chars": 676,
+          "chars": 666,
           "lines": 1,
-          "o200k": 187,
-          "cl100k": 187
+          "o200k": 179,
+          "cl100k": 179
         },
         {
           "file": "tl/wildcardRoute.tl",
-          "chars": 1692,
+          "chars": 1681,
           "lines": 1,
-          "o200k": 510,
-          "cl100k": 504
+          "o200k": 502,
+          "cl100k": 497
         },
         {
           "file": "tl/tl.def",
-          "chars": 5096,
-          "lines": 308,
-          "o200k": 1354,
-          "cl100k": 1337
+          "chars": 5158,
+          "lines": 1,
+          "o200k": 1062,
+          "cl100k": 1045
         }
       ],
-      "chars": 31828,
-      "lines": 342,
-      "o200k": 9182,
-      "cl100k": 9132,
-      "o200k_nocomments": 9182,
+      "chars": 31345,
+      "lines": 35,
+      "o200k": 8705,
+      "cl100k": 8663,
+      "o200k_nocomments": 8705,
       "tests": {
         "ok": true,
         "summary": "221 passed, 0 failed (14/14 suites)",

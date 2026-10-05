@@ -1,7 +1,7 @@
 {
   "project": "log-analyzer",
   "title": "Project 2 — Log analyzer CLI",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -52,10 +52,10 @@
       "files": [
         {
           "file": "tl/analyze.tl",
-          "chars": 1073,
+          "chars": 1067,
           "lines": 1,
-          "o200k": 495,
-          "cl100k": 487
+          "o200k": 492,
+          "cl100k": 484
         },
         {
           "file": "tl/tl.def",
@@ -65,11 +65,11 @@
           "cl100k": 0
         }
       ],
-      "chars": 1073,
+      "chars": 1067,
       "lines": 1,
-      "o200k": 495,
-      "cl100k": 487,
-      "o200k_nocomments": 495,
+      "o200k": 492,
+      "cl100k": 484,
+      "o200k_nocomments": 492,
       "tests": {
         "ok": true,
         "summary": "3 passed, 0 failed",

@@ -1,7 +1,7 @@
 {
   "project": "validator",
   "title": "Project 6 — validator.js (real-world library, 103 modules)",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -934,10 +934,10 @@
       "files": [
         {
           "file": "tl/alpha.tl",
-          "chars": 4366,
+          "chars": 4231,
           "lines": 1,
-          "o200k": 2952,
-          "cl100k": 3396
+          "o200k": 2937,
+          "cl100k": 3382
         },
         {
           "file": "tl/blacklist.tl",
@@ -948,10 +948,10 @@
         },
         {
           "file": "tl/contains.tl",
-          "chars": 148,
+          "chars": 146,
           "lines": 1,
-          "o200k": 49,
-          "cl100k": 49
+          "o200k": 48,
+          "cl100k": 48
         },
         {
           "file": "tl/equals.tl",
@@ -969,10 +969,10 @@
         },
         {
           "file": "tl/isAbaRouting.tl",
-          "chars": 212,
+          "chars": 211,
           "lines": 1,
-          "o200k": 130,
-          "cl100k": 128
+          "o200k": 129,
+          "cl100k": 127
         },
         {
           "file": "tl/isAfter.tl",
@@ -983,17 +983,17 @@
         },
         {
           "file": "tl/isAlpha.tl",
-          "chars": 407,
+          "chars": 405,
           "lines": 1,
           "o200k": 127,
           "cl100k": 123
         },
         {
           "file": "tl/isAlphanumeric.tl",
-          "chars": 428,
+          "chars": 399,
           "lines": 1,
-          "o200k": 130,
-          "cl100k": 124
+          "o200k": 127,
+          "cl100k": 123
         },
         {
           "file": "tl/isAscii.tl",
@@ -1011,10 +1011,10 @@
         },
         {
           "file": "tl/isBase32.tl",
-          "chars": 176,
+          "chars": 150,
           "lines": 1,
-          "o200k": 66,
-          "cl100k": 65
+          "o200k": 57,
+          "cl100k": 56
         },
         {
           "file": "tl/isBase58.tl",
@@ -1025,10 +1025,10 @@
         },
         {
           "file": "tl/isBase64.tl",
-          "chars": 319,
+          "chars": 316,
           "lines": 1,
-          "o200k": 122,
-          "cl100k": 120
+          "o200k": 121,
+          "cl100k": 119
         },
         {
           "file": "tl/isBefore.tl",
@@ -1039,10 +1039,10 @@
         },
         {
           "file": "tl/isBoolean.tl",
-          "chars": 116,
+          "chars": 114,
           "lines": 1,
-          "o200k": 48,
-          "cl100k": 47
+          "o200k": 47,
+          "cl100k": 46
         },
         {
           "file": "tl/isBtcAddress.tl",
@@ -1060,31 +1060,31 @@
         },
         {
           "file": "tl/isCreditCard.tl",
-          "chars": 620,
+          "chars": 617,
           "lines": 1,
-          "o200k": 255,
-          "cl100k": 254
+          "o200k": 254,
+          "cl100k": 253
         },
         {
           "file": "tl/isCurrency.tl",
-          "chars": 921,
+          "chars": 920,
           "lines": 1,
-          "o200k": 354,
-          "cl100k": 354
+          "o200k": 353,
+          "cl100k": 353
         },
         {
           "file": "tl/isDataURI.tl",
           "chars": 435,
           "lines": 1,
-          "o200k": 179,
-          "cl100k": 175
+          "o200k": 178,
+          "cl100k": 173
         },
         {
           "file": "tl/isDate.tl",
-          "chars": 1103,
+          "chars": 1074,
           "lines": 1,
-          "o200k": 438,
-          "cl100k": 428
+          "o200k": 427,
+          "cl100k": 421
         },
         {
           "file": "tl/isDecimal.tl",
@@ -1109,35 +1109,35 @@
         },
         {
           "file": "tl/isEmail.tl",
-          "chars": 1901,
+          "chars": 1854,
           "lines": 1,
-          "o200k": 795,
-          "cl100k": 771
+          "o200k": 778,
+          "cl100k": 754
         },
         {
           "file": "tl/isEmpty.tl",
-          "chars": 84,
+          "chars": 83,
           "lines": 1,
-          "o200k": 24,
-          "cl100k": 24
+          "o200k": 23,
+          "cl100k": 23
         },
         {
           "file": "tl/isEthereumAddress.tl",
           "chars": 40,
           "lines": 1,
           "o200k": 19,
-          "cl100k": 20
+          "cl100k": 19
         },
         {
           "file": "tl/isFQDN.tl",
-          "chars": 728,
+          "chars": 726,
           "lines": 1,
-          "o200k": 285,
-          "cl100k": 274
+          "o200k": 283,
+          "cl100k": 273
         },
         {
           "file": "tl/isFloat.tl",
-          "chars": 488,
+          "chars": 486,
           "lines": 1,
           "o200k": 187,
           "cl100k": 187
@@ -1161,7 +1161,7 @@
           "chars": 571,
           "lines": 1,
           "o200k": 344,
-          "cl100k": 339
+          "cl100k": 338
         },
         {
           "file": "tl/isHalfWidth.tl",
@@ -1172,17 +1172,17 @@
         },
         {
           "file": "tl/isHash.tl",
-          "chars": 226,
+          "chars": 227,
           "lines": 1,
           "o200k": 90,
           "cl100k": 89
         },
         {
           "file": "tl/isHexColor.tl",
-          "chars": 197,
+          "chars": 195,
           "lines": 1,
-          "o200k": 93,
-          "cl100k": 94
+          "o200k": 92,
+          "cl100k": 92
         },
         {
           "file": "tl/isHexadecimal.tl",
@@ -1193,122 +1193,122 @@
         },
         {
           "file": "tl/isIBAN.tl",
-          "chars": 2941,
+          "chars": 2921,
           "lines": 1,
-          "o200k": 1557,
-          "cl100k": 1554
+          "o200k": 1549,
+          "cl100k": 1547
         },
         {
           "file": "tl/isIMEI.tl",
-          "chars": 312,
+          "chars": 309,
           "lines": 1,
-          "o200k": 141,
-          "cl100k": 140
+          "o200k": 138,
+          "cl100k": 136
         },
         {
           "file": "tl/isIP.tl",
-          "chars": 777,
+          "chars": 731,
           "lines": 1,
-          "o200k": 420,
-          "cl100k": 413
+          "o200k": 388,
+          "cl100k": 381
         },
         {
           "file": "tl/isIPRange.tl",
-          "chars": 344,
+          "chars": 342,
           "lines": 1,
-          "o200k": 131,
-          "cl100k": 128
+          "o200k": 129,
+          "cl100k": 125
         },
         {
           "file": "tl/isISBN.tl",
-          "chars": 551,
+          "chars": 543,
           "lines": 1,
-          "o200k": 215,
-          "cl100k": 209
+          "o200k": 210,
+          "cl100k": 204
         },
         {
           "file": "tl/isISIN.tl",
-          "chars": 363,
+          "chars": 362,
           "lines": 1,
-          "o200k": 151,
-          "cl100k": 150
+          "o200k": 149,
+          "cl100k": 148
         },
         {
           "file": "tl/isISO15924.tl",
-          "chars": 1656,
+          "chars": 1657,
           "lines": 1,
           "o200k": 841,
           "cl100k": 901
         },
         {
           "file": "tl/isISO31661Alpha2.tl",
-          "chars": 1147,
+          "chars": 1145,
           "lines": 1,
           "o200k": 558,
           "cl100k": 563
         },
         {
           "file": "tl/isISO31661Alpha3.tl",
-          "chars": 1402,
+          "chars": 1400,
           "lines": 1,
           "o200k": 751,
-          "cl100k": 759
+          "cl100k": 758
         },
         {
           "file": "tl/isISO31661Numeric.tl",
           "chars": 1276,
           "lines": 1,
           "o200k": 509,
-          "cl100k": 510
+          "cl100k": 509
         },
         {
           "file": "tl/isISO4217.tl",
-          "chars": 928,
+          "chars": 929,
           "lines": 1,
           "o200k": 516,
           "cl100k": 528
         },
         {
           "file": "tl/isISO6346.tl",
-          "chars": 375,
+          "chars": 373,
           "lines": 1,
-          "o200k": 173,
-          "cl100k": 172
+          "o200k": 171,
+          "cl100k": 170
         },
         {
           "file": "tl/isISO6391.tl",
-          "chars": 770,
+          "chars": 771,
           "lines": 1,
           "o200k": 382,
           "cl100k": 384
         },
         {
           "file": "tl/isISO8601.tl",
-          "chars": 1100,
+          "chars": 1099,
           "lines": 1,
-          "o200k": 636,
-          "cl100k": 631
+          "o200k": 633,
+          "cl100k": 628
         },
         {
           "file": "tl/isISRC.tl",
-          "chars": 51,
+          "chars": 52,
           "lines": 1,
           "o200k": 30,
           "cl100k": 30
         },
         {
           "file": "tl/isISSN.tl",
-          "chars": 253,
+          "chars": 242,
           "lines": 1,
-          "o200k": 116,
-          "cl100k": 111
+          "o200k": 114,
+          "cl100k": 109
         },
         {
           "file": "tl/isIdentityCard.tl",
-          "chars": 4024,
+          "chars": 3999,
           "lines": 1,
-          "o200k": 1872,
-          "cl100k": 1834
+          "o200k": 1850,
+          "cl100k": 1812
         },
         {
           "file": "tl/isIn.tl",
@@ -1319,31 +1319,31 @@
         },
         {
           "file": "tl/isInt.tl",
-          "chars": 343,
+          "chars": 341,
           "lines": 1,
           "o200k": 135,
           "cl100k": 138
         },
         {
           "file": "tl/isJSON.tl",
-          "chars": 210,
+          "chars": 208,
           "lines": 1,
-          "o200k": 72,
-          "cl100k": 71
+          "o200k": 71,
+          "cl100k": 69
         },
         {
           "file": "tl/isJWT.tl",
-          "chars": 106,
+          "chars": 104,
           "lines": 1,
-          "o200k": 34,
-          "cl100k": 34
+          "o200k": 33,
+          "cl100k": 33
         },
         {
           "file": "tl/isLatLong.tl",
-          "chars": 538,
+          "chars": 535,
           "lines": 1,
-          "o200k": 286,
-          "cl100k": 279
+          "o200k": 284,
+          "cl100k": 277
         },
         {
           "file": "tl/isLength.tl",
@@ -1364,7 +1364,7 @@
           "chars": 862,
           "lines": 1,
           "o200k": 401,
-          "cl100k": 396
+          "cl100k": 395
         },
         {
           "file": "tl/isLowercase.tl",
@@ -1382,17 +1382,17 @@
         },
         {
           "file": "tl/isMACAddress.tl",
-          "chars": 613,
+          "chars": 596,
           "lines": 1,
-          "o200k": 287,
-          "cl100k": 279
+          "o200k": 273,
+          "cl100k": 265
         },
         {
           "file": "tl/isMD5.tl",
           "chars": 35,
           "lines": 1,
           "o200k": 16,
-          "cl100k": 17
+          "cl100k": 16
         },
         {
           "file": "tl/isMagnetURI.tl",
@@ -1413,7 +1413,7 @@
           "chars": 467,
           "lines": 1,
           "o200k": 222,
-          "cl100k": 208
+          "cl100k": 207
         },
         {
           "file": "tl/isMobilePhone.tl",
@@ -1427,25 +1427,25 @@
           "chars": 41,
           "lines": 1,
           "o200k": 16,
-          "cl100k": 17
+          "cl100k": 16
         },
         {
           "file": "tl/isMultibyte.tl",
-          "chars": 33,
+          "chars": 34,
           "lines": 1,
           "o200k": 17,
           "cl100k": 17
         },
         {
           "file": "tl/isNumeric.tl",
-          "chars": 182,
+          "chars": 184,
           "lines": 1,
-          "o200k": 63,
-          "cl100k": 61
+          "o200k": 62,
+          "cl100k": 60
         },
         {
           "file": "tl/isOctal.tl",
-          "chars": 35,
+          "chars": 36,
           "lines": 1,
           "o200k": 19,
           "cl100k": 19
@@ -1455,14 +1455,14 @@
           "chars": 1489,
           "lines": 1,
           "o200k": 826,
-          "cl100k": 825
+          "cl100k": 824
         },
         {
           "file": "tl/isPort.tl",
-          "chars": 49,
+          "chars": 47,
           "lines": 1,
-          "o200k": 21,
-          "cl100k": 22
+          "o200k": 20,
+          "cl100k": 21
         },
         {
           "file": "tl/isPostalCode.tl",
@@ -1473,17 +1473,17 @@
         },
         {
           "file": "tl/isRFC3339.tl",
-          "chars": 424,
+          "chars": 425,
           "lines": 1,
           "o200k": 201,
           "cl100k": 193
         },
         {
           "file": "tl/isRgbColor.tl",
-          "chars": 604,
+          "chars": 603,
           "lines": 1,
-          "o200k": 314,
-          "cl100k": 305
+          "o200k": 312,
+          "cl100k": 303
         },
         {
           "file": "tl/isSemVer.tl",
@@ -1501,63 +1501,63 @@
         },
         {
           "file": "tl/isStrongPassword.tl",
-          "chars": 797,
+          "chars": 791,
           "lines": 1,
-          "o200k": 321,
-          "cl100k": 324
+          "o200k": 318,
+          "cl100k": 321
         },
         {
           "file": "tl/isSurrogatePair.tl",
           "chars": 52,
           "lines": 1,
           "o200k": 27,
-          "cl100k": 26
+          "cl100k": 25
         },
         {
           "file": "tl/isTaxID.tl",
-          "chars": 12100,
+          "chars": 11859,
           "lines": 1,
-          "o200k": 5434,
-          "cl100k": 5354
+          "o200k": 5374,
+          "cl100k": 5292
         },
         {
           "file": "tl/isTime.tl",
-          "chars": 442,
+          "chars": 440,
           "lines": 1,
-          "o200k": 237,
-          "cl100k": 234
+          "o200k": 236,
+          "cl100k": 233
         },
         {
           "file": "tl/isULID.tl",
-          "chars": 50,
+          "chars": 51,
           "lines": 1,
           "o200k": 26,
           "cl100k": 26
         },
         {
           "file": "tl/isURL.tl",
-          "chars": 1976,
+          "chars": 1971,
           "lines": 1,
-          "o200k": 718,
-          "cl100k": 690
+          "o200k": 711,
+          "cl100k": 683
         },
         {
           "file": "tl/isUUID.tl",
-          "chars": 967,
+          "chars": 968,
           "lines": 1,
           "o200k": 542,
           "cl100k": 534
         },
         {
           "file": "tl/isUppercase.tl",
-          "chars": 19,
+          "chars": 20,
           "lines": 1,
           "o200k": 9,
-          "cl100k": 10
+          "cl100k": 9
         },
         {
           "file": "tl/isVAT.tl",
-          "chars": 3162,
+          "chars": 3154,
           "lines": 1,
           "o200k": 1823,
           "cl100k": 1813
@@ -1567,11 +1567,11 @@
           "chars": 54,
           "lines": 1,
           "o200k": 20,
-          "cl100k": 22
+          "cl100k": 21
         },
         {
           "file": "tl/isWhitelisted.tl",
-          "chars": 76,
+          "chars": 77,
           "lines": 1,
           "o200k": 29,
           "cl100k": 28
@@ -1599,10 +1599,10 @@
         },
         {
           "file": "tl/prelude.tl",
-          "chars": 1393,
+          "chars": 1383,
           "lines": 1,
-          "o200k": 788,
-          "cl100k": 783
+          "o200k": 787,
+          "cl100k": 782
         },
         {
           "file": "tl/rtrim.tl",
@@ -1634,17 +1634,17 @@
         },
         {
           "file": "tl/toFloat.tl",
-          "chars": 44,
+          "chars": 43,
           "lines": 1,
-          "o200k": 20,
-          "cl100k": 17
+          "o200k": 19,
+          "cl100k": 16
         },
         {
           "file": "tl/toInt.tl",
-          "chars": 38,
+          "chars": 39,
           "lines": 1,
-          "o200k": 13,
-          "cl100k": 12
+          "o200k": 12,
+          "cl100k": 11
         },
         {
           "file": "tl/toString.tl",
@@ -1676,17 +1676,17 @@
         },
         {
           "file": "tl/tl.def",
-          "chars": 6315,
-          "lines": 401,
-          "o200k": 1928,
-          "cl100k": 1923
+          "chars": 6512,
+          "lines": 1,
+          "o200k": 1568,
+          "cl100k": 1563
         }
       ],
-      "chars": 86021,
-      "lines": 507,
-      "o200k": 41815,
-      "cl100k": 41945,
-      "o200k_nocomments": 41815,
+      "chars": 85521,
+      "lines": 107,
+      "o200k": 41212,
+      "cl100k": 41332,
+      "o200k_nocomments": 41212,
       "tests": {
         "ok": true,
         "summary": "103 functions, 13289 passed, 0 failed",

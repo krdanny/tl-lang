@@ -1,7 +1,7 @@
 {
   "project": "expresscart",
   "title": "Project 8 — expressCart (online shop application, 34 modules)",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -294,66 +294,66 @@
       "files": [
         {
           "file": "tl/app.tl",
-          "chars": 7949,
+          "chars": 7658,
           "lines": 1,
-          "o200k": 2504,
-          "cl100k": 2435
+          "o200k": 2368,
+          "cl100k": 2311
         },
         {
           "file": "tl/auth.tl",
-          "chars": 1859,
+          "chars": 1856,
           "lines": 1,
-          "o200k": 498,
-          "cl100k": 493
+          "o200k": 487,
+          "cl100k": 483
         },
         {
           "file": "tl/cart.tl",
-          "chars": 1390,
+          "chars": 1371,
           "lines": 1,
-          "o200k": 361,
-          "cl100k": 362
+          "o200k": 351,
+          "cl100k": 352
         },
         {
           "file": "tl/common.tl",
-          "chars": 3265,
+          "chars": 3224,
           "lines": 1,
-          "o200k": 985,
-          "cl100k": 981
+          "o200k": 949,
+          "cl100k": 950
         },
         {
           "file": "tl/config.tl",
-          "chars": 2390,
+          "chars": 2366,
           "lines": 1,
-          "o200k": 658,
-          "cl100k": 648
+          "o200k": 645,
+          "cl100k": 638
         },
         {
           "file": "tl/db.tl",
-          "chars": 858,
+          "chars": 826,
           "lines": 1,
-          "o200k": 215,
-          "cl100k": 214
+          "o200k": 208,
+          "cl100k": 206
         },
         {
           "file": "tl/googledata.tl",
-          "chars": 887,
+          "chars": 880,
           "lines": 1,
-          "o200k": 272,
-          "cl100k": 272
+          "o200k": 265,
+          "cl100k": 268
         },
         {
           "file": "tl/indexing.tl",
-          "chars": 2167,
+          "chars": 2055,
           "lines": 1,
-          "o200k": 589,
-          "cl100k": 592
+          "o200k": 556,
+          "cl100k": 557
         },
         {
           "file": "tl/menu.tl",
-          "chars": 1098,
+          "chars": 1039,
           "lines": 1,
-          "o200k": 373,
-          "cl100k": 373
+          "o200k": 340,
+          "cl100k": 341
         },
         {
           "file": "tl/modDiscountVoucher.tl",
@@ -364,192 +364,192 @@
         },
         {
           "file": "tl/modReviewsBasic.tl",
-          "chars": 2265,
+          "chars": 2242,
           "lines": 1,
-          "o200k": 683,
-          "cl100k": 679
+          "o200k": 671,
+          "cl100k": 669
         },
         {
           "file": "tl/modShippingBasic.tl",
-          "chars": 556,
+          "chars": 555,
           "lines": 1,
-          "o200k": 163,
-          "cl100k": 161
+          "o200k": 160,
+          "cl100k": 158
         },
         {
           "file": "tl/paginate.tl",
-          "chars": 1070,
+          "chars": 1049,
           "lines": 1,
-          "o200k": 350,
-          "cl100k": 343
+          "o200k": 332,
+          "cl100k": 326
         },
         {
           "file": "tl/payAdyen.tl",
-          "chars": 2242,
+          "chars": 2207,
           "lines": 1,
-          "o200k": 621,
-          "cl100k": 624
+          "o200k": 598,
+          "cl100k": 602
         },
         {
           "file": "tl/payAuthorizenet.tl",
-          "chars": 2774,
+          "chars": 2739,
           "lines": 1,
-          "o200k": 760,
-          "cl100k": 767
+          "o200k": 736,
+          "cl100k": 743
         },
         {
           "file": "tl/payBlockonomics.tl",
-          "chars": 2528,
+          "chars": 2479,
           "lines": 1,
-          "o200k": 722,
-          "cl100k": 722
+          "o200k": 690,
+          "cl100k": 692
         },
         {
           "file": "tl/payInstore.tl",
-          "chars": 1284,
+          "chars": 1268,
           "lines": 1,
-          "o200k": 351,
-          "cl100k": 353
+          "o200k": 341,
+          "cl100k": 343
         },
         {
           "file": "tl/payPaypal.tl",
-          "chars": 3204,
+          "chars": 3176,
           "lines": 1,
-          "o200k": 868,
-          "cl100k": 879
+          "o200k": 843,
+          "cl100k": 854
         },
         {
           "file": "tl/payPayway.tl",
-          "chars": 2861,
+          "chars": 2830,
           "lines": 1,
-          "o200k": 765,
-          "cl100k": 772
+          "o200k": 747,
+          "cl100k": 754
         },
         {
           "file": "tl/payStripe.tl",
-          "chars": 3007,
+          "chars": 2938,
           "lines": 1,
-          "o200k": 817,
-          "cl100k": 821
+          "o200k": 778,
+          "cl100k": 783
         },
         {
           "file": "tl/payVerifone.tl",
-          "chars": 2731,
+          "chars": 2705,
           "lines": 1,
-          "o200k": 736,
-          "cl100k": 744
+          "o200k": 719,
+          "cl100k": 727
         },
         {
           "file": "tl/payZip.tl",
-          "chars": 3803,
+          "chars": 3744,
           "lines": 1,
-          "o200k": 1014,
-          "cl100k": 1019
+          "o200k": 978,
+          "cl100k": 982
         },
         {
           "file": "tl/paymentCommon.tl",
-          "chars": 619,
+          "chars": 602,
           "lines": 1,
-          "o200k": 201,
-          "cl100k": 201
+          "o200k": 188,
+          "cl100k": 192
         },
         {
           "file": "tl/prelude.tl",
-          "chars": 361,
+          "chars": 195,
           "lines": 1,
-          "o200k": 144,
-          "cl100k": 142
+          "o200k": 71,
+          "cl100k": 71
         },
         {
           "file": "tl/routeAdmin.tl",
-          "chars": 14962,
+          "chars": 14344,
           "lines": 1,
-          "o200k": 4268,
-          "cl100k": 4249
+          "o200k": 4031,
+          "cl100k": 4008
         },
         {
           "file": "tl/routeCustomer.tl",
-          "chars": 11656,
+          "chars": 11016,
           "lines": 1,
-          "o200k": 3034,
-          "cl100k": 3042
+          "o200k": 2839,
+          "cl100k": 2849
         },
         {
           "file": "tl/routeIndex.tl",
-          "chars": 18418,
+          "chars": 17735,
           "lines": 1,
-          "o200k": 5274,
-          "cl100k": 5259
+          "o200k": 5008,
+          "cl100k": 4997
         },
         {
           "file": "tl/routeOrder.tl",
-          "chars": 5042,
+          "chars": 4886,
           "lines": 1,
-          "o200k": 1338,
-          "cl100k": 1340
+          "o200k": 1275,
+          "cl100k": 1276
         },
         {
           "file": "tl/routeProduct.tl",
-          "chars": 8310,
+          "chars": 8002,
           "lines": 1,
-          "o200k": 2308,
-          "cl100k": 2303
+          "o200k": 2189,
+          "cl100k": 2184
         },
         {
           "file": "tl/routeReviews.tl",
-          "chars": 1433,
+          "chars": 1351,
           "lines": 1,
-          "o200k": 398,
-          "cl100k": 397
+          "o200k": 372,
+          "cl100k": 371
         },
         {
           "file": "tl/routeTransactions.tl",
-          "chars": 1556,
+          "chars": 1490,
           "lines": 1,
-          "o200k": 402,
-          "cl100k": 401
+          "o200k": 379,
+          "cl100k": 378
         },
         {
           "file": "tl/routeUser.tl",
-          "chars": 3770,
+          "chars": 3639,
           "lines": 1,
-          "o200k": 1065,
-          "cl100k": 1065
+          "o200k": 1008,
+          "cl100k": 1007
         },
         {
           "file": "tl/schema.tl",
-          "chars": 989,
+          "chars": 964,
           "lines": 1,
-          "o200k": 370,
-          "cl100k": 363
+          "o200k": 355,
+          "cl100k": 349
         },
         {
           "file": "tl/testdata.tl",
-          "chars": 918,
+          "chars": 805,
           "lines": 1,
-          "o200k": 260,
-          "cl100k": 260
+          "o200k": 247,
+          "cl100k": 246
         },
         {
           "file": "tl/testhelper.tl",
-          "chars": 955,
+          "chars": 889,
           "lines": 1,
-          "o200k": 284,
-          "cl100k": 284
+          "o200k": 281,
+          "cl100k": 281
         },
         {
           "file": "tl/tl.def",
-          "chars": 9695,
-          "lines": 599,
-          "o200k": 2567,
-          "cl100k": 2531
+          "chars": 9965,
+          "lines": 1,
+          "o200k": 1996,
+          "cl100k": 1945
         }
       ],
-      "chars": 129043,
-      "lines": 634,
-      "o200k": 36265,
-      "cl100k": 36139,
-      "o200k_nocomments": 36265,
+      "chars": 125261,
+      "lines": 36,
+      "o200k": 34048,
+      "cl100k": 33941,
+      "o200k_nocomments": 34048,
       "tests": {
         "ok": true,
         "summary": "86 passed, 0 failed",

@@ -5,7 +5,7 @@ possible. This extension is for the people who have to read it. Opening a `.tl` 
 syntax-highlighted rendering instead of the line, and that rendering is **read-only**.
 
 ```
-+semver.Sem|fn parse version options=none the=false|if version is Sem|^version<try|Sem version options<catch e|if not the|^null<!e
++sem.Sem|fn parse version options=none the=false|if version is Sem|^version<try|Sem version options<catch e|guard the|^null<!e
 ```
 
 with the project's dictionary `tl.def` (`Sem SemVer`, `the throwErrors`, …)
@@ -78,8 +78,8 @@ as written because spacing has meaning in TL: tight operators bind before a call
 ```sh
 npm install
 npm test            # builds dist/extension.js, then runs test/run.cjs
-npm run package     # tl-readable-0.2.1.vsix
-code --install-extension tl-readable-0.2.1.vsix
+npm run package     # tl-readable-0.2.2.vsix
+code --install-extension tl-readable-0.2.2.vsix
 ```
 
 To try it without installing: open this folder in VS Code and press F5 ("Run TL Readable View").

@@ -23,7 +23,7 @@ export const GLOSSARY = {
   error: '**error** — declares an error type that can be raised with `raise` (`!` in the source).',
   test: '**test** — a test case, run by `tl test`.',
   const: '**const** — a module-level constant; it is exported.',
-  guard: '**guard cond** — if the condition is false, the indented body runs and must leave (return, raise, break, continue).',
+  guard: '**guard cond** — the short form of `if not cond`: the indented body runs when the condition is false. Shown as `if not` in the readable view.',
   match: '**match value** — picks the first arm whose pattern fits; `_` is the default arm.',
   loop: '**loop** — repeats until `break` or `return`.',
   for: '**for x xs** — loops over a collection or range (`for i 0..n`, `for k,v map`). There is no `in` keyword.',

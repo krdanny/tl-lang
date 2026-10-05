@@ -1,7 +1,7 @@
 {
   "project": "hubot",
   "title": "Project 10 — Hubot (chat bot application, 18 modules)",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -166,80 +166,80 @@
       "files": [
         {
           "file": "tl/Adapter.tl",
-          "chars": 1265,
+          "chars": 1215,
           "lines": 1,
-          "o200k": 354,
-          "cl100k": 349
+          "o200k": 348,
+          "cl100k": 343
         },
         {
           "file": "tl/Brain.tl",
-          "chars": 1890,
+          "chars": 1829,
           "lines": 1,
-          "o200k": 539,
-          "cl100k": 535
+          "o200k": 524,
+          "cl100k": 521
         },
         {
           "file": "tl/Campfire.tl",
-          "chars": 6717,
+          "chars": 6509,
           "lines": 1,
-          "o200k": 1757,
-          "cl100k": 1738
+          "o200k": 1721,
+          "cl100k": 1705
         },
         {
           "file": "tl/CommandBus.tl",
-          "chars": 12184,
+          "chars": 11899,
           "lines": 1,
-          "o200k": 3376,
-          "cl100k": 3333
+          "o200k": 3278,
+          "cl100k": 3235
         },
         {
           "file": "tl/DataStore.tl",
-          "chars": 826,
+          "chars": 819,
           "lines": 1,
-          "o200k": 209,
-          "cl100k": 209
+          "o200k": 207,
+          "cl100k": 207
         },
         {
           "file": "tl/GenHubot.tl",
-          "chars": 6028,
+          "chars": 5998,
           "lines": 1,
-          "o200k": 1788,
-          "cl100k": 1800
+          "o200k": 1776,
+          "cl100k": 1790
         },
         {
           "file": "tl/HttpClient.tl",
-          "chars": 4086,
+          "chars": 4057,
           "lines": 1,
-          "o200k": 1090,
-          "cl100k": 1081
+          "o200k": 1077,
+          "cl100k": 1068
         },
         {
           "file": "tl/Hubot.tl",
-          "chars": 2988,
+          "chars": 2888,
           "lines": 1,
-          "o200k": 802,
-          "cl100k": 810
+          "o200k": 782,
+          "cl100k": 792
         },
         {
           "file": "tl/Listener.tl",
-          "chars": 1464,
+          "chars": 1449,
           "lines": 1,
-          "o200k": 339,
-          "cl100k": 332
+          "o200k": 332,
+          "cl100k": 325
         },
         {
           "file": "tl/Memory.tl",
-          "chars": 249,
+          "chars": 240,
           "lines": 1,
-          "o200k": 70,
-          "cl100k": 68
+          "o200k": 67,
+          "cl100k": 65
         },
         {
           "file": "tl/Message.tl",
-          "chars": 472,
+          "chars": 466,
           "lines": 1,
-          "o200k": 123,
-          "cl100k": 122
+          "o200k": 119,
+          "cl100k": 118
         },
         {
           "file": "tl/Middleware.tl",
@@ -250,45 +250,45 @@
         },
         {
           "file": "tl/OptParse.tl",
-          "chars": 680,
+          "chars": 670,
           "lines": 1,
-          "o200k": 226,
-          "cl100k": 223
+          "o200k": 224,
+          "cl100k": 221
         },
         {
           "file": "tl/Response.tl",
-          "chars": 1099,
+          "chars": 948,
           "lines": 1,
-          "o200k": 272,
-          "cl100k": 266
+          "o200k": 260,
+          "cl100k": 255
         },
         {
           "file": "tl/Robot.tl",
-          "chars": 12320,
+          "chars": 12073,
           "lines": 1,
-          "o200k": 3328,
-          "cl100k": 3282
+          "o200k": 3265,
+          "cl100k": 3219
         },
         {
           "file": "tl/Shell.tl",
-          "chars": 3093,
+          "chars": 2947,
           "lines": 1,
-          "o200k": 942,
-          "cl100k": 937
+          "o200k": 917,
+          "cl100k": 911
         },
         {
           "file": "tl/User.tl",
-          "chars": 544,
+          "chars": 540,
           "lines": 1,
-          "o200k": 160,
-          "cl100k": 158
+          "o200k": 157,
+          "cl100k": 155
         },
         {
           "file": "tl/index.tl",
-          "chars": 443,
+          "chars": 438,
           "lines": 1,
-          "o200k": 124,
-          "cl100k": 124
+          "o200k": 122,
+          "cl100k": 122
         },
         {
           "file": "tl/prelude.tl",
@@ -299,17 +299,17 @@
         },
         {
           "file": "tl/tl.def",
-          "chars": 4780,
-          "lines": 285,
-          "o200k": 1312,
-          "cl100k": 1290
+          "chars": 4897,
+          "lines": 1,
+          "o200k": 1053,
+          "cl100k": 1031
         }
       ],
-      "chars": 61715,
-      "lines": 304,
-      "o200k": 16964,
-      "cl100k": 16805,
-      "o200k_nocomments": 16964,
+      "chars": 60469,
+      "lines": 20,
+      "o200k": 16382,
+      "cl100k": 16231,
+      "o200k_nocomments": 16382,
       "tests": {
         "ok": true,
         "summary": "286 passed, 0 failed",

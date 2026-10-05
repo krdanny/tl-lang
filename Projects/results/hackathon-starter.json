@@ -1,7 +1,7 @@
 {
   "project": "hackathon-starter",
   "title": "Project 9 — hackathon-starter (web application, 16 modules)",
-  "date": "2026-10-02",
+  "date": "2026-10-05",
   "impls": {
     "js": {
       "files": [
@@ -150,45 +150,45 @@
       "files": [
         {
           "file": "tl/agent.tl",
-          "chars": 13357,
+          "chars": 12873,
           "lines": 1,
-          "o200k": 3643,
-          "cl100k": 3630
+          "o200k": 3444,
+          "cl100k": 3436
         },
         {
           "file": "tl/ai.tl",
-          "chars": 13272,
+          "chars": 12722,
           "lines": 1,
-          "o200k": 3756,
-          "cl100k": 3742
+          "o200k": 3546,
+          "cl100k": 3546
         },
         {
           "file": "tl/api.tl",
-          "chars": 26902,
+          "chars": 26272,
           "lines": 1,
-          "o200k": 8200,
-          "cl100k": 8159
+          "o200k": 7889,
+          "cl100k": 7850
         },
         {
           "file": "tl/app.tl",
-          "chars": 10205,
+          "chars": 9878,
           "lines": 1,
-          "o200k": 3157,
-          "cl100k": 3120
+          "o200k": 2970,
+          "cl100k": 2946
         },
         {
           "file": "tl/cachebust.tl",
-          "chars": 263,
+          "chars": 258,
           "lines": 1,
-          "o200k": 90,
-          "cl100k": 90
+          "o200k": 89,
+          "cl100k": 89
         },
         {
           "file": "tl/contact.tl",
-          "chars": 2174,
+          "chars": 2061,
           "lines": 1,
-          "o200k": 605,
-          "cl100k": 606
+          "o200k": 560,
+          "cl100k": 562
         },
         {
           "file": "tl/dotenv.tl",
@@ -199,94 +199,94 @@
         },
         {
           "file": "tl/flash.tl",
-          "chars": 754,
+          "chars": 728,
           "lines": 1,
-          "o200k": 229,
-          "cl100k": 227
+          "o200k": 214,
+          "cl100k": 212
         },
         {
           "file": "tl/home.tl",
-          "chars": 70,
+          "chars": 59,
           "lines": 1,
-          "o200k": 21,
-          "cl100k": 21
+          "o200k": 19,
+          "cl100k": 19
         },
         {
           "file": "tl/mailer.tl",
-          "chars": 824,
+          "chars": 777,
           "lines": 1,
-          "o200k": 215,
-          "cl100k": 213
+          "o200k": 195,
+          "cl100k": 194
         },
         {
           "file": "tl/morgan.tl",
-          "chars": 1821,
+          "chars": 1806,
           "lines": 1,
-          "o200k": 571,
-          "cl100k": 555
+          "o200k": 559,
+          "cl100k": 543
         },
         {
           "file": "tl/passport.tl",
-          "chars": 15416,
+          "chars": 14580,
           "lines": 1,
-          "o200k": 4367,
-          "cl100k": 4317
+          "o200k": 4105,
+          "cl100k": 4077
         },
         {
           "file": "tl/prelude.tl",
-          "chars": 434,
+          "chars": 246,
           "lines": 1,
-          "o200k": 159,
-          "cl100k": 158
+          "o200k": 88,
+          "cl100k": 87
         },
         {
           "file": "tl/revocation.tl",
-          "chars": 3090,
+          "chars": 3054,
           "lines": 1,
-          "o200k": 831,
-          "cl100k": 803
+          "o200k": 802,
+          "cl100k": 778
         },
         {
           "file": "tl/session.tl",
-          "chars": 307,
+          "chars": 283,
           "lines": 1,
-          "o200k": 98,
-          "cl100k": 97
+          "o200k": 83,
+          "cl100k": 82
         },
         {
           "file": "tl/user.tl",
-          "chars": 21981,
+          "chars": 21302,
           "lines": 1,
-          "o200k": 5879,
-          "cl100k": 5830
+          "o200k": 5511,
+          "cl100k": 5504
         },
         {
           "file": "tl/usermodel.tl",
-          "chars": 3768,
+          "chars": 3679,
           "lines": 1,
-          "o200k": 1114,
-          "cl100k": 1116
+          "o200k": 1073,
+          "cl100k": 1074
         },
         {
           "file": "tl/webauthn.tl",
-          "chars": 5238,
+          "chars": 4936,
           "lines": 1,
-          "o200k": 1439,
-          "cl100k": 1422
+          "o200k": 1354,
+          "cl100k": 1352
         },
         {
           "file": "tl/tl.def",
-          "chars": 15402,
-          "lines": 864,
-          "o200k": 4139,
-          "cl100k": 4105
+          "chars": 15814,
+          "lines": 1,
+          "o200k": 3305,
+          "cl100k": 3297
         }
       ],
-      "chars": 135527,
-      "lines": 882,
-      "o200k": 38571,
-      "cl100k": 38269,
-      "o200k_nocomments": 38571,
+      "chars": 131577,
+      "lines": 19,
+      "o200k": 35864,
+      "cl100k": 35706,
+      "o200k_nocomments": 35864,
       "tests": {
         "ok": true,
         "summary": "327 passed, 0 failed",
