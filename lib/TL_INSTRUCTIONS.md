@@ -10,12 +10,12 @@ specific, open the matching file in `tl-dictionary/` (see the index at the end) 
 
 - A compound name is camelCase, PascalCase of several words, or snake_case: `isValidEmail`, `SemVer`,
   `user_id`, `MAX_LENGTH`, and also JavaScript members such as `toUpperCase`, `startsWith`.
-- Give it a short symbol in `tl.def`, one line `<symbol> <longName>`, and write only the symbol in the source:
+- Give it a short symbol in `tl.def` as a pair `<symbol> <longName>`, all pairs on the first line separated by
+  spaces, and write only the symbol in the source:
 
   `tl.def`:
   ```
-  ive isValidEmail
-  ui user_id
+  ive isValidEmail ui user_id
   ```
   source: `fn ive s:str|s.has"@"<print(ive"a@b.c")`
 

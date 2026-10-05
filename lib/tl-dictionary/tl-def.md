@@ -3,19 +3,18 @@
 `tl.def` sits next to the `.tl` files (or in a parent folder up to the project root). **It is mandatory**: without
 it the compiler stops with `E260`. It gives short source symbols their long names, so each long name is paid for
 once instead of at every use, and the generated JavaScript, the error messages and the readable view (`tl view`,
-the VS Code extension) show the long names. Unlike `.tl` files it is multi-line and allows `#` comments. An empty
-`tl.def` is valid for a project that has nothing to declare.
+the VS Code extension) show the long names. It allows several lines and `#` comments. An empty `tl.def` is valid
+for a project that has nothing to declare.
 
-## Names: `<symbol> <longName>`
+## Names: `<symbol> <longName>` pairs, all on one line
 
 A compound name (camelCase, several-word PascalCase, snake_case) may not be written in a `.tl` file (`E261`).
-It gets one line in `tl.def` and the source uses the symbol, in every position: variable, parameter, function,
-type, member after `.`, map key, import.
+It gets a `<symbol> <longName>` pair in `tl.def` and the source uses the symbol, in every position: variable,
+parameter, function, type, member after `.`, map key, import. All pairs go on the first line, separated by spaces
+(a newline would cost one token per name):
 
 ```
-ive isValidEmail
-ui user_id
-tu toUpperCase
+ive isValidEmail ui user_id tu toUpperCase
 ```
 
 ```tl
@@ -34,13 +33,13 @@ The generated JavaScript reads `function isValidEmail(s)`, `let user_id = 7` and
 - Single words and the language's own names (`type_of`, `parseInt`, `sort_with`, `TypeError`, …) need no entry.
 - Strings are not touched: `"includePrerelease"` in quotes is that text.
 - `tl def [dir]` writes the file for an existing project: it finds every compound name, picks a symbol that is one
-  token, replaces the name in the sources and adds the line. `tl def --check` only reports.
+  token, replaces the name in the sources and appends the pair to the names line. `tl def --check` only reports.
 - `tl def --expand [dir]` puts the long names back into the sources for a round of editing; `tl def` afterwards
   restores the same symbols.
 
-Whether a symbol saves tokens depends on how often the name is used: the line costs about the name's tokens plus two,
-each use saves the name's tokens minus one. A four-token name pays off from its third use; a two-token name from its
-fifth. The rule is still unconditional, because the writer cannot know the final count while writing.
+Whether a symbol saves tokens depends on how often the name is used: the pair costs about the name's tokens plus one,
+each use saves the name's tokens minus one. A four-token name pays off from its second use; a two-token name from its
+fourth. The rule is still unconditional, because the writer cannot know the final count while writing.
 
 ## Typed entries
 

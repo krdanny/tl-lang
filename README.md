@@ -311,13 +311,11 @@ from JavaScript like any other module.
 ## The dictionary: `tl.def`
 
 Every TL project has a `tl.def` file; the compiler refuses to compile without one. Compound names — camelCase,
-multi-word PascalCase, snake_case — are not allowed in `.tl` files. Each gets one line in `tl.def` and the source
-writes only the short symbol:
+multi-word PascalCase, snake_case — are not allowed in `.tl` files. Each gets a `symbol longName` pair in
+`tl.def`, all pairs on one line, and the source writes only the short symbol:
 
 ```
-ip includePrerelease
-cid compareIdentifiers
-Sem SemVer
+ip includePrerelease cid compareIdentifiers Sem SemVer
 ```
 
 The reason is how tokenizers work: `options` is one token, but `isPrereleaseIdentifier` is four, every time it is

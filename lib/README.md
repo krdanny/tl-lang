@@ -76,7 +76,7 @@ More complete programs are in `examples/`, one per feature area:
 ## The semantic dictionary (`tl.def`)
 
 `tl.def` is mandatory: a project does not compile without it (`E260`). Compound names (camelCase, snake_case) are
-not written in `.tl` files (`E261`); each gets a line `<symbol> <longName>` in `tl.def` and the source uses the
+not written in `.tl` files (`E261`); each gets a pair `<symbol> <longName>` on the names line of `tl.def` and the source uses the
 symbol, so a long name is paid for once. `tl def` writes the file for you. Typed entries additionally give
 symbols their signatures and error sets (spec §10). The compiler uses it to parse calls without parentheses, emit readable JavaScript with the long
 names, and map short field names to real property names.
