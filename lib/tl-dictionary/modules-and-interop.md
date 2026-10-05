@@ -43,8 +43,17 @@ true true
 - `{a:1}` is a TL map (a JS `Map`). A JS library that expects an options object gets `#{a:1}`, a plain object.
 - Every `{…}` written inside `#{…}` is a plain object too: `#{a:1 b:{c:2} xs:[{d:3}]}`. Maps written inside a
   lambda in it stay maps. `obj m` converts an existing map (one level).
-- Reading a property that holds a function **calls it**: `o.run` is `o.run()`. To read the function itself, index
-  by name: `o["run"]`. The same for `req["app"]`, `x["constructor"]`, `lib["SomeClass"]`.
+- Reading a property that holds a function at the **end** of a chain calls it: `o.run` is `o.run()`. To read the
+  function itself there, index by name: `o["run"]`.
+- In the **middle** of a chain a function that takes parameters, or a class, is read as a value: `req.app.db`,
+  `logger.debug.bind`, `google.auth.OAuth2`. A function without parameters is still called: `s.trim.x`.
+```tl
+app a b c=>a|app.db=#{n:1|req #{app:app|print req.app.db.n(type_of req["app
+```
+```text
+1 fn
+```
+
 - A function passed as an operand: `\f` (see functions-and-lambdas.md). A lambda inside a literal needs
   parentheses: `run:(()=>7)`.
 

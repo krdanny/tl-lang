@@ -49,7 +49,8 @@
 | `timeout 5`, `error e`, `match m` as variable names | another name | prelude functions (`timeout`, `list`, `str`, …) and keywords (`error match type test ext alias pass static`) cannot be bound; `catch error` fails |
 | `x is str or x is num` | `(x is str)or(x is num)` | `or` after `is` continues the pattern |
 | `new URLSearchParams{a:"1"}` | `new URLSearchParams #{a:"1"}` | `Name{` is a record literal of type `Name` |
-| `o.run` to read a function from a JS object | `o["run"]` | a property that holds a function is called when read |
+| `o.run` to read a function from a JS object | `o["run"]` | a property that holds a function is called when read last in a chain |
+| `req["app"].db` | `req.app.db` | in the middle of a chain a function with parameters is read, not called |
 | `{a:1}` or `obj{a:1}` passed to a JS library | `#{a:1}` | `{…}` is a `Map`; `#{…}` is a plain object, and so is every `{…}` nested in it |
 | `if not x\|…` | `guard x\|…` | one token less, same meaning |
 | `fn all xs\|xs.map(x=>half x?)` called as `all xs` | `all xs?` | `?` or `!` inside a lambda makes the enclosing `fn` raising: without `?` the caller gets `Ok(…)` |
