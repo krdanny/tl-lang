@@ -1,1 +1,1 @@
-+node.path|+node.crypto|+node.fs|fd new Map|fn gf fa lib root|if(fd.has fa|^fd.get fa<fp if(lib.has fa)(lib.get fa)(path.join"public"(fa.slice 1|hash(((crypto.ch"sha256").update(fs.hp(path.join root fp))).digest"hex").slice 0 8|fd.set fa hash|hash<fn cca|fd.clear
++node.path|+crypto|+node.fs|fd new Map|fn gf fa lib root|if(fd.has fa|^fd.get fa<fp if(lib.has fa)(lib.get fa)(path.join"public"(fa.slice 1|hash(((crypto.ch"sha256").update(fs.hp(path.join root fp))).digest"hex").slice 0 8|fd.set fa hash|hash<fn cca|fd.clear

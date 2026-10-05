@@ -8,14 +8,14 @@ Imports are segments starting with `+`, written first.
 | `+users.gu` | one item, used as `gu` |
 | `+users.(gu ls)` | several items |
 | `+users:u` | alias |
-| `+node.fs`, `+node.path` | Node built-in modules |
-| `+npm.lodash:ld` | an npm package (default export, else the namespace) |
+| `+crypto`, `+express`, `+lodash:ld` | a Node built-in module or an installed npm package (default export, else the namespace), when the folder has no module of that name |
+| `+node.fs`, `+npm.passport` | the same, explicitly: needed when the name is also a TL module (`fs`, `path`, …) or a file of the folder |
 | `+"./helper.js":h` | a local JavaScript file |
 
 Standard modules need no import: `fs json env proc time log path math http` (see stdlib.md).
 
 ```tl
-+node.path|+node.os|p os.platform()|print(path.basename"/a/b/c.txt")(path.join"x""y")(p.len>0
++node.path|+os|p os.platform()|print(path.basename"/a/b/c.txt")(path.join"x""y")(p.len>0
 ```
 ```text
 c.txt x/y true

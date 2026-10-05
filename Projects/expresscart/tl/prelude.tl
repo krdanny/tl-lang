@@ -1,1 +1,1 @@
-+node.path|+node.module:nm|fn ap f ..a|f ..a<fn root ..parts|path.join(process.cwd()) ..parts<fn load p|ap(nm.cw(root"app.js"))p<fn del o k|Reflect.dh o k<fn call o name ..a|Reflect.apply o[name]o a
++node.path|+module:nm|fn ap f ..a|f ..a<fn root ..parts|path.join(process.cwd()) ..parts<fn load p|ap(nm.cw(root"app.js"))p<fn del o k|Reflect.dh o k<fn call o name ..a|Reflect.apply o[name]o a
