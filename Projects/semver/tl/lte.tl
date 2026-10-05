@@ -1,1 +1,1 @@
-+compare.compare|fn lte a b loose=none|0>=(compare a b loose
++compare.compare|fn lte a b lb=none|0>=(compare a b lb

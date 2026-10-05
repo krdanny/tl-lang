@@ -1,1 +1,1 @@
-+semver.Sem|fn compare a b loose=none|(Sem a loose).compare(Sem b loose
++sem.Sem|fn compare a b lb=none|(Sem a lb).compare(Sem b lb

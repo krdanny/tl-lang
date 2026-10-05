@@ -1,1 +1,1 @@
-+semver.Sem|fn major a loose=none|(Sem a loose).major
++sem.Sem|fn major a lb=none|(Sem a lb).major

@@ -1,1 +1,1 @@
-+cb.cb|fn sort list loose=none|list.sort_with a b=>cb a b loose
++cb.cb|fn sort list lb=none|list.sort_with a b=>cb a b lb

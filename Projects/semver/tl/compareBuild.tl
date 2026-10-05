@@ -1,1 +1,1 @@
-+semver.Sem|fn cb a b loose=none|va Sem a loose|vb Sem b loose|va.compare vb or va.cb vb
++sem.Sem|fn cb a b lb=none|va Sem a lb|vb Sem b lb|va.compare vb or va.cb vb

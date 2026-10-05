@@ -1,1 +1,1 @@
-+compare.compare|fn neq a b loose=none|(compare a b loose)!=0
++compare.compare|fn neq a b lb=none|(compare a b lb)!=0

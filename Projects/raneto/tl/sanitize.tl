@@ -1,1 +1,1 @@
-+validator|inc"&'\"/>\<|fn sanitizer s|s=validator.blacklist s inc|s=validator.trim s|s=validator.escape s|s
++validator|inc"&'\"/>\<|fn jd s|s=validator.blacklist s inc|s=validator.trim s|s=validator.escape s|s

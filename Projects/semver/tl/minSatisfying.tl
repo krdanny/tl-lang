@@ -1,1 +1,1 @@
-+range.Range|+semver.Sem|fn ma versions range options=none|min null|me null|ro try|Range range options<catch e|^null<for v versions|if ro.test v|if not min or(me.compare v)==1|min=v|me=Sem min options<<<min
++range.Range|+sem.Sem|fn ma versions range options=none|min null|me null|ro try|Range range options<catch e|^null<for v versions|if ro.test v|if not min or(me.compare v)==1|min=v|me=Sem min options<<<min

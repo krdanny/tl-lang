@@ -31,6 +31,8 @@ The generated JavaScript reads `function isValidEmail(s)`, `let user_id = 7` and
 - Symbols are global to the project: the same symbol means the same name in every file, and nothing else may use
   that word. File names stay long: `+cb.cb` imports `compareBuild` from `compareBuild.tl`.
 - Single words and the language's own names (`type_of`, `parseInt`, `sort_with`, `TypeError`, …) need no entry.
+  `tl def` still gives a symbol to a plain word that costs several tokens when its uses make that worth it
+  (`prerelease`, `handlebars`); the word itself keeps working, so writing it out is never an error.
 - Strings are not touched: `"includePrerelease"` in quotes is that text.
 - `tl def [dir]` writes the file for an existing project: it finds every compound name, picks a symbol that is one
   token, replaces the name in the sources and appends the pair to the names line. `tl def --check` only reports.
