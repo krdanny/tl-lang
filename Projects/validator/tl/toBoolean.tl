@@ -1,1 +1,1 @@
-fn tob s:str strict|if strict|^s=="1" or /^true$/i.test s<s!="0" and not /^false$/i.test s and s!="
+fn cur s:str strict|if strict|^s=="1" or /^true$/i.test s<s!="0" and not /^false$/i.test s and s!="

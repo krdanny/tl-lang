@@ -1,1 +1,1 @@
-fn ae s:str|/^(0o)?[0-7]+$/i.test s
+fn but s:str|/^(0o)?[0-7]+$/i.test s

@@ -1,1 +1,1 @@
-fn bj s:str chars|for i(0..s.length).rev|if(chars.io(s[i]))==-1|^false<<true
+fn col s:str chars|for i(0..s.length).rev|if(chars.io(s[i]))==-1|^false<<true

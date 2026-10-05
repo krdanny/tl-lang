@@ -1,1 +1,1 @@
-fn iz s:str|/[^\x00-\x7F]/.test s
+fn btn s:str|/[^\x00-\x7F]/.test s

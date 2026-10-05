@@ -1,1 +1,1 @@
-fn aq s:str|s==s.tc
+fn cli s:str|s==s.tc

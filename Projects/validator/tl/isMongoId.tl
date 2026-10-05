@@ -1,1 +1,1 @@
-+ag.ag|fn imo s:str|ag s and s.length==24
++ag.ag|fn box s:str|ag s and s.length==24

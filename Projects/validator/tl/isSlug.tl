@@ -1,1 +1,1 @@
-fn iss s:str|/^[a-z\d](?!.*[-_]{2,})(?:[a-z\d_-]*[a-z\d])?$/.test s
+fn cap s:str|/^[a-z\d](?!.*[-_]{2,})(?:[a-z\d_-]*[a-z\d])?$/.test s

@@ -1,1 +1,1 @@
-fn ijs s:str options|try|o merge options #{ck:false bl:false|ob JSON.parse s|if o.bl|^true<prims if o.ck [null false true] [|t type_of ob|^ie prims ob or(not not ob and(t=="obj" or t=="list<catch e|pass<false
+fn bas s:str options|try|o merge options #{ck:false bl:false|ob JSON.parse s|if o.bl|^true<prims if o.ck [null false true] [|t type_of ob|^ie prims ob or(not not ob and(t=="obj" or t=="list<catch e|pass<false

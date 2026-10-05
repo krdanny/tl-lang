@@ -1,1 +1,1 @@
-fn ism s:str|/^[a-f\d]{32}$/.test s
+fn bmp s:str|/^[a-f\d]{32}$/.test s

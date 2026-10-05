@@ -1,1 +1,1 @@
-fn ti s:str radix|parseInt s radix??10
+fn cut s:str radix|parseInt s radix??10

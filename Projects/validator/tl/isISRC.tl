@@ -1,1 +1,1 @@
-fn iw s:str|/^[A-Z]{2}[\dA-Z]{3}\d{2}\d{5}$/.test s
+fn bad s:str|/^[A-Z]{2}[\dA-Z]{3}\d{2}\d{5}$/.test s

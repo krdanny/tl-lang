@@ -1,1 +1,1 @@
-fn isu s:str|/[\uD800-\uDBFF][\uDC00-\uDFFF]/.test s
+fn cas s:str|/[\uD800-\uDBFF][\uDC00-\uDFFF]/.test s

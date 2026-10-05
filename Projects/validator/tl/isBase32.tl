@@ -1,1 +1,1 @@
-base32 /^[A-Z2-7]+=*$/|cro /^[A-HJKMNP-TV-Z\d]+$/|fn up s:str options|o merge options #{cro:false|if o.cro|^cro.test s<s.length%8==0 and base32.test s
+base32 /^[A-Z2-7]+=*$/|did /^[A-HJKMNP-TV-Z\d]+$/|fn up s:str options|o merge options #{did:false|if o.did|^did.test s<s.length%8==0 and base32.test s

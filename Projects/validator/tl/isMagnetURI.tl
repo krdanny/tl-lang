@@ -1,1 +1,1 @@
-rx /(?:^magnet:\?|[^?&]&)xt(?:\.1)?=urn:(?:(?:aich|bitprint|btih|ed2k|ed2khash|kzhash|md5|sha1|tree:tiger):[a-z\d]{32}(?:[a-z\d]{8})?|btmh:1220[a-z\d]{64})(?:$|&)/i|fn imu url:str|if(url.io"magnet:?")!=0|^false<rx.test url
+rx /(?:^magnet:\?|[^?&]&)xt(?:\.1)?=urn:(?:(?:aich|bitprint|btih|ed2k|ed2khash|kzhash|md5|sha1|tree:tiger):[a-z\d]{32}(?:[a-z\d]{8})?|btmh:1220[a-z\d]{64})(?:$|&)/i|fn bit url:str|if(url.io"magnet:?")!=0|^false<rx.test url

@@ -1,1 +1,1 @@
-+iv.iv|fn iy s:str|parts s.split".|parts.length==3 and parts.reduce(acc p=>acc and iv p #{us:true})true
++iv.iv|fn beh s:str|parts s.split".|parts.length==3 and parts.reduce(acc p=>acc and iv p #{us:true})true

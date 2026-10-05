@@ -1,1 +1,1 @@
-fn isl s:str|s==s.ta
+fn bio s:str|s==s.ta
