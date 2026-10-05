@@ -40,15 +40,16 @@ true true
 
 ## Plain objects and function values
 
-- `{a:1}` is a TL map (a JS `Map`). A JS library that expects an options object needs `obj{a:1}`.
-- `obj` converts one level. A nested object is its own `obj`, in parentheses: `obj{a:1 b:(obj{c:2})}`.
+- `{a:1}` is a TL map (a JS `Map`). A JS library that expects an options object gets `#{a:1}`, a plain object.
+- Every `{…}` written inside `#{…}` is a plain object too: `#{a:1 b:{c:2} xs:[{d:3}]}`. Maps written inside a
+  lambda in it stay maps. `obj m` converts an existing map (one level).
 - Reading a property that holds a function **calls it**: `o.run` is `o.run()`. To read the function itself, index
   by name: `o["run"]`. The same for `req["app"]`, `x["constructor"]`, `lib["SomeClass"]`.
 - A function passed as an operand: `\f` (see functions-and-lambdas.md). A lambda inside a literal needs
   parentheses: `run:(()=>7)`.
 
 ```tl
-o obj{a:1 run:(()=>7|f o["run|r o.run|print r(f())(JSON.stringify(obj{a:1 b:(obj{c:2
+o #{a:1 run:(()=>7|f o["run|r o.run|print r(f())(JSON.stringify #{a:1 b:{c:2
 ```
 ```text
 7 7 {"a":1,"b":{"c":2}}
@@ -65,14 +66,14 @@ o obj{a:1 run:(()=>7|f o["run|r o.run|print r(f())(JSON.stringify(obj{a:1 b:(obj
 | `xs.sort((a, b) => …)` | `xs.sort_with(a b=>…)`; `xs.sort` takes no comparator |
 | `xs[9]` out of range gives `undefined` | `xs[9]` panics; `xs.at 9` gives `none` |
 | `xs.push(a, b)` | `xs.push a\|xs.push b`: built-in method names take a fixed number of operands on any object |
-| `throw {code: 5}` | `!obj{code:5}`: an `Error` or a plain object is thrown unchanged; `!"text"` raises an error with that message |
+| `throw {code: 5}` | `!#{code:5}`: an `Error` or a plain object is thrown unchanged; `!"text"` raises an error with that message |
 | `try { x.name } catch {}` with `x` undefined | not caught: a member of `none` or an index out of range is a panic, and `catch` does not catch panics. Test first: `if x\|…` or `x?.name` |
 | `x?.m(1)` | `?.` covers member reads (`x?.name`); guard a method call with `if x\|…` |
 | `this`, `super`, `delete o.k`, `k in o`, `typeof x` | no syntax. Use `self` in methods, `Reflect.deleteProperty`, `Reflect.has o"k"`, `x is str` |
 | `export default` | named exports only |
 
 ```tl
-o obj{a:1|x o.b|print"v=$x"("v="+x)(x==null)(Object.is x null
+o #{a:1|x o.b|print"v=$x"("v="+x)(x==null)(Object.is x null
 ```
 ```text
 v=none v=undefined true false

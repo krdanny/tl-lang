@@ -1,1 +1,1 @@
-fn mid config opts=none|if opts?.required or config.authentication==true|^req res next=>|if not req.session.li|res.redirect 302 config.bas+"/login|^none<next()<<^req res next=>next()
+fn mid config opts=none|if opts?.required or config.authentication==true|^req res next=>|guard req.session.li|res.redirect 302 config.bas+"/login|^none<next()<<^req res next=>next()

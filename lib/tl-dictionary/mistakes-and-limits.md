@@ -48,9 +48,10 @@
 | `x -1` | `x-1` | a spaced `-1` is an operand: `x(-1)` |
 | `timeout 5`, `error e`, `match m` as variable names | another name | prelude functions (`timeout`, `list`, `str`, …) and keywords (`error match type test ext alias pass static`) cannot be bound; `catch error` fails |
 | `x is str or x is num` | `(x is str)or(x is num)` | `or` after `is` continues the pattern |
-| `new URLSearchParams{a:"1"}` | `new URLSearchParams(obj{a:"1"})` | `Name{` is a record literal of type `Name` |
+| `new URLSearchParams{a:"1"}` | `new URLSearchParams #{a:"1"}` | `Name{` is a record literal of type `Name` |
 | `o.run` to read a function from a JS object | `o["run"]` | a property that holds a function is called when read |
-| `{a:1}` passed to a JS library | `obj{a:1}` | `{…}` is a `Map`; nested: `obj{a:1 b:(obj{c:2})}` |
+| `{a:1}` or `obj{a:1}` passed to a JS library | `#{a:1}` | `{…}` is a `Map`; `#{…}` is a plain object, and so is every `{…}` nested in it |
+| `if not x\|…` | `guard x\|…` | one token less, same meaning |
 | `fn all xs\|xs.map(x=>half x?)` called as `all xs` | `all xs?` | `?` or `!` inside a lambda makes the enclosing `fn` raising: without `?` the caller gets `Ok(…)` |
 | `try\|x.name<catch e\|…` with `x` none | `if x\|…` or `x?.name` | a panic (member of `none`, index out of range) is not caught by `catch` |
 | a plain word that is already a symbol in `tl.def` (`send` when `send sendEmail` exists) | rename the symbol in `tl.def` first | a symbol always compiles to its long name; check `tl.def` before using a short word as a real name |

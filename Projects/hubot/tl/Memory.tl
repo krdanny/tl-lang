@@ -1,1 +1,1 @@
-+Data.Data|type IM:Data;impl IM|init self robot|self.robot=robot|self.data=obj{global:(obj{})users:(obj{<async _get self key table|Promise.resolve self.data[table][key<async _set self key value table|self.data[table][key]=value|Promise.resolve value
++Data.Data|type IM:Data;impl IM|init self robot|self.robot=robot|self.data=#{global:#{}users:(#{<async _get self key table|Promise.resolve self.data[table][key<async _set self key value table|self.data[table][key]=value|Promise.resolve value

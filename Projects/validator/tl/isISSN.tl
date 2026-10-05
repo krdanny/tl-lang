@@ -1,1 +1,1 @@
-issn`^\d{4}-?\d{3}[\dX]$`|fn ix s:str options|o options??(obj{|t issn|if o.rhy|t=t.sub"?""<rx if o.case(new RegExp t)(new RegExp t"i|if not rx.test s|^false<digits(s.sub"-""").tc|c 0|for i 0..digits.length|d digits[i|c+=(if d=="X"10(f64 d))*(8-i<c%11==0
+issn`^\d{4}-?\d{3}[\dX]$`|fn ix s:str options|o options??(#{|t issn|if o.rhy|t=t.sub"?""<rx if o.case(new RegExp t)(new RegExp t"i|guard rx.test s|^false<digits(s.sub"-""").tc|c 0|for i 0..digits.length|d digits[i|c+=(if d=="X"10(f64 d))*(8-i<c%11==0

@@ -1,1 +1,1 @@
-lo Object.freeze(obj{loose:true|emp Object.freeze(obj{|fn po options=none|if not options|^emp<t type_of options|if t=="str"or t=="num"or t=="bool"or t=="fn|^lo<options
+lo Object.freeze(#{loose:true|emp Object.freeze(#{|fn po options=none|guard options|^emp<t type_of options|if t=="str"or t=="num"or t=="bool"or t=="fn|^lo<options

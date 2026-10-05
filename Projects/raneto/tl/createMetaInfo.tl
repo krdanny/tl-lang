@@ -1,1 +1,1 @@
-+"js-yaml":yaml|fn cm mi med me|yy obj{|mo mi or med or me|if mo|if mi|yy.Title=mi<if med|yy.Description=med<if me|yy.Sort=Number.parseInt me 10<^"---\n"+(yaml.dump yy)+"---\n<"---\n---\n
++"js-yaml":yaml|fn cm mi med me|yy #{|mo mi or med or me|if mo|if mi|yy.Title=mi<if med|yy.Description=med<if me|yy.Sort=Number.parseInt me 10<^"---\n"+(yaml.dump yy)+"---\n<"---\n---\n

@@ -1,0 +1,1 @@
+o #{a:1 b:{c:[{d:2}]}f:(x=>{k:1|g o["f|print(JSON.stringify o)(o.b.c[0].d)((g 0)is Map|fn half n|guard n%2|^n/2<-1<print(half 4)(half 3

@@ -24,16 +24,16 @@ n 7|kind if n%2==0"even""odd|print n kind
 
 Block form as a value: `v if c|a<else|b`.
 
-## guard (early exit)
+## guard (if not)
 
-`guard cond|body` runs `body` when `cond` is false; the body must leave (`^`, `break`, `continue`, `!Err`).
-Names bound by `is` in the condition stay visible after the guard.
+`guard cond|body` runs `body` when `cond` is false. Write it instead of `if not cond|…`: one token less. It takes
+`elif`/`else` and the inline form like `if`. Names bound by `is` in the condition stay visible after the guard.
 
 ```tl
-fn pos n|guard n>0|^"not positive<"ok $n<print(pos -1)(pos 3
+fn pos n|guard n>0|^"not positive<"ok $n<fn sign n|guard n>0"-""+<print(pos -1)(pos 3)(sign -2
 ```
 ```text
-not positive ok 3
+not positive ok 3 -
 ```
 
 ## is (pattern test)

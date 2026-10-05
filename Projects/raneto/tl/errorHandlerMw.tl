@@ -1,1 +1,1 @@
-+ga.ga|fn ec config|^err req res next=>|status err.status or 500|res.status status|res.render"error"(obj{config:config status:err.status message:(config.lang.error[status]or"An unexpected error occurred")error:(obj{})bc:"page-error"lang:config.lang ..(ga config req.session|none
++ga.ga|fn ec config|^err req res next=>|status err.status or 500|res.status status|res.render"error"(#{config:config status:err.status message:(config.lang.error[status]or"An unexpected error occurred")error:#{}bc:"page-error"lang:config.lang ..(ga config req.session|none
