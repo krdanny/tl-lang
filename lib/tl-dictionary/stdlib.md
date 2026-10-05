@@ -32,7 +32,7 @@ pipelines-and-iterators.md.
 |---|---|
 | `fs` | `read p`, `read_bytes p`, `write p s`, `append p s`, `exists p`, `rm p`, `mkdir p`, `ls dir`, `lines p`, `open p` (`.read .lines .close`), `walk dir`, `stat p` |
 | `json` | `de text`, `en value [indent]`, `pretty value`, `store path defaults` (a JSON file that loads itself and saves after every change: `st json.store"data.json"{next:1 items:[]}|st.next+=1`) |
-| `env` | `get k [default]`, `set k v`, `vars` |
+| `env` | `env.PORT` (read and assign process.env), `get k [default]`, `set k v`, `vars` |
 | `proc` | `args`, `run[argv] [check=false]` → `{code out err}`, `sh"cmd"`, `spawn[argv]`, `exit code`, `pid`, `cwd` |
 | `time` | `now` (ms epoch), `ms` (monotonic), `since t` |
 | `log` | `info/warn/error/debug"msg" key=value…`; `log"msg"` = `log.info` |
