@@ -61,8 +61,8 @@ fn classify n|if n>100|"huge<elif n>10|"big<else|"small<<for n[5 50 500|print n(
 
 ## Workflow
 
-`tl def` (create or update `tl.def`) → `tl check f.tl` (diagnostics like `E116@main:c22 … fixes …`, `c22` = column) → `tl fmt f.tl` (canonical
-spacing and closers) → `tl run f.tl` / `tl test` / `tlc`.
+`tl def` (create or update `tl.def`) → `tl check f.tl` (diagnostics like `E116@main:c22 … fixes …`, `c22` = column) → `tl shrink f.tl` (canonical
+spacing and closers, and every token that does not change the program removed) → `tl run f.tl` / `tl test` / `tlc`.
 
 ## Dictionary: open the file for the task
 

@@ -340,6 +340,7 @@ All commands are `node lib/bin/tl.js <command>` (or `tl <command>` once the pack
 | `tl check file.tl` | diagnostics only, in a compact form with a column and suggested fixes |
 | `tl compile file.tl` | print the generated JavaScript |
 | `tl fmt file.tl` | rewrite in canonical form (minimal spaces and closers) |
+| `tl shrink file.tl` | canonical form, plus every token removed that does not change the compiled program |
 | `tl def [dir]` | create or update `tl.def` and replace compound names by symbols |
 | `tl view file.tl` | readable rendering: indented, closers restored, long names |
 | `tl test` | run `test"…"` blocks |

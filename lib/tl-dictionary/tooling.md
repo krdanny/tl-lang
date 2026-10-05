@@ -5,6 +5,7 @@
 | `tl run f.tl [args]` | compile in memory and run |
 | `tl check f.tl` | diagnostics only |
 | `tl fmt f.tl` / `--check` | rewrite in canonical form (minimal spaces and closers) |
+| `tl shrink [files\|dir]` / `--check` | remove every token that does not change the program: a `^` before a value that is returned anyway, redundant parentheses, `if not` → `guard`, `+npm.`/`+node.` prefixes. Run it after writing |
 | `tl def [dir]` | create or update `tl.def`: every compound name gets a one-token symbol, the sources are rewritten to use it. `--check` only reports. |
 | `tl view f.tl` | readable view for people: one statement per line, indented, closers restored, long names from `tl.def`, `return`/`import`/`raise`/`=` spelled out. `--short` shows the symbols as written, `--sigils` keeps `^ + !`, `--plain` only splits segments. The VS Code extension (`vscode/`) shows the same text read-only when a `.tl` file is opened |
 | `tl compile f.tl` | print the generated JavaScript |

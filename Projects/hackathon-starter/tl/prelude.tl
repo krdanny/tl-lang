@@ -1,1 +1,1 @@
-fn del o k|Reflect.dep o k<fn undef x|Object.is x none<fn isnull x|Object.is x null<fn isa x c|c[Symbol.hin].call c x<fn nth xs i|if xs==none|^none<Reflect.get(Object xs)i<fn isobj x|(Object.is(Object x)x)and(type_of x)!="fn" and(type_of x)!="type
+fn del o k|Reflect.dep o k<fn undef x|Object.is x none<fn isnull x|Object.is x null<fn isa x c|c[Symbol.hin].call c x<fn nth xs i|if xs==none|^none<Reflect.get(Object xs)i<fn isobj x|Object.is(Object x)x and(type_of x)!="fn" and(type_of x)!="type
